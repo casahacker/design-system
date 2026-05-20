@@ -24,6 +24,7 @@ GENERATORS = [
     ("patterns",         "gen_patterns.py"),
     ("dataviz",          "gen_dataviz.py"),
     ("brand+help",       "gen_brand.py"),
+    ("impressos",        "gen_impressos.py"),
     ("search-index",     "gen_search_index.py"),
 ]
 QUICK_SUBSET = {"foundations", "components-a", "components-b", "components-new", "search-index"}

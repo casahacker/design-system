@@ -205,7 +205,10 @@ for slug, title, desc, color, foco in SUBMARCAS:
         toc=[{"id":"logo","label":"Logo"},{"id":"color","label":"Paleta"},{"id":"usage","label":"Regras de uso"},{"id":"mockups","label":"Mockups"},{"id":"assets","label":"Assets"}],
     ))
 
-# ----- IMPRESSOS -----------------------------------------------------------
+# ----- IMPRESSOS · movido pra scripts/gen_impressos.py ---------------------
+# (rebuild completo com mockups SVG inline + specs Printi-ready)
+"""
+# ----- IMPRESSOS (old · não usado) -----------------------------------------
 IMPRESSOS = [
     ("papelaria", "Papelaria", "Cartões de visita, papel timbrado, envelopes, pastas e folders."),
     ("eventos",   "Eventos",   "Sinalização, crachás, banners, painéis de palco, programações impressas."),
@@ -324,6 +327,7 @@ write("pages/impressos/loja.html", page(
     ]),
     toc=[{"id":"items","label":"Produtos"},{"id":"rules","label":"Regras de aplicação"},{"id":"submarcas","label":"Merch das submarcas"}],
 ))
+"""
 
 # ----- CONTRIBUTING --------------------------------------------------------
 write("pages/contributing/index.html", page(

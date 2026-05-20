@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="ch-page" content="papelaria">
 <meta name="ch-base" content="../../">
-<meta name="description" content="Cartões de visita, papel timbrado, envelopes, folders. Identidade institucional formal.">
+<meta name="description" content="Cartões de visita, papel timbrado, envelopes, folders. Identidade institucional formal · specs prontos pra Printi.">
 <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
 <title>Papelaria · Casa Hacker DS</title>
 <link rel="stylesheet" href="../../styles.css">
@@ -18,13 +18,156 @@
     <div class="page-breadcrumb"><a href="../../index.html">home</a><span class="sep">/</span><a href="index.html">impressos</a><span class="sep">/</span>papelaria</div>
     <div class="section-eyebrow section-eyebrow--brand">brand</div>
     <h1 class="page-title">papelaria</h1>
-    <p class="page-intro">Cartões de visita, papel timbrado, envelopes, folders. Identidade institucional formal.</p>
-    
+    <p class="page-intro">Cartões de visita, papel timbrado, envelopes, folders. Identidade institucional formal · specs prontos pra Printi.</p>
+    <div class="page-tags"><span class="tag tag--code">stable</span></div>
   </header>
 
-  <aside class="toc"><h5>nesta página</h5><ol><li><a href="#items">Itens</a></li><li><a href="#specs">Specs técnicos</a></li><li><a href="#colors">Cores impressas (CMYK)</a></li></ol></aside>
+  <aside class="toc"><h5>nesta página</h5><ol><li><a href="#mockups">Mockups</a></li><li><a href="#specs">Specs técnicos</a></li><li><a href="#rules">Regras</a></li><li><a href="#anatomy">Anatomia cartão</a></li></ol></aside>
 
-  <section class="section" id="items"><div class="section-head"><h2>itens</h2><span class="meta">01</span></div><div class="grid-3"><div class="tile tile--bordered"><h4>cartão de visita</h4><p>90×55mm · plex mono + roboto flex · fundo Dos ou CSS</p></div><div class="tile tile--bordered"><h4>papel timbrado</h4><p>A4 · logo + barra Code superior · margens 25mm</p></div><div class="tile tile--bordered"><h4>envelope</h4><p>C5/C6 · logo no canto superior esquerdo</p></div><div class="tile tile--bordered"><h4>folder/pasta</h4><p>A4 dobrado · capa com H e nome do programa</p></div></div></section><section class="section" id="specs"><div class="section-head"><h2>specs técnicos</h2><span class="meta">02</span></div><table class="data-table"><thead><tr><th>item</th><th>tamanho</th><th>papel</th><th>acabamento</th></tr></thead><tbody><tr><td>cartão</td><td>90×55mm</td><td>triplex 300g</td><td>laminação fosca</td></tr><tr><td>timbrado</td><td>210×297mm (A4)</td><td>sulfite 90g</td><td>sem acabamento</td></tr><tr><td>envelope</td><td>229×162mm (C5)</td><td>sulfite 90g</td><td>sem acabamento</td></tr><tr><td>folder</td><td>420×297mm (A3 dobrado)</td><td>couché 150g</td><td>verniz UV no logo</td></tr></tbody></table></section><section class="section" id="colors"><div class="section-head"><h2>cores impressas (CMYK)</h2><span class="meta">03</span></div><table class="data-table"><thead><tr><th>nome</th><th>cmyk</th><th>pantone</th></tr></thead><tbody><tr><td>Code Green</td><td>C70 M0 Y65 K0</td><td>802C</td></tr><tr><td>Dos</td><td>C68 M55 Y65 K59</td><td>Black 7C</td></tr><tr><td>Console</td><td>C5 M0 Y5 K3</td><td>—</td></tr></tbody></table></section>
+  <section class="section" id="mockups"><div class="section-head"><h2>mockups</h2><span class="meta">01 · referência visual</span></div><div class="mockup-grid"><div class="mockup"><div class="mockup-stage"><svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="cartão de visita frente e verso">
+<!-- frente · Dos -->
+<g>
+  <rect width="360" height="200" rx="2" fill="#3C433C"/>
+  <!-- H pixelado -->
+  <g transform="translate(28, 32)" fill="#32FA96">
+    <rect width="9" height="9"/>
+    <rect x="18" width="9" height="9"/>
+    <rect y="18" width="9" height="9"/>
+    <rect x="9" y="18" width="9" height="9"/>
+    <rect x="18" y="18" width="9" height="9"/>
+    <rect width="9" height="9" y="36"/>
+    <rect x="18" y="36" width="9" height="9"/>
+  </g>
+  <text x="28" y="120" font-family="IBM Plex Mono, monospace" font-size="9" fill="#91938C" letter-spacing="0.5">// produto</text>
+  <text x="28" y="138" font-family="Roboto Flex, sans-serif" font-size="14" font-weight="500" fill="#F8FCF8">geraldo barros</text>
+  <text x="28" y="155" font-family="IBM Plex Mono, monospace" font-size="10" fill="#D7DCD7">tech lead · casa hacker</text>
+  <text x="28" y="178" font-family="IBM Plex Mono, monospace" font-size="9" fill="#32FA96">geraldo@casahacker.org</text>
+</g>
+</svg></div><div class="mockup-meta"><span class="mockup-label">cartão de visita</span><span class="mockup-sub">90×50mm · frente</span></div></div><div class="mockup"><div class="mockup-stage"><svg viewBox="0 0 210 297" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="papel timbrado A4">
+<rect width="210" height="297" fill="#F8FCF8"/>
+<!-- barra superior Code -->
+<rect x="0" y="0" width="210" height="6" fill="#32FA96"/>
+<!-- H pequeno -->
+<g transform="translate(15, 18)" fill="#3C433C">
+  <rect width="3" height="3"/>
+  <rect x="6" width="3" height="3"/>
+  <rect y="6" width="3" height="3"/>
+  <rect x="3" y="6" width="3" height="3"/>
+  <rect x="6" y="6" width="3" height="3"/>
+  <rect y="12" width="3" height="3"/>
+  <rect x="6" y="12" width="3" height="3"/>
+</g>
+<text x="28" y="28" font-family="IBM Plex Mono, monospace" font-size="6" fill="#3C433C" letter-spacing="0.3">casa hacker</text>
+<!-- corpo simulado -->
+<g fill="#91938C" opacity="0.5">
+  <rect x="25" y="55" width="160" height="2"/>
+  <rect x="25" y="62" width="140" height="2"/>
+  <rect x="25" y="69" width="155" height="2"/>
+  <rect x="25" y="80" width="135" height="2"/>
+  <rect x="25" y="87" width="160" height="2"/>
+  <rect x="25" y="94" width="120" height="2"/>
+  <rect x="25" y="105" width="155" height="2"/>
+  <rect x="25" y="112" width="140" height="2"/>
+</g>
+<!-- rodapé -->
+<rect x="25" y="280" width="160" height="0.5" fill="#3C433C"/>
+<text x="25" y="288" font-family="IBM Plex Mono, monospace" font-size="3.5" fill="#91938C">casahacker.org · rua das hackers, 42 · são paulo</text>
+</svg></div><div class="mockup-meta"><span class="mockup-label">papel timbrado</span><span class="mockup-sub">A4 · 210×297mm</span></div></div><div class="mockup"><div class="mockup-stage"><svg viewBox="0 0 229 162" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="envelope C5">
+<rect width="229" height="162" fill="#F0F5F0" stroke="#D7DCD7"/>
+<!-- aba traseira (linha) -->
+<line x1="0" y1="0" x2="114.5" y2="60" stroke="#D7DCD7" stroke-width="0.5"/>
+<line x1="229" y1="0" x2="114.5" y2="60" stroke="#D7DCD7" stroke-width="0.5"/>
+<!-- logo canto -->
+<g transform="translate(14, 14)" fill="#3C433C">
+  <rect width="4" height="4"/>
+  <rect x="8" width="4" height="4"/>
+  <rect y="8" width="4" height="4"/>
+  <rect x="4" y="8" width="4" height="4"/>
+  <rect x="8" y="8" width="4" height="4"/>
+  <rect y="16" width="4" height="4"/>
+  <rect x="8" y="16" width="4" height="4"/>
+</g>
+<text x="26" y="22" font-family="IBM Plex Mono, monospace" font-size="6" fill="#3C433C">casa hacker</text>
+<text x="14" y="40" font-family="IBM Plex Mono, monospace" font-size="4.5" fill="#91938C">rua das hackers, 42 · sp</text>
+<!-- linhas destinatário -->
+<g fill="#91938C" opacity="0.6">
+  <rect x="100" y="100" width="100" height="2"/>
+  <rect x="100" y="108" width="120" height="2"/>
+  <rect x="100" y="116" width="80" height="2"/>
+</g>
+</svg></div><div class="mockup-meta"><span class="mockup-label">envelope C5</span><span class="mockup-sub">229×162mm</span></div></div><div class="mockup"><div class="mockup-stage"><svg viewBox="0 0 210 297" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="folder A4 capa">
+<rect width="210" height="297" fill="#3C433C"/>
+<!-- grafismo de fundo -->
+<g opacity="0.08" fill="#32FA96">
+  <rect x="0" y="0" width="20" height="20"/>
+  <rect x="40" y="40" width="20" height="20"/>
+  <rect x="80" y="80" width="20" height="20"/>
+  <rect x="120" y="120" width="20" height="20"/>
+  <rect x="160" y="160" width="20" height="20"/>
+  <rect x="0" y="40" width="20" height="20"/>
+  <rect x="40" y="80" width="20" height="20"/>
+  <rect x="80" y="120" width="20" height="20"/>
+</g>
+<!-- H grande -->
+<g transform="translate(60, 80)" fill="#32FA96">
+  <rect width="30" height="30"/>
+  <rect x="60" width="30" height="30"/>
+  <rect y="60" width="30" height="30"/>
+  <rect x="30" y="60" width="30" height="30"/>
+  <rect x="60" y="60" width="30" height="30"/>
+  <rect y="120" width="30" height="30"/>
+  <rect x="60" y="120" width="30" height="30"/>
+</g>
+<text x="20" y="250" font-family="Roboto Flex, sans-serif" font-size="20" font-weight="300" fill="#F8FCF8" letter-spacing="-0.5">casa hacker</text>
+<text x="20" y="265" font-family="IBM Plex Mono, monospace" font-size="6" fill="#32FA96">// relatório 2026</text>
+</svg></div><div class="mockup-meta"><span class="mockup-label">folder/capa</span><span class="mockup-sub">A4 dobrado</span></div></div><div class="mockup"><div class="mockup-stage"><svg viewBox="0 0 148 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="caderno A5">
+<rect width="148" height="210" fill="#3C433C" rx="1"/>
+<!-- espiral -->
+<g fill="#32FA96">
+  <rect x="0" y="20" width="6" height="2"/>
+  <rect x="0" y="36" width="6" height="2"/>
+  <rect x="0" y="52" width="6" height="2"/>
+  <rect x="0" y="68" width="6" height="2"/>
+  <rect x="0" y="84" width="6" height="2"/>
+  <rect x="0" y="100" width="6" height="2"/>
+  <rect x="0" y="116" width="6" height="2"/>
+  <rect x="0" y="132" width="6" height="2"/>
+  <rect x="0" y="148" width="6" height="2"/>
+  <rect x="0" y="164" width="6" height="2"/>
+  <rect x="0" y="180" width="6" height="2"/>
+</g>
+<!-- H grande centralizado -->
+<g transform="translate(48, 70)" fill="#32FA96">
+  <rect width="16" height="16"/>
+  <rect x="32" width="16" height="16"/>
+  <rect y="32" width="16" height="16"/>
+  <rect x="16" y="32" width="16" height="16"/>
+  <rect x="32" y="32" width="16" height="16"/>
+  <rect y="64" width="16" height="16"/>
+  <rect x="32" y="64" width="16" height="16"/>
+</g>
+<text x="74" y="180" font-family="IBM Plex Mono, monospace" font-size="7" fill="#D7DCD7" text-anchor="middle">// pensamento livre</text>
+<text x="74" y="195" font-family="Roboto Flex, sans-serif" font-size="9" fill="#F8FCF8" text-anchor="middle">casa hacker</text>
+</svg></div><div class="mockup-meta"><span class="mockup-label">caderno A5</span><span class="mockup-sub">148×210mm · capa</span></div></div></div></section><section class="section" id="specs"><div class="section-head"><h2>specs técnicos · referência Printi</h2><span class="meta">02</span></div><table class="data-table"><thead><tr><th>item</th><th>tamanho</th><th>papel</th><th>gramatura</th><th>acabamento</th><th>prazo médio</th></tr></thead><tbody><tr><td>cartão de visita</td><td>90×50mm</td><td>Couché ou Triplex</td><td>300g</td><td>laminação fosca</td><td>3-5 dias úteis</td></tr><tr><td>cartão premium</td><td>90×50mm</td><td>Couché</td><td>350g</td><td>verniz UV localizado no logo</td><td>5-7 dias úteis</td></tr><tr><td>papel timbrado</td><td>210×297mm</td><td>Sulfite</td><td>90g</td><td>sem acabamento</td><td>2-4 dias úteis</td></tr><tr><td>envelope C5</td><td>229×162mm</td><td>Sulfite</td><td>90g</td><td>fecho gomado</td><td>3-5 dias úteis</td></tr><tr><td>envelope C6</td><td>162×114mm</td><td>Sulfite</td><td>90g</td><td>fecho gomado</td><td>3-5 dias úteis</td></tr><tr><td>folder/pasta</td><td>420×297mm</td><td>Couché brilho</td><td>240g</td><td>verniz UV na capa</td><td>5-8 dias úteis</td></tr><tr><td>caderno A5</td><td>148×210mm</td><td>Capa: Couché 300g · miolo: offset 75g</td><td>—</td><td>wire-o ou costurado</td><td>7-10 dias úteis</td></tr></tbody></table></section><section class="section" id="rules"><div class="section-head"><h2>regras de aplicação</h2><span class="meta">03</span></div><div class="do-dont"><div class="tile do"><h4>use</h4><ul class="bare"><li>H sempre no canto superior esquerdo (cartão) ou centralizado (capa)</li><li>Cor signature CSS (claro) ou Dos (escuro) como fundo · nunca cores secundárias</li><li>Tracking +5 em Plex Mono pra textos pequenos (cartão)</li><li>Margem mínima de 5mm da linha de corte (área segura)</li><li>Endereço completo no rodapé do timbrado</li></ul></div><div class="tile dont"><h4>não use</h4><ul class="bare"><li>Múltiplas cores de fundo no mesmo material</li><li>Fontes diferentes de Roboto Flex + Plex Mono</li><li>Logo abaixo de 8mm de altura (não fica legível)</li><li>Textos críticos dentro da margem de sangria</li><li>Elementos coloridos contra o limite do papel</li></ul></div></div></section><section class="section" id="anatomy"><div class="section-head"><h2>anatomia do cartão de visita</h2><span class="meta">04</span></div><p class="t-body-02 t-secondary mb-05 prose">5 elementos canônicos. Hierarquia clara · informação técnica em mono · nome em Roboto.</p><div class="demo "><div style="max-width: 360px; margin: 0 auto; background: var(--layer-02); padding: var(--spacing-04)"><svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="cartão de visita frente e verso">
+<!-- frente · Dos -->
+<g>
+  <rect width="360" height="200" rx="2" fill="#3C433C"/>
+  <!-- H pixelado -->
+  <g transform="translate(28, 32)" fill="#32FA96">
+    <rect width="9" height="9"/>
+    <rect x="18" width="9" height="9"/>
+    <rect y="18" width="9" height="9"/>
+    <rect x="9" y="18" width="9" height="9"/>
+    <rect x="18" y="18" width="9" height="9"/>
+    <rect width="9" height="9" y="36"/>
+    <rect x="18" y="36" width="9" height="9"/>
+  </g>
+  <text x="28" y="120" font-family="IBM Plex Mono, monospace" font-size="9" fill="#91938C" letter-spacing="0.5">// produto</text>
+  <text x="28" y="138" font-family="Roboto Flex, sans-serif" font-size="14" font-weight="500" fill="#F8FCF8">geraldo barros</text>
+  <text x="28" y="155" font-family="IBM Plex Mono, monospace" font-size="10" fill="#D7DCD7">tech lead · casa hacker</text>
+  <text x="28" y="178" font-family="IBM Plex Mono, monospace" font-size="9" fill="#32FA96">geraldo@casahacker.org</text>
+</g>
+</svg></div></div><ul class="checklist"><li>Logo H verde (Code) · canto superior esquerdo · 18×18px no SVG = ~9mm impresso</li><li>Eyebrow '// produto' · Plex Mono 9pt · cor Java</li><li>Nome · Roboto Flex 14pt 500 · cor CSS</li><li>Cargo + organização · Plex Mono 10pt · cor Inspect</li><li>Email · Plex Mono 9pt · cor Code (destaque)</li></ul></section>
 
 </main>
 <script src="../../shell.js"></script>
