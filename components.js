@@ -332,6 +332,41 @@
   }
 
   /* --------------------------------------------------------------------- */
+  /*  DATA TABLE — sortable headers                                          */
+  /* --------------------------------------------------------------------- */
+  function initSortableTable(table) {
+    const headers = $$('th[data-sort]', table);
+    if (!headers.length) return;
+    headers.forEach((th, colIdx) => {
+      th.setAttribute('tabindex', '0');
+      th.setAttribute('role', 'button');
+      const sortBy = () => {
+        const cur = th.dataset.sort || 'none';
+        const dir = cur === 'asc' ? 'desc' : 'asc';
+        headers.forEach(h => h.dataset.sort = 'none');
+        th.dataset.sort = dir;
+        const tbody = $('tbody', table);
+        const rows = $$('tr', tbody);
+        rows.sort((a, b) => {
+          const ta = a.children[colIdx]?.textContent.trim() || '';
+          const tb = b.children[colIdx]?.textContent.trim() || '';
+          const na = parseFloat(ta);
+          const nb = parseFloat(tb);
+          let cmp;
+          if (!isNaN(na) && !isNaN(nb)) cmp = na - nb;
+          else cmp = ta.localeCompare(tb, 'pt-BR');
+          return dir === 'asc' ? cmp : -cmp;
+        });
+        rows.forEach(r => tbody.appendChild(r));
+      };
+      th.addEventListener('click', sortBy);
+      th.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); sortBy(); }
+      });
+    });
+  }
+
+  /* --------------------------------------------------------------------- */
   /*  AUTO-INIT                                                              */
   /* --------------------------------------------------------------------- */
   function initAll() {
@@ -343,6 +378,7 @@
     $$('.number-input').forEach(initNumberInput);
     $$('.file-uploader').forEach(initFileUploader);
     $$('.slider').forEach(initSlider);
+    $$('table.data-table').forEach(initSortableTable);
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initAll);
