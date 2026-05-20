@@ -5,25 +5,254 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="ch-page" content="global-header">
 <meta name="ch-base" content="../../">
-<meta name="description" content="Header padrão de produtos Casa Hacker: 48px, fundo Dos, brand à esquerda, ações à direita. Sticky no topo.">
+<meta name="description" content="Global header padrão de produtos Casa Hacker, com barra de acessibilidade obrigatória + header dos.">
 <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
 <title>Global header · Casa Hacker DS</title>
 <link rel="stylesheet" href="../../styles.css">
-
 </head>
 <body>
 <main class="main">
 
   <header class="page-header">
-    <div class="page-breadcrumb"><a href="../../index.html">home</a><span class="sep">/</span><a href="index.html">patterns</a><span class="sep">/</span>global header</div>
+    <div class="page-breadcrumb">
+      <a href="../../index.html">home</a><span class="sep">/</span><a href="index.html">patterns</a><span class="sep">/</span>global header
+    </div>
     <h1 class="page-title">global header</h1>
-    <p class="page-intro">Header padrão de produtos Casa Hacker: 48px, fundo Dos, brand à esquerda, ações à direita. Sticky no topo.</p>
-    
+    <p class="page-intro">
+      O topo padrão de qualquer produto Casa Hacker. Composto por <strong>2 camadas obrigatórias</strong>:
+      a <strong>barra de acessibilidade</strong> (no topo absoluto, 32px) e o <strong>header dos</strong>
+      logo abaixo (48px com brand + navegação). A combinação garante conformidade WCAG e identidade
+      visual consistente em todos os produtos da casa.
+    </p>
+    <div class="page-tags">
+      <span class="tag tag--code">obrigatório</span>
+      <span class="tag tag--blue">wcag aa</span>
+    </div>
   </header>
 
-  <aside class="toc"><h5>nesta página</h5><ol><li><a href="#anatomy">Anatomia</a></li><li><a href="#structure">Estrutura</a></li><li><a href="#variants">Variantes</a></li></ol></aside>
+  <aside class="toc">
+    <h5>nesta página</h5>
+    <ol>
+      <li><a href="#layout">Layout</a></li>
+      <li><a href="#a11y-bar">Barra de acessibilidade (obrigatória)</a></li>
+      <li><a href="#header-dos">Header dos</a></li>
+      <li><a href="#anatomy">Anatomia completa</a></li>
+      <li><a href="#variants">Variantes</a></li>
+      <li><a href="#integration">Integração</a></li>
+      <li><a href="#a11y">Acessibilidade</a></li>
+      <li><a href="#code">Código</a></li>
+    </ol>
+  </aside>
 
-  <section class="section" id="anatomy"><div class="section-head"><h2>anatomia</h2><span class="meta">01</span></div><div class="demo "><div style="background: var(--ch-dos); color: var(--ch-css); padding: 0 var(--spacing-05); height: 48px; display: flex; align-items: center; gap: var(--spacing-05)"><div class="h-mini" style="width: 18px; height: 18px;"><span class="on"></span><span></span><span class="on"></span><span></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span class="on"></span></div><span class="t-label-02">casa hacker / produto</span><span style="margin-left: auto; color: var(--ch-inspect); font: var(--label-01); text-transform: uppercase; letter-spacing: 0.08em;">conta</span></div></div></section><section class="section" id="structure"><div class="section-head"><h2>estrutura</h2><span class="meta">02</span></div><ul class="checklist"><li>Altura fixa 48px</li><li>Fundo --ch-dos · texto --ch-css</li><li>Logo brand à esquerda (H + nome + área de produto)</li><li>Ações secundárias à direita (conta, ajuda, notificações)</li><li>Z-index alto (var(--z-sticky))</li><li>Borda inferior sutil</li></ul></section><section class="section" id="variants"><div class="section-head"><h2>variantes</h2><span class="meta">03</span></div><ul class="checklist"><li>Default — produto institucional</li><li>Com nav horizontal — produtos com seções top-level</li><li>Mobile — menu hambúrguer + brand + 1 ação</li></ul></section>
+  <section class="section" id="layout">
+    <div class="section-head"><h2>layout</h2><span class="meta">01 · 2 camadas empilhadas</span></div>
+    <p class="t-body-02 t-secondary mb-05" style="max-width: 720px;">
+      Stack vertical fixo no topo. A barra de acessibilidade fica acima (z-index ultra-alto),
+      o header de produto logo abaixo. Total de <strong>80px de altura</strong> reservados.
+    </p>
+    <div class="demo">
+      <div style="background: var(--ch-dos); color: var(--ch-css); padding: 0 var(--spacing-04); height: 32px; display: flex; align-items: center; gap: var(--spacing-04); font: var(--code-01); border-bottom: 1px solid rgba(255,255,255,0.1)">
+        <strong style="letter-spacing: 0.1em; color: rgba(255,255,255,0.6);">CASA HACKER</strong>
+        <span style="color: rgba(255,255,255,0.4); margin-left: var(--spacing-04);">TEMA</span>
+        <span>claro · escuro · alto contraste</span>
+        <span style="color: rgba(255,255,255,0.4); margin-left: var(--spacing-04);">FONTE</span>
+        <span>14 · 16 · 18</span>
+        <span style="margin-left: auto; background: var(--ch-code); color: var(--ch-dos); padding: 2px 8px; font-weight: 600;">libras</span>
+      </div>
+      <div style="background: var(--ch-dos); color: var(--ch-css); padding: 0 var(--spacing-05); height: 48px; display: flex; align-items: center; gap: var(--spacing-04);">
+        <div class="h-mini" style="width: 18px; height: 18px;"><span class="on"></span><span></span><span class="on"></span><span></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span class="on"></span></div>
+        <span class="t-label-02">produto casa hacker</span>
+        <span style="margin-left: auto; color: var(--ch-inspect); font: var(--label-01); text-transform: uppercase; letter-spacing: 0.08em;">conta</span>
+      </div>
+      <div style="padding: var(--spacing-06); background: var(--layer-01); text-align: center; color: var(--text-helper); font: var(--code-02);">// conteúdo do produto começa aqui</div>
+    </div>
+  </section>
+
+  <section class="section" id="a11y-bar">
+    <div class="section-head"><h2>barra de acessibilidade — obrigatória</h2><span class="meta">02 · 32px · topo absoluto</span></div>
+    <p class="t-body-02 t-secondary mb-05" style="max-width: 720px;">
+      Componente desenvolvido pela própria Casa Hacker:
+      <a class="link" href="https://github.com/casahacker/barra-acessibilidade" target="_blank" rel="noopener">github.com/casahacker/barra-acessibilidade ↗</a>.
+      <strong>Não é opcional</strong> — todo produto Casa Hacker deve incluir.
+      Já vem ligada por padrão no shell.js deste design system.
+    </p>
+
+    <h3 class="t-h02 mb-04">12 features WCAG-aligned</h3>
+    <table class="data-table mb-06">
+      <thead><tr><th>feature</th><th>função</th><th>WCAG</th></tr></thead>
+      <tbody>
+        <tr><td>tema claro/escuro</td><td>preferência visual</td><td>—</td></tr>
+        <tr><td>alto contraste</td><td>aumenta diferença texto/fundo</td><td>1.4.6</td></tr>
+        <tr><td>fonte 14/16/18px</td><td>3 tamanhos de texto</td><td>1.4.4</td></tr>
+        <tr><td>fonte para dislexia</td><td>Atkinson Hyperlegible</td><td>—</td></tr>
+        <tr><td>régua de leitura</td><td>barra horizontal que segue o cursor</td><td>1.4.8</td></tr>
+        <tr><td>modo foco</td><td>escurece elementos secundários</td><td>1.4.8</td></tr>
+        <tr><td>cursor ampliado</td><td>SVG customizado maior</td><td>—</td></tr>
+        <tr><td>vlibras</td><td>tradução em Língua Brasileira de Sinais</td><td>1.2.6</td></tr>
+        <tr><td>sem animação</td><td>pausa transitions e animations</td><td>2.3.3</td></tr>
+        <tr><td>foco realçado</td><td>contorno persistente em elementos focados</td><td>2.4.7</td></tr>
+        <tr><td>alvos ampliados</td><td>botões mínimo 44×44px</td><td>2.5.8</td></tr>
+        <tr><td>links sublinhados</td><td>todos os links com underline</td><td>1.4.1</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="t-h02 mb-04">override visual Casa Hacker</h3>
+    <p class="t-body-02 t-secondary mb-04" style="max-width: 720px;">
+      A barra upstream usa azul IBM (#0F62FE) por padrão. Neste design system fazemos override
+      pros tokens da marca: fundo <code class="code-inline">--ch-dos</code>, ativo
+      <code class="code-inline">--ch-code</code> (verde brand). O override está em
+      <code class="code-inline">styles.css</code>, seção "ACCESSIBILITY BAR".
+    </p>
+
+    <div class="do-dont">
+      <div class="tile do"><h4>use</h4><ul class="bare">
+        <li>Em <strong>todo produto</strong> Casa Hacker — sem exceção</li>
+        <li>Acima do header de produto · z-index 2147483600</li>
+        <li>Carregar via CDN (jsDelivr) — peso ~30KB minificado</li>
+        <li>Override visual pra alinhar com identidade local</li>
+      </ul></div>
+      <div class="tile dont"><h4>não use</h4><ul class="bare">
+        <li>Remover ou esconder a barra — quebra a conformidade WCAG</li>
+        <li>Bloquear z-index — outros elementos não podem cobri-la</li>
+        <li>Customizar feature individual sem propor PR upstream</li>
+        <li>Versão antiga sem VLibras — usa sempre o release atual</li>
+      </ul></div>
+    </div>
+  </section>
+
+  <section class="section" id="header-dos">
+    <div class="section-head"><h2>header dos</h2><span class="meta">03 · 48px · brand + nav</span></div>
+    <p class="t-body-02 t-secondary mb-05" style="max-width: 720px;">
+      Fundo <code class="code-inline">--ch-dos</code>, texto <code class="code-inline">--ch-css</code>.
+      Brand à esquerda (H pixelado + nome do produto). Ações secundárias à direita
+      (conta, ajuda, links externos).
+    </p>
+    <ul class="checklist">
+      <li>Altura fixa 48px</li>
+      <li>Sticky no topo da janela (mas abaixo da barra de acessibilidade — top: 32px)</li>
+      <li>Logo brand à esquerda: H + " / " + nome do produto</li>
+      <li>Ações à direita em <code class="code-inline">.t-label-01</code> (mono uppercase)</li>
+      <li>Borda inferior sutil (rgba(255,255,255,0.06))</li>
+      <li>Em mobile: hambúrguer à esquerda + brand + 1 ação principal</li>
+    </ul>
+  </section>
+
+  <section class="section" id="anatomy">
+    <div class="section-head"><h2>anatomia completa</h2><span class="meta">04</span></div>
+    <div class="anatomy">
+      <svg width="640" height="220" viewBox="0 0 640 220" fill="none">
+        <rect x="20" y="40" width="600" height="28" fill="#3C433C"/>
+        <text x="32" y="58" font-family="IBM Plex Mono" font-size="9" fill="#FFF" letter-spacing="1">CASA HACKER · TEMA · FONTE · DISLEXIA · LIBRAS</text>
+        <rect x="540" y="46" width="60" height="16" fill="#32FA96"/>
+        <text x="555" y="58" font-family="IBM Plex Mono" font-size="9" fill="#3C433C" font-weight="600">LIBRAS</text>
+        <rect x="20" y="68" width="600" height="44" fill="#3C433C" stroke="rgba(255,255,255,0.06)"/>
+        <rect x="36" y="84" width="12" height="12" fill="#32FA96"/>
+        <text x="58" y="94" font-family="IBM Plex Mono" font-size="11" fill="#FFF" font-weight="500">casa hacker / produto</text>
+        <text x="540" y="94" font-family="IBM Plex Mono" font-size="9" fill="#D7DCD7" letter-spacing="1">CONTA</text>
+        <rect x="20" y="112" width="600" height="80" fill="#F8FCF8" stroke="#D7DCD7"/>
+        <text x="270" y="156" font-family="IBM Plex Mono" font-size="10" fill="#91938C">// conteúdo do produto</text>
+        <circle cx="10" cy="54" r="9" fill="#FFF" stroke="#91938C"/>
+        <text x="6" y="58" font-family="IBM Plex Mono" font-size="11" fill="#3C433C" font-weight="600">1</text>
+        <circle cx="10" cy="90" r="9" fill="#FFF" stroke="#91938C"/>
+        <text x="6" y="94" font-family="IBM Plex Mono" font-size="11" fill="#3C433C" font-weight="600">2</text>
+        <circle cx="10" cy="152" r="9" fill="#FFF" stroke="#91938C"/>
+        <text x="6" y="156" font-family="IBM Plex Mono" font-size="11" fill="#3C433C" font-weight="600">3</text>
+      </svg>
+      <ol class="anatomy-legend">
+        <li>Barra de acessibilidade · 32px · fundo --ch-dos · z-index 2147483600 · OBRIGATÓRIA</li>
+        <li>Header dos · 48px · brand à esquerda · ações à direita · sticky logo abaixo da barra</li>
+        <li>Conteúdo do produto · começa em 80px de offset do topo</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="variants">
+    <div class="section-head"><h2>variantes do header dos</h2><span class="meta">05</span></div>
+    <div class="grid-3">
+      <div class="tile tile--bordered"><h4>Default</h4><p>Brand + ações simples à direita. Padrão de sites institucionais e ferramentas pequenas.</p></div>
+      <div class="tile tile--bordered"><h4>Com nav horizontal</h4><p>Para produtos com seções top-level. Nav entre brand e ações.</p></div>
+      <div class="tile tile--bordered"><h4>Mobile</h4><p>Hambúrguer + brand + 1 ação. Sidebar vira drawer.</p></div>
+    </div>
+    <p class="t-helper mt-04">A barra de acessibilidade <strong>não tem variante</strong>: é sempre a mesma, em todos os produtos, sem customização visual além do override de cor pros tokens da marca.</p>
+  </section>
+
+  <section class="section" id="integration">
+    <div class="section-head"><h2>integração</h2><span class="meta">06</span></div>
+
+    <h3 class="t-h02 mb-04">no design system (já incluso)</h3>
+    <p class="t-body-02 t-secondary mb-04" style="max-width: 720px;">
+      Este DS já carrega a barra automaticamente via <code class="code-inline">shell.js</code>.
+      Qualquer página que inclua <code class="code-inline">&lt;script src="shell.js"&gt;</code>
+      ganha a barra sem código adicional.
+    </p>
+
+    <h3 class="t-h02 mb-04">em produto novo</h3>
+    <div class="code-snippet"><span class="c">&lt;!-- HTML estático --&gt;</span>
+&lt;<span class="k">link</span> <span class="v">rel</span>=<span class="s">"stylesheet"</span> <span class="v">href</span>=<span class="s">"https://cdn.jsdelivr.net/gh/casahacker/barra-acessibilidade@v0.1.0/packages/standalone/dist/bar.css"</span>&gt;
+&lt;<span class="k">script</span> <span class="v">src</span>=<span class="s">"https://cdn.jsdelivr.net/gh/casahacker/barra-acessibilidade@v0.1.0/packages/standalone/dist/bar.iife.js"</span> <span class="v">data-auto</span>=<span class="s">"true"</span>&gt;&lt;/<span class="k">script</span>&gt;
+
+<span class="c">&lt;!-- depois ajusta offsets do seu layout --&gt;</span>
+&lt;<span class="k">style</span>&gt;
+  body { padding-top: 32px; }
+  .seu-header-fixo { top: 32px; }
+&lt;/<span class="k">style</span>&gt;</div>
+
+    <h3 class="t-h02 mb-04 mt-06">em react / vue / next</h3>
+    <p class="t-body-02 t-secondary mb-04" style="max-width: 720px;">
+      Use o pacote npm ou wrappers de framework. Veja o README do
+      <a class="link" href="https://github.com/casahacker/barra-acessibilidade" target="_blank" rel="noopener">repo upstream ↗</a>.
+    </p>
+
+    <h3 class="t-h02 mb-04 mt-06">em wordpress</h3>
+    <p class="t-body-02 t-secondary" style="max-width: 720px;">
+      Plugin oficial em <code class="code-inline">plugin-wp/casa-hacker-a11y/</code> do repo. Faz upload do ZIP via painel de plugins → ativa → configura.
+    </p>
+  </section>
+
+  <section class="section" id="a11y">
+    <div class="section-head"><h2>acessibilidade</h2><span class="meta">07 · wcag aa</span></div>
+    <ul class="checklist">
+      <li>A própria barra é WCAG 2.1 AA · 1.2.6 · 1.4.4 · 1.4.6 · 1.4.8 · 2.3.3 · 2.4.7 · 2.5.8</li>
+      <li>Preferências do usuário são persistidas em localStorage (key prefixed <code class="code-inline">ch-a11y-</code>)</li>
+      <li>Funciona via teclado integralmente (Tab + Enter)</li>
+      <li>Compatível com leitores de tela (NVDA, VoiceOver, JAWS)</li>
+      <li>VLibras é integração oficial do governo brasileiro</li>
+      <li>z-index isolado pra não conflitar com modais e overlays do produto</li>
+    </ul>
+  </section>
+
+  <section class="section" id="code">
+    <div class="section-head"><h2>código</h2><span class="meta">08 · html + css</span></div>
+
+    <h3 class="t-h02 mb-04">html base</h3>
+    <div class="code-snippet"><span class="c">&lt;!-- 1. barra de acessibilidade · OBRIGATÓRIA --&gt;</span>
+&lt;<span class="k">link</span> <span class="v">rel</span>=<span class="s">"stylesheet"</span> <span class="v">href</span>=<span class="s">"https://cdn.jsdelivr.net/gh/casahacker/barra-acessibilidade@v0.1.0/packages/standalone/dist/bar.css"</span>&gt;
+&lt;<span class="k">script</span> <span class="v">src</span>=<span class="s">"https://cdn.jsdelivr.net/gh/casahacker/barra-acessibilidade@v0.1.0/packages/standalone/dist/bar.iife.js"</span> <span class="v">data-auto</span>=<span class="s">"true"</span> <span class="v">defer</span>&gt;&lt;/<span class="k">script</span>&gt;
+
+<span class="c">&lt;!-- 2. header de produto · 48px sticky abaixo da barra --&gt;</span>
+&lt;<span class="k">header</span> <span class="v">class</span>=<span class="s">"shell-header"</span> <span class="v">role</span>=<span class="s">"banner"</span>&gt;
+  &lt;<span class="k">a</span> <span class="v">href</span>=<span class="s">"/"</span> <span class="v">class</span>=<span class="s">"shell-brand"</span>&gt;
+    &lt;<span class="k">div</span> <span class="v">class</span>=<span class="s">"h-mini"</span>&gt;...&lt;/<span class="k">div</span>&gt;
+    &lt;<span class="k">span</span>&gt;produto&lt;/<span class="k">span</span>&gt;
+  &lt;/<span class="k">a</span>&gt;
+  &lt;<span class="k">nav</span> <span class="v">class</span>=<span class="s">"shell-actions"</span>&gt;...&lt;/<span class="k">nav</span>&gt;
+&lt;/<span class="k">header</span>&gt;</div>
+
+    <h3 class="t-h02 mb-04 mt-06">css overrides — identidade casa hacker</h3>
+    <div class="code-snippet"><span class="c">/* sobrescreve cores hardcoded da barra upstream */</span>
+<span class="k">.ch-a11y-bar</span> {
+  background: <span class="k">var</span>(--ch-dos) !important;
+  font-family: <span class="k">var</span>(--font-mono) !important;
+}
+<span class="k">.ch-a11y-btn--active</span> {
+  background: <span class="k">var</span>(--ch-code) !important;
+  color: <span class="k">var</span>(--ch-dos) !important;
+}
+
+<span class="c">/* offsets de layout */</span>
+<span class="k">body</span> { padding-top: <span class="v">32px</span>; }
+<span class="k">.shell-header</span> { top: <span class="v">32px</span>; }</div>
+  </section>
 
 </main>
 <script src="../../shell.js"></script>

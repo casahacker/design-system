@@ -205,32 +205,8 @@ write("pages/patterns/login.html", page(
     toc=[{"id":"standard","label":"Padrão"},{"id":"variants","label":"Variantes"},{"id":"rules","label":"Regras"}],
 ))
 
-# Global header
-write("pages/patterns/global-header.html", page(
-    "global-header", "Global header",
-    '<a href="../../index.html">home</a><span class="sep">/</span><a href="index.html">patterns</a><span class="sep">/</span>global header',
-    "Header padrão de produtos Casa Hacker: 48px, fundo Dos, brand à esquerda, ações à direita. Sticky no topo.",
-    "".join([
-        sec("anatomy", "anatomia", "01",
-            demo('<div style="background: var(--ch-dos); color: var(--ch-css); padding: 0 var(--spacing-05); height: 48px; display: flex; align-items: center; gap: var(--spacing-05)"><div class="h-mini" style="width: 18px; height: 18px;"><span class="on"></span><span></span><span class="on"></span><span></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span class="on"></span></div><span class="t-label-02">casa hacker / produto</span><span style="margin-left: auto; color: var(--ch-inspect); font: var(--label-01); text-transform: uppercase; letter-spacing: 0.08em;">conta</span></div>')),
-        sec("structure", "estrutura", "02",
-            checklist([
-                "Altura fixa 48px",
-                "Fundo --ch-dos · texto --ch-css",
-                "Logo brand à esquerda (H + nome + área de produto)",
-                "Ações secundárias à direita (conta, ajuda, notificações)",
-                "Z-index alto (var(--z-sticky))",
-                "Borda inferior sutil",
-            ])),
-        sec("variants", "variantes", "03",
-            checklist([
-                "Default — produto institucional",
-                "Com nav horizontal — produtos com seções top-level",
-                "Mobile — menu hambúrguer + brand + 1 ação",
-            ])),
-    ]),
-    toc=[{"id":"anatomy","label":"Anatomia"},{"id":"structure","label":"Estrutura"},{"id":"variants","label":"Variantes"}],
-))
+# Global header — mantida manualmente (versão expandida com barra de acessibilidade
+# obrigatória). NÃO regenerar aqui — ver pages/patterns/global-header.html direto.
 
 # Status indicators
 write("pages/patterns/status-indicators.html", page(

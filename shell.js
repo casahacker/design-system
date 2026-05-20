@@ -159,6 +159,26 @@
   })();
 
   /* --------------------------------------------------------------------- */
+  /*  ACCESSIBILITY BAR · obrigatória em produtos Casa Hacker               */
+  /*  Carrega via CDN (https://github.com/casahacker/barra-acessibilidade)  */
+  /* --------------------------------------------------------------------- */
+  (function loadA11yBar() {
+    if (document.querySelector('#chds-a11y-bar-css')) return;
+    const ver = 'v0.1.0';
+    const cssBase = `https://cdn.jsdelivr.net/gh/casahacker/barra-acessibilidade@${ver}/packages/standalone/dist`;
+    const css = document.createElement('link');
+    css.id = 'chds-a11y-bar-css';
+    css.rel = 'stylesheet';
+    css.href = `${cssBase}/bar.css`;
+    document.head.appendChild(css);
+    const js = document.createElement('script');
+    js.src = `${cssBase}/bar.iife.js`;
+    js.defer = true;
+    js.setAttribute('data-auto', 'true');
+    document.head.appendChild(js);
+  })();
+
+  /* --------------------------------------------------------------------- */
   /*  HEADER + SKIP LINK                                                    */
   /* --------------------------------------------------------------------- */
   const H_SYMBOL = `<span class="on"></span><span></span><span class="on"></span>

@@ -91,6 +91,17 @@ write("pages/guidelines/accessibility.html", page(
     '<a href="../../index.html">home</a><span class="sep">/</span><a href="index.html">guidelines</a><span class="sep">/</span>accessibility',
     "CHDS é WCAG 2.1 AA por padrão. Esta página documenta os critérios, padrões de teclado e ARIA aplicados em todos os componentes.",
     "".join([
+        sec("a11y-bar", "barra de acessibilidade — obrigatória", "00 · base",
+            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Todo produto Casa Hacker <strong>deve incluir</strong> a barra de acessibilidade oficial (<a class="link" href="https://github.com/casahacker/barra-acessibilidade" target="_blank" rel="noopener">github.com/casahacker/barra-acessibilidade ↗</a>), que cobre 12 features WCAG-aligned + integração VLibras. Detalhes de integração na página <a class="link" href="../patterns/global-header.html">global header</a>.</p>' +
+            checklist([
+                "Tema (claro/escuro/alto contraste) + 3 tamanhos de fonte (14/16/18)",
+                "Fonte Atkinson Hyperlegible pra dislexia",
+                "Régua de leitura, modo foco, cursor ampliado",
+                "VLibras (Língua Brasileira de Sinais) oficial do governo",
+                "Pausa de animação (WCAG 2.3.3), foco realçado (2.4.7), alvos ampliados (2.5.8)",
+                "Carrega via CDN jsDelivr — peso ~30KB minificado",
+                "Este design system já inclui automaticamente em todas as páginas",
+            ])),
         sec("contrast", "contraste", "01 · 1.4.3",
             '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Texto normal exige razão 4.5:1 contra o fundo. Texto grande (18pt+ regular, 14pt+ bold) exige 3:1. Bordas e ícones também 3:1.</p>' +
             table(["par","razão","aa text","aa large"], [
@@ -151,7 +162,7 @@ write("pages/guidelines/accessibility.html", page(
             ])),
     ]),
     tags=[{"cls":"tag--blue","label":"wcag 2.1 aa"}],
-    toc=[{"id":"contrast","label":"Contraste"},{"id":"keyboard","label":"Teclado"},{"id":"focus","label":"Foco visível"},{"id":"aria","label":"ARIA & semântica"},{"id":"motion","label":"Motion & reduced motion"},{"id":"targets","label":"Áreas de toque"},{"id":"forms","label":"Formulários"},{"id":"checklist","label":"Checklist por componente"}],
+    toc=[{"id":"a11y-bar","label":"Barra de acessibilidade (obrigatória)"},{"id":"contrast","label":"Contraste"},{"id":"keyboard","label":"Teclado"},{"id":"focus","label":"Foco visível"},{"id":"aria","label":"ARIA & semântica"},{"id":"motion","label":"Motion & reduced motion"},{"id":"targets","label":"Áreas de toque"},{"id":"forms","label":"Formulários"},{"id":"checklist","label":"Checklist por componente"}],
 ))
 
 write("pages/guidelines/content.html", page(

@@ -586,6 +586,50 @@ button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 .sidebar-backdrop { display: none; }
 
 /* -----------------------------------------------------------------------------
+   ACCESSIBILITY BAR · override visual pra alinhar com identidade Casa Hacker
+   ─────────────────────────────────────────────────────────────────────────────
+   A barra original usa cores hardcoded (fundo #21272a, ativo IBM blue #0F62FE).
+   Aqui sobrescrevemos pros tokens Casa Hacker — fundo --ch-dos, ativo --ch-code
+   verde. Mantém a estrutura e features (a barra é upstream em github.com/
+   casahacker/barra-acessibilidade), só repinta com !important pq o CSS dela
+   usa valores cruos sem variáveis.
+   ----------------------------------------------------------------------------- */
+.ch-a11y-bar {
+  background: var(--ch-dos) !important;
+  font-family: var(--font-mono) !important;
+}
+.ch-a11y-brand,
+.ch-a11y-section-label {
+  letter-spacing: 0.08em !important;
+}
+.ch-a11y-btn--active {
+  background: var(--ch-code) !important;
+  color: var(--ch-dos) !important;
+  font-weight: 600 !important;
+}
+.ch-a11y-btn--active:hover {
+  background: var(--ch-code-hover) !important;
+}
+.ch-a11y-btn:focus-visible {
+  outline: 2px solid var(--ch-code) !important;
+  outline-offset: -2px !important;
+}
+.ch-a11y-ruler {
+  background: var(--ch-code) !important;
+}
+
+/* Empurra todo o resto pra baixo do offset de 32px da barra */
+body { padding-top: 32px; }
+.shell-header { top: 32px; }
+.sidebar { top: 80px; height: calc(100vh - 80px); }
+.skip-link { top: -100px; }
+.skip-link:focus { top: 32px; }
+@media (max-width: 1024px) {
+  .sidebar { top: 80px; height: calc(100vh - 80px); }
+  .sidebar-backdrop { inset: 80px 0 0 0; }
+}
+
+/* -----------------------------------------------------------------------------
    05 · TYPOGRAPHY UTILITIES
    ----------------------------------------------------------------------------- */
 .t-code-01  { font: var(--code-01); }
