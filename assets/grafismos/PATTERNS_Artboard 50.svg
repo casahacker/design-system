@@ -1,0 +1,999 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 618.64 618.66">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #d7dcd7;
+      }
+
+      .cls-3 {
+        clip-path: url(#clippath-1);
+      }
+
+      .cls-4 {
+        clip-path: url(#clippath-2);
+      }
+
+      .cls-5 {
+        fill: #e1ffde;
+      }
+
+      .cls-6 {
+        fill: #b3d9fe;
+      }
+
+      .cls-7 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-1" x="56.24" y="-559.46" width="523.55" height="543.66"/>
+    </clipPath>
+    <clipPath id="clippath-1">
+      <rect class="cls-1" x="56.24" y="51.24" width="523.55" height="543.66"/>
+    </clipPath>
+    <clipPath id="clippath-2">
+      <rect class="cls-1" x="56.24" y="661.94" width="523.55" height="543.66"/>
+    </clipPath>
+  </defs>
+  <g class="cls-7">
+    <g>
+      <g id="_Grid_Repeat_" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-2" points="18.75 7.96 18.75 -10.79 37.49 -10.79 37.49 -29.54 18.75 -29.54 18.75 -48.29 0 -48.29 0 -29.54 0 -10.79 0 7.96 18.75 7.96"/>
+          <rect class="cls-2" x="37.49" y="-10.79" width="18.75" height="18.75" transform="translate(93.73 -2.84) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-2" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-2" points="93.73 7.96 93.73 -10.79 74.99 -10.79 74.99 -29.54 93.73 -29.54 93.73 -48.29 112.48 -48.29 112.48 -29.54 112.48 -10.79 112.48 7.96 93.73 7.96"/>
+          <rect class="cls-2" x="56.24" y="-10.79" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-3" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-2" points="131.22 7.96 131.22 -10.79 149.97 -10.79 149.97 -29.54 131.22 -29.54 131.22 -48.29 112.48 -48.29 112.48 -29.54 112.48 -10.79 112.48 7.96 131.22 7.96"/>
+          <rect class="cls-2" x="149.97" y="-10.79" width="18.75" height="18.75" transform="translate(318.69 -2.84) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-4" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-2" points="206.21 7.96 206.21 -10.79 187.46 -10.79 187.46 -29.54 206.21 -29.54 206.21 -48.29 224.96 -48.29 224.96 -29.54 224.96 -10.79 224.96 7.96 206.21 7.96"/>
+          <rect class="cls-2" x="168.72" y="-10.79" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-5" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-2" points="243.71 7.96 243.71 -10.79 262.45 -10.79 262.45 -29.54 243.71 -29.54 243.71 -48.29 224.96 -48.29 224.96 -29.54 224.96 -10.79 224.96 7.96 243.71 7.96"/>
+          <rect class="cls-2" x="262.45" y="-10.79" width="18.75" height="18.75" transform="translate(543.65 -2.84) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-6" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-2" points="318.69 7.96 318.69 -10.79 299.94 -10.79 299.94 -29.54 318.69 -29.54 318.69 -48.29 337.44 -48.29 337.44 -29.54 337.44 -10.79 337.44 7.96 318.69 7.96"/>
+          <rect class="cls-2" x="281.2" y="-10.79" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-7" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-2" points="356.18 7.96 356.18 -10.79 374.93 -10.79 374.93 -29.54 356.18 -29.54 356.18 -48.29 337.44 -48.29 337.44 -29.54 337.44 -10.79 337.44 7.96 356.18 7.96"/>
+          <rect class="cls-2" x="374.93" y="-10.79" width="18.75" height="18.75" transform="translate(768.61 -2.84) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-8" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-2" points="431.17 7.96 431.17 -10.79 412.42 -10.79 412.42 -29.54 431.17 -29.54 431.17 -48.29 449.92 -48.29 449.92 -29.54 449.92 -10.79 449.92 7.96 431.17 7.96"/>
+          <rect class="cls-2" x="393.68" y="-10.79" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-9" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-2" points="468.66 7.96 468.66 -10.79 487.41 -10.79 487.41 -29.54 468.66 -29.54 468.66 -48.29 449.92 -48.29 449.92 -29.54 449.92 -10.79 449.92 7.96 468.66 7.96"/>
+          <rect class="cls-2" x="487.41" y="-10.79" width="18.75" height="18.75" transform="translate(993.57 -2.84) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-10" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-2" points="543.65 7.96 543.65 -10.79 524.9 -10.79 524.9 -29.54 543.65 -29.54 543.65 -48.29 562.4 -48.29 562.4 -29.54 562.4 -10.79 562.4 7.96 543.65 7.96"/>
+          <rect class="cls-2" x="506.16" y="-10.79" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-11" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-2" points="581.14 7.96 581.14 -10.79 599.89 -10.79 599.89 -29.54 581.14 -29.54 581.14 -48.29 562.4 -48.29 562.4 -29.54 562.4 -10.79 562.4 7.96 581.14 7.96"/>
+          <rect class="cls-2" x="599.89" y="-10.79" width="18.75" height="18.75" transform="translate(1218.53 -2.84) rotate(180)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="cls-3">
+    <g>
+      <g id="_Grid_Repeat_-12" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="18.75 56.24 18.75 37.5 37.49 37.5 37.49 18.75 18.75 18.75 18.75 0 0 0 0 18.75 0 37.5 0 56.24 18.75 56.24"/>
+          <rect class="cls-5" x="37.49" width="18.75" height="18.75" transform="translate(93.73 18.75) rotate(180)"/>
+          <rect class="cls-5" x="37.49" y="37.5" width="18.75" height="18.75" transform="translate(93.73 93.74) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-13" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="93.73 56.24 93.73 37.5 74.99 37.5 74.99 18.75 93.73 18.75 93.73 0 112.48 0 112.48 18.75 112.48 37.5 112.48 56.24 93.73 56.24"/>
+          <rect class="cls-5" x="56.24" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="56.24" y="37.5" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-14" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="131.22 56.24 131.22 37.5 149.97 37.5 149.97 18.75 131.22 18.75 131.22 0 112.48 0 112.48 18.75 112.48 37.5 112.48 56.24 131.22 56.24"/>
+          <rect class="cls-5" x="149.97" width="18.75" height="18.75" transform="translate(318.69 18.75) rotate(180)"/>
+          <rect class="cls-5" x="149.97" y="37.5" width="18.75" height="18.75" transform="translate(318.69 93.74) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-15" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="206.21 56.24 206.21 37.5 187.46 37.5 187.46 18.75 206.21 18.75 206.21 0 224.96 0 224.96 18.75 224.96 37.5 224.96 56.24 206.21 56.24"/>
+          <rect class="cls-5" x="168.72" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="168.72" y="37.5" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-16" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="243.71 56.24 243.71 37.5 262.45 37.5 262.45 18.75 243.71 18.75 243.71 0 224.96 0 224.96 18.75 224.96 37.5 224.96 56.24 243.71 56.24"/>
+          <rect class="cls-5" x="262.45" width="18.75" height="18.75" transform="translate(543.65 18.75) rotate(180)"/>
+          <rect class="cls-5" x="262.45" y="37.5" width="18.75" height="18.75" transform="translate(543.65 93.74) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-17" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="318.69 56.24 318.69 37.5 299.94 37.5 299.94 18.75 318.69 18.75 318.69 0 337.44 0 337.44 18.75 337.44 37.5 337.44 56.24 318.69 56.24"/>
+          <rect class="cls-5" x="281.2" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="281.2" y="37.5" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-18" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="356.18 56.24 356.18 37.5 374.93 37.5 374.93 18.75 356.18 18.75 356.18 0 337.44 0 337.44 18.75 337.44 37.5 337.44 56.24 356.18 56.24"/>
+          <rect class="cls-5" x="374.93" width="18.75" height="18.75" transform="translate(768.61 18.75) rotate(180)"/>
+          <rect class="cls-5" x="374.93" y="37.5" width="18.75" height="18.75" transform="translate(768.61 93.74) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-19" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="431.17 56.24 431.17 37.5 412.42 37.5 412.42 18.75 431.17 18.75 431.17 0 449.92 0 449.92 18.75 449.92 37.5 449.92 56.24 431.17 56.24"/>
+          <rect class="cls-5" x="393.68" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="393.68" y="37.5" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-20" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="468.66 56.24 468.66 37.5 487.41 37.5 487.41 18.75 468.66 18.75 468.66 0 449.92 0 449.92 18.75 449.92 37.5 449.92 56.24 468.66 56.24"/>
+          <rect class="cls-5" x="487.41" width="18.75" height="18.75" transform="translate(993.57 18.75) rotate(180)"/>
+          <rect class="cls-5" x="487.41" y="37.5" width="18.75" height="18.75" transform="translate(993.57 93.74) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-21" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="543.65 56.24 543.65 37.5 524.9 37.5 524.9 18.75 543.65 18.75 543.65 0 562.4 0 562.4 18.75 562.4 37.5 562.4 56.24 543.65 56.24"/>
+          <rect class="cls-5" x="506.16" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="506.16" y="37.5" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-22" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="581.14 56.24 581.14 37.5 599.89 37.5 599.89 18.75 581.14 18.75 581.14 0 562.4 0 562.4 18.75 562.4 37.5 562.4 56.24 581.14 56.24"/>
+          <rect class="cls-5" x="599.89" width="18.75" height="18.75" transform="translate(1218.53 18.75) rotate(180)"/>
+          <rect class="cls-5" x="599.89" y="37.5" width="18.75" height="18.75" transform="translate(1218.53 93.74) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-23" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="74.98 56.24 74.98 74.99 93.73 74.99 93.73 93.74 74.98 93.74 74.98 112.48 56.24 112.48 56.24 93.74 56.24 74.99 56.24 56.24 74.98 56.24"/>
+          <rect class="cls-5" x="93.73" y="93.74" width="18.75" height="18.75" transform="translate(206.21 206.22) rotate(180)"/>
+          <rect class="cls-5" x="93.73" y="56.24" width="18.75" height="18.75" transform="translate(206.21 131.23) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-24" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="149.97 56.24 149.97 74.99 131.22 74.99 131.22 93.74 149.97 93.74 149.97 112.48 168.72 112.48 168.72 93.74 168.72 74.99 168.72 56.24 149.97 56.24"/>
+          <rect class="cls-5" x="112.48" y="93.74" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="112.48" y="56.24" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-25" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="187.46 56.24 187.46 74.99 206.21 74.99 206.21 93.74 187.46 93.74 187.46 112.48 168.72 112.48 168.72 93.74 168.72 74.99 168.72 56.24 187.46 56.24"/>
+          <rect class="cls-5" x="206.21" y="93.74" width="18.75" height="18.75" transform="translate(431.17 206.22) rotate(180)"/>
+          <rect class="cls-5" x="206.21" y="56.24" width="18.75" height="18.75" transform="translate(431.17 131.23) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-26" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="262.45 56.24 262.45 74.99 243.7 74.99 243.7 93.74 262.45 93.74 262.45 112.48 281.2 112.48 281.2 93.74 281.2 74.99 281.2 56.24 262.45 56.24"/>
+          <rect class="cls-5" x="224.96" y="93.74" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="224.96" y="56.24" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-27" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="299.94 56.24 299.94 74.99 318.69 74.99 318.69 93.74 299.94 93.74 299.94 112.48 281.2 112.48 281.2 93.74 281.2 74.99 281.2 56.24 299.94 56.24"/>
+          <rect class="cls-5" x="318.69" y="93.74" width="18.75" height="18.75" transform="translate(656.13 206.22) rotate(180)"/>
+          <rect class="cls-5" x="318.69" y="56.24" width="18.75" height="18.75" transform="translate(656.13 131.23) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-28" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="374.93 56.24 374.93 74.99 356.18 74.99 356.18 93.74 374.93 93.74 374.93 112.48 393.68 112.48 393.68 93.74 393.68 74.99 393.68 56.24 374.93 56.24"/>
+          <rect class="cls-5" x="337.44" y="93.74" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="337.44" y="56.24" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-29" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="412.42 56.24 412.42 74.99 431.17 74.99 431.17 93.74 412.42 93.74 412.42 112.48 393.68 112.48 393.68 93.74 393.68 74.99 393.68 56.24 412.42 56.24"/>
+          <rect class="cls-5" x="431.17" y="93.74" width="18.75" height="18.75" transform="translate(881.09 206.22) rotate(180)"/>
+          <rect class="cls-5" x="431.17" y="56.24" width="18.75" height="18.75" transform="translate(881.09 131.23) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-30" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="487.41 56.24 487.41 74.99 468.66 74.99 468.66 93.74 487.41 93.74 487.41 112.48 506.16 112.48 506.16 93.74 506.16 74.99 506.16 56.24 487.41 56.24"/>
+          <rect class="cls-5" x="449.92" y="93.74" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="449.92" y="56.24" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-31" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="524.9 56.24 524.9 74.99 543.65 74.99 543.65 93.74 524.9 93.74 524.9 112.48 506.16 112.48 506.16 93.74 506.16 74.99 506.16 56.24 524.9 56.24"/>
+          <rect class="cls-5" x="543.65" y="93.74" width="18.75" height="18.75" transform="translate(1106.05 206.22) rotate(180)"/>
+          <rect class="cls-5" x="543.65" y="56.24" width="18.75" height="18.75" transform="translate(1106.05 131.23) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-32" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="599.89 56.24 599.89 74.99 581.14 74.99 581.14 93.74 599.89 93.74 599.89 112.48 618.64 112.48 618.64 93.74 618.64 74.99 618.64 56.24 599.89 56.24"/>
+          <rect class="cls-5" x="562.4" y="93.74" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="562.4" y="56.24" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-33" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="18.75 168.72 18.75 149.98 37.49 149.98 37.49 131.23 18.75 131.23 18.75 112.48 0 112.48 0 131.23 0 149.98 0 168.72 18.75 168.72"/>
+          <rect class="cls-5" x="37.49" y="112.48" width="18.75" height="18.75" transform="translate(93.73 243.71) rotate(180)"/>
+          <rect class="cls-5" x="37.49" y="149.98" width="18.75" height="18.75" transform="translate(93.73 318.7) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-34" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="93.73 168.72 93.73 149.98 74.99 149.98 74.99 131.23 93.73 131.23 93.73 112.48 112.48 112.48 112.48 131.23 112.48 149.98 112.48 168.72 93.73 168.72"/>
+          <rect class="cls-5" x="56.24" y="112.48" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="56.24" y="149.98" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-35" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="131.22 168.72 131.22 149.98 149.97 149.98 149.97 131.23 131.22 131.23 131.22 112.48 112.48 112.48 112.48 131.23 112.48 149.98 112.48 168.72 131.22 168.72"/>
+          <rect class="cls-5" x="149.97" y="112.48" width="18.75" height="18.75" transform="translate(318.69 243.71) rotate(180)"/>
+          <rect class="cls-5" x="149.97" y="149.98" width="18.75" height="18.75" transform="translate(318.69 318.7) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-36" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="206.21 168.72 206.21 149.98 187.46 149.98 187.46 131.23 206.21 131.23 206.21 112.48 224.96 112.48 224.96 131.23 224.96 149.98 224.96 168.72 206.21 168.72"/>
+          <rect class="cls-5" x="168.72" y="112.48" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="168.72" y="149.98" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-37" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="243.71 168.72 243.71 149.98 262.45 149.98 262.45 131.23 243.71 131.23 243.71 112.48 224.96 112.48 224.96 131.23 224.96 149.98 224.96 168.72 243.71 168.72"/>
+          <rect class="cls-5" x="262.45" y="112.48" width="18.75" height="18.75" transform="translate(543.65 243.71) rotate(180)"/>
+          <rect class="cls-5" x="262.45" y="149.98" width="18.75" height="18.75" transform="translate(543.65 318.7) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-38" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="318.69 168.72 318.69 149.98 299.94 149.98 299.94 131.23 318.69 131.23 318.69 112.48 337.44 112.48 337.44 131.23 337.44 149.98 337.44 168.72 318.69 168.72"/>
+          <rect class="cls-5" x="281.2" y="112.48" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="281.2" y="149.98" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-39" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="356.18 168.72 356.18 149.98 374.93 149.98 374.93 131.23 356.18 131.23 356.18 112.48 337.44 112.48 337.44 131.23 337.44 149.98 337.44 168.72 356.18 168.72"/>
+          <rect class="cls-5" x="374.93" y="112.48" width="18.75" height="18.75" transform="translate(768.61 243.71) rotate(180)"/>
+          <rect class="cls-5" x="374.93" y="149.98" width="18.75" height="18.75" transform="translate(768.61 318.7) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-40" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="431.17 168.72 431.17 149.98 412.42 149.98 412.42 131.23 431.17 131.23 431.17 112.48 449.92 112.48 449.92 131.23 449.92 149.98 449.92 168.72 431.17 168.72"/>
+          <rect class="cls-5" x="393.68" y="112.48" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="393.68" y="149.98" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-41" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="468.66 168.72 468.66 149.98 487.41 149.98 487.41 131.23 468.66 131.23 468.66 112.48 449.92 112.48 449.92 131.23 449.92 149.98 449.92 168.72 468.66 168.72"/>
+          <rect class="cls-5" x="487.41" y="112.48" width="18.75" height="18.75" transform="translate(993.57 243.71) rotate(180)"/>
+          <rect class="cls-5" x="487.41" y="149.98" width="18.75" height="18.75" transform="translate(993.57 318.7) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-42" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="543.65 168.72 543.65 149.98 524.9 149.98 524.9 131.23 543.65 131.23 543.65 112.48 562.4 112.48 562.4 131.23 562.4 149.98 562.4 168.72 543.65 168.72"/>
+          <rect class="cls-5" x="506.16" y="112.48" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="506.16" y="149.98" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-43" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="581.14 168.72 581.14 149.98 599.89 149.98 599.89 131.23 581.14 131.23 581.14 112.48 562.4 112.48 562.4 131.23 562.4 149.98 562.4 168.72 581.14 168.72"/>
+          <rect class="cls-5" x="599.89" y="112.48" width="18.75" height="18.75" transform="translate(1218.53 243.71) rotate(180)"/>
+          <rect class="cls-5" x="599.89" y="149.98" width="18.75" height="18.75" transform="translate(1218.53 318.7) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-44" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="74.98 168.72 74.98 187.47 93.73 187.47 93.73 206.22 74.98 206.22 74.98 224.97 56.24 224.97 56.24 206.22 56.24 187.47 56.24 168.72 74.98 168.72"/>
+          <rect class="cls-5" x="93.73" y="206.22" width="18.75" height="18.75" transform="translate(206.21 431.19) rotate(180)"/>
+          <rect class="cls-5" x="93.73" y="168.72" width="18.75" height="18.75" transform="translate(206.21 356.19) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-45" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="149.97 168.72 149.97 187.47 131.22 187.47 131.22 206.22 149.97 206.22 149.97 224.97 168.72 224.97 168.72 206.22 168.72 187.47 168.72 168.72 149.97 168.72"/>
+          <rect class="cls-5" x="112.48" y="206.22" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="112.48" y="168.72" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-46" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="187.46 168.72 187.46 187.47 206.21 187.47 206.21 206.22 187.46 206.22 187.46 224.97 168.72 224.97 168.72 206.22 168.72 187.47 168.72 168.72 187.46 168.72"/>
+          <rect class="cls-5" x="206.21" y="206.22" width="18.75" height="18.75" transform="translate(431.17 431.19) rotate(180)"/>
+          <rect class="cls-5" x="206.21" y="168.72" width="18.75" height="18.75" transform="translate(431.17 356.19) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-47" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="262.45 168.72 262.45 187.47 243.7 187.47 243.7 206.22 262.45 206.22 262.45 224.97 281.2 224.97 281.2 206.22 281.2 187.47 281.2 168.72 262.45 168.72"/>
+          <rect class="cls-5" x="224.96" y="206.22" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="224.96" y="168.72" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-48" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="299.94 168.72 299.94 187.47 318.69 187.47 318.69 206.22 299.94 206.22 299.94 224.97 281.2 224.97 281.2 206.22 281.2 187.47 281.2 168.72 299.94 168.72"/>
+          <rect class="cls-5" x="318.69" y="206.22" width="18.75" height="18.75" transform="translate(656.13 431.19) rotate(180)"/>
+          <rect class="cls-5" x="318.69" y="168.72" width="18.75" height="18.75" transform="translate(656.13 356.19) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-49" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="374.93 168.72 374.93 187.47 356.18 187.47 356.18 206.22 374.93 206.22 374.93 224.97 393.68 224.97 393.68 206.22 393.68 187.47 393.68 168.72 374.93 168.72"/>
+          <rect class="cls-5" x="337.44" y="206.22" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="337.44" y="168.72" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-50" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="412.42 168.72 412.42 187.47 431.17 187.47 431.17 206.22 412.42 206.22 412.42 224.97 393.68 224.97 393.68 206.22 393.68 187.47 393.68 168.72 412.42 168.72"/>
+          <rect class="cls-5" x="431.17" y="206.22" width="18.75" height="18.75" transform="translate(881.09 431.19) rotate(180)"/>
+          <rect class="cls-5" x="431.17" y="168.72" width="18.75" height="18.75" transform="translate(881.09 356.19) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-51" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="487.41 168.72 487.41 187.47 468.66 187.47 468.66 206.22 487.41 206.22 487.41 224.97 506.16 224.97 506.16 206.22 506.16 187.47 506.16 168.72 487.41 168.72"/>
+          <rect class="cls-5" x="449.92" y="206.22" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="449.92" y="168.72" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-52" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="524.9 168.72 524.9 187.47 543.65 187.47 543.65 206.22 524.9 206.22 524.9 224.97 506.16 224.97 506.16 206.22 506.16 187.47 506.16 168.72 524.9 168.72"/>
+          <rect class="cls-5" x="543.65" y="206.22" width="18.75" height="18.75" transform="translate(1106.05 431.19) rotate(180)"/>
+          <rect class="cls-5" x="543.65" y="168.72" width="18.75" height="18.75" transform="translate(1106.05 356.19) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-53" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="599.89 168.72 599.89 187.47 581.14 187.47 581.14 206.22 599.89 206.22 599.89 224.97 618.64 224.97 618.64 206.22 618.64 187.47 618.64 168.72 599.89 168.72"/>
+          <rect class="cls-5" x="562.4" y="206.22" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="562.4" y="168.72" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-54" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="18.75 281.21 18.75 262.46 37.49 262.46 37.49 243.71 18.75 243.71 18.75 224.97 0 224.97 0 243.71 0 262.46 0 281.21 18.75 281.21"/>
+          <rect class="cls-5" x="37.49" y="224.97" width="18.75" height="18.75" transform="translate(93.73 468.68) rotate(180)"/>
+          <rect class="cls-5" x="37.49" y="262.46" width="18.75" height="18.75" transform="translate(93.73 543.67) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-55" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="93.73 281.21 93.73 262.46 74.99 262.46 74.99 243.71 93.73 243.71 93.73 224.97 112.48 224.97 112.48 243.71 112.48 262.46 112.48 281.21 93.73 281.21"/>
+          <rect class="cls-5" x="56.24" y="224.97" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="56.24" y="262.46" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-56" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="131.22 281.21 131.22 262.46 149.97 262.46 149.97 243.71 131.22 243.71 131.22 224.97 112.48 224.97 112.48 243.71 112.48 262.46 112.48 281.21 131.22 281.21"/>
+          <rect class="cls-5" x="149.97" y="224.97" width="18.75" height="18.75" transform="translate(318.69 468.68) rotate(180)"/>
+          <rect class="cls-5" x="149.97" y="262.46" width="18.75" height="18.75" transform="translate(318.69 543.67) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-57" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="206.21 281.21 206.21 262.46 187.46 262.46 187.46 243.71 206.21 243.71 206.21 224.97 224.96 224.97 224.96 243.71 224.96 262.46 224.96 281.21 206.21 281.21"/>
+          <rect class="cls-5" x="168.72" y="224.97" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="168.72" y="262.46" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-58" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="243.71 281.21 243.71 262.46 262.45 262.46 262.45 243.71 243.71 243.71 243.71 224.97 224.96 224.97 224.96 243.71 224.96 262.46 224.96 281.21 243.71 281.21"/>
+          <rect class="cls-5" x="262.45" y="224.97" width="18.75" height="18.75" transform="translate(543.65 468.68) rotate(180)"/>
+          <rect class="cls-5" x="262.45" y="262.46" width="18.75" height="18.75" transform="translate(543.65 543.67) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-59" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="318.69 281.21 318.69 262.46 299.94 262.46 299.94 243.71 318.69 243.71 318.69 224.97 337.44 224.97 337.44 243.71 337.44 262.46 337.44 281.21 318.69 281.21"/>
+          <rect class="cls-5" x="281.2" y="224.97" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="281.2" y="262.46" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-60" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="356.18 281.21 356.18 262.46 374.93 262.46 374.93 243.71 356.18 243.71 356.18 224.97 337.44 224.97 337.44 243.71 337.44 262.46 337.44 281.21 356.18 281.21"/>
+          <rect class="cls-5" x="374.93" y="224.97" width="18.75" height="18.75" transform="translate(768.61 468.68) rotate(180)"/>
+          <rect class="cls-5" x="374.93" y="262.46" width="18.75" height="18.75" transform="translate(768.61 543.67) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-61" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="431.17 281.21 431.17 262.46 412.42 262.46 412.42 243.71 431.17 243.71 431.17 224.97 449.92 224.97 449.92 243.71 449.92 262.46 449.92 281.21 431.17 281.21"/>
+          <rect class="cls-5" x="393.68" y="224.97" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="393.68" y="262.46" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-62" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="468.66 281.21 468.66 262.46 487.41 262.46 487.41 243.71 468.66 243.71 468.66 224.97 449.92 224.97 449.92 243.71 449.92 262.46 449.92 281.21 468.66 281.21"/>
+          <rect class="cls-5" x="487.41" y="224.97" width="18.75" height="18.75" transform="translate(993.57 468.68) rotate(180)"/>
+          <rect class="cls-5" x="487.41" y="262.46" width="18.75" height="18.75" transform="translate(993.57 543.67) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-63" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="543.65 281.21 543.65 262.46 524.9 262.46 524.9 243.71 543.65 243.71 543.65 224.97 562.4 224.97 562.4 243.71 562.4 262.46 562.4 281.21 543.65 281.21"/>
+          <rect class="cls-5" x="506.16" y="224.97" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="506.16" y="262.46" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-64" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="581.14 281.21 581.14 262.46 599.89 262.46 599.89 243.71 581.14 243.71 581.14 224.97 562.4 224.97 562.4 243.71 562.4 262.46 562.4 281.21 581.14 281.21"/>
+          <rect class="cls-5" x="599.89" y="224.97" width="18.75" height="18.75" transform="translate(1218.53 468.68) rotate(180)"/>
+          <rect class="cls-5" x="599.89" y="262.46" width="18.75" height="18.75" transform="translate(1218.53 543.67) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-65" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="74.98 281.21 74.98 299.95 93.73 299.95 93.73 318.7 74.98 318.7 74.98 337.45 56.24 337.45 56.24 318.7 56.24 299.95 56.24 281.21 74.98 281.21"/>
+          <rect class="cls-5" x="93.73" y="318.7" width="18.75" height="18.75" transform="translate(206.21 656.15) rotate(180)"/>
+          <rect class="cls-5" x="93.73" y="281.21" width="18.75" height="18.75" transform="translate(206.21 581.16) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-66" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="149.97 281.21 149.97 299.95 131.22 299.95 131.22 318.7 149.97 318.7 149.97 337.45 168.72 337.45 168.72 318.7 168.72 299.95 168.72 281.21 149.97 281.21"/>
+          <rect class="cls-5" x="112.48" y="318.7" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="112.48" y="281.21" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-67" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="187.46 281.21 187.46 299.95 206.21 299.95 206.21 318.7 187.46 318.7 187.46 337.45 168.72 337.45 168.72 318.7 168.72 299.95 168.72 281.21 187.46 281.21"/>
+          <rect class="cls-5" x="206.21" y="318.7" width="18.75" height="18.75" transform="translate(431.17 656.15) rotate(180)"/>
+          <rect class="cls-5" x="206.21" y="281.21" width="18.75" height="18.75" transform="translate(431.17 581.16) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-68" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="262.45 281.21 262.45 299.95 243.7 299.95 243.7 318.7 262.45 318.7 262.45 337.45 281.2 337.45 281.2 318.7 281.2 299.95 281.2 281.21 262.45 281.21"/>
+          <rect class="cls-5" x="224.96" y="318.7" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="224.96" y="281.21" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-69" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="299.94 281.21 299.94 299.95 318.69 299.95 318.69 318.7 299.94 318.7 299.94 337.45 281.2 337.45 281.2 318.7 281.2 299.95 281.2 281.21 299.94 281.21"/>
+          <rect class="cls-5" x="318.69" y="318.7" width="18.75" height="18.75" transform="translate(656.13 656.15) rotate(180)"/>
+          <rect class="cls-5" x="318.69" y="281.21" width="18.75" height="18.75" transform="translate(656.13 581.16) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-70" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="374.93 281.21 374.93 299.95 356.18 299.95 356.18 318.7 374.93 318.7 374.93 337.45 393.68 337.45 393.68 318.7 393.68 299.95 393.68 281.21 374.93 281.21"/>
+          <rect class="cls-5" x="337.44" y="318.7" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="337.44" y="281.21" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-71" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="412.42 281.21 412.42 299.95 431.17 299.95 431.17 318.7 412.42 318.7 412.42 337.45 393.68 337.45 393.68 318.7 393.68 299.95 393.68 281.21 412.42 281.21"/>
+          <rect class="cls-5" x="431.17" y="318.7" width="18.75" height="18.75" transform="translate(881.09 656.15) rotate(180)"/>
+          <rect class="cls-5" x="431.17" y="281.21" width="18.75" height="18.75" transform="translate(881.09 581.16) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-72" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="487.41 281.21 487.41 299.95 468.66 299.95 468.66 318.7 487.41 318.7 487.41 337.45 506.16 337.45 506.16 318.7 506.16 299.95 506.16 281.21 487.41 281.21"/>
+          <rect class="cls-5" x="449.92" y="318.7" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="449.92" y="281.21" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-73" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="524.9 281.21 524.9 299.95 543.65 299.95 543.65 318.7 524.9 318.7 524.9 337.45 506.16 337.45 506.16 318.7 506.16 299.95 506.16 281.21 524.9 281.21"/>
+          <rect class="cls-5" x="543.65" y="318.7" width="18.75" height="18.75" transform="translate(1106.05 656.15) rotate(180)"/>
+          <rect class="cls-5" x="543.65" y="281.21" width="18.75" height="18.75" transform="translate(1106.05 581.16) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-74" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="599.89 281.21 599.89 299.95 581.14 299.95 581.14 318.7 599.89 318.7 599.89 337.45 618.64 337.45 618.64 318.7 618.64 299.95 618.64 281.21 599.89 281.21"/>
+          <rect class="cls-5" x="562.4" y="318.7" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="562.4" y="281.21" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-75" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="18.75 393.69 18.75 374.94 37.49 374.94 37.49 356.19 18.75 356.19 18.75 337.45 0 337.45 0 356.19 0 374.94 0 393.69 18.75 393.69"/>
+          <rect class="cls-5" x="37.49" y="337.45" width="18.75" height="18.75" transform="translate(93.73 693.64) rotate(180)"/>
+          <rect class="cls-5" x="37.49" y="374.94" width="18.75" height="18.75" transform="translate(93.73 768.63) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-76" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="93.73 393.69 93.73 374.94 74.99 374.94 74.99 356.19 93.73 356.19 93.73 337.45 112.48 337.45 112.48 356.19 112.48 374.94 112.48 393.69 93.73 393.69"/>
+          <rect class="cls-5" x="56.24" y="337.45" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="56.24" y="374.94" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-77" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="131.22 393.69 131.22 374.94 149.97 374.94 149.97 356.19 131.22 356.19 131.22 337.45 112.48 337.45 112.48 356.19 112.48 374.94 112.48 393.69 131.22 393.69"/>
+          <rect class="cls-5" x="149.97" y="337.45" width="18.75" height="18.75" transform="translate(318.69 693.64) rotate(180)"/>
+          <rect class="cls-5" x="149.97" y="374.94" width="18.75" height="18.75" transform="translate(318.69 768.63) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-78" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="206.21 393.69 206.21 374.94 187.46 374.94 187.46 356.19 206.21 356.19 206.21 337.45 224.96 337.45 224.96 356.19 224.96 374.94 224.96 393.69 206.21 393.69"/>
+          <rect class="cls-5" x="168.72" y="337.45" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="168.72" y="374.94" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-79" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="243.71 393.69 243.71 374.94 262.45 374.94 262.45 356.19 243.71 356.19 243.71 337.45 224.96 337.45 224.96 356.19 224.96 374.94 224.96 393.69 243.71 393.69"/>
+          <rect class="cls-5" x="262.45" y="337.45" width="18.75" height="18.75" transform="translate(543.65 693.64) rotate(180)"/>
+          <rect class="cls-5" x="262.45" y="374.94" width="18.75" height="18.75" transform="translate(543.65 768.63) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-80" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="318.69 393.69 318.69 374.94 299.94 374.94 299.94 356.19 318.69 356.19 318.69 337.45 337.44 337.45 337.44 356.19 337.44 374.94 337.44 393.69 318.69 393.69"/>
+          <rect class="cls-5" x="281.2" y="337.45" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="281.2" y="374.94" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-81" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="356.18 393.69 356.18 374.94 374.93 374.94 374.93 356.19 356.18 356.19 356.18 337.45 337.44 337.45 337.44 356.19 337.44 374.94 337.44 393.69 356.18 393.69"/>
+          <rect class="cls-5" x="374.93" y="337.45" width="18.75" height="18.75" transform="translate(768.61 693.64) rotate(180)"/>
+          <rect class="cls-5" x="374.93" y="374.94" width="18.75" height="18.75" transform="translate(768.61 768.63) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-82" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="431.17 393.69 431.17 374.94 412.42 374.94 412.42 356.19 431.17 356.19 431.17 337.45 449.92 337.45 449.92 356.19 449.92 374.94 449.92 393.69 431.17 393.69"/>
+          <rect class="cls-5" x="393.68" y="337.45" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="393.68" y="374.94" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-83" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="468.66 393.69 468.66 374.94 487.41 374.94 487.41 356.19 468.66 356.19 468.66 337.45 449.92 337.45 449.92 356.19 449.92 374.94 449.92 393.69 468.66 393.69"/>
+          <rect class="cls-5" x="487.41" y="337.45" width="18.75" height="18.75" transform="translate(993.57 693.64) rotate(180)"/>
+          <rect class="cls-5" x="487.41" y="374.94" width="18.75" height="18.75" transform="translate(993.57 768.63) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-84" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="543.65 393.69 543.65 374.94 524.9 374.94 524.9 356.19 543.65 356.19 543.65 337.45 562.4 337.45 562.4 356.19 562.4 374.94 562.4 393.69 543.65 393.69"/>
+          <rect class="cls-5" x="506.16" y="337.45" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="506.16" y="374.94" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-85" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="581.14 393.69 581.14 374.94 599.89 374.94 599.89 356.19 581.14 356.19 581.14 337.45 562.4 337.45 562.4 356.19 562.4 374.94 562.4 393.69 581.14 393.69"/>
+          <rect class="cls-5" x="599.89" y="337.45" width="18.75" height="18.75" transform="translate(1218.53 693.64) rotate(180)"/>
+          <rect class="cls-5" x="599.89" y="374.94" width="18.75" height="18.75" transform="translate(1218.53 768.63) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-86" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="74.98 393.69 74.98 412.44 93.73 412.44 93.73 431.18 74.98 431.18 74.98 449.93 56.24 449.93 56.24 431.18 56.24 412.44 56.24 393.69 74.98 393.69"/>
+          <rect class="cls-5" x="93.73" y="431.18" width="18.75" height="18.75" transform="translate(206.21 881.12) rotate(180)"/>
+          <rect class="cls-5" x="93.73" y="393.69" width="18.75" height="18.75" transform="translate(206.21 806.12) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-87" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="149.97 393.69 149.97 412.44 131.22 412.44 131.22 431.18 149.97 431.18 149.97 449.93 168.72 449.93 168.72 431.18 168.72 412.44 168.72 393.69 149.97 393.69"/>
+          <rect class="cls-5" x="112.48" y="431.18" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="112.48" y="393.69" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-88" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="187.46 393.69 187.46 412.44 206.21 412.44 206.21 431.18 187.46 431.18 187.46 449.93 168.72 449.93 168.72 431.18 168.72 412.44 168.72 393.69 187.46 393.69"/>
+          <rect class="cls-5" x="206.21" y="431.18" width="18.75" height="18.75" transform="translate(431.17 881.12) rotate(180)"/>
+          <rect class="cls-5" x="206.21" y="393.69" width="18.75" height="18.75" transform="translate(431.17 806.12) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-89" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="262.45 393.69 262.45 412.44 243.7 412.44 243.7 431.18 262.45 431.18 262.45 449.93 281.2 449.93 281.2 431.18 281.2 412.44 281.2 393.69 262.45 393.69"/>
+          <rect class="cls-5" x="224.96" y="431.18" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="224.96" y="393.69" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-90" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="299.94 393.69 299.94 412.44 318.69 412.44 318.69 431.18 299.94 431.18 299.94 449.93 281.2 449.93 281.2 431.18 281.2 412.44 281.2 393.69 299.94 393.69"/>
+          <rect class="cls-5" x="318.69" y="431.18" width="18.75" height="18.75" transform="translate(656.13 881.12) rotate(180)"/>
+          <rect class="cls-5" x="318.69" y="393.69" width="18.75" height="18.75" transform="translate(656.13 806.12) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-91" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="374.93 393.69 374.93 412.44 356.18 412.44 356.18 431.18 374.93 431.18 374.93 449.93 393.68 449.93 393.68 431.18 393.68 412.44 393.68 393.69 374.93 393.69"/>
+          <rect class="cls-5" x="337.44" y="431.18" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="337.44" y="393.69" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-92" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="412.42 393.69 412.42 412.44 431.17 412.44 431.17 431.18 412.42 431.18 412.42 449.93 393.68 449.93 393.68 431.18 393.68 412.44 393.68 393.69 412.42 393.69"/>
+          <rect class="cls-5" x="431.17" y="431.18" width="18.75" height="18.75" transform="translate(881.09 881.12) rotate(180)"/>
+          <rect class="cls-5" x="431.17" y="393.69" width="18.75" height="18.75" transform="translate(881.09 806.12) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-93" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="487.41 393.69 487.41 412.44 468.66 412.44 468.66 431.18 487.41 431.18 487.41 449.93 506.16 449.93 506.16 431.18 506.16 412.44 506.16 393.69 487.41 393.69"/>
+          <rect class="cls-5" x="449.92" y="431.18" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="449.92" y="393.69" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-94" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="524.9 393.69 524.9 412.44 543.65 412.44 543.65 431.18 524.9 431.18 524.9 449.93 506.16 449.93 506.16 431.18 506.16 412.44 506.16 393.69 524.9 393.69"/>
+          <rect class="cls-5" x="543.65" y="431.18" width="18.75" height="18.75" transform="translate(1106.05 881.12) rotate(180)"/>
+          <rect class="cls-5" x="543.65" y="393.69" width="18.75" height="18.75" transform="translate(1106.05 806.12) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-95" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="599.89 393.69 599.89 412.44 581.14 412.44 581.14 431.18 599.89 431.18 599.89 449.93 618.64 449.93 618.64 431.18 618.64 412.44 618.64 393.69 599.89 393.69"/>
+          <rect class="cls-5" x="562.4" y="431.18" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="562.4" y="393.69" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-96" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="18.75 506.17 18.75 487.43 37.49 487.43 37.49 468.68 18.75 468.68 18.75 449.93 0 449.93 0 468.68 0 487.43 0 506.17 18.75 506.17"/>
+          <rect class="cls-5" x="37.49" y="449.93" width="18.75" height="18.75" transform="translate(93.73 918.61) rotate(180)"/>
+          <rect class="cls-5" x="37.49" y="487.43" width="18.75" height="18.75" transform="translate(93.73 993.6) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-97" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="93.73 506.17 93.73 487.43 74.99 487.43 74.99 468.68 93.73 468.68 93.73 449.93 112.48 449.93 112.48 468.68 112.48 487.43 112.48 506.17 93.73 506.17"/>
+          <rect class="cls-5" x="56.24" y="449.93" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="56.24" y="487.43" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-98" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="131.22 506.17 131.22 487.43 149.97 487.43 149.97 468.68 131.22 468.68 131.22 449.93 112.48 449.93 112.48 468.68 112.48 487.43 112.48 506.17 131.22 506.17"/>
+          <rect class="cls-5" x="149.97" y="449.93" width="18.75" height="18.75" transform="translate(318.69 918.61) rotate(180)"/>
+          <rect class="cls-5" x="149.97" y="487.43" width="18.75" height="18.75" transform="translate(318.69 993.6) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-99" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="206.21 506.17 206.21 487.43 187.46 487.43 187.46 468.68 206.21 468.68 206.21 449.93 224.96 449.93 224.96 468.68 224.96 487.43 224.96 506.17 206.21 506.17"/>
+          <rect class="cls-5" x="168.72" y="449.93" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="168.72" y="487.43" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-100" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="243.71 506.17 243.71 487.43 262.45 487.43 262.45 468.68 243.71 468.68 243.71 449.93 224.96 449.93 224.96 468.68 224.96 487.43 224.96 506.17 243.71 506.17"/>
+          <rect class="cls-5" x="262.45" y="449.93" width="18.75" height="18.75" transform="translate(543.65 918.61) rotate(180)"/>
+          <rect class="cls-5" x="262.45" y="487.43" width="18.75" height="18.75" transform="translate(543.65 993.6) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-101" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="318.69 506.17 318.69 487.43 299.94 487.43 299.94 468.68 318.69 468.68 318.69 449.93 337.44 449.93 337.44 468.68 337.44 487.43 337.44 506.17 318.69 506.17"/>
+          <rect class="cls-5" x="281.2" y="449.93" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="281.2" y="487.43" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-102" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="356.18 506.17 356.18 487.43 374.93 487.43 374.93 468.68 356.18 468.68 356.18 449.93 337.44 449.93 337.44 468.68 337.44 487.43 337.44 506.17 356.18 506.17"/>
+          <rect class="cls-5" x="374.93" y="449.93" width="18.75" height="18.75" transform="translate(768.61 918.61) rotate(180)"/>
+          <rect class="cls-5" x="374.93" y="487.43" width="18.75" height="18.75" transform="translate(768.61 993.6) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-103" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="431.17 506.17 431.17 487.43 412.42 487.43 412.42 468.68 431.17 468.68 431.17 449.93 449.92 449.93 449.92 468.68 449.92 487.43 449.92 506.17 431.17 506.17"/>
+          <rect class="cls-5" x="393.68" y="449.93" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="393.68" y="487.43" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-104" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="468.66 506.17 468.66 487.43 487.41 487.43 487.41 468.68 468.66 468.68 468.66 449.93 449.92 449.93 449.92 468.68 449.92 487.43 449.92 506.17 468.66 506.17"/>
+          <rect class="cls-5" x="487.41" y="449.93" width="18.75" height="18.75" transform="translate(993.57 918.61) rotate(180)"/>
+          <rect class="cls-5" x="487.41" y="487.43" width="18.75" height="18.75" transform="translate(993.57 993.6) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-105" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="543.65 506.17 543.65 487.43 524.9 487.43 524.9 468.68 543.65 468.68 543.65 449.93 562.4 449.93 562.4 468.68 562.4 487.43 562.4 506.17 543.65 506.17"/>
+          <rect class="cls-5" x="506.16" y="449.93" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="506.16" y="487.43" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-106" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="581.14 506.17 581.14 487.43 599.89 487.43 599.89 468.68 581.14 468.68 581.14 449.93 562.4 449.93 562.4 468.68 562.4 487.43 562.4 506.17 581.14 506.17"/>
+          <rect class="cls-5" x="599.89" y="449.93" width="18.75" height="18.75" transform="translate(1218.53 918.61) rotate(180)"/>
+          <rect class="cls-5" x="599.89" y="487.43" width="18.75" height="18.75" transform="translate(1218.53 993.6) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-107" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="74.98 506.17 74.98 524.92 93.73 524.92 93.73 543.67 74.98 543.67 74.98 562.41 56.24 562.41 56.24 543.67 56.24 524.92 56.24 506.17 74.98 506.17"/>
+          <rect class="cls-5" x="93.73" y="543.67" width="18.75" height="18.75" transform="translate(206.21 1106.08) rotate(180)"/>
+          <rect class="cls-5" x="93.73" y="506.17" width="18.75" height="18.75" transform="translate(206.21 1031.09) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-108" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="149.97 506.17 149.97 524.92 131.22 524.92 131.22 543.67 149.97 543.67 149.97 562.41 168.72 562.41 168.72 543.67 168.72 524.92 168.72 506.17 149.97 506.17"/>
+          <rect class="cls-5" x="112.48" y="543.67" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="112.48" y="506.17" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-109" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="187.46 506.17 187.46 524.92 206.21 524.92 206.21 543.67 187.46 543.67 187.46 562.41 168.72 562.41 168.72 543.67 168.72 524.92 168.72 506.17 187.46 506.17"/>
+          <rect class="cls-5" x="206.21" y="543.67" width="18.75" height="18.75" transform="translate(431.17 1106.08) rotate(180)"/>
+          <rect class="cls-5" x="206.21" y="506.17" width="18.75" height="18.75" transform="translate(431.17 1031.09) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-110" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="262.45 506.17 262.45 524.92 243.7 524.92 243.7 543.67 262.45 543.67 262.45 562.41 281.2 562.41 281.2 543.67 281.2 524.92 281.2 506.17 262.45 506.17"/>
+          <rect class="cls-5" x="224.96" y="543.67" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="224.96" y="506.17" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-111" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="299.94 506.17 299.94 524.92 318.69 524.92 318.69 543.67 299.94 543.67 299.94 562.41 281.2 562.41 281.2 543.67 281.2 524.92 281.2 506.17 299.94 506.17"/>
+          <rect class="cls-5" x="318.69" y="543.67" width="18.75" height="18.75" transform="translate(656.13 1106.08) rotate(180)"/>
+          <rect class="cls-5" x="318.69" y="506.17" width="18.75" height="18.75" transform="translate(656.13 1031.09) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-112" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="374.93 506.17 374.93 524.92 356.18 524.92 356.18 543.67 374.93 543.67 374.93 562.41 393.68 562.41 393.68 543.67 393.68 524.92 393.68 506.17 374.93 506.17"/>
+          <rect class="cls-5" x="337.44" y="543.67" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="337.44" y="506.17" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-113" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="412.42 506.17 412.42 524.92 431.17 524.92 431.17 543.67 412.42 543.67 412.42 562.41 393.68 562.41 393.68 543.67 393.68 524.92 393.68 506.17 412.42 506.17"/>
+          <rect class="cls-5" x="431.17" y="543.67" width="18.75" height="18.75" transform="translate(881.09 1106.08) rotate(180)"/>
+          <rect class="cls-5" x="431.17" y="506.17" width="18.75" height="18.75" transform="translate(881.09 1031.09) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-114" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="487.41 506.17 487.41 524.92 468.66 524.92 468.66 543.67 487.41 543.67 487.41 562.41 506.16 562.41 506.16 543.67 506.16 524.92 506.16 506.17 487.41 506.17"/>
+          <rect class="cls-5" x="449.92" y="543.67" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="449.92" y="506.17" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-115" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="524.9 506.17 524.9 524.92 543.65 524.92 543.65 543.67 524.9 543.67 524.9 562.41 506.16 562.41 506.16 543.67 506.16 524.92 506.16 506.17 524.9 506.17"/>
+          <rect class="cls-5" x="543.65" y="543.67" width="18.75" height="18.75" transform="translate(1106.05 1106.08) rotate(180)"/>
+          <rect class="cls-5" x="543.65" y="506.17" width="18.75" height="18.75" transform="translate(1106.05 1031.09) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-116" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="599.89 506.17 599.89 524.92 581.14 524.92 581.14 543.67 599.89 543.67 599.89 562.41 618.64 562.41 618.64 543.67 618.64 524.92 618.64 506.17 599.89 506.17"/>
+          <rect class="cls-5" x="562.4" y="543.67" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="562.4" y="506.17" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-117" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="18.75 618.66 18.75 599.91 37.49 599.91 37.49 581.16 18.75 581.16 18.75 562.41 0 562.41 0 581.16 0 599.91 0 618.66 18.75 618.66"/>
+          <rect class="cls-5" x="37.49" y="562.41" width="18.75" height="18.75" transform="translate(93.73 1143.57) rotate(180)"/>
+          <rect class="cls-5" x="37.49" y="599.91" width="18.75" height="18.75" transform="translate(93.73 1218.56) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-118" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="93.73 618.66 93.73 599.91 74.99 599.91 74.99 581.16 93.73 581.16 93.73 562.41 112.48 562.41 112.48 581.16 112.48 599.91 112.48 618.66 93.73 618.66"/>
+          <rect class="cls-5" x="56.24" y="562.41" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="56.24" y="599.91" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-119" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="131.22 618.66 131.22 599.91 149.97 599.91 149.97 581.16 131.22 581.16 131.22 562.41 112.48 562.41 112.48 581.16 112.48 599.91 112.48 618.66 131.22 618.66"/>
+          <rect class="cls-5" x="149.97" y="562.41" width="18.75" height="18.75" transform="translate(318.69 1143.57) rotate(180)"/>
+          <rect class="cls-5" x="149.97" y="599.91" width="18.75" height="18.75" transform="translate(318.69 1218.56) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-120" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="206.21 618.66 206.21 599.91 187.46 599.91 187.46 581.16 206.21 581.16 206.21 562.41 224.96 562.41 224.96 581.16 224.96 599.91 224.96 618.66 206.21 618.66"/>
+          <rect class="cls-5" x="168.72" y="562.41" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="168.72" y="599.91" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-121" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="243.71 618.66 243.71 599.91 262.45 599.91 262.45 581.16 243.71 581.16 243.71 562.41 224.96 562.41 224.96 581.16 224.96 599.91 224.96 618.66 243.71 618.66"/>
+          <rect class="cls-5" x="262.45" y="562.41" width="18.75" height="18.75" transform="translate(543.65 1143.57) rotate(180)"/>
+          <rect class="cls-5" x="262.45" y="599.91" width="18.75" height="18.75" transform="translate(543.65 1218.56) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-122" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="318.69 618.66 318.69 599.91 299.94 599.91 299.94 581.16 318.69 581.16 318.69 562.41 337.44 562.41 337.44 581.16 337.44 599.91 337.44 618.66 318.69 618.66"/>
+          <rect class="cls-5" x="281.2" y="562.41" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="281.2" y="599.91" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-123" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="356.18 618.66 356.18 599.91 374.93 599.91 374.93 581.16 356.18 581.16 356.18 562.41 337.44 562.41 337.44 581.16 337.44 599.91 337.44 618.66 356.18 618.66"/>
+          <rect class="cls-5" x="374.93" y="562.41" width="18.75" height="18.75" transform="translate(768.61 1143.57) rotate(180)"/>
+          <rect class="cls-5" x="374.93" y="599.91" width="18.75" height="18.75" transform="translate(768.61 1218.56) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-124" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="431.17 618.66 431.17 599.91 412.42 599.91 412.42 581.16 431.17 581.16 431.17 562.41 449.92 562.41 449.92 581.16 449.92 599.91 449.92 618.66 431.17 618.66"/>
+          <rect class="cls-5" x="393.68" y="562.41" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="393.68" y="599.91" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-125" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="468.66 618.66 468.66 599.91 487.41 599.91 487.41 581.16 468.66 581.16 468.66 562.41 449.92 562.41 449.92 581.16 449.92 599.91 449.92 618.66 468.66 618.66"/>
+          <rect class="cls-5" x="487.41" y="562.41" width="18.75" height="18.75" transform="translate(993.57 1143.57) rotate(180)"/>
+          <rect class="cls-5" x="487.41" y="599.91" width="18.75" height="18.75" transform="translate(993.57 1218.56) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-126" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="543.65 618.66 543.65 599.91 524.9 599.91 524.9 581.16 543.65 581.16 543.65 562.41 562.4 562.41 562.4 581.16 562.4 599.91 562.4 618.66 543.65 618.66"/>
+          <rect class="cls-5" x="506.16" y="562.41" width="18.75" height="18.75"/>
+          <rect class="cls-5" x="506.16" y="599.91" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-127" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-5" points="581.14 618.66 581.14 599.91 599.89 599.91 599.89 581.16 581.14 581.16 581.14 562.41 562.4 562.41 562.4 581.16 562.4 599.91 562.4 618.66 581.14 618.66"/>
+          <rect class="cls-5" x="599.89" y="562.41" width="18.75" height="18.75" transform="translate(1218.53 1143.57) rotate(180)"/>
+          <rect class="cls-5" x="599.89" y="599.91" width="18.75" height="18.75" transform="translate(1218.53 1218.56) rotate(180)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g class="cls-4">
+    <g>
+      <g id="_Grid_Repeat_-128" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-6" points="18.75 666.94 18.75 648.2 37.49 648.2 37.49 629.45 18.75 629.45 18.75 610.7 0 610.7 0 629.45 0 648.2 0 666.94 18.75 666.94"/>
+          <rect class="cls-6" x="37.49" y="610.7" width="18.75" height="18.75" transform="translate(93.73 1240.15) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-129" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-6" points="93.73 666.94 93.73 648.2 74.99 648.2 74.99 629.45 93.73 629.45 93.73 610.7 112.48 610.7 112.48 629.45 112.48 648.2 112.48 666.94 93.73 666.94"/>
+          <rect class="cls-6" x="56.24" y="610.7" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-130" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-6" points="131.22 666.94 131.22 648.2 149.97 648.2 149.97 629.45 131.22 629.45 131.22 610.7 112.48 610.7 112.48 629.45 112.48 648.2 112.48 666.94 131.22 666.94"/>
+          <rect class="cls-6" x="149.97" y="610.7" width="18.75" height="18.75" transform="translate(318.69 1240.15) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-131" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-6" points="206.21 666.94 206.21 648.2 187.46 648.2 187.46 629.45 206.21 629.45 206.21 610.7 224.96 610.7 224.96 629.45 224.96 648.2 224.96 666.94 206.21 666.94"/>
+          <rect class="cls-6" x="168.72" y="610.7" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-132" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-6" points="243.71 666.94 243.71 648.2 262.45 648.2 262.45 629.45 243.71 629.45 243.71 610.7 224.96 610.7 224.96 629.45 224.96 648.2 224.96 666.94 243.71 666.94"/>
+          <rect class="cls-6" x="262.45" y="610.7" width="18.75" height="18.75" transform="translate(543.65 1240.15) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-133" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-6" points="318.69 666.94 318.69 648.2 299.94 648.2 299.94 629.45 318.69 629.45 318.69 610.7 337.44 610.7 337.44 629.45 337.44 648.2 337.44 666.94 318.69 666.94"/>
+          <rect class="cls-6" x="281.2" y="610.7" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-134" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-6" points="356.18 666.94 356.18 648.2 374.93 648.2 374.93 629.45 356.18 629.45 356.18 610.7 337.44 610.7 337.44 629.45 337.44 648.2 337.44 666.94 356.18 666.94"/>
+          <rect class="cls-6" x="374.93" y="610.7" width="18.75" height="18.75" transform="translate(768.61 1240.15) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-135" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-6" points="431.17 666.94 431.17 648.2 412.42 648.2 412.42 629.45 431.17 629.45 431.17 610.7 449.92 610.7 449.92 629.45 449.92 648.2 449.92 666.94 431.17 666.94"/>
+          <rect class="cls-6" x="393.68" y="610.7" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-136" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-6" points="468.66 666.94 468.66 648.2 487.41 648.2 487.41 629.45 468.66 629.45 468.66 610.7 449.92 610.7 449.92 629.45 449.92 648.2 449.92 666.94 468.66 666.94"/>
+          <rect class="cls-6" x="487.41" y="610.7" width="18.75" height="18.75" transform="translate(993.57 1240.15) rotate(180)"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-137" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-6" points="543.65 666.94 543.65 648.2 524.9 648.2 524.9 629.45 543.65 629.45 543.65 610.7 562.4 610.7 562.4 629.45 562.4 648.2 562.4 666.94 543.65 666.94"/>
+          <rect class="cls-6" x="506.16" y="610.7" width="18.75" height="18.75"/>
+        </g>
+      </g>
+      <g id="_Grid_Repeat_-138" data-name="&amp;lt;Grid Repeat&amp;gt;">
+        <g>
+          <polygon class="cls-6" points="581.14 666.94 581.14 648.2 599.89 648.2 599.89 629.45 581.14 629.45 581.14 610.7 562.4 610.7 562.4 629.45 562.4 648.2 562.4 666.94 581.14 666.94"/>
+          <rect class="cls-6" x="599.89" y="610.7" width="18.75" height="18.75" transform="translate(1218.53 1240.15) rotate(180)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
