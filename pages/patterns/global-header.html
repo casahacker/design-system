@@ -46,7 +46,7 @@
 
   <section class="section" id="layout">
     <div class="section-head"><h2>layout</h2><span class="meta">01 · 2 camadas empilhadas</span></div>
-    <p class="t-body-02 t-secondary mb-05" style="max-width: 720px;">
+    <p class="t-body-02 t-secondary mb-05 prose">
       Stack vertical fixo no topo. A barra de acessibilidade fica acima (z-index ultra-alto),
       o header de produto logo abaixo. Total de <strong>80px de altura</strong> reservados.
     </p>
@@ -70,7 +70,7 @@
 
   <section class="section" id="a11y-bar">
     <div class="section-head"><h2>barra de acessibilidade — obrigatória</h2><span class="meta">02 · 32px · topo absoluto</span></div>
-    <p class="t-body-02 t-secondary mb-05" style="max-width: 720px;">
+    <p class="t-body-02 t-secondary mb-05 prose">
       Componente desenvolvido pela própria Casa Hacker:
       <a class="link" href="https://github.com/casahacker/barra-acessibilidade" target="_blank" rel="noopener">github.com/casahacker/barra-acessibilidade ↗</a>.
       <strong>Não é opcional</strong> — todo produto Casa Hacker deve incluir.
@@ -97,7 +97,7 @@
     </table>
 
     <h3 class="t-h02 mb-04">override visual Casa Hacker</h3>
-    <p class="t-body-02 t-secondary mb-04" style="max-width: 720px;">
+    <p class="t-body-02 t-secondary mb-04 prose">
       A barra upstream usa azul IBM (#0F62FE) por padrão. Neste design system fazemos override
       pros tokens da marca: fundo <code class="code-inline">--ch-dos</code>, ativo
       <code class="code-inline">--ch-code</code> (verde brand). O override está em
@@ -122,7 +122,7 @@
 
   <section class="section" id="header-dos">
     <div class="section-head"><h2>header dos</h2><span class="meta">03 · 48px · brand + nav</span></div>
-    <p class="t-body-02 t-secondary mb-05" style="max-width: 720px;">
+    <p class="t-body-02 t-secondary mb-05 prose">
       Fundo <code class="code-inline">--ch-dos</code>, texto <code class="code-inline">--ch-css</code>.
       Brand à esquerda (H pixelado + nome do produto). Ações secundárias à direita
       (conta, ajuda, links externos).
@@ -180,7 +180,7 @@
     <div class="section-head"><h2>integração</h2><span class="meta">06</span></div>
 
     <h3 class="t-h02 mb-04">no design system (já incluso)</h3>
-    <p class="t-body-02 t-secondary mb-04" style="max-width: 720px;">
+    <p class="t-body-02 t-secondary mb-04 prose">
       Este DS já carrega a barra automaticamente via <code class="code-inline">shell.js</code>.
       Qualquer página que inclua <code class="code-inline">&lt;script src="shell.js"&gt;</code>
       ganha a barra sem código adicional.
@@ -198,13 +198,13 @@
 &lt;/<span class="k">style</span>&gt;</div>
 
     <h3 class="t-h02 mb-04 mt-06">em react / vue / next</h3>
-    <p class="t-body-02 t-secondary mb-04" style="max-width: 720px;">
+    <p class="t-body-02 t-secondary mb-04 prose">
       Use o pacote npm ou wrappers de framework. Veja o README do
       <a class="link" href="https://github.com/casahacker/barra-acessibilidade" target="_blank" rel="noopener">repo upstream ↗</a>.
     </p>
 
     <h3 class="t-h02 mb-04 mt-06">em wordpress</h3>
-    <p class="t-body-02 t-secondary" style="max-width: 720px;">
+    <p class="t-body-02 t-secondary prose">
       Plugin oficial em <code class="code-inline">plugin-wp/casa-hacker-a11y/</code> do repo. Faz upload do ZIP via painel de plugins → ativa → configura.
     </p>
   </section>

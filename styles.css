@@ -1758,8 +1758,20 @@ body { padding-top: 32px; }
 .text-helper { color: var(--text-helper); }
 .text-secondary { color: var(--text-secondary); }
 
+.max-w-xs { max-width: 480px; }
+.max-w-sm { max-width: 600px; }
 .max-w-md { max-width: var(--container-md); }
 .max-w-lg { max-width: var(--container-lg); }
+.max-w-card { max-width: 320px; }
+
+/* Prose · coluna de leitura confortável (paragraphs de doc) */
+.prose { max-width: 720px; }
+
+/* Alinhamento centralizado pra wrapping flex */
+.justify-center { justify-content: center; }
+.gap-06 { gap: var(--spacing-06); }
+.gap-07 { gap: var(--spacing-07); }
+.gap-08 { gap: var(--spacing-08); }
 
 .mt-04 { margin-top: var(--spacing-04); }
 .mt-05 { margin-top: var(--spacing-05); }

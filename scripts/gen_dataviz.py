@@ -226,7 +226,7 @@ write("pages/dataviz/index.html", page(
     "Sistema de visualização de dados Casa Hacker. Charts respondem perguntas — escolha errada de chart gera mais confusão que clareza. Tipos canônicos, paletas brand-aligned, padrões de interação e regras de acessibilidade.",
     "".join([
         sec("why", "por que data viz", "01 · contexto",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">A Casa Hacker mede impacto: alunos matriculados, hackerclubes ativos, oficinas realizadas, parcerias firmadas. Dados sem visualização são planilhas — visualizações sem método são desinformação. Este sistema dá vocabulário visual consistente em produto, relatório e impressos.</p>'),
+            '<p class="t-body-02 t-secondary mb-05 prose">A Casa Hacker mede impacto: alunos matriculados, hackerclubes ativos, oficinas realizadas, parcerias firmadas. Dados sem visualização são planilhas — visualizações sem método são desinformação. Este sistema dá vocabulário visual consistente em produto, relatório e impressos.</p>'),
         sec("principles", "4 princípios", "02",
             '<div class="grid-2">' +
             '<div class="tile tile--bordered"><h4>verdadeiro</h4><p>O chart conta a verdade dos dados. Eixo Y começa no zero quando faz sentido. Sem distorções intencionais ou acidentais.</p></div>' +
@@ -235,7 +235,7 @@ write("pages/dataviz/index.html", page(
             '<div class="tile tile--bordered"><h4>insightful</h4><p>Não basta ser bonito — precisa revelar padrão, comparar, contar uma história que números crus não contam.</p></div>' +
             '</div>'),
         sec("picker", "que chart usar?", "03 · matriz de decisão",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Comece pela pergunta. Cada pergunta tem 1-2 charts ideais.</p>' +
+            '<p class="t-body-02 t-secondary mb-05 prose">Comece pela pergunta. Cada pergunta tem 1-2 charts ideais.</p>' +
             table(["pergunta","chart ideal"], [
                 ["Comparar valores entre categorias","Bar"],
                 ["Mostrar mudança ao longo do tempo","Line"],
@@ -249,7 +249,7 @@ write("pages/dataviz/index.html", page(
                 ["Tendência inline em pouco espaço","Sparkline"],
             ])),
         sec("showcase", "preview", "04",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Cada uma das 8 páginas desta seção entra em detalhe.</p>' +
+            '<p class="t-body-02 t-secondary mb-05 prose">Cada uma das 8 páginas desta seção entra em detalhe.</p>' +
             '<div class="resource-cards">' +
             '<a class="resource-card" href="anatomy.html"><div class="meta">structure</div><h4>chart anatomy</h4><p>Partes universais de qualquer chart.</p><span class="cta">explorar</span></a>' +
             '<a class="resource-card" href="types.html"><div class="meta">gallery</div><h4>chart types</h4><p>12 tipos com SVG, código e quando usar.</p><span class="cta">explorar</span></a>' +
@@ -346,7 +346,7 @@ write("pages/dataviz/anatomy.html", page(
             '<li>Annotation · destaque pontual (recorde, anomalia, meta) · cor de support quando crítico</li>'
             '</ol></div>'),
         sec("title", "título e subtítulo", "02",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Título responde a pergunta. Subtítulo dá contexto.</p>' +
+            '<p class="t-body-02 t-secondary mb-05 prose">Título responde a pergunta. Subtítulo dá contexto.</p>' +
             do_dont(
                 ['"vendas mensais 2026" — claro, datado','"// faturamento em R$ mil" — unidade explícita','Subtítulo opcional quando título já basta'],
                 ['"gráfico de barras" — descreve forma, não conteúdo','Título sem unidade ("vendas") — força ler eixos pra entender','Título genérico ("dados", "performance")'],
@@ -357,20 +357,20 @@ write("pages/dataviz/anatomy.html", page(
             '<div class="tile tile--bordered"><h4>eixo x</h4><p>Tempo da esquerda pra direita. Categorias ordenadas por valor decrescente quando comparação.</p></div>' +
             '</div>'),
         sec("gridlines", "gridlines", "04",
-            '<p class="t-body-02 t-secondary" style="max-width:720px">Só horizontais em bar/line. Tracejadas, cor <code class="code-inline">--dv-gridline</code> (subtle). Verticais só em scatter ou quando ajuda a leitura. Nunca grades duplas (X+Y juntos) — vira tabela.</p>'),
+            '<p class="t-body-02 t-secondary prose">Só horizontais em bar/line. Tracejadas, cor <code class="code-inline">--dv-gridline</code> (subtle). Verticais só em scatter ou quando ajuda a leitura. Nunca grades duplas (X+Y juntos) — vira tabela.</p>'),
         sec("legend", "legenda", "05",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Necessária quando há 2+ séries. Pode ficar abaixo do chart ou inline com direct labels.</p>' +
+            '<p class="t-body-02 t-secondary mb-05 prose">Necessária quando há 2+ séries. Pode ficar abaixo do chart ou inline com direct labels.</p>' +
             do_dont(
                 ['Legenda inline em line com poucas séries (≤3)','Legenda abaixo em pies/bars empilhadas','Cor + texto sempre (nunca só cor)'],
                 ['Legenda longa em chart pequeno (vira maior que o chart)','Cor crua sem label adjacente','Legenda no topo (rouba foco do título)'],
             )),
         sec("tooltip", "tooltip", "06",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Aparece on-hover (ou tap mobile). Mostra valor exato + label + comparação opcional.</p>' +
+            '<p class="t-body-02 t-secondary mb-05 prose">Aparece on-hover (ou tap mobile). Mostra valor exato + label + comparação opcional.</p>' +
             chart_card("hover sobre uma barra", "experimenta passar o mouse",
                        bar_chart([45, 32, 60, 38, 72, 55, 80], ['seg','ter','qua','qui','sex','sáb','dom'], label='exemplos de hover'),
                        "demonstração · valores fictícios")),
         sec("source", "fonte", "07",
-            '<p class="t-body-02 t-secondary" style="max-width:720px">Sempre cite a fonte dos dados. Texto pequeno (code-01) abaixo do chart. Quando interno, datar a query: <code class="code-inline">// extração: 2026-05-19</code>.</p>'),
+            '<p class="t-body-02 t-secondary prose">Sempre cite a fonte dos dados. Texto pequeno (code-01) abaixo do chart. Quando interno, datar a query: <code class="code-inline">// extração: 2026-05-19</code>.</p>'),
         sec("spacing", "spacing", "08 · BIT-aligned",
             checklist([
                 "Padding interno do chart: spacing-06 (24px)",
@@ -619,7 +619,7 @@ write("pages/dataviz/colors.html", page(
     "4 paletas dedicadas a dataviz: categórica (séries sem ordem), sequencial (intensidade ordenada), divergente (extremos + neutro), status (estados de sistema). Tokens prefixados <code class='code-inline'>--dv-*</code>.",
     "".join([
         sec("categorical", "categórica · 8 cores", "01",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Pra séries qualitativas (categorias sem ordem natural). Cores ordenadas por contraste mútuo — use sempre da 1 pra cima.</p>'
+            '<p class="t-body-02 t-secondary mb-05 prose">Pra séries qualitativas (categorias sem ordem natural). Cores ordenadas por contraste mútuo — use sempre da 1 pra cima.</p>'
             + palette_swatches([
                 ('#32FA96','01'),('#AA78E6','02'),('#D79B2E','03'),('#B3D9FE','04'),
                 ('#FF9ECF','05'),('#3C433C','06'),('#5CFFAA','07'),('#D3BAF5','08'),
@@ -645,21 +645,21 @@ write("pages/dataviz/colors.html", page(
                 "demonstração",
                 legend([('hackerclubes',CAT[0],'line'),('inclusão',CAT[1],'line'),('minas',CAT[2],'line'),('mão massa',CAT[3],'line')])))),
         sec("sequential", "sequencial · 7 steps · verde", "02",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Pra dados ordenados (intensidade, frequência). Gradiente do mais claro ao mais escuro, sem cor neutra no meio.</p>'
+            '<p class="t-body-02 t-secondary mb-05 prose">Pra dados ordenados (intensidade, frequência). Gradiente do mais claro ao mais escuro, sem cor neutra no meio.</p>'
             + palette_swatches([
                 ('#E1FFDE','01'),('#C2F5DA','02'),('#9BE5BF','03'),('#5CFFAA','04'),
                 ('#32FA96','05'),('#24C775','06'),('#0F5A33','07'),
             ])
             + '<p class="t-helper mt-04">Tokens <code class="code-inline">--dv-seq-1</code> a <code class="code-inline">--dv-seq-7</code></p>'),
         sec("divergent", "divergente · 7 steps · vermelho→neutro→verde", "03",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Pra dados com ponto neutro e dois extremos opostos (ex: variação positiva/negativa, satisfação 1-5).</p>'
+            '<p class="t-body-02 t-secondary mb-05 prose">Pra dados com ponto neutro e dois extremos opostos (ex: variação positiva/negativa, satisfação 1-5).</p>'
             + palette_swatches([
                 ('#DA1E28','01'),('#FF8389','02'),('#FFCCE3','03'),('#F0F5F0','04'),
                 ('#C2F5DA','05'),('#5CFFAA','06'),('#24C775','07'),
             ])
             + '<p class="t-helper mt-04">Tokens <code class="code-inline">--dv-div-1</code> a <code class="code-inline">--dv-div-7</code> · meio (04) é o neutro</p>'),
         sec("status", "status · 4 cores", "04",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Estados de sistema. Use sempre acompanhados de ícone ou texto.</p>'
+            '<p class="t-body-02 t-secondary mb-05 prose">Estados de sistema. Use sempre acompanhados de ícone ou texto.</p>'
             + '<div class="row" style="gap: 1px;">'
             + '<div style="flex:1;height:64px;background:#24C775;display:flex;align-items:center;justify-content:center;color:#FFF;font:var(--code-02)">success</div>'
             + '<div style="flex:1;height:64px;background:#D79B2E;display:flex;align-items:center;justify-content:center;color:#FFF;font:var(--code-02)">warning</div>'
@@ -687,7 +687,7 @@ write("pages/dataviz/labels.html", page(
     "Annotations, eixos, formatting numérico, direct labels vs legenda. As decisões textuais que separam um chart claro de um confuso.",
     "".join([
         sec("direct-vs-legend", "direct labels vs legenda", "01",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Quando há poucas séries (≤3) e ponta da linha não colide, direct labels eliminam ida-e-volta do olho.</p>'
+            '<p class="t-body-02 t-secondary mb-05 prose">Quando há poucas séries (≤3) e ponta da linha não colide, direct labels eliminam ida-e-volta do olho.</p>'
             + '<div class="grid-2">'
             + chart_card("✓ direct labels", "leitura direta sem legenda",
                 line_chart([[120, 180, 220, 280, 320, 380, 450]],
@@ -721,7 +721,7 @@ write("pages/dataviz/labels.html", page(
                 ['delta','+ ou ↑ / - ou ↓','+18% · ↓3,2pp · -R$ 50'],
             ])),
         sec("annotations", "annotations", "04",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Quando há marco crítico (recorde, meta atingida, anomalia), anote diretamente no chart.</p>'
+            '<p class="t-body-02 t-secondary mb-05 prose">Quando há marco crítico (recorde, meta atingida, anomalia), anote diretamente no chart.</p>'
             + chart_card("com annotation", "destaca o marco",
                 f'''<svg class="chart-svg" viewBox="0 0 520 240" role="img" aria-label="line com annotation">
   <line class="grid-line" x1="40" y1="50" x2="504" y2="50"/>
@@ -756,23 +756,23 @@ write("pages/dataviz/interaction.html", page(
     "Padrões de interação em charts: hover/tooltip, legend toggle, drill-down, brush selection, time range. Toda interação deve ter equivalente acessível via teclado.",
     "".join([
         sec("hover", "hover & tooltip", "01",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Tooltip aparece on-hover (desktop) ou tap (mobile). Conteúdo: label + valor exato + comparação opcional. Passa o mouse no chart abaixo.</p>'
+            '<p class="t-body-02 t-secondary mb-05 prose">Tooltip aparece on-hover (desktop) ou tap (mobile). Conteúdo: label + valor exato + comparação opcional. Passa o mouse no chart abaixo.</p>'
             + chart_card("demo · hover sobre barras", "tooltip aparece on-hover",
                 bar_chart([45, 32, 60, 38, 72, 55, 80], ['seg','ter','qua','qui','sex','sáb','dom'], label='hover'),
                 "demonstração interativa")),
         sec("legend-toggle", "legend toggle", "02",
-            '<p class="t-body-02 t-secondary" style="max-width:720px">Clique na legenda esconde/mostra a série. Visual: opacidade 0.3 quando "off". Implementação JS opcional — em SVG nativo, usar <code class="code-inline">display: none</code> ou <code class="code-inline">opacity</code>.</p>'),
+            '<p class="t-body-02 t-secondary prose">Clique na legenda esconde/mostra a série. Visual: opacidade 0.3 quando "off". Implementação JS opcional — em SVG nativo, usar <code class="code-inline">display: none</code> ou <code class="code-inline">opacity</code>.</p>'),
         sec("drill-down", "drill-down", "03",
-            '<p class="t-body-02 t-secondary" style="max-width:720px">Click numa barra/fatia abre detalhamento. Usar quando há hierarquia (mês → semana → dia). Sinalize com cursor pointer + tooltip "clica pra detalhar".</p>'),
+            '<p class="t-body-02 t-secondary prose">Click numa barra/fatia abre detalhamento. Usar quando há hierarquia (mês → semana → dia). Sinalize com cursor pointer + tooltip "clica pra detalhar".</p>'),
         sec("brush", "brush selection (range)", "04",
-            '<p class="t-body-02 t-secondary" style="max-width:720px">Em line charts longos, brush no eixo X permite zoom em sub-range. Mostra o range selecionado destacado, resto fica fade. Equivalente teclado: input de date range acima.</p>'),
+            '<p class="t-body-02 t-secondary prose">Em line charts longos, brush no eixo X permite zoom em sub-range. Mostra o range selecionado destacado, resto fica fade. Equivalente teclado: input de date range acima.</p>'),
         sec("time-range", "time range selector", "05",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Quando dashboard tem múltiplos charts com mesmo eixo temporal, controle único no topo.</p>'
+            '<p class="t-body-02 t-secondary mb-05 prose">Quando dashboard tem múltiplos charts com mesmo eixo temporal, controle único no topo.</p>'
             + demo('<div class="row"><button class="btn btn--ghost btn--sm">7d</button><button class="btn btn--ghost btn--sm">30d</button><button class="btn btn--primary btn--sm">90d</button><button class="btn btn--ghost btn--sm">1a</button><button class="btn btn--ghost btn--sm">tudo</button><span class="t-helper">· customizado: <input class="input" type="date" style="width:140px;display:inline-block;height:32px"></span></div>')),
         sec("filter", "filter chips", "06",
             demo('<div class="row"><span class="t-label-01 text-helper">filtros ativos:</span><span class="tag tag--code">programa: hackerclubes ×</span><span class="tag tag--purple">região: sudeste ×</span><span class="tag tag--outline">+ adicionar</span></div>')),
         sec("empty", "empty state em chart", "07",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Quando não há dados pra mostrar (filtro vazio, primeira vez, erro), substitua o chart por um estado vazio com call-to-action.</p>'
+            '<p class="t-body-02 t-secondary mb-05 prose">Quando não há dados pra mostrar (filtro vazio, primeira vez, erro), substitua o chart por um estado vazio com call-to-action.</p>'
             + demo('<div style="background:var(--layer-01);border:1px solid var(--border-subtle-00);padding:var(--spacing-09);text-align:center"><div style="width:48px;height:48px;margin:0 auto var(--spacing-04);background:var(--layer-02);display:flex;align-items:center;justify-content:center;font:var(--code-02);color:var(--text-helper)">∅</div><h4 class="t-h03 mb-03">sem dados pra esse período</h4><p class="t-secondary mb-05">tenta um intervalo maior ou ajusta os filtros.</p><button class="btn btn--ghost btn--sm">resetar filtros</button></div>')),
         sec("a11y", "alternativas via teclado", "08",
             checklist([
@@ -796,16 +796,16 @@ write("pages/dataviz/accessibility.html", page(
     tags=[{"cls":"tag--blue","label":"wcag aa"}],
     sections="".join([
         sec("alt-text", "texto alternativo", "01 · 1.1.1",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Todo chart é uma <code class="code-inline">&lt;svg role="img" aria-label="descrição"&gt;</code>. O aria-label conta a história, não a forma.</p>'
+            '<p class="t-body-02 t-secondary mb-05 prose">Todo chart é uma <code class="code-inline">&lt;svg role="img" aria-label="descrição"&gt;</code>. O aria-label conta a história, não a forma.</p>'
             + do_dont(
                 ['"vendas de jan a dez · alta consistente · setembro recorde com 580"','"alunos por região · sudeste lidera com 320 · norte menor 18"','Resumo informativo (não enumera valores)'],
                 ['"gráfico de barras com 9 colunas"','"chart"','"figura ilustrativa"','Enumerar todos os valores (vira tabela falada)'],
             )),
         sec("table-fallback", "tabular fallback", "02",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Pra leitores de tela e usuários que preferem dados crus, ofereça versão tabela. Pode ficar oculta visualmente (sr-only) ou em &lt;details&gt;.</p>'
+            '<p class="t-body-02 t-secondary mb-05 prose">Pra leitores de tela e usuários que preferem dados crus, ofereça versão tabela. Pode ficar oculta visualmente (sr-only) ou em &lt;details&gt;.</p>'
             + demo('<details><summary class="t-label-02" style="cursor:pointer">▸ ver dados em tabela</summary><table class="data-table data-table--compact mt-04"><thead><tr><th>mês</th><th>vendas</th></tr></thead><tbody><tr><td>jan</td><td>45</td></tr><tr><td>fev</td><td>32</td></tr><tr><td>mar</td><td>60</td></tr><tr><td>abr</td><td>38</td></tr></tbody></table></details>')),
         sec("color-blind", "color-blind safe", "03 · 1.4.1",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Nossa paleta categórica foi testada em deuteranopia (verde-vermelho, ~5% da população masculina) e protanopia. Mesmo assim, sempre acompanhe cor com pattern, ícone ou label.</p>'
+            '<p class="t-body-02 t-secondary mb-05 prose">Nossa paleta categórica foi testada em deuteranopia (verde-vermelho, ~5% da população masculina) e protanopia. Mesmo assim, sempre acompanhe cor com pattern, ícone ou label.</p>'
             + table(['daltonismo','prevalência','o que vira'], [
                 ['deuteranopia','5% (homens)','verde/vermelho indistinguíveis'],
                 ['protanopia','1%','vermelho parece marrom'],
@@ -813,7 +813,7 @@ write("pages/dataviz/accessibility.html", page(
                 ['monocromacia','muito raro','tudo em tons de cinza'],
             ])),
         sec("patterns", "patterns como alternativa", "04",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Em bar/area stacked, use hachura (pattern fill SVG) pra distinguir além da cor.</p>'
+            '<p class="t-body-02 t-secondary mb-05 prose">Em bar/area stacked, use hachura (pattern fill SVG) pra distinguir além da cor.</p>'
             + chart_card("bar com hachura", "hachura distingue além da cor",
                 f'''<svg class="chart-svg" viewBox="0 0 520 240" role="img" aria-label="bar com hachura">
   <defs>
@@ -838,9 +838,9 @@ write("pages/dataviz/accessibility.html", page(
                 "Tooltip: contraste alto sempre (--dv-tooltip-bg vs fg)",
             ])),
         sec("keyboard", "keyboard navigation", "06 · 2.1.1",
-            '<p class="t-body-02 t-secondary" style="max-width:720px">Quando chart é interativo: cada ponto/barra é focável via Tab. Setas navegam entre pontos da mesma série. Enter ativa drill-down. Esc sai do modo "explorando chart".</p>'),
+            '<p class="t-body-02 t-secondary prose">Quando chart é interativo: cada ponto/barra é focável via Tab. Setas navegam entre pontos da mesma série. Enter ativa drill-down. Esc sai do modo "explorando chart".</p>'),
         sec("motion", "motion", "07 · 2.3.3",
-            '<p class="t-body-02 t-secondary" style="max-width:720px">Animações de entrada (barras crescendo, linhas desenhando) ≤ 700ms. Respeitar <code class="code-inline">prefers-reduced-motion</code> — desativa animação, mostra estado final.</p>'),
+            '<p class="t-body-02 t-secondary prose">Animações de entrada (barras crescendo, linhas desenhando) ≤ 700ms. Respeitar <code class="code-inline">prefers-reduced-motion</code> — desativa animação, mostra estado final.</p>'),
         sec("checklist", "checklist por chart", "08",
             checklist([
                 'role="img" + aria-label descritivo no SVG',
@@ -865,7 +865,7 @@ write("pages/dataviz/examples.html", page(
     "Composições reais de dashboards Casa Hacker. Como vários charts trabalham juntos pra contar uma história única.",
     "".join([
         sec("dashboard-1", "dashboard · impacto hackerclubes", "01",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Composição típica de relatório mensal de programa. Layout 3 KPIs + 2 charts.</p>'
+            '<p class="t-body-02 t-secondary mb-05 prose">Composição típica de relatório mensal de programa. Layout 3 KPIs + 2 charts.</p>'
             + '<div class="grid-3 mb-05">'
             + '<div class="chart-kpi"><div class="label">alunos · mai/2026</div><div class="value">2.847</div><div class="delta up">↑ 18% vs abr</div></div>'
             + '<div class="chart-kpi"><div class="label">clubes ativos</div><div class="value">145</div><div class="delta up">↑ 6 novos</div></div>'
@@ -882,7 +882,7 @@ write("pages/dataviz/examples.html", page(
                 "demonstração")
             + '</div>'),
         sec("dashboard-2", "relatório · perifa impacto", "02",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Foco em métricas de impacto social. Comparação ano sobre ano + composição.</p>'
+            '<p class="t-body-02 t-secondary mb-05 prose">Foco em métricas de impacto social. Comparação ano sobre ano + composição.</p>'
             + '<div class="chart-grid">'
             + chart_card("oficinas realizadas · 2024-2026", "evolução acumulada",
                 area_chart([15, 22, 28, 35, 42, 50, 60, 68, 75],
@@ -895,7 +895,7 @@ write("pages/dataviz/examples.html", page(
                 legend([(l, CAT[i], 'dot') for i, l in enumerate(['hackerclubes','inclusão','minas','mão massa','perifa'])]))
             + '</div>'),
         sec("dashboard-3", "atividade · portal hacker clubes", "03",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Heatmap de atividade horária + KPIs com sparklines.</p>'
+            '<p class="t-body-02 t-secondary mb-05 prose">Heatmap de atividade horária + KPIs com sparklines.</p>'
             + '<div class="grid-3 mb-05">'
             + '<div class="chart-kpi"><div class="label">acessos · últimos 30d</div><div class="value" style="display:flex;align-items:center;gap:var(--spacing-03);flex-wrap:wrap">14.523<svg viewBox="0 0 120 32" width="100" height="28"><polyline fill="none" stroke="var(--ch-code)" stroke-width="2" points="2,28 12,24 22,26 32,20 42,22 52,18 62,20 72,14 82,16 92,10 102,12 112,8"/></svg></div><div class="delta up">↑ 22%</div></div>'
             + '<div class="chart-kpi"><div class="label">sessões médias</div><div class="value" style="display:flex;align-items:center;gap:var(--spacing-03);flex-wrap:wrap">8min 32s<svg viewBox="0 0 120 32" width="100" height="28"><polyline fill="none" stroke="var(--ch-purple)" stroke-width="2" points="2,16 12,18 22,14 32,12 42,16 52,10 62,12 72,8 82,10 92,6 102,8 112,4"/></svg></div><div class="delta up">↑ 12%</div></div>'

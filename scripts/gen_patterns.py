@@ -34,16 +34,16 @@ write("pages/patterns/bit-system.html", page(
     "O BIT — um cubo de 8px — é a unidade fundamental. Combinações de BITs geram o H da marca, ícones, padrões geométricos e identidades de submarcas. Sistema modular reproduzível em digital e impresso.",
     "".join([
         sec("primitive", "primitiva: o bit", "01",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Um quadrado de 8×8px (ou 1×1 unidade modular). Todas as composições visuais descendem dele.</p>' +
+            '<p class="t-body-02 t-secondary mb-05 prose">Um quadrado de 8×8px (ou 1×1 unidade modular). Todas as composições visuais descendem dele.</p>' +
             demo('<div style="display: flex; gap: var(--spacing-06); align-items: flex-end;"><div style="width: 8px; height: 8px; background: var(--ch-code)"></div><div style="width: 16px; height: 16px; background: var(--ch-code)"></div><div style="width: 32px; height: 32px; background: var(--ch-code)"></div><div style="width: 64px; height: 64px; background: var(--ch-code)"></div></div><p class="t-helper mt-04">1 BIT · 2 BITs · 4 BITs · 8 BITs</p>')),
         sec("h-symbol", "o h da casa hacker", "02",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Grid 3×3 de BITs forma o H. Padrão: 5 quadrados ativos formando a letra.</p>' +
+            '<p class="t-body-02 t-secondary mb-05 prose">Grid 3×3 de BITs forma o H. Padrão: 5 quadrados ativos formando a letra.</p>' +
             demo('<div class="row" style="gap: var(--spacing-08)"><div class="h-symbol h-symbol--dark" style="width:96px;height:96px"><span class="on"></span><span></span><span class="on"></span><span></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span class="on"></span></div><div class="h-symbol" style="width:96px;height:96px"><span class="on"></span><span></span><span class="on"></span><span></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span class="on"></span></div></div>')),
         sec("patterns", "padrões geométricos", "03",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Tessellations geradas a partir de combinações modulares de BITs. 67+ variações na <a class="link" href="grafismos.html">biblioteca de grafismos</a>.</p>' +
+            '<p class="t-body-02 t-secondary mb-05 prose">Tessellations geradas a partir de combinações modulares de BITs. 67+ variações na <a class="link" href="grafismos.html">biblioteca de grafismos</a>.</p>' +
             demo('<div style="background: repeating-linear-gradient(45deg, var(--ch-code) 0 16px, transparent 16px 32px, var(--ch-purple) 32px 48px, transparent 48px 64px); height: 200px; border: 1px solid var(--border-subtle-00)"></div>')),
         sec("submarcas", "identidade das submarcas", "04",
-            '<p class="t-body-02 t-secondary" style="max-width:720px">Cada submarca tem uma variação do H: cor, posicionamento, padrão. Veja em <a class="link" href="../submarcas/index.html">submarcas</a>.</p>'),
+            '<p class="t-body-02 t-secondary prose">Cada submarca tem uma variação do H: cor, posicionamento, padrão. Veja em <a class="link" href="../submarcas/index.html">submarcas</a>.</p>'),
         sec("usage", "diretrizes", "05",
             do_dont(
                 ["Múltiplos de 8 em tudo (spacing, sizing, ícones, grid)","Padrões alinhados ao grid invisível de BITs","Compor identidade nova respeitando o BIT base"],
@@ -67,7 +67,7 @@ write("pages/patterns/colored-symbol.html", page(
                 ["Material institucional formal","UI funcional","Substituto do H monocromático em uso diário"],
             )),
         sec("library", "biblioteca", "03",
-            '<p class="t-body-02 t-secondary" style="max-width:720px">Variações em <code class="code-inline">assets/colored-symbols/</code>. Use sempre as cores tokenizadas da paleta brand.</p>'),
+            '<p class="t-body-02 t-secondary prose">Variações em <code class="code-inline">assets/colored-symbols/</code>. Use sempre as cores tokenizadas da paleta brand.</p>'),
     ]),
     toc=[{"id":"examples","label":"Exemplos"},{"id":"when","label":"Quando usar"},{"id":"library","label":"Biblioteca"}],
 ))
@@ -79,7 +79,7 @@ write("pages/patterns/grafismos.html", page(
     "Biblioteca de 67+ padrões geométricos derivados do BIT. Tessellations isométricas, padrões pixel, ornamentos modulares.",
     "".join([
         sec("library", "biblioteca", "01 · 67+",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Padrões prontos em <code class="code-inline">assets/grafismos/</code> em formato SVG. Reescaláveis sem perda.</p>' +
+            '<p class="t-body-02 t-secondary mb-05 prose">Padrões prontos em <code class="code-inline">assets/grafismos/</code> em formato SVG. Reescaláveis sem perda.</p>' +
             demo('<div class="grid-4"><div style="background: var(--ch-dos); aspect-ratio: 1; background-image: repeating-linear-gradient(45deg, var(--ch-code) 0 8px, transparent 8px 16px)"></div><div style="background: var(--ch-css); aspect-ratio: 1; background-image: radial-gradient(circle at center, var(--ch-code) 2px, transparent 2px); background-size: 16px 16px"></div><div style="background: var(--ch-purple); aspect-ratio: 1; background-image: repeating-conic-gradient(var(--ch-css) 0% 25%, transparent 0% 50%); background-size: 16px 16px"></div><div style="background: var(--ch-sec-b); aspect-ratio: 1; background-image: linear-gradient(135deg, var(--ch-dos) 25%, transparent 25%), linear-gradient(225deg, var(--ch-dos) 25%, transparent 25%); background-size: 16px 16px"></div></div>')),
         sec("categories", "categorias", "02",
             table(["categoria","quantidade","uso típico"], [
@@ -89,7 +89,7 @@ write("pages/patterns/grafismos.html", page(
                 ["Tessellation","10","fundos institucionais"],
             ])),
         sec("download", "download", "03",
-            '<p class="t-body-02 t-secondary" style="max-width:720px">Acesse <code class="code-inline">assets/grafismos/</code> no repositório. Cada SVG é otimizado e versionável.</p>'),
+            '<p class="t-body-02 t-secondary prose">Acesse <code class="code-inline">assets/grafismos/</code> no repositório. Cada SVG é otimizado e versionável.</p>'),
         sec("when", "quando usar", "04",
             do_dont(
                 ["Fundos de hero, banner, eventos","Redes sociais e materiais promocionais","Frames decorativos em prints"],
@@ -106,8 +106,8 @@ write("pages/patterns/forms-pattern.html", page(
     "Composição de formulários longos: agrupamento por seção, validação, ações no rodapé. Single column como padrão.",
     "".join([
         sec("structure", "estrutura", "01",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">1 coluna · labels acima · seções com título quando >5 campos · ações no rodapé alinhadas à esquerda.</p>' +
-            demo('<form style="max-width: 480px"><div class="t-label-01 mb-04" style="color: var(--text-helper)">// dados pessoais</div><div class="form-group"><label class="form-label" for="fn">nome <span class="req">*</span></label><input class="input" id="fn" required></div><div class="form-group"><label class="form-label" for="fe">email <span class="req">*</span></label><input class="input" type="email" id="fe" required></div><div class="t-label-01 mb-04 mt-06" style="color: var(--text-helper)">// preferências</div><div class="form-group"><label class="checkbox-row"><input type="checkbox"> receber newsletter</label></div><div class="row" style="margin-top: var(--spacing-06)"><button type="submit" class="btn btn--primary">cadastrar</button><button type="button" class="btn btn--ghost">cancelar</button></div></form>')),
+            '<p class="t-body-02 t-secondary mb-05 prose">1 coluna · labels acima · seções com título quando >5 campos · ações no rodapé alinhadas à esquerda.</p>' +
+            demo('<form class="max-w-xs"><div class="t-label-01 mb-04" style="color: var(--text-helper)">// dados pessoais</div><div class="form-group"><label class="form-label" for="fn">nome <span class="req">*</span></label><input class="input" id="fn" required></div><div class="form-group"><label class="form-label" for="fe">email <span class="req">*</span></label><input class="input" type="email" id="fe" required></div><div class="t-label-01 mb-04 mt-06" style="color: var(--text-helper)">// preferências</div><div class="form-group"><label class="checkbox-row"><input type="checkbox"> receber newsletter</label></div><div class="row" style="margin-top: var(--spacing-06)"><button type="submit" class="btn btn--primary">cadastrar</button><button type="button" class="btn btn--ghost">cancelar</button></div></form>')),
         sec("validation", "validação", "02",
             checklist([
                 "Validar no blur do campo (não a cada keystroke)",
@@ -117,7 +117,7 @@ write("pages/patterns/forms-pattern.html", page(
                 "Foco no primeiro campo com erro ao submeter",
             ])),
         sec("actions", "ações", "03",
-            '<p class="t-body-02 t-secondary" style="max-width:720px">Primary à esquerda (ação principal), ghost à direita (cancelar). Em flows multi-step, usar "voltar" (ghost) à esquerda e "próximo" (primary) à direita.</p>'),
+            '<p class="t-body-02 t-secondary prose">Primary à esquerda (ação principal), ghost à direita (cancelar). Em flows multi-step, usar "voltar" (ghost) à esquerda e "próximo" (primary) à direita.</p>'),
         sec("when", "quando usar", "04",
             do_dont(
                 ["Single column como default","Agrupamento em seções com título quando >5 campos","Helper text antecipando dúvidas"],

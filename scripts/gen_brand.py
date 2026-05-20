@@ -35,7 +35,7 @@ write("pages/submarcas/index.html", page(
     "".join([
         sec("family", "família de marcas", "01 · 5 submarcas", f'<div class="resource-cards">{cards_html}</div>'),
         sec("philosophy", "filosofia", "02",
-            '<p class="t-body-02 t-secondary" style="max-width:720px">Submarcas estendem o sistema sem fragmentá-lo. Cada uma adiciona tokens próprios (cor signature, tipografia opcional) preservando a estrutura, spacing e princípios.</p>'),
+            '<p class="t-body-02 t-secondary prose">Submarcas estendem o sistema sem fragmentá-lo. Cada uma adiciona tokens próprios (cor signature, tipografia opcional) preservando a estrutura, spacing e princípios.</p>'),
     ]),
     tags=[{"cls":"tag--code","label":"5 submarcas"}],
     toc=[{"id":"family","label":"Família"},{"id":"philosophy","label":"Filosofia"}],
@@ -60,7 +60,7 @@ for slug, title, desc, color, foco in SUBMARCAS:
                     [f"Substituir cor signature ({color}) por outra","Distorcer ou rotacionar logo","Usar logo abaixo do tamanho mínimo (24px)","Aplicar efeitos (sombra, gradiente, etc.) no logo"],
                 )),
             sec("assets", "assets", "04",
-                f'<p class="t-body-02 t-secondary" style="max-width:720px">Arquivos disponíveis em <code class="code-inline">assets/submarcas/{slug}/</code>. Versões SVG vetorial pra todos os usos.</p>'),
+                f'<p class="t-body-02 t-secondary prose">Arquivos disponíveis em <code class="code-inline">assets/submarcas/{slug}/</code>. Versões SVG vetorial pra todos os usos.</p>'),
         ]),
         tags=[{"cls":"tag--code","label":"stable"}],
         toc=[{"id":"logo","label":"Logo"},{"id":"color","label":"Cor signature"},{"id":"usage","label":"Regras de uso"},{"id":"assets","label":"Assets"}],
@@ -181,7 +181,7 @@ write("pages/impressos/loja.html", page(
                 "Sem efeitos de impressão que distorçam a identidade",
             ])),
         sec("submarcas", "merch das submarcas", "03",
-            '<p class="t-body-02 t-secondary" style="max-width:720px">Cada submarca pode ter merch próprio mantendo sua cor signature. Exemplo: t-shirt Perifa Impacto em roxo, t-shirt Minas em Tech em roxo claro, etc.</p>'),
+            '<p class="t-body-02 t-secondary prose">Cada submarca pode ter merch próprio mantendo sua cor signature. Exemplo: t-shirt Perifa Impacto em roxo, t-shirt Minas em Tech em roxo claro, etc.</p>'),
     ]),
     toc=[{"id":"items","label":"Produtos"},{"id":"rules","label":"Regras de aplicação"},{"id":"submarcas","label":"Merch das submarcas"}],
 ))
@@ -280,7 +280,7 @@ write("pages/contributing/pdlc.html", page(
         sec("status-badges", "status badges", "02",
             demo('<div class="row" style="gap: var(--spacing-04)"><span class="status-badge status-badge--draft">draft</span><span class="status-badge status-badge--beta">beta</span><span class="status-badge status-badge--stable">stable</span><span class="status-badge status-badge--new">new</span></div>')),
         sec("deprecation", "deprecation", "03",
-            '<p class="t-body-02 t-secondary" style="max-width:720px">Componentes deprecated mantêm 1 versão major suportada. Avisos no console e no docs. Substituição recomendada clara na página do componente.</p>'),
+            '<p class="t-body-02 t-secondary prose">Componentes deprecated mantêm 1 versão major suportada. Avisos no console e no docs. Substituição recomendada clara na página do componente.</p>'),
     ]),
     toc=[{"id":"stages","label":"5 etapas"},{"id":"status-badges","label":"Status badges"},{"id":"deprecation","label":"Deprecation"}],
 ))
@@ -291,7 +291,7 @@ write("pages/contributing/documentation.html", page(
     "Como documentar componentes e patterns pra que façam sentido pros próximos. Princípios de boa documentação.",
     "".join([
         sec("structure", "estrutura padrão", "01",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Toda página de componente segue a estrutura abaixo. Use o gerador Python ou copie de uma página existente como base.</p>' +
+            '<p class="t-body-02 t-secondary mb-05 prose">Toda página de componente segue a estrutura abaixo. Use o gerador Python ou copie de uma página existente como base.</p>' +
             checklist([
                 "Page header: breadcrumb + title + intro + tags",
                 "TOC com links pra cada seção",
@@ -308,8 +308,8 @@ write("pages/contributing/documentation.html", page(
                 "Related (links pra componentes correlatos)",
             ])),
         sec("voice", "tom", "02",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Direto, em pt-br caixa baixa. Frases curtas. Comandos no infinitivo. Exemplos comparados (faz/não faz) em vez de prescrições vagas.</p>' +
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Veja <a class="link" href="../guidelines/content.html">content & voice</a> pra detalhes.</p>'),
+            '<p class="t-body-02 t-secondary mb-05 prose">Direto, em pt-br caixa baixa. Frases curtas. Comandos no infinitivo. Exemplos comparados (faz/não faz) em vez de prescrições vagas.</p>' +
+            '<p class="t-body-02 t-secondary mb-05 prose">Veja <a class="link" href="../guidelines/content.html">content & voice</a> pra detalhes.</p>'),
         sec("code-examples", "code examples", "03",
             checklist([
                 "Mínimo viável — só o necessário pra entender",
@@ -335,7 +335,7 @@ write("pages/help/index.html", page(
                 {"title":"docs","desc":"A maior parte das perguntas já está respondida aqui — veja a <a class='link' href='faq.html'>FAQ</a>."},
             ])),
         sec("response", "tempo de resposta", "02",
-            '<p class="t-body-02 t-secondary" style="max-width:720px">Equipe é pequena, voluntária e atende em horário comercial. Issues técnicas: 3-5 dias úteis. PRs: 5-7 dias úteis. Pra urgências, marca como "urgent" no título.</p>'),
+            '<p class="t-body-02 t-secondary prose">Equipe é pequena, voluntária e atende em horário comercial. Issues técnicas: 3-5 dias úteis. PRs: 5-7 dias úteis. Pra urgências, marca como "urgent" no título.</p>'),
     ]),
     toc=[{"id":"channels","label":"Canais"},{"id":"response","label":"Tempo de resposta"}],
 ))

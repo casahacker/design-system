@@ -9,11 +9,11 @@ write("pages/about/principles.html", page(
     '<a href="../../index.html">home</a><span class="sep">/</span><a href="index.html">sobre</a><span class="sep">/</span>princípios',
     "Os 5 princípios que guiam todas as decisões de design no CHDS. Servem de filtro quando o caminho não é óbvio.",
     "".join([
-        sec("p1", "acessível por padrão", "01", '<p class="t-body-02 t-secondary" style="max-width:720px">Componente que não passa em WCAG 2.1 AA não entra no sistema. Foco visível, contraste mínimo 4.5:1 em texto, alvos de toque 44×44px, navegação por teclado e leitor de tela. Acessibilidade não é feature opcional — é qualidade de base.</p>'),
-        sec("p2", "bit-aligned", "02", '<p class="t-body-02 t-secondary" style="max-width:720px">O BIT (8px) é a unidade primitiva de tudo: spacing, sizing, ícones, grid, divisores. Múltiplos de 8 (com 4 e 2 como divisores excepcionais) garantem ritmo visual consistente entre interfaces, impressos e merchandise.</p>'),
-        sec("p3", "híbrido digital-físico", "03", '<p class="t-body-02 t-secondary" style="max-width:720px">Casa Hacker faz hackathons, eventos, oficinas. O sistema atende produto digital E papelaria, sinalização, brindes. Tokens valem nos dois mundos — um adesivo segue a mesma grade que um botão.</p>'),
-        sec("p4", "aberto e modificável", "04", '<p class="t-body-02 t-secondary" style="max-width:720px">Forkado do Carbon (Apache 2.0) e mantido em GitHub público. Submarcas estendem tokens sem fragmentar o sistema. Qualquer pessoa pode propor melhorias via PR.</p>'),
-        sec("p5", "brasileiro de raiz", "05", '<p class="t-body-02 t-secondary" style="max-width:720px">Documentação em pt-br. Exemplos refletem a realidade brasileira. Submarcas falam dos contextos atendidos. O sistema não é tradução de Carbon: é Carbon recontextualizado.</p>'),
+        sec("p1", "acessível por padrão", "01", '<p class="t-body-02 t-secondary prose">Componente que não passa em WCAG 2.1 AA não entra no sistema. Foco visível, contraste mínimo 4.5:1 em texto, alvos de toque 44×44px, navegação por teclado e leitor de tela. Acessibilidade não é feature opcional — é qualidade de base.</p>'),
+        sec("p2", "bit-aligned", "02", '<p class="t-body-02 t-secondary prose">O BIT (8px) é a unidade primitiva de tudo: spacing, sizing, ícones, grid, divisores. Múltiplos de 8 (com 4 e 2 como divisores excepcionais) garantem ritmo visual consistente entre interfaces, impressos e merchandise.</p>'),
+        sec("p3", "híbrido digital-físico", "03", '<p class="t-body-02 t-secondary prose">Casa Hacker faz hackathons, eventos, oficinas. O sistema atende produto digital E papelaria, sinalização, brindes. Tokens valem nos dois mundos — um adesivo segue a mesma grade que um botão.</p>'),
+        sec("p4", "aberto e modificável", "04", '<p class="t-body-02 t-secondary prose">Forkado do Carbon (Apache 2.0) e mantido em GitHub público. Submarcas estendem tokens sem fragmentar o sistema. Qualquer pessoa pode propor melhorias via PR.</p>'),
+        sec("p5", "brasileiro de raiz", "05", '<p class="t-body-02 t-secondary prose">Documentação em pt-br. Exemplos refletem a realidade brasileira. Submarcas falam dos contextos atendidos. O sistema não é tradução de Carbon: é Carbon recontextualizado.</p>'),
     ]),
     tags=[{"cls": "tag--code", "label": "foundational"}],
     toc=[{"id":"p1","label":"Acessível por padrão"},{"id":"p2","label":"BIT-aligned"},{"id":"p3","label":"Híbrido digital-físico"},{"id":"p4","label":"Aberto e modificável"},{"id":"p5","label":"Brasileiro de raiz"}],
@@ -31,14 +31,14 @@ write("pages/about/who-uses.html", page(
                 {"title":"internet segura","desc":"Conteúdo educativo digital + impresso."},
             ])),
         sec("partners", "parceiros e financiadores", "02",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Organizações que constroem soluções alinhadas com a missão da Casa Hacker podem adotar o CHDS pra acelerar entregas e garantir consistência.</p>' +
+            '<p class="t-body-02 t-secondary mb-05 prose">Organizações que constroem soluções alinhadas com a missão da Casa Hacker podem adotar o CHDS pra acelerar entregas e garantir consistência.</p>' +
             grid([
                 {"title":"governo","desc":"Secretarias e órgãos públicos com pautas de tecnologia social."},
                 {"title":"ongs","desc":"Terceiro setor focado em educação tech e inclusão digital."},
                 {"title":"empresas","desc":"Patrocinadores com programas de impacto social comunitário."},
             ])),
         sec("community", "comunidade open-source", "03",
-            '<p class="t-body-02 t-secondary" style="max-width:720px">Fork público no GitHub. Devs e designers da comunidade podem usar componentes, propor melhorias e adaptar pra projetos próprios. Licença MIT no código, CC BY-SA no conteúdo de marca.</p>'),
+            '<p class="t-body-02 t-secondary prose">Fork público no GitHub. Devs e designers da comunidade podem usar componentes, propor melhorias e adaptar pra projetos próprios. Licença MIT no código, CC BY-SA no conteúdo de marca.</p>'),
     ]),
     toc=[{"id":"internal","label":"Uso interno"},{"id":"partners","label":"Parceiros"},{"id":"community","label":"Comunidade"}],
 ))
@@ -49,7 +49,7 @@ write("pages/about/ecosystem.html", page(
     "Mapa de como o CHDS se conecta com Carbon, com os produtos da Casa Hacker e com a comunidade externa.",
     "".join([
         sec("carbon", "relação com ibm carbon", "01",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">CHDS adota a <strong>estrutura</strong> do Carbon — tokens semânticos, escala de spacing, sistema de grid, princípios de a11y — e <strong>reskinna</strong> com a paleta, tipografia e linguagem visual Casa Hacker.</p>' +
+            '<p class="t-body-02 t-secondary mb-05 prose">CHDS adota a <strong>estrutura</strong> do Carbon — tokens semânticos, escala de spacing, sistema de grid, princípios de a11y — e <strong>reskinna</strong> com a paleta, tipografia e linguagem visual Casa Hacker.</p>' +
             table(["Carbon","CHDS"], [
                 ["Blue 60 (#0F62FE) primary","Code Green (#32FA96)"],
                 ["IBM Plex Sans","Roboto Flex + IBM Plex Mono"],
@@ -58,9 +58,9 @@ write("pages/about/ecosystem.html", page(
                 ["Gray 10 / Gray 100 themes","Console / Dos themes"],
             ])),
         sec("submarcas", "submarcas", "02",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">5 marcas-filha que herdam o sistema e estendem com tokens próprios. Ver a seção <a class="link" href="../submarcas/index.html">submarcas</a>.</p>'),
+            '<p class="t-body-02 t-secondary mb-05 prose">5 marcas-filha que herdam o sistema e estendem com tokens próprios. Ver a seção <a class="link" href="../submarcas/index.html">submarcas</a>.</p>'),
         sec("community", "aberto à comunidade", "03",
-            '<p class="t-body-02 t-secondary" style="max-width:720px">Repositório público em <a class="link" href="https://github.com/casahacker/design-system" target="_blank" rel="noopener">github.com/casahacker/design-system</a>. Issues, PRs e discussões são bem-vindos.</p>'),
+            '<p class="t-body-02 t-secondary prose">Repositório público em <a class="link" href="https://github.com/casahacker/design-system" target="_blank" rel="noopener">github.com/casahacker/design-system</a>. Issues, PRs e discussões são bem-vindos.</p>'),
     ]),
     toc=[{"id":"carbon","label":"Relação com Carbon"},{"id":"submarcas","label":"Submarcas"},{"id":"community","label":"Aberto à comunidade"}],
 ))
@@ -74,13 +74,13 @@ write("pages/guidelines/index.html", page(
     "Diretrizes transversais que valem pra todos os componentes e padrões: acessibilidade, conteúdo & voz e uso responsável de IA.",
     "".join([
         sec("a11y", "accessibility", "01",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Critérios WCAG 2.1 AA em todo componente, com auditoria contínua. Cobre contraste, foco, teclado, ARIA, motion e densidade.</p>' +
+            '<p class="t-body-02 t-secondary mb-05 prose">Critérios WCAG 2.1 AA em todo componente, com auditoria contínua. Cobre contraste, foco, teclado, ARIA, motion e densidade.</p>' +
             '<a class="link link--standalone" href="accessibility.html">ler guidelines de a11y</a>'),
         sec("content", "content & voice", "02",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Tom Casa Hacker: direto, ativo, brasileiro, sem firula. UI fala pt-br em caixa baixa, microcopy curto, sem jargão desnecessário.</p>' +
+            '<p class="t-body-02 t-secondary mb-05 prose">Tom Casa Hacker: direto, ativo, brasileiro, sem firula. UI fala pt-br em caixa baixa, microcopy curto, sem jargão desnecessário.</p>' +
             '<a class="link link--standalone" href="content.html">ler guidelines de conteúdo</a>'),
         sec("ai", "casa hacker for ai", "03",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Princípios pra usar IA generativa em produtos: transparência, divulgação, opt-in, fontes citáveis, controle do usuário.</p>' +
+            '<p class="t-body-02 t-secondary mb-05 prose">Princípios pra usar IA generativa em produtos: transparência, divulgação, opt-in, fontes citáveis, controle do usuário.</p>' +
             '<a class="link link--standalone" href="ai.html">ler guidelines de ia</a>'),
     ]),
     toc=[{"id":"a11y","label":"Accessibility"},{"id":"content","label":"Content & voice"},{"id":"ai","label":"Casa Hacker for AI"}],
@@ -92,7 +92,7 @@ write("pages/guidelines/accessibility.html", page(
     "CHDS é WCAG 2.1 AA por padrão. Esta página documenta os critérios, padrões de teclado e ARIA aplicados em todos os componentes.",
     "".join([
         sec("a11y-bar", "barra de acessibilidade — obrigatória", "00 · base",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Todo produto Casa Hacker <strong>deve incluir</strong> a barra de acessibilidade oficial (<a class="link" href="https://github.com/casahacker/barra-acessibilidade" target="_blank" rel="noopener">github.com/casahacker/barra-acessibilidade ↗</a>), que cobre 12 features WCAG-aligned + integração VLibras. Detalhes de integração na página <a class="link" href="../patterns/global-header.html">global header</a>.</p>' +
+            '<p class="t-body-02 t-secondary mb-05 prose">Todo produto Casa Hacker <strong>deve incluir</strong> a barra de acessibilidade oficial (<a class="link" href="https://github.com/casahacker/barra-acessibilidade" target="_blank" rel="noopener">github.com/casahacker/barra-acessibilidade ↗</a>), que cobre 12 features WCAG-aligned + integração VLibras. Detalhes de integração na página <a class="link" href="../patterns/global-header.html">global header</a>.</p>' +
             checklist([
                 "Tema (claro/escuro/alto contraste) + 3 tamanhos de fonte (14/16/18)",
                 "Fonte Atkinson Hyperlegible pra dislexia",
@@ -103,7 +103,7 @@ write("pages/guidelines/accessibility.html", page(
                 "Este design system já inclui automaticamente em todas as páginas",
             ])),
         sec("contrast", "contraste", "01 · 1.4.3",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Texto normal exige razão 4.5:1 contra o fundo. Texto grande (18pt+ regular, 14pt+ bold) exige 3:1. Bordas e ícones também 3:1.</p>' +
+            '<p class="t-body-02 t-secondary mb-05 prose">Texto normal exige razão 4.5:1 contra o fundo. Texto grande (18pt+ regular, 14pt+ bold) exige 3:1. Bordas e ícones também 3:1.</p>' +
             table(["par","razão","aa text","aa large"], [
                 ["text-primary / background (light)","11.7:1","✓","✓"],
                 ["text-secondary / background (light)","7.2:1","✓","✓"],
@@ -113,7 +113,7 @@ write("pages/guidelines/accessibility.html", page(
                 ["support-error / background (light)","5.2:1","✓","✓"],
             ])),
         sec("keyboard", "navegação por teclado", "02 · 2.1.1",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Todo elemento interativo é acessível via Tab. Componentes complexos seguem ARIA Authoring Practices.</p>' +
+            '<p class="t-body-02 t-secondary mb-05 prose">Todo elemento interativo é acessível via Tab. Componentes complexos seguem ARIA Authoring Practices.</p>' +
             table(["componente","tecla","ação"], [
                 ["Tabs","← / →","move foco entre tabs"],
                 ["Tabs","Home / End","primeiro / último tab"],
@@ -125,7 +125,7 @@ write("pages/guidelines/accessibility.html", page(
                 ["Sidebar nav","/","foca busca"],
             ])),
         sec("focus", "foco visível", "03 · 2.4.7",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Todo elemento focado tem indicação visual evidente. <code class="code-inline">outline: 2px solid var(--focus)</code> ou <code class="code-inline">box-shadow: inset 0 0 0 2px var(--focus)</code>. Nunca <code class="code-inline">outline: none</code> sem fallback.</p>' +
+            '<p class="t-body-02 t-secondary mb-05 prose">Todo elemento focado tem indicação visual evidente. <code class="code-inline">outline: 2px solid var(--focus)</code> ou <code class="code-inline">box-shadow: inset 0 0 0 2px var(--focus)</code>. Nunca <code class="code-inline">outline: none</code> sem fallback.</p>' +
             demo('<div class="row"><button class="btn btn--primary" style="outline: 2px solid var(--focus); outline-offset: 2px;">botão com foco</button><a class="link" style="outline: 2px solid var(--focus); outline-offset: 2px;" href="#">link com foco</a></div>')),
         sec("aria", "aria & semântica", "04 · 4.1.2",
             checklist([
@@ -138,9 +138,9 @@ write("pages/guidelines/accessibility.html", page(
                 'role="tablist", role="tab", role="tabpanel" em tabs',
             ])),
         sec("motion", "motion & reduced motion", "05 · 2.3.3",
-            '<p class="t-body-02 t-secondary" style="max-width:720px">Animações longas (>200ms) e parallax são respeitados via <code class="code-inline">prefers-reduced-motion</code>. Durações Carbon: fast-01 (70ms) até slow-02 (700ms).</p>'),
+            '<p class="t-body-02 t-secondary prose">Animações longas (>200ms) e parallax são respeitados via <code class="code-inline">prefers-reduced-motion</code>. Durações Carbon: fast-01 (70ms) até slow-02 (700ms).</p>'),
         sec("targets", "áreas de toque", "06 · 2.5.5",
-            '<p class="t-body-02 t-secondary" style="max-width:720px">Alvos interativos têm no mínimo 44×44px (botões padrão são 48px de altura). Tamanhos menores (small) só em toolbars internas com espaçamento extra.</p>'),
+            '<p class="t-body-02 t-secondary prose">Alvos interativos têm no mínimo 44×44px (botões padrão são 48px de altura). Tamanhos menores (small) só em toolbars internas com espaçamento extra.</p>'),
         sec("forms", "formulários", "07 · 3.3.x",
             checklist([
                 "Todo input tem &lt;label&gt; associado (for + id)",
@@ -150,7 +150,7 @@ write("pages/guidelines/accessibility.html", page(
                 "Helper text antes do erro, não substituído por ele",
             ])),
         sec("checklist", "checklist por componente", "08",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Antes de qualquer componente entrar no sistema, passa por este checklist.</p>' +
+            '<p class="t-body-02 t-secondary mb-05 prose">Antes de qualquer componente entrar no sistema, passa por este checklist.</p>' +
             checklist([
                 "Operável só com teclado (sem mouse, sem touch)",
                 "Visível ao zoom 200% sem perda de função",
@@ -173,7 +173,7 @@ write("pages/guidelines/content.html", page(
         sec("tone", "tom de voz", "01",
             '<div class="grid-2"><div class="tile tile--bordered"><h4>somos</h4><ul class="checklist"><li>diretos · sem rodeio</li><li>ativos · "salvar" em vez de "as alterações foram salvas"</li><li>brasileiros · pt-br informal mas profissional</li><li>técnicos sem jargão · "json" sim, "monetização programática" não</li></ul></div><div class="tile tile--bordered"><h4>não somos</h4><ul class="checklist"><li>solenes · "prezado usuário" → "olá"</li><li>passivos · "houve um erro" → "deu ruim, tenta de novo"</li><li>genéricos · "operação concluída" → "post publicado"</li><li>infantis · "ops!" exagerado fica antipático</li></ul></div></div>'),
         sec("case", "caixa baixa", "02",
-            '<p class="t-body-02 t-secondary" style="max-width:720px">Títulos, labels e botões em caixa baixa. CAIXA ALTA só pra labels técnicos (// CODE, // META). Nomes próprios mantêm capitalização: Casa Hacker, Perifa Impacto, IBM Carbon.</p>'),
+            '<p class="t-body-02 t-secondary prose">Títulos, labels e botões em caixa baixa. CAIXA ALTA só pra labels técnicos (// CODE, // META). Nomes próprios mantêm capitalização: Casa Hacker, Perifa Impacto, IBM Carbon.</p>'),
         sec("verbs", "verbos em ação", "03",
             table(["contexto","evita","prefere"], [
                 ["botão de salvar","salvar alterações","salvar"],
@@ -183,8 +183,8 @@ write("pages/guidelines/content.html", page(
                 ["próxima etapa","ir pra próxima etapa","próximo"],
             ])),
         sec("errors", "erros úteis", "04",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Erro diz (1) o que aconteceu, (2) por que aconteceu se ajudar, (3) o que fazer agora.</p>' +
-            demo('<div class="notification notification--error" style="max-width: 480px;"><div class="notification-icon">⚠</div><div class="notification-body"><strong>não rolou enviar</strong><p>o servidor demorou pra responder. tenta de novo em alguns segundos.</p></div></div>')),
+            '<p class="t-body-02 t-secondary mb-05 prose">Erro diz (1) o que aconteceu, (2) por que aconteceu se ajudar, (3) o que fazer agora.</p>' +
+            demo('<div class="notification notification--error max-w-xs"><div class="notification-icon">⚠</div><div class="notification-body"><strong>não rolou enviar</strong><p>o servidor demorou pra responder. tenta de novo em alguns segundos.</p></div></div>')),
         sec("examples", "exemplos comparados", "05",
             do_dont(
                 ['"salvar" como label de botão primary','"cancelar" simples, sem "voltar e cancelar"','"deu ruim, tenta de novo" em erro de rede','"publicar post" deixa claro o que será publicado'],
@@ -202,7 +202,7 @@ write("pages/guidelines/ai.html", page(
         sec("principles", "princípios", "01",
             '<div class="grid-2"><div class="tile tile--bordered"><h4>1. transparência</h4><p>Usuário sempre sabe quando está interagindo com IA. Indicador visual + texto explícito.</p></div><div class="tile tile--bordered"><h4>2. opt-in</h4><p>Funcionalidades de IA são opcionais. Usuário ativa, não vem ligado por padrão.</p></div><div class="tile tile--bordered"><h4>3. fontes citáveis</h4><p>Quando a IA cita fato, mostra a fonte. Resposta sem fonte é especulação.</p></div><div class="tile tile--bordered"><h4>4. correção pelo humano</h4><p>Usuário pode editar, refazer, desfazer. IA propõe — usuário decide.</p></div></div>'),
         sec("disclosure", "divulgação", "02",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Conteúdo gerado por IA recebe marcação visual: tag com ícone, ou borda colorida característica.</p>' +
+            '<p class="t-body-02 t-secondary mb-05 prose">Conteúdo gerado por IA recebe marcação visual: tag com ícone, ou borda colorida característica.</p>' +
             demo('<div class="row"><span class="tag tag--purple">◆ gerado por ia</span><span class="tag tag--purple">◆ resumido por ia</span><span class="tag tag--purple">◆ traduzido por ia</span></div>')),
         sec("control", "controle do usuário", "03",
             checklist([
@@ -212,7 +212,7 @@ write("pages/guidelines/ai.html", page(
                 'Botão de "explicar essa sugestão" quando faz sentido',
             ])),
         sec("patterns", "padrões visuais", "04",
-            '<p class="t-body-02 t-secondary" style="max-width:720px">Cor de destaque pra IA: <strong>--ch-purple</strong> (#AA78E6). Mesma cor do Perifa Impacto — porque tecnologia de ponta na periferia. Borda gradiente verde→roxo opcional pra destacar áreas de IA.</p>'),
+            '<p class="t-body-02 t-secondary prose">Cor de destaque pra IA: <strong>--ch-purple</strong> (#AA78E6). Mesma cor do Perifa Impacto — porque tecnologia de ponta na periferia. Borda gradiente verde→roxo opcional pra destacar áreas de IA.</p>'),
     ]),
     tags=[{"cls":"tag--purple","label":"novo"}],
     toc=[{"id":"principles","label":"Princípios"},{"id":"disclosure","label":"Divulgação"},{"id":"control","label":"Controle do usuário"},{"id":"patterns","label":"Padrões visuais"}],
@@ -227,7 +227,7 @@ write("pages/elements/spacing.html", page(
     "O BIT (8px) é a unidade primitiva. Toda a escala de spacing são múltiplos ou frações dele, garantindo ritmo visual consistente em digital e físico.",
     "".join([
         sec("scale", "escala", "01 · 13 tokens",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Spacing-01 a spacing-13. Os primeiros 2 são frações do BIT (2px, 4px); os demais são múltiplos.</p>' +
+            '<p class="t-body-02 t-secondary mb-05 prose">Spacing-01 a spacing-13. Os primeiros 2 são frações do BIT (2px, 4px); os demais são múltiplos.</p>' +
             table(["token","valor","múltiplo do BIT","uso típico"], [
                 ["--spacing-01","2px","¼ BIT","ajuste fino · ícones inline"],
                 ["--spacing-02","4px","½ BIT","gap mínimo entre elementos"],
@@ -244,10 +244,10 @@ write("pages/elements/spacing.html", page(
                 ["--spacing-13","160px","20","display spacing"],
             ])),
         sec("bit", "o bit", "02 · unidade primitiva",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">BIT = 8px. Por que 8? É divisível por 2 e 4, encaixa em telas retina (×2, ×3), e cria um grid invisível que conecta padding, sizing, ícones e linha-altura.</p>' +
+            '<p class="t-body-02 t-secondary mb-05 prose">BIT = 8px. Por que 8? É divisível por 2 e 4, encaixa em telas retina (×2, ×3), e cria um grid invisível que conecta padding, sizing, ícones e linha-altura.</p>' +
             demo('<div style="display:grid;grid-template-columns:repeat(8,32px);gap:1px;background:var(--ch-code);padding:1px;width:fit-content;"><div style="background:var(--layer-01);height:32px"></div>'.join([""]*9) + '</div><p class="t-helper mt-04">8 BITs no horizontal · 32px cada · grid de 264px</p>')),
         sec("density", "modos de densidade", "03",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Componentes podem assumir 3 densidades. Para usar, troque os tokens base por seus equivalentes denser.</p>' +
+            '<p class="t-body-02 t-secondary mb-05 prose">Componentes podem assumir 3 densidades. Para usar, troque os tokens base por seus equivalentes denser.</p>' +
             table(["modo","altura input","altura btn","uso"], [
                 ["compact","32px","32px","tabelas densas, toolbars"],
                 ["default","40px","48px","produto padrão"],
@@ -278,10 +278,10 @@ write("pages/elements/grid.html", page(
                 ["2xl","1440px+","12","24px","32px"],
             ])),
         sec("columns", "colunas", "02",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">12 colunas em desktop, 8 em tablet, 4 em mobile. Gutter é constante; o que muda é a largura das colunas.</p>' +
+            '<p class="t-body-02 t-secondary mb-05 prose">12 colunas em desktop, 8 em tablet, 4 em mobile. Gutter é constante; o que muda é a largura das colunas.</p>' +
             demo('<div style="display:grid;grid-template-columns:repeat(12,1fr);gap:16px;background:rgba(50,250,150,.1);padding:16px;">' + ''.join(f'<div style="background:var(--ch-code);height:48px;display:flex;align-items:center;justify-content:center;font:var(--code-01);color:var(--ch-dos)">{i+1}</div>' for i in range(12)) + '</div>')),
         sec("containers", "containers", "03",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Largura máxima do conteúdo principal por breakpoint.</p>' +
+            '<p class="t-body-02 t-secondary mb-05 prose">Largura máxima do conteúdo principal por breakpoint.</p>' +
             table(["token","valor"], [
                 ["--container-sm","640px"],
                 ["--container-md","800px"],
@@ -306,7 +306,7 @@ write("pages/elements/iconography.html", page(
     "Sistema de ícones BIT-aligned: tamanhos múltiplos de 8px, traço consistente, otimizados para 16/20/24/32px. SVG inline, sem icon font.",
     "".join([
         sec("sizes", "tamanhos", "01",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Quatro tamanhos canônicos. Ícones desenhados em grid de 16 ou 24px, com traço 1.5 (small) ou 2 (medium+).</p>' +
+            '<p class="t-body-02 t-secondary mb-05 prose">Quatro tamanhos canônicos. Ícones desenhados em grid de 16 ou 24px, com traço 1.5 (small) ou 2 (medium+).</p>' +
             table(["tamanho","px","uso"], [
                 ["xs","16px","inline em texto, botões small"],
                 ["sm","20px","botões standard, form fields"],
@@ -314,10 +314,10 @@ write("pages/elements/iconography.html", page(
                 ["lg","32px","header, ações destacadas"],
             ])),
         sec("style", "estilo", "02",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Traço uniforme, cantos arredondados sutis (raio 1px em 16px grid), preenchimento sólido pra glifos críticos (sucesso, erro, alerta).</p>' +
+            '<p class="t-body-02 t-secondary mb-05 prose">Traço uniforme, cantos arredondados sutis (raio 1px em 16px grid), preenchimento sólido pra glifos críticos (sucesso, erro, alerta).</p>' +
             demo('<div class="row" style="font-size: 24px; gap: var(--spacing-06);"><span>◆</span><span>→</span><span>↗</span><span>✓</span><span>✗</span><span>⚠</span><span>i</span><span>?</span><span>+</span><span>×</span></div>')),
         sec("h-symbol", "h símbolo · marca casa hacker", "03",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">O H estilizado é o ícone-assinatura da marca. Sempre num grid 3×3 de quadrados, com 5 quadrados ativos no padrão H.</p>' +
+            '<p class="t-body-02 t-secondary mb-05 prose">O H estilizado é o ícone-assinatura da marca. Sempre num grid 3×3 de quadrados, com 5 quadrados ativos no padrão H.</p>' +
             demo('<div class="row" style="gap: var(--spacing-07);"><div class="h-symbol h-symbol--dark" style="width:32px;height:32px"><span class="on"></span><span></span><span class="on"></span><span></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span class="on"></span></div><div class="h-symbol h-symbol--dark" style="width:64px;height:64px"><span class="on"></span><span></span><span class="on"></span><span></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span class="on"></span></div><div class="h-symbol h-symbol--dark" style="width:128px;height:128px"><span class="on"></span><span></span><span class="on"></span><span></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span class="on"></span></div></div>')),
         sec("usage", "quando usar", "04",
             do_dont(
@@ -353,7 +353,7 @@ write("pages/elements/motion.html", page(
                 ["--ease-standard","cubic-bezier(0.5,0,0.1,1)","easing genérico"],
             ])),
         sec("reduced", "reduced motion", "03",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Usuários com <code class="code-inline">prefers-reduced-motion: reduce</code> têm todas as animações reduzidas a ~0ms. Implementado globalmente no CSS — sem precisar tratar em cada componente.</p>' +
+            '<p class="t-body-02 t-secondary mb-05 prose">Usuários com <code class="code-inline">prefers-reduced-motion: reduce</code> têm todas as animações reduzidas a ~0ms. Implementado globalmente no CSS — sem precisar tratar em cada componente.</p>' +
             code('<span class="k">@media</span> (<span class="v">prefers-reduced-motion</span>: <span class="v">reduce</span>) {\n  *, *::before, *::after {\n    animation-duration: <span class="v">0.01ms</span> !important;\n    transition-duration: <span class="v">0.01ms</span> !important;\n  }\n}')),
         sec("usage", "quando animar", "04",
             do_dont(
@@ -372,13 +372,13 @@ write("pages/elements/themes.html", page(
     "Light e dark theme controlados por atributo data-theme no html. Tokens semânticos garantem que componentes nunca precisam saber qual tema está ativo.",
     "".join([
         sec("active", "temas ativos", "01",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Dois temas em produção, ambos cobrindo a paleta completa. Dark theme segue <code class="code-inline">prefers-color-scheme</code> como default.</p>' +
+            '<p class="t-body-02 t-secondary mb-05 prose">Dois temas em produção, ambos cobrindo a paleta completa. Dark theme segue <code class="code-inline">prefers-color-scheme</code> como default.</p>' +
             '<div class="grid-2"><div class="demo" style="background:#F8FCF8;color:#3C433C;padding:var(--spacing-07)"><div class="t-label-01 mb-04" style="color:#91938C">// light · default</div><h4 class="t-h03 mb-04" style="color:#3C433C">claro</h4><p style="color:#5C625C">background CSS, texto Dos, destaques Code.</p></div><div class="demo" style="background:#3C433C;color:#F8FCF8;padding:var(--spacing-07)"><div class="t-label-01 mb-04" style="color:#ADB1A9">// dark</div><h4 class="t-h03 mb-04" style="color:#F8FCF8">escuro</h4><p style="color:#D7DCD7">background Dos, texto CSS, mesmo Code.</p></div></div>'),
         sec("switching", "trocando de tema", "02",
-            '<p class="t-body-02 t-secondary mb-05" style="max-width:720px">Tema é controlado por atributo no &lt;html&gt;. Persistido em localStorage. Inicial respeita prefers-color-scheme.</p>' +
+            '<p class="t-body-02 t-secondary mb-05 prose">Tema é controlado por atributo no &lt;html&gt;. Persistido em localStorage. Inicial respeita prefers-color-scheme.</p>' +
             code('<span class="c">/* CSS: tokens redeclarados */</span>\n<span class="k">html</span>[<span class="v">data-theme</span>=<span class="s">"dark"</span>] {\n  --background: <span class="k">var</span>(--ch-dos);\n  --text-primary: <span class="k">var</span>(--ch-css);\n  <span class="c">/* etc */</span>\n}\n\n<span class="c">// JS</span>\ndocument.documentElement.setAttribute(<span class="s">"data-theme"</span>, <span class="s">"dark"</span>);')),
         sec("philosophy", "filosofia", "03",
-            '<p class="t-body-02 t-secondary" style="max-width:720px">Componentes não conhecem o tema. Eles consomem tokens semânticos (<code class="code-inline">--text-primary</code>, <code class="code-inline">--layer-01</code>) que mudam de valor conforme o atributo. Trocar de tema = trocar tokens, zero refactor de componente.</p>'),
+            '<p class="t-body-02 t-secondary prose">Componentes não conhecem o tema. Eles consomem tokens semânticos (<code class="code-inline">--text-primary</code>, <code class="code-inline">--layer-01</code>) que mudam de valor conforme o atributo. Trocar de tema = trocar tokens, zero refactor de componente.</p>'),
         sec("usage", "quando usar cada tema", "04",
             do_dont(
                 ["Light por padrão em produtos de produtividade e leitura","Dark por padrão em IDEs, dashboards de monitoramento, conteúdo notural","Sempre permitir o usuário trocar","Respeitar prefers-color-scheme do SO"],

@@ -7,7 +7,7 @@ write("pages/components/notification.html", component_page(
     page_id="notification",
     name="notification",
     intro="Feedback inline ou toast pra resultado de ações: sucesso, erro, aviso, info. Pode ser dispensável.",
-    demo_html=demo('<div class="stack" style="max-width: 480px;">' +
+    demo_html=demo('<div class="stack max-w-xs">' +
         '<div class="notification notification--success"><div class="notification-icon">◆</div><div class="notification-body"><strong>tudo certo</strong><p>post publicado com sucesso.</p></div><button class="notification-close" aria-label="fechar">×</button></div>' +
         '<div class="notification notification--error"><div class="notification-icon">⚠</div><div class="notification-body"><strong>deu ruim</strong><p>não foi possível enviar. tenta de novo em alguns segundos.</p></div><button class="notification-close" aria-label="fechar">×</button></div>' +
         '<div class="notification notification--warning"><div class="notification-icon">⚠</div><div class="notification-body"><strong>atenção</strong><p>essa ação tem consequências.</p></div></div>' +
@@ -15,7 +15,7 @@ write("pages/components/notification.html", component_page(
         '</div>'),
     variants='<p class="t-secondary mb-04">Inline (default) e Toast (programático via <code class="code-inline">window.CHDS.toast()</code>).</p>' +
         demo('<button class="btn btn--primary" onclick="window.CHDS && window.CHDS.toast({title:\'toast disparado\',message:\'demo de toast programático\',kind:\'success\'})">disparar toast</button>'),
-    states=demo('<div class="stack" style="max-width: 480px"><div class="notification notification--success"><div class="notification-icon">◆</div><div class="notification-body"><strong>com ação</strong><p>tem botão de fechar.</p></div><button class="notification-close">×</button></div><div class="notification notification--info"><div class="notification-icon">i</div><div class="notification-body"><strong>sem ação</strong><p>não pode ser dispensada.</p></div></div></div>'),
+    states=demo('<div class="stack max-w-xs"><div class="notification notification--success"><div class="notification-icon">◆</div><div class="notification-body"><strong>com ação</strong><p>tem botão de fechar.</p></div><button class="notification-close">×</button></div><div class="notification notification--info"><div class="notification-icon">i</div><div class="notification-body"><strong>sem ação</strong><p>não pode ser dispensada.</p></div></div></div>'),
     modifiers=api_table([
         {"prop":".notification--success","type":"class","desc":"verde"},
         {"prop":".notification--error","type":"class","desc":"vermelho"},
@@ -50,7 +50,7 @@ write("pages/components/pagination.html", component_page(
     name="pagination",
     intro="Navegação entre páginas de resultado em listas e tabelas longas. Mostra qual página está ativa e total.",
     demo_html=demo('<div class="pagination"><div>mostrando 1-10 de 247</div><div class="pagination-items"><button disabled>← anterior</button><span>página 1 de 25</span><button>próximo →</button></div></div>'),
-    states=demo('<div class="stack" style="max-width: 720px"><div class="pagination"><div>10 / 100</div><div class="pagination-items"><button disabled>← anterior</button><span>página 1</span><button>próximo →</button></div></div><div class="pagination"><div>50 / 100</div><div class="pagination-items"><button>← anterior</button><span>página 5</span><button>próximo →</button></div></div><div class="pagination"><div>100 / 100</div><div class="pagination-items"><button>← anterior</button><span>página 10</span><button disabled>próximo →</button></div></div></div>'),
+    states=demo('<div class="stack prose"><div class="pagination"><div>10 / 100</div><div class="pagination-items"><button disabled>← anterior</button><span>página 1</span><button>próximo →</button></div></div><div class="pagination"><div>50 / 100</div><div class="pagination-items"><button>← anterior</button><span>página 5</span><button>próximo →</button></div></div><div class="pagination"><div>100 / 100</div><div class="pagination-items"><button>← anterior</button><span>página 10</span><button disabled>próximo →</button></div></div></div>'),
     modifiers=api_table([
         {"prop":".pagination","type":"class","desc":"container"},
         {"prop":".pagination-items","type":"class","desc":"grupo de controles"},
@@ -101,9 +101,9 @@ write("pages/components/search.html", component_page(
     page_id="search",
     name="search",
     intro="Input dedicado pra busca textual. Visualmente distinto de text-input regular pra reforçar a função.",
-    demo_html=demo('<div class="search" style="max-width: 480px"><input type="search" placeholder="// buscar componentes..."></div>'),
+    demo_html=demo('<div class="search max-w-xs"><input type="search" placeholder="// buscar componentes..."></div>'),
     sizes='<p class="t-secondary">Altura padrão 40px. Variantes futuras: small (32px) e large (48px).</p>',
-    states=demo('<div class="stack" style="max-width: 480px"><div class="search"><input type="search" placeholder="// vazio"></div><div class="search"><input type="search" value="button"></div><div class="search"><input type="search" placeholder="// disabled" disabled></div></div>'),
+    states=demo('<div class="stack max-w-xs"><div class="search"><input type="search" placeholder="// vazio"></div><div class="search"><input type="search" value="button"></div><div class="search"><input type="search" placeholder="// disabled" disabled></div></div>'),
     behaviors=checklist([
         "X aparece quando há valor (futuro — depende do browser)",
         "Enter dispara o submit do form",
@@ -195,11 +195,11 @@ write("pages/components/text-input.html", component_page(
     page_id="text-input",
     name="text-input",
     intro="Campo de texto single-line com label, helper e estados de validação. Variante textarea pra multi-line.",
-    demo_html=demo('<div style="max-width: 480px"><div class="form-group"><label class="form-label" for="ti">label</label><input class="input" id="ti" placeholder="// digite aqui"><div class="form-helper">texto de ajuda</div></div></div>'),
-    variants='<div class="stack-06" style="max-width: 480px"><div><h3 class="t-h02 mb-04">Text</h3>' + demo('<input class="input" placeholder="single line">') +
+    demo_html=demo('<div class="max-w-xs"><div class="form-group"><label class="form-label" for="ti">label</label><input class="input" id="ti" placeholder="// digite aqui"><div class="form-helper">texto de ajuda</div></div></div>'),
+    variants='<div class="stack-06 max-w-xs"><div><h3 class="t-h02 mb-04">Text</h3>' + demo('<input class="input" placeholder="single line">') +
         '</div><div><h3 class="t-h02 mb-04">Textarea</h3>' + demo('<textarea class="textarea" placeholder="multi-line"></textarea>') +
         '</div><div><h3 class="t-h02 mb-04">Select</h3>' + demo('<select class="select"><option>opção 1</option><option>opção 2</option></select>') + '</div></div>',
-    states='<div class="stack" style="max-width: 480px">' +
+    states='<div class="stack max-w-xs">' +
         demo('<div class="form-group"><label class="form-label" for="x1">default</label><input class="input" id="x1"></div>') +
         demo('<div class="form-group"><label class="form-label" for="x2">com valor</label><input class="input" id="x2" value="texto"></div>') +
         demo('<div class="form-group"><label class="form-label" for="x3">disabled</label><input class="input" id="x3" value="readonly" disabled></div>') +
@@ -234,10 +234,10 @@ write("pages/components/tile.html", component_page(
     name="tile",
     intro="Container retangular pra agrupar conteúdo relacionado. Variantes clicável (navega) e selecionável (seleção múltipla).",
     demo_html=demo('<div class="grid-3"><div class="tile"><h4>tile padrão</h4><p>card simples com fundo layer-01.</p></div><a class="tile tile--clickable" href="#"><h4>clicável</h4><p>hover muda borda e mostra barra verde.</p></a><div class="tile tile--selected"><h4>selecionado</h4><p>borda verde + fundo selected.</p></div></div>'),
-    variants='<div class="stack-06"><div><h3 class="t-h02 mb-04">Default</h3>' + demo('<div class="tile" style="max-width: 320px"><h4>título</h4><p>tile estático sem interação.</p></div>') +
-        '</div><div><h3 class="t-h02 mb-04">Clickable</h3>' + demo('<a class="tile tile--clickable" href="#" style="max-width: 320px"><h4>navegável</h4><p>vira link com hover.</p></a>') +
-        '</div><div><h3 class="t-h02 mb-04">Selected</h3>' + demo('<div class="tile tile--selected" style="max-width: 320px"><h4>opção escolhida</h4><p>usado em seleção visual de cards.</p></div>') +
-        '</div><div><h3 class="t-h02 mb-04">Bordered</h3>' + demo('<div class="tile tile--bordered" style="max-width: 320px"><h4>com borda</h4><p>destaca o tile do fundo.</p></div>') + '</div></div>',
+    variants='<div class="stack-06"><div><h3 class="t-h02 mb-04">Default</h3>' + demo('<div class="tile max-w-card"><h4>título</h4><p>tile estático sem interação.</p></div>') +
+        '</div><div><h3 class="t-h02 mb-04">Clickable</h3>' + demo('<a class="tile tile--clickable" href="#" class="max-w-card"><h4>navegável</h4><p>vira link com hover.</p></a>') +
+        '</div><div><h3 class="t-h02 mb-04">Selected</h3>' + demo('<div class="tile tile--selected max-w-card"><h4>opção escolhida</h4><p>usado em seleção visual de cards.</p></div>') +
+        '</div><div><h3 class="t-h02 mb-04">Bordered</h3>' + demo('<div class="tile tile--bordered max-w-card"><h4>com borda</h4><p>destaca o tile do fundo.</p></div>') + '</div></div>',
     states=demo('<div class="row"><div class="tile" style="max-width: 200px"><h4>default</h4><p>estático.</p></div><a class="tile tile--clickable" style="max-width: 200px;background: var(--layer-hover-01); border-color: var(--border-subtle-01)" href="#"><h4>hover</h4><p>borda subtle.</p></a><div class="tile tile--selected" style="max-width: 200px"><h4>selected</h4><p>com barra verde.</p></div></div>'),
     modifiers=api_table([
         {"prop":".tile","type":"class","desc":"tile base"},
