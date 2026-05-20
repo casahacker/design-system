@@ -300,36 +300,86 @@ write("pages/elements/grid.html", page(
     toc=[{"id":"breakpoints","label":"Breakpoints"},{"id":"columns","label":"Colunas"},{"id":"containers","label":"Containers"},{"id":"usage","label":"Quando usar"},{"id":"code","label":"Código"}],
 ))
 
+# --- Biblioteca real de 55 ícones disponíveis em assets/icons/sprite.svg
+ICON_GROUPS = [
+    ("Navigation", ["chevron-up","chevron-down","chevron-left","chevron-right","arrow-up","arrow-down","arrow-left","arrow-right","external"]),
+    ("UI Controls", ["close","menu","more-horizontal","more-vertical","plus","minus","check","search","settings","filter"]),
+    ("State & Feedback", ["info","warning","error","check-circle","help","loading"]),
+    ("Content", ["document","folder","image","code","terminal","copy","link","download","upload","share"]),
+    ("People & Communication", ["user","users","mail","phone","chat","bell"]),
+    ("Privacy & Security", ["eye","eye-off","lock","unlock","shield"]),
+    ("Time & Location", ["calendar","clock","location","globe"]),
+    ("Actions", ["edit","trash","star","bookmark","github"]),
+]
+def _icon_cell(name):
+    return (
+        f'<div class="icon-cell" style="display:flex;flex-direction:column;align-items:center;gap:var(--spacing-02);padding:var(--spacing-04);background:var(--layer-01);border:1px solid var(--border-subtle-00);transition:all 110ms;cursor:pointer" '
+        f'data-icon-name="{name}" title="clique pra copiar &quot;{name}&quot;">'
+        f'<svg class="ico ico--24" aria-hidden="true"><use href="../../assets/icons/sprite.svg#{name}"/></svg>'
+        f'<span style="font:var(--code-01);color:var(--text-helper)">{name}</span>'
+        f'</div>'
+    )
+def _icon_group(label, names):
+    cells = "".join(_icon_cell(n) for n in names)
+    return (
+        f'<div style="margin-bottom:var(--spacing-07)">'
+        f'<h3 class="t-h02" style="margin-bottom:var(--spacing-04)">{label} <span style="font:var(--code-01);color:var(--text-helper);margin-left:var(--spacing-03);text-transform:none">{len(names)}</span></h3>'
+        f'<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:var(--spacing-03)">{cells}</div>'
+        f'</div>'
+    )
+icons_html = "".join(_icon_group(lbl, names) for lbl, names in ICON_GROUPS)
+total_icons = sum(len(names) for _, names in ICON_GROUPS)
+
 write("pages/elements/iconography.html", page(
     "iconography", "Iconography",
     '<a href="../../index.html">home</a><span class="sep">/</span><a href="../about/index.html">foundations</a><span class="sep">/</span>iconography',
-    "Sistema de ícones BIT-aligned: tamanhos múltiplos de 8px, traço consistente, otimizados para 16/20/24/32px. SVG inline, sem icon font.",
+    f"Biblioteca de {total_icons} ícones BIT-aligned em SVG sprite. Grid 16×16px, traço 1.5px, currentColor por padrão. Zero icon font, zero dependência externa.",
     "".join([
-        sec("sizes", "tamanhos", "01",
-            '<p class="t-body-02 t-secondary mb-05 prose">Quatro tamanhos canônicos. Ícones desenhados em grid de 16 ou 24px, com traço 1.5 (small) ou 2 (medium+).</p>' +
-            table(["tamanho","px","uso"], [
-                ["xs","16px","inline em texto, botões small"],
-                ["sm","20px","botões standard, form fields"],
-                ["md","24px","menus, nav items"],
-                ["lg","32px","header, ações destacadas"],
+        sec("library", f"biblioteca · {total_icons} ícones", "01 · sprite svg",
+            '<p class="t-body-02 t-secondary mb-05 prose">Todos os ícones do sistema. Clique pra copiar o nome. Uso via <code class="code-inline">&lt;use href="../../assets/icons/sprite.svg#name"&gt;</code>.</p>' +
+            icons_html),
+        sec("sizes", "tamanhos", "02 · classes utility",
+            '<p class="t-body-02 t-secondary mb-05 prose">Cinco tamanhos canônicos via classes. Ícones desenhados em grid de 16px com traço 1.5px otimizado para 16/20/24px.</p>' +
+            demo(
+                '<div class="row" style="gap: var(--spacing-06); align-items: center;">'
+                '<div style="text-align:center"><svg class="ico ico--12" aria-hidden="true"><use href="../../assets/icons/sprite.svg#info"/></svg><div style="font:var(--code-01);color:var(--text-helper);margin-top:var(--spacing-02)">12</div></div>'
+                '<div style="text-align:center"><svg class="ico" aria-hidden="true"><use href="../../assets/icons/sprite.svg#info"/></svg><div style="font:var(--code-01);color:var(--text-helper);margin-top:var(--spacing-02)">16 · default</div></div>'
+                '<div style="text-align:center"><svg class="ico ico--20" aria-hidden="true"><use href="../../assets/icons/sprite.svg#info"/></svg><div style="font:var(--code-01);color:var(--text-helper);margin-top:var(--spacing-02)">20</div></div>'
+                '<div style="text-align:center"><svg class="ico ico--24" aria-hidden="true"><use href="../../assets/icons/sprite.svg#info"/></svg><div style="font:var(--code-01);color:var(--text-helper);margin-top:var(--spacing-02)">24</div></div>'
+                '<div style="text-align:center"><svg class="ico ico--32" aria-hidden="true"><use href="../../assets/icons/sprite.svg#info"/></svg><div style="font:var(--code-01);color:var(--text-helper);margin-top:var(--spacing-02)">32</div></div>'
+                '</div>'
+            ) +
+            table(["classe","px","uso"], [
+                [".ico--12","12px","inline em label-01"],
+                [".ico (default)","16px","inline em texto body, botões small"],
+                [".ico--20","20px","botões standard, form fields"],
+                [".ico--24","24px","menus, nav items, headers"],
+                [".ico--32","32px","header brand, ações destacadas"],
             ])),
-        sec("style", "estilo", "02",
-            '<p class="t-body-02 t-secondary mb-05 prose">Traço uniforme, cantos arredondados sutis (raio 1px em 16px grid), preenchimento sólido pra glifos críticos (sucesso, erro, alerta).</p>' +
-            demo('<div class="row" style="font-size: 24px; gap: var(--spacing-06);"><span>◆</span><span>→</span><span>↗</span><span>✓</span><span>✗</span><span>⚠</span><span>i</span><span>?</span><span>+</span><span>×</span></div>')),
-        sec("h-symbol", "h símbolo · marca casa hacker", "03",
+        sec("color", "cor · currentColor", "03",
+            '<p class="t-body-02 t-secondary mb-05 prose">Ícones herdam a cor do contexto via <code class="code-inline">currentColor</code>. Helpers para cores específicas.</p>' +
+            demo(
+                '<div class="row" style="gap: var(--spacing-06); align-items: center;">'
+                '<div style="text-align:center;color:var(--text-primary)"><svg class="ico ico--24" aria-hidden="true"><use href="../../assets/icons/sprite.svg#star"/></svg><div style="font:var(--code-01);color:var(--text-helper);margin-top:var(--spacing-02)">currentColor</div></div>'
+                '<div style="text-align:center"><svg class="ico ico--24 ico--code" aria-hidden="true"><use href="../../assets/icons/sprite.svg#star"/></svg><div style="font:var(--code-01);color:var(--text-helper);margin-top:var(--spacing-02)">.ico--code</div></div>'
+                '<div style="text-align:center"><svg class="ico ico--24 ico--muted" aria-hidden="true"><use href="../../assets/icons/sprite.svg#star"/></svg><div style="font:var(--code-01);color:var(--text-helper);margin-top:var(--spacing-02)">.ico--muted</div></div>'
+                '<div style="text-align:center;color:var(--support-error)"><svg class="ico ico--24" aria-hidden="true"><use href="../../assets/icons/sprite.svg#error"/></svg><div style="font:var(--code-01);color:var(--text-helper);margin-top:var(--spacing-02)">inherited</div></div>'
+                '</div>'
+            )),
+        sec("h-symbol", "h símbolo · marca casa hacker", "04",
             '<p class="t-body-02 t-secondary mb-05 prose">O H estilizado é o ícone-assinatura da marca. Sempre num grid 3×3 de quadrados, com 5 quadrados ativos no padrão H. Modificadores opcionais com animações CSS (todos respeitam prefers-reduced-motion).</p>' +
             demo('<div class="row" style="gap: var(--spacing-07);"><div class="h-symbol h-symbol--dark" style="width:32px;height:32px"><span class="on"></span><span></span><span class="on"></span><span></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span class="on"></span></div><div class="h-symbol h-symbol--dark" style="width:64px;height:64px"><span class="on"></span><span></span><span class="on"></span><span></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span class="on"></span></div><div class="h-symbol h-symbol--dark" style="width:128px;height:128px"><span class="on"></span><span></span><span class="on"></span><span></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span class="on"></span></div></div>')),
-        sec("h-symbol-variants", "variações animadas", "04",
+        sec("h-symbol-variants", "variações animadas", "05",
             demo('<div class="grid-3"><div style="text-align:center"><div class="h-symbol h-symbol--dark h-symbol--loading" style="width:64px;height:64px;margin:0 auto var(--spacing-04)"><span class="on"></span><span></span><span class="on"></span><span></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span class="on"></span></div><div class="t-helper">--loading</div></div><div style="text-align:center"><div class="h-symbol h-symbol--dark h-symbol--breathing" style="width:64px;height:64px;margin:0 auto var(--spacing-04)"><span class="on"></span><span></span><span class="on"></span><span></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span class="on"></span></div><div class="t-helper">--breathing</div></div><div style="text-align:center"><div class="h-symbol h-symbol--dark h-symbol--hover" style="width:64px;height:64px;margin:0 auto var(--spacing-04);cursor:pointer"><span class="on"></span><span></span><span class="on"></span><span></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span class="on"></span></div><div class="t-helper">--hover (passa mouse)</div></div></div>')),
-        sec("usage", "quando usar", "04",
+        sec("usage", "quando usar", "06",
             do_dont(
-                ["Ícones reforçam significado de texto, não substituem","Múltiplos de 8px (16, 24, 32, 40, 48)","Cor herdada do contexto (currentColor) sempre que possível","Traço consistente entre ícones da mesma área"],
-                ["Ícone sozinho pra ação crítica — sempre acompanhe de label/aria-label","Tamanhos arbitrários (19px, 21px)","Misturar estilos diferentes (filled + outlined) sem critério","Cores cruas em ícones — usa tokens"],
+                ["Ícones reforçam significado de texto, não substituem","Múltiplos de 8px (16, 24, 32, 40, 48)","Cor herdada do contexto (currentColor) sempre que possível","Traço consistente · usa o sprite oficial","Tap-target mínimo 44×44px em mobile"],
+                ["Ícone sozinho pra ação crítica — sempre acompanhe de label/aria-label","Tamanhos arbitrários (19px, 21px)","Misturar estilos diferentes (filled + outlined) sem critério","Cores cruas em ícones — usa currentColor ou tokens","Misturar ícones de bibliotecas diferentes"],
             )),
-        sec("code", "código", "05",
-            code('<span class="c">&lt;!-- ícone inline com currentColor --&gt;</span>\n&lt;<span class="k">svg</span> <span class="v">width</span>=<span class="s">"24"</span> <span class="v">height</span>=<span class="s">"24"</span> <span class="v">viewBox</span>=<span class="s">"0 0 24 24"</span> <span class="v">fill</span>=<span class="s">"currentColor"</span>&gt;\n  &lt;<span class="k">path</span> <span class="v">d</span>=<span class="s">"M12 2L2 22h20L12 2z"</span>/&gt;\n&lt;/<span class="k">svg</span>&gt;\n\n<span class="c">/* o ícone vai herdar a cor do parent */</span>\n<span class="k">.btn</span> { color: <span class="k">var</span>(--text-primary); }')),
+        sec("code", "código", "07",
+            code('<span class="c">&lt;!-- 1. usando o sprite (recomendado) --&gt;</span>\n&lt;<span class="k">svg</span> <span class="v">class</span>=<span class="s">"ico ico--24"</span> <span class="v">aria-hidden</span>=<span class="s">"true"</span>&gt;\n  &lt;<span class="k">use</span> <span class="v">href</span>=<span class="s">"/assets/icons/sprite.svg#search"</span>/&gt;\n&lt;/<span class="k">svg</span>&gt;\n\n<span class="c">&lt;!-- 2. com label acessível --&gt;</span>\n&lt;<span class="k">button</span> <span class="v">aria-label</span>=<span class="s">"buscar"</span>&gt;\n  &lt;<span class="k">svg</span> <span class="v">class</span>=<span class="s">"ico"</span> <span class="v">aria-hidden</span>=<span class="s">"true"</span>&gt;\n    &lt;<span class="k">use</span> <span class="v">href</span>=<span class="s">"#search"</span>/&gt;\n  &lt;/<span class="k">svg</span>&gt;\n&lt;/<span class="k">button</span>&gt;\n\n<span class="c">/* CSS: herda cor do parent */</span>\n<span class="k">.btn</span> {\n  color: <span class="k">var</span>(--text-primary);\n}\n<span class="k">.btn</span> <span class="k">.ico</span> {\n  <span class="c">/* já é currentColor por default */</span>\n}')),
     ]),
-    toc=[{"id":"sizes","label":"Tamanhos"},{"id":"style","label":"Estilo"},{"id":"h-symbol","label":"H símbolo"},{"id":"usage","label":"Quando usar"},{"id":"code","label":"Código"}],
+    toc=[{"id":"library","label":"Biblioteca"},{"id":"sizes","label":"Tamanhos"},{"id":"color","label":"Cor"},{"id":"h-symbol","label":"H símbolo"},{"id":"h-symbol-variants","label":"Variações"},{"id":"usage","label":"Quando usar"},{"id":"code","label":"Código"}],
 ))
 
 write("pages/elements/motion.html", page(

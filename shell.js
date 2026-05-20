@@ -740,6 +740,40 @@
   });
 
   /* --------------------------------------------------------------------- */
+  /*  Icon library · click to copy icon name                                */
+  /* --------------------------------------------------------------------- */
+  $$('.icon-cell').forEach(cell => {
+    cell.setAttribute('role', 'button');
+    cell.setAttribute('tabindex', '0');
+    const doCopy = async () => {
+      const name = cell.dataset.iconName;
+      if (!name) return;
+      try {
+        await navigator.clipboard.writeText(name);
+        const label = cell.querySelector('span');
+        if (label) {
+          const orig = label.textContent;
+          label.textContent = '✓ copied';
+          label.style.color = 'var(--ch-code-active)';
+          setTimeout(() => { label.textContent = orig; label.style.color = ''; }, 1100);
+        }
+      } catch (e) { /* clipboard unavailable */ }
+    };
+    cell.addEventListener('click', doCopy);
+    cell.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); doCopy(); }
+    });
+    cell.addEventListener('mouseenter', () => {
+      cell.style.borderColor = 'var(--ch-code)';
+      cell.style.background = 'var(--background-hover)';
+    });
+    cell.addEventListener('mouseleave', () => {
+      cell.style.borderColor = '';
+      cell.style.background = '';
+    });
+  });
+
+  /* --------------------------------------------------------------------- */
   /*  EASTER EGGS · personalidade hacker · ativados opt-in via interação    */
   /* --------------------------------------------------------------------- */
 

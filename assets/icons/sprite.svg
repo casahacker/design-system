@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+<!-- Casa Hacker DS · Icon library v1.0
+     Grid: 16×16 viewBox · BIT-aligned (8px module)
+     Stroke: 1.5px · fill=none por default · stroke=currentColor
+     Uso: <svg class="ico" width="16" height="16"><use href="../../assets/icons/sprite.svg#NAME"/></svg>
+     ou inline: <use href="#NAME"/> quando o sprite está embutido na página
+-->
+
+<!-- ===== Navigation ===== -->
+<symbol id="chevron-up" viewBox="0 0 16 16"><path d="M3 10l5-5 5 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="chevron-down" viewBox="0 0 16 16"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="chevron-left" viewBox="0 0 16 16"><path d="M10 3l-5 5 5 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="chevron-right" viewBox="0 0 16 16"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="arrow-up" viewBox="0 0 16 16"><path d="M8 13V3M4 7l4-4 4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="arrow-down" viewBox="0 0 16 16"><path d="M8 3v10M4 9l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="arrow-left" viewBox="0 0 16 16"><path d="M13 8H3M7 4L3 8l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="arrow-right" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="external" viewBox="0 0 16 16"><path d="M6 3h7v7M13 3L6 10M11 8v5H3V5h5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+
+<!-- ===== UI Controls ===== -->
+<symbol id="close" viewBox="0 0 16 16"><path d="M3 3l10 10M13 3L3 13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+<symbol id="menu" viewBox="0 0 16 16"><path d="M2 4h12M2 8h12M2 12h12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+<symbol id="more-horizontal" viewBox="0 0 16 16"><circle cx="3" cy="8" r="1" fill="currentColor"/><circle cx="8" cy="8" r="1" fill="currentColor"/><circle cx="13" cy="8" r="1" fill="currentColor"/></symbol>
+<symbol id="more-vertical" viewBox="0 0 16 16"><circle cx="8" cy="3" r="1" fill="currentColor"/><circle cx="8" cy="8" r="1" fill="currentColor"/><circle cx="8" cy="13" r="1" fill="currentColor"/></symbol>
+<symbol id="plus" viewBox="0 0 16 16"><path d="M8 3v10M3 8h10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+<symbol id="minus" viewBox="0 0 16 16"><path d="M3 8h10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+<symbol id="check" viewBox="0 0 16 16"><path d="M3 8l3.5 3.5L13 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="search" viewBox="0 0 16 16"><circle cx="7" cy="7" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 10l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+<symbol id="settings" viewBox="0 0 16 16"><circle cx="8" cy="8" r="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3 3l1.5 1.5M11.5 11.5L13 13M3 13l1.5-1.5M11.5 4.5L13 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+<symbol id="filter" viewBox="0 0 16 16"><path d="M2 3h12l-5 6v5l-2-1V9L2 3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+
+<!-- ===== State / Feedback ===== -->
+<symbol id="info" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 7v4M8 5v.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+<symbol id="warning" viewBox="0 0 16 16"><path d="M8 2l6.5 11h-13L8 2z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 6v3M8 11v.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+<symbol id="error" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5 5l6 6M11 5l-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+<symbol id="check-circle" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5 8l2.5 2.5L11 6.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="help" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M6 6c0-1.1.9-2 2-2s2 .9 2 2-2 1.5-2 3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="12" r=".75" fill="currentColor"/></symbol>
+<symbol id="loading" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="6 4" opacity=".5"/><path d="M8 2a6 6 0 016 6" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+
+<!-- ===== Content / Documents ===== -->
+<symbol id="document" viewBox="0 0 16 16"><path d="M3 2h7l3 3v9H3V2z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 2v3h3" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" fill="none"/></symbol>
+<symbol id="folder" viewBox="0 0 16 16"><path d="M2 4a1 1 0 011-1h3l1.5 1.5H13a1 1 0 011 1V12a1 1 0 01-1 1H3a1 1 0 01-1-1V4z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+<symbol id="image" viewBox="0 0 16 16"><rect x="2" y="3" width="12" height="10" rx="1" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="6" cy="7" r="1.5" fill="currentColor"/><path d="M2 11l3.5-3.5L8 10l3-3 3 3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+<symbol id="code" viewBox="0 0 16 16"><path d="M5 4L1 8l4 4M11 4l4 4-4 4M9 3l-2 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="terminal" viewBox="0 0 16 16"><rect x="1.5" y="3" width="13" height="10" rx="1" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M4 7l2 1.5L4 10M8 10h4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="copy" viewBox="0 0 16 16"><rect x="5" y="5" width="9" height="9" rx="1" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M2 9V3a1 1 0 011-1h6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+<symbol id="link" viewBox="0 0 16 16"><path d="M6.5 9.5l3-3M4 7L2.5 8.5a2.5 2.5 0 003.5 3.5L7.5 10.5M9 5.5L10.5 4a2.5 2.5 0 013.5 3.5L12.5 9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+<symbol id="download" viewBox="0 0 16 16"><path d="M8 2v9M4 7l4 4 4-4M2 14h12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="upload" viewBox="0 0 16 16"><path d="M8 13V4M4 8l4-4 4 4M2 2h12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="share" viewBox="0 0 16 16"><circle cx="3.5" cy="8" r="2" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12.5" cy="4" r="2" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12.5" cy="12" r="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5 7l6-2M5 9l6 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+
+<!-- ===== People / Communication ===== -->
+<symbol id="user" viewBox="0 0 16 16"><circle cx="8" cy="5.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M2.5 14a5.5 5.5 0 0111 0" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+<symbol id="users" viewBox="0 0 16 16"><circle cx="6" cy="6" r="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="5.5" r="1.75" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M1 14a5 5 0 0110 0M11 9a4 4 0 014 5" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+<symbol id="mail" viewBox="0 0 16 16"><rect x="1.5" y="3" width="13" height="10" rx="1" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M2 4l6 5 6-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+<symbol id="phone" viewBox="0 0 16 16"><path d="M3 2h2l1.5 4-2 1c.5 2 2 3.5 4 4l1-2 4 1.5v2c0 .5-.5 1-1 1-6 0-11-5-11-11 0-.5.5-1 1-1z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+<symbol id="chat" viewBox="0 0 16 16"><path d="M14 8c0 3-2.5 5-6 5l-2 2v-2.5C3.5 12 2 10 2 8c0-3 2.5-5 6-5s6 2 6 5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+<symbol id="bell" viewBox="0 0 16 16"><path d="M3.5 12c0-3 .5-3 .5-5a4 4 0 018 0c0 2 .5 2 .5 5h-9zM7 14h2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+
+<!-- ===== Privacy / Security ===== -->
+<symbol id="eye" viewBox="0 0 16 16"><path d="M1 8s2.5-4 7-4 7 4 7 4-2.5 4-7 4-7-4-7-4z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="8" cy="8" r="2" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+<symbol id="eye-off" viewBox="0 0 16 16"><path d="M2 8s2.5-4 7-4M14 8s-2.5 4-6 4M3 4l10 8M9 6.5l-3 3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="lock" viewBox="0 0 16 16"><rect x="3" y="7" width="10" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5 7V5a3 3 0 016 0v2" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+<symbol id="unlock" viewBox="0 0 16 16"><rect x="3" y="7" width="10" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5 7V5a3 3 0 015.83-1" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+<symbol id="shield" viewBox="0 0 16 16"><path d="M8 2L3 4v4c0 3 2 5 5 6 3-1 5-3 5-6V4l-5-2z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+
+<!-- ===== Time / Location ===== -->
+<symbol id="calendar" viewBox="0 0 16 16"><rect x="2" y="3" width="12" height="11" rx="1" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M2 6h12M5 2v3M11 2v3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+<symbol id="clock" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 4v4l3 2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+<symbol id="location" viewBox="0 0 16 16"><path d="M8 14s-5-5-5-9a5 5 0 0110 0c0 4-5 9-5 9z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="8" cy="5" r="2" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+<symbol id="globe" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M1.5 8h13M8 1.5c2 2 3 4 3 6.5s-1 4.5-3 6.5c-2-2-3-4-3-6.5s1-4.5 3-6.5z" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+
+<!-- ===== Common Actions ===== -->
+<symbol id="edit" viewBox="0 0 16 16"><path d="M2 14l4-1L13 6l-3-3L3 10l-1 4zM10 3l3 3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="trash" viewBox="0 0 16 16"><path d="M3 4h10M5 4V3a1 1 0 011-1h4a1 1 0 011 1v1M4 4l1 9a1 1 0 001 1h4a1 1 0 001-1l1-9M6.5 7v5M9.5 7v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="star" viewBox="0 0 16 16"><path d="M8 1.5l2 4.5 5 .5-4 3.5 1.5 5-4.5-3-4.5 3 1.5-5L1 6.5l5-.5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+<symbol id="bookmark" viewBox="0 0 16 16"><path d="M4 2h8v12l-4-3-4 3V2z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+<symbol id="github" viewBox="0 0 16 16"><path d="M8 1a7 7 0 00-2.2 13.6c.35.07.5-.15.5-.34v-1.2c-2 .43-2.4-.85-2.4-.85-.3-.83-.8-1.05-.8-1.05-.65-.45.05-.44.05-.44.72.05 1.1.75 1.1.75.65 1.1 1.7.8 2.1.6.07-.46.25-.78.45-.96-1.6-.18-3.3-.8-3.3-3.55 0-.8.28-1.43.75-1.95-.07-.18-.32-.93.07-1.93 0 0 .6-.2 2 .75A6.85 6.85 0 018 4.45c.6 0 1.22.08 1.8.24 1.4-.95 2-.75 2-.75.4 1 .15 1.75.07 1.93.47.52.75 1.15.75 1.95 0 2.76-1.7 3.37-3.3 3.55.25.23.48.66.48 1.34v2c0 .2.13.42.5.34A7 7 0 008 1z" fill="currentColor"/></symbol>
+
+</svg>
