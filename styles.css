@@ -2009,6 +2009,107 @@ kbd {
 /* -----------------------------------------------------------------------------
    11 · THEME TOGGLE (in header) · BACK-TO-TOP · PAGE NAV
    ----------------------------------------------------------------------------- */
+/* -----------------------------------------------------------------------------
+   COMMAND PALETTE (Cmd/Ctrl+K)
+   ----------------------------------------------------------------------------- */
+.cmdk-backdrop {
+  position: fixed; inset: 0;
+  background: rgba(60, 67, 60, 0.55);
+  z-index: var(--z-modal);
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 10vh;
+}
+.cmdk-backdrop.open { display: flex; }
+.cmdk {
+  background: var(--layer-01);
+  width: 100%;
+  max-width: 640px;
+  max-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-04);
+  border: 1px solid var(--border-subtle-00);
+  animation: ch-slide-up var(--duration-moderate-02) var(--ease-entrance);
+}
+.cmdk-input-wrap {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--border-subtle-00);
+  padding: 0 var(--spacing-05);
+  gap: var(--spacing-03);
+}
+.cmdk-input-wrap::before {
+  content: '/';
+  font: 600 18px/1 var(--font-mono);
+  color: var(--ch-code-active);
+}
+[data-theme="dark"] .cmdk-input-wrap::before { color: var(--ch-code); }
+.cmdk-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font: var(--body-02);
+  color: var(--text-primary);
+  padding: var(--spacing-05) 0;
+}
+.cmdk-kbd-hint {
+  font: var(--code-01);
+  color: var(--text-helper);
+  background: var(--layer-02);
+  padding: 2px 6px;
+  border: 1px solid var(--border-subtle-01);
+}
+.cmdk-list {
+  overflow-y: auto;
+  flex: 1;
+  padding: var(--spacing-03) 0;
+  list-style: none;
+  margin: 0;
+}
+.cmdk-section-label {
+  font: var(--code-01);
+  color: var(--text-helper);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: var(--spacing-04) var(--spacing-05) var(--spacing-02);
+}
+.cmdk-section-label::before { content: '// '; color: var(--ch-code); }
+.cmdk-item {
+  padding: var(--spacing-03) var(--spacing-05);
+  cursor: pointer;
+  border-left: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.cmdk-item:hover, .cmdk-item.focused {
+  background: var(--background-hover);
+  border-left-color: var(--ch-code);
+}
+.cmdk-item-title { font: var(--body-01); color: var(--text-primary); font-weight: 500; }
+.cmdk-item-desc { font: var(--code-01); color: var(--text-helper); }
+.cmdk-item-section { font: var(--code-01); color: var(--text-helper); }
+.cmdk-item-section::before { content: '→ '; color: var(--ch-code); }
+.cmdk-empty {
+  padding: var(--spacing-07);
+  text-align: center;
+  color: var(--text-helper);
+  font: var(--body-01);
+}
+.cmdk-footer {
+  border-top: 1px solid var(--border-subtle-00);
+  padding: var(--spacing-03) var(--spacing-05);
+  display: flex;
+  gap: var(--spacing-05);
+  font: var(--code-01);
+  color: var(--text-helper);
+  flex-wrap: wrap;
+}
+.cmdk-footer kbd { font: var(--code-01); background: var(--layer-02); border: 1px solid var(--border-subtle-01); padding: 1px 6px; border-radius: 2px; color: var(--text-primary); }
+
 .shell-theme-toggle {
   background: transparent;
   border: 1px solid transparent;

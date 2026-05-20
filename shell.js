@@ -420,6 +420,174 @@
   }
 
   /* --------------------------------------------------------------------- */
+  /*  COMMAND PALETTE (Cmd/Ctrl + K) · full-text search                     */
+  /* --------------------------------------------------------------------- */
+  (function commandPalette() {
+    let searchIndex = null;
+    let backdrop = null;
+    let input = null;
+    let list = null;
+    let items = [];
+    let focused = 0;
+
+    function loadIndex() {
+      if (searchIndex) return Promise.resolve(searchIndex);
+      return fetch(base + 'search-index.json')
+        .then(r => r.ok ? r.json() : [])
+        .then(data => { searchIndex = data; return data; })
+        .catch(() => []);
+    }
+
+    function render(html) {
+      backdrop = document.createElement('div');
+      backdrop.className = 'cmdk-backdrop';
+      backdrop.id = 'cmdkBackdrop';
+      backdrop.setAttribute('role', 'dialog');
+      backdrop.setAttribute('aria-modal', 'true');
+      backdrop.setAttribute('aria-label', 'busca global');
+      backdrop.innerHTML = `
+        <div class="cmdk">
+          <div class="cmdk-input-wrap">
+            <input class="cmdk-input" id="cmdkInput" placeholder="buscar páginas, componentes, seções..." autocomplete="off" spellcheck="false">
+            <span class="cmdk-kbd-hint" aria-hidden="true">esc</span>
+          </div>
+          <ul class="cmdk-list" id="cmdkList" role="listbox"></ul>
+          <div class="cmdk-footer">
+            <span><kbd>↑</kbd><kbd>↓</kbd> navegar</span>
+            <span><kbd>enter</kbd> abrir</span>
+            <span><kbd>esc</kbd> fechar</span>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(backdrop);
+      input = $('#cmdkInput', backdrop);
+      list = $('#cmdkList', backdrop);
+      backdrop.addEventListener('click', e => { if (e.target === backdrop) close(); });
+      input.addEventListener('input', () => renderResults(input.value.trim()));
+      input.addEventListener('keydown', onKey);
+    }
+
+    function score(query, page) {
+      const q = query.toLowerCase();
+      const title = (page.title || '').toLowerCase();
+      const intro = (page.intro || '').toLowerCase();
+      const section = (page.section || '').toLowerCase();
+      let s = 0;
+      if (title === q) s += 100;
+      if (title.startsWith(q)) s += 50;
+      if (title.includes(q)) s += 30;
+      if (section.includes(q)) s += 20;
+      if (intro.includes(q)) s += 10;
+      // h2 matches
+      (page.h2 || []).forEach(h => {
+        if (h.label.toLowerCase().includes(q)) s += 15;
+      });
+      return s;
+    }
+
+    function renderResults(query) {
+      if (!searchIndex) return;
+      items = [];
+      let html = '';
+
+      if (!query) {
+        // Mostra navegação por seções (lista mais curta)
+        const bySection = {};
+        searchIndex.forEach(p => {
+          (bySection[p.section] = bySection[p.section] || []).push(p);
+        });
+        Object.keys(bySection).forEach(sec => {
+          html += `<li class="cmdk-section-label" aria-hidden="true">${sec}</li>`;
+          bySection[sec].slice(0, 5).forEach(p => {
+            const idx = items.length;
+            items.push(p);
+            html += `<li class="cmdk-item" role="option" data-idx="${idx}">
+              <span class="cmdk-item-title">${p.title}</span>
+              <span class="cmdk-item-desc">${p.intro.slice(0, 80) || ''}</span>
+            </li>`;
+          });
+        });
+      } else {
+        // Busca por relevância
+        const scored = searchIndex
+          .map(p => ({ p, s: score(query, p) }))
+          .filter(x => x.s > 0)
+          .sort((a, b) => b.s - a.s)
+          .slice(0, 30);
+        if (!scored.length) {
+          html = `<li class="cmdk-empty">nada encontrado pra "${query}"</li>`;
+        } else {
+          scored.forEach(({ p }) => {
+            const idx = items.length;
+            items.push(p);
+            html += `<li class="cmdk-item" role="option" data-idx="${idx}">
+              <span class="cmdk-item-title">${p.title}</span>
+              <span class="cmdk-item-section">${p.section}</span>
+              <span class="cmdk-item-desc">${p.intro.slice(0, 100) || ''}</span>
+            </li>`;
+          });
+        }
+      }
+      list.innerHTML = html;
+      focused = 0;
+      updateFocus();
+      $$('.cmdk-item', list).forEach(el => {
+        el.addEventListener('click', () => open(items[+el.dataset.idx]));
+        el.addEventListener('mouseover', () => {
+          focused = +el.dataset.idx;
+          updateFocus();
+        });
+      });
+    }
+
+    function updateFocus() {
+      $$('.cmdk-item', list).forEach((el, i) => {
+        el.classList.toggle('focused', i === focused);
+        if (i === focused) el.scrollIntoView({ block: 'nearest' });
+      });
+    }
+
+    function onKey(e) {
+      if (e.key === 'ArrowDown') { e.preventDefault(); focused = Math.min(items.length - 1, focused + 1); updateFocus(); }
+      if (e.key === 'ArrowUp')   { e.preventDefault(); focused = Math.max(0, focused - 1); updateFocus(); }
+      if (e.key === 'Enter')     { e.preventDefault(); if (items[focused]) open(items[focused]); }
+      if (e.key === 'Escape')    { e.preventDefault(); close(); }
+    }
+
+    function open(page) {
+      if (page && page.url) {
+        window.location.href = base + page.url;
+      }
+    }
+
+    function show() {
+      loadIndex().then(() => {
+        if (!backdrop) render();
+        backdrop.classList.add('open');
+        input.value = '';
+        renderResults('');
+        setTimeout(() => input.focus(), 50);
+      });
+    }
+    function close() {
+      backdrop?.classList.remove('open');
+    }
+
+    // Atalho Cmd/Ctrl+K
+    document.addEventListener('keydown', e => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        if (backdrop?.classList.contains('open')) close();
+        else show();
+      }
+    });
+
+    // Expor publicamente
+    window.CHDS = window.CHDS || {};
+    window.CHDS.openCommandPalette = show;
+  })();
+
+  /* --------------------------------------------------------------------- */
   /*  Keyboard shortcuts: "/" focus search, "Esc" close menu                */
   /* --------------------------------------------------------------------- */
   document.addEventListener('keydown', e => {
