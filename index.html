@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="ch-page" content="home">
+<meta name="ch-base" content="./">
+<meta name="description" content="Casa Hacker Design System — sistema de design baseado em IBM Carbon, reskinned com a identidade Casa Hacker. Tokens, componentes, padrões, submarcas e impressos.">
+<meta name="theme-color" content="#3C433C">
+<meta property="og:title" content="Casa Hacker Design System">
+<meta property="og:description" content="Sistema de design completo: foundations, componentes, padrões, submarcas e impressos.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>Casa Hacker Design System</title>
+<link rel="preload" href="fonts/IBM_Plex_Mono/IBMPlexMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/Roboto_Flex/RobotoFlex-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* Landing-only styles */
+  .hero-landing {
+    padding: var(--spacing-12) 0 var(--spacing-10);
+    border-bottom: 1px solid var(--border-subtle-00);
+    margin-bottom: var(--spacing-10);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-landing .eyebrow {
+    font: var(--label-01); text-transform: uppercase; letter-spacing: 0.15em;
+    color: var(--text-helper); margin-bottom: var(--spacing-05);
+    display: flex; align-items: center; gap: var(--spacing-03);
+  }
+  .hero-landing .eyebrow::before {
+    content: ''; width: 24px; height: 1px; background: var(--ch-code);
+  }
+  .hero-landing h1 {
+    font: 300 clamp(48px, 6vw, 84px)/0.98 var(--font-sans);
+    letter-spacing: -0.035em;
+    margin-bottom: var(--spacing-06);
+    color: var(--text-primary);
+  }
+  .hero-landing h1 .green {
+    background: var(--ch-code); color: var(--ch-dos);
+    padding: 0 0.15em; font-weight: 700;
+  }
+  .hero-landing .lead {
+    font: var(--body-02); color: var(--text-secondary);
+    max-width: 640px; line-height: 1.6; margin-bottom: var(--spacing-07);
+  }
+  .hero-h {
+    position: absolute; top: var(--spacing-09); right: 0;
+    width: 240px; height: 240px;
+    opacity: 0.08; pointer-events: none;
+  }
+  .hero-h .h-symbol { width: 100%; height: 100%; }
+  .hero-h .h-symbol span.on { background: var(--ch-dos); }
+  [data-theme="dark"] .hero-h .h-symbol span.on { background: var(--ch-css); }
+
+  .quick-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border-subtle-00);
+    border: 1px solid var(--border-subtle-00);
+    margin-bottom: var(--spacing-10);
+  }
+  .quick-stat { background: var(--layer-01); padding: var(--spacing-06); }
+  .quick-stat .num {
+    font: 600 36px/1 var(--font-mono);
+    color: var(--text-primary); margin-bottom: var(--spacing-03);
+  }
+  .quick-stat .num .unit { color: var(--ch-code); font-size: 0.6em; margin-left: var(--spacing-02); }
+  .quick-stat .label {
+    font: var(--label-01); text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--text-helper);
+  }
+
+  .section-cards {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-05); margin-bottom: var(--spacing-10);
+  }
+  .section-card {
+    background: var(--layer-01); border: 1px solid var(--border-subtle-00);
+    padding: var(--spacing-07); text-decoration: none; color: inherit;
+    transition: all var(--duration-fast-02); position: relative; display: block;
+  }
+  .section-card:hover {
+    border-color: var(--ch-code); color: inherit;
+    transform: translateY(-2px);
+  }
+  .section-card:hover::before {
+    content: ''; position: absolute; top: 0; left: 0;
+    width: 100%; height: 3px; background: var(--ch-code);
+  }
+  .section-card .meta {
+    font: var(--label-01); color: var(--text-helper);
+    text-transform: uppercase; letter-spacing: 0.1em;
+    margin-bottom: var(--spacing-04);
+  }
+  .section-card .meta::before { content: '// '; color: var(--ch-code); }
+  .section-card h3 { font: var(--heading-03); margin-bottom: var(--spacing-03); letter-spacing: -0.015em; }
+  .section-card p { font: var(--body-01); color: var(--text-secondary); margin-bottom: var(--spacing-05); line-height: 1.55; }
+  .section-card .cta { font: var(--label-02); color: var(--ch-code-active); }
+  [data-theme="dark"] .section-card .cta { color: var(--ch-code); }
+  .section-card .cta::after { content: ' →'; transition: transform var(--duration-fast-02); display: inline-block; }
+  .section-card:hover .cta::after { transform: translateX(4px); }
+
+  .home-quickstart {
+    background: var(--layer-02);
+    padding: var(--spacing-09);
+    margin-left: calc(var(--spacing-10) * -1);
+    margin-right: calc(var(--spacing-10) * -1);
+  }
+  .home-quickstart-inner { max-width: 800px; margin: 0 auto; }
+
+  @media (max-width: 1024px) {
+    .quick-stats { grid-template-columns: repeat(2, 1fr); }
+    .section-cards { grid-template-columns: 1fr; }
+    .hero-h { display: none; }
+    .home-quickstart { margin-left: calc(var(--spacing-06) * -1); margin-right: calc(var(--spacing-06) * -1); padding: var(--spacing-07); }
+  }
+  @media (max-width: 600px) {
+    .home-quickstart { margin-left: calc(var(--spacing-05) * -1); margin-right: calc(var(--spacing-05) * -1); padding: var(--spacing-06); }
+  }
+</style>
+</head>
+<body>
+
+<main class="main" id="main-content">
+
+  <section class="hero-landing">
+    <div class="hero-h" aria-hidden="true">
+      <div class="h-symbol">
+        <span class="on"></span><span></span><span class="on"></span>
+        <span></span><span class="on"></span><span class="on"></span>
+        <span class="on"></span><span></span><span class="on"></span>
+      </div>
+    </div>
+    <div class="eyebrow">design system · v1.0 · forked from ibm carbon</div>
+    <h1>casa <span class="green">hacker</span><br>design system</h1>
+    <p class="lead">
+      Um sistema de design construído sobre a estrutura sólida do IBM Carbon e
+      reskinned com a identidade Casa Hacker. Princípios, tokens, componentes,
+      submarcas e diretrizes para materiais impressos — tudo num lugar só.
+    </p>
+    <div class="row">
+      <a href="pages/about/index.html" class="btn btn--primary">começar</a>
+      <a href="pages/elements/color.html" class="btn btn--ghost">explorar tokens</a>
+    </div>
+  </section>
+
+  <section class="quick-stats" aria-label="estatísticas do sistema">
+    <div class="quick-stat"><div class="num">3</div><div class="label">font families</div></div>
+    <div class="quick-stat"><div class="num">22</div><div class="label">componentes</div></div>
+    <div class="quick-stat"><div class="num">5</div><div class="label">submarcas</div></div>
+    <div class="quick-stat"><div class="num">67<span class="unit">+</span></div><div class="label">grafismos</div></div>
+  </section>
+
+  <section class="section" id="foundation">
+    <div class="section-head">
+      <h2>foundations</h2>
+      <span class="meta">01 · elementos base</span>
+    </div>
+    <div class="section-cards">
+      <a class="section-card" href="pages/elements/color.html">
+        <div class="meta">color</div>
+        <h3>paleta + tokens semânticos</h3>
+        <p>11 cores brand mapeadas para tokens Carbon. Light + dark theme, com a cor PURPLE do Perifa Impacto.</p>
+        <span class="cta">explorar color</span>
+      </a>
+      <a class="section-card" href="pages/elements/typography.html">
+        <div class="meta">typography</div>
+        <h3>plex mono · roboto flex · vt323</h3>
+        <p>Três famílias self-hosted. Roboto Flex com 13 eixos variáveis e playground interativo.</p>
+        <span class="cta">explorar typography</span>
+      </a>
+      <a class="section-card" href="pages/elements/spacing.html">
+        <div class="meta">spacing · bit</div>
+        <h3>escala 01-13 baseada em bits</h3>
+        <p>O BIT (8px) é a unidade base. Toda a escala de spacing são múltiplos ou frações dele.</p>
+        <span class="cta">explorar spacing</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="section" id="components">
+    <div class="section-head">
+      <h2>components</h2>
+      <span class="meta">02 · blocos de interface</span>
+    </div>
+    <div class="section-cards">
+      <a class="section-card" href="pages/components/button.html">
+        <div class="meta">button</div>
+        <h3>5 variantes · 4 tamanhos</h3>
+        <p>Primary, secondary, tertiary, ghost, danger. Hover, focus, disabled, loading e contraste AA garantido.</p>
+        <span class="cta">explorar button</span>
+      </a>
+      <a class="section-card" href="pages/components/index.html">
+        <div class="meta">overview · 22 itens</div>
+        <h3>biblioteca completa</h3>
+        <p>Tag, Tile, Form, Notification, Tabs, Modal, Data Table, Dropdown — todos os componentes do sistema.</p>
+        <span class="cta">ver overview</span>
+      </a>
+      <a class="section-card" href="pages/patterns/bit-system.html">
+        <div class="meta">pattern</div>
+        <h3>bit modular system</h3>
+        <p>O DNA visual: como o BIT primitivo gera símbolos, padrões, enquadramentos e identidades de submarcas.</p>
+        <span class="cta">explorar bit</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="section" id="brand">
+    <div class="section-head">
+      <h2>brand</h2>
+      <span class="meta">03 · marca + aplicações</span>
+    </div>
+    <div class="section-cards">
+      <a class="section-card" href="pages/submarcas/index.html">
+        <div class="meta">submarcas · 5</div>
+        <h3>família de marcas</h3>
+        <p>Inclusão Tech, Minas em Tech, Mão na Massa, Perifa Impacto, Hackerclubes — cada uma com identidade própria.</p>
+        <span class="cta">ver todas</span>
+      </a>
+      <a class="section-card" href="pages/impressos/index.html">
+        <div class="meta">impressos</div>
+        <h3>papelaria · eventos · loja</h3>
+        <p>Diretrizes para materiais físicos: cartões, sinalização de eventos, brindes, t-shirts e merchandise.</p>
+        <span class="cta">explorar impressos</span>
+      </a>
+      <a class="section-card" href="pages/patterns/grafismos.html">
+        <div class="meta">grafismos · 67+</div>
+        <h3>biblioteca de padrões</h3>
+        <p>Patterns geométricos derivados do BIT: tessellations isométricas, padrões pixel, ornamentos modulares.</p>
+        <span class="cta">ver biblioteca</span>
+      </a>
+    </div>
+  </section>
+
+  <div class="bit-divider" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <section class="home-quickstart">
+    <div class="home-quickstart-inner">
+      <span class="t-label-01" style="color: var(--text-helper);">// quickstart</span>
+      <h2 class="t-h05" style="margin: var(--spacing-04) 0 var(--spacing-05);">usar em um projeto</h2>
+      <p class="t-body-02 t-secondary" style="margin-bottom: var(--spacing-06);">
+        Importe o CSS base, use os tokens via CSS custom properties, e componha com as classes utilitárias.
+      </p>
+      <div class="code-snippet"><span class="c">// 1. importe o stylesheet base</span>
+<span class="k">@import</span> <span class="s">"@casahacker/ds/styles.css"</span>;
+
+<span class="c">// 2. use os tokens em seus próprios componentes</span>
+<span class="k">.my-button</span> {
+  background: <span class="k">var</span>(--ch-code);
+  color: <span class="k">var</span>(--text-on-color);
+  font: <span class="k">var</span>(--label-02);
+  padding: <span class="k">var</span>(--spacing-04) <span class="k">var</span>(--spacing-05);
+}</div>
+    </div>
+  </section>
+
+</main>
+
+<script src="shell.js"></script>
+<script src="components.js"></script>
+</body>
+</html>

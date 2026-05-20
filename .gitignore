@@ -1,0 +1,21 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Python (scripts dir)
+__pycache__/
+*.pyc
+scripts/__pycache__/
+
+# Claude / Agent
+.claude/
+
+# Raw source assets (2GB · referência local apenas, não pro repo público)
+casahacker-assets/
+
+# Discovery doc (interno · não publicar)
+DISCOVERY.md

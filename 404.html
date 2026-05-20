@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="ch-page" content="404">
+<meta name="ch-base" content="./">
+<title>404 · Casa Hacker DS</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .err-wrap { padding: var(--spacing-12) 0; text-align: left; max-width: 720px; }
+  .err-code {
+    font: 300 clamp(96px, 18vw, 220px)/0.9 var(--font-sans);
+    color: var(--ch-code);
+    letter-spacing: -0.05em;
+    margin-bottom: var(--spacing-06);
+  }
+  .err-code .x { color: var(--text-primary); }
+  .err-title { font: var(--heading-05); letter-spacing: -0.02em; margin-bottom: var(--spacing-04); }
+  .err-msg { font: var(--body-02); color: var(--text-secondary); margin-bottom: var(--spacing-07); }
+  .err-paths {
+    background: var(--code-snippet-bg);
+    color: var(--code-snippet-fg);
+    padding: var(--spacing-05);
+    font: var(--code-02);
+    margin-bottom: var(--spacing-07);
+    border-left: 2px solid var(--ch-code);
+  }
+  .err-paths .label { color: var(--ch-java); }
+</style>
+</head>
+<body>
+<main class="main">
+  <div class="err-wrap">
+    <div class="page-breadcrumb">erro · 404</div>
+    <div class="err-code">4<span class="x">0</span>4</div>
+    <h1 class="err-title">página não encontrada</h1>
+    <p class="err-msg">A rota solicitada não existe no Casa Hacker Design System. Pode ter sido renomeada, movida ou nunca ter existido.</p>
+    <div class="err-paths" id="errPaths"><span class="label">// path:</span> <span id="errPath"></span></div>
+    <div class="row">
+      <a class="btn btn--primary" href="./index.html">voltar pra home</a>
+      <a class="btn btn--ghost" href="./pages/help/index.html">ir pro help</a>
+    </div>
+  </div>
+</main>
+<script>document.getElementById('errPath').textContent = window.location.pathname;</script>
+<script src="shell.js"></script>
+</body>
+</html>
