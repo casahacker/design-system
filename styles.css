@@ -2060,6 +2060,79 @@ body { padding-top: 32px; }
 .shell-brand:hover .h-mini { animation: ch-h-breathe 1.4s ease-in-out infinite; }
 
 /* -----------------------------------------------------------------------------
+   EASTER EGG · TERMINAL MODE (Konami code)
+   ----------------------------------------------------------------------------- */
+html.ch-terminal-mode {
+  --background: #000;
+  --layer-01: #0a0a0a;
+  --layer-02: #111;
+  --layer-03: #1a1a1a;
+  --text-primary: var(--ch-code);
+  --text-secondary: #5CFFAA;
+  --text-helper: #2EBE7A;
+  --text-on-color: #000;
+  --border-subtle-00: #1c4a30;
+  --border-subtle-01: #2EBE7A;
+  --link-primary: var(--ch-code);
+}
+html.ch-terminal-mode body,
+html.ch-terminal-mode .main,
+html.ch-terminal-mode .t-body-01,
+html.ch-terminal-mode .t-body-02 {
+  font-family: var(--font-pixel), var(--font-mono) !important;
+  font-size: 18px;
+}
+html.ch-terminal-mode .shell-header { background: #000; border-bottom-color: var(--ch-code); }
+html.ch-terminal-mode .sidebar { background: #0a0a0a; }
+
+.ch-easter-tip {
+  position: fixed;
+  bottom: var(--spacing-09);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--ch-dos);
+  color: var(--ch-code);
+  padding: var(--spacing-04) var(--spacing-06);
+  font: var(--code-02);
+  z-index: var(--z-toast);
+  border: 1px solid var(--ch-code);
+  animation: ch-fade-in var(--duration-fast-02);
+  font-family: var(--font-pixel);
+}
+
+/* -----------------------------------------------------------------------------
+   GRAFISMOS · helpers de uso in-context
+   ----------------------------------------------------------------------------- */
+.bg-grafismo {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.bg-grafismo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.06;
+  background-repeat: repeat;
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+.bg-grafismo--checker::before {
+  background-image: repeating-linear-gradient(45deg, var(--ch-code) 0 8px, transparent 8px 16px);
+}
+.bg-grafismo--dots::before {
+  background-image: radial-gradient(circle at center, var(--ch-code) 2px, transparent 2px);
+  background-size: 16px 16px;
+  opacity: 0.12;
+}
+.bg-grafismo--iso::before {
+  background-image: linear-gradient(135deg, var(--ch-code) 25%, transparent 25%), linear-gradient(225deg, var(--ch-code) 25%, transparent 25%);
+  background-size: 24px 24px;
+  opacity: 0.08;
+}
+
+/* -----------------------------------------------------------------------------
    10 · UTILITIES
    ----------------------------------------------------------------------------- */
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-05); }

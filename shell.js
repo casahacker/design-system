@@ -697,6 +697,72 @@
   });
 
   /* --------------------------------------------------------------------- */
+  /*  EASTER EGGS · personalidade hacker · ativados opt-in via interação    */
+  /* --------------------------------------------------------------------- */
+
+  // Console ASCII art na primeira abertura do DevTools
+  console.log(
+    '%c\n' +
+    '  ██  ██  ██████ ██████ ██  ██ ██████ ██████\n' +
+    '  ██  ██ ██   ██ ██     ██ ██  ██     ██   ██\n' +
+    '  ██████ ████████ ██     ████   ████   ██████\n' +
+    '  ██  ██ ██   ██ ██     ██ ██  ██     ██   ██\n' +
+    '  ██  ██ ██   ██ ██████ ██  ██ ██████ ██   ██\n' +
+    '\n' +
+    '  // casa hacker design system v1.0\n' +
+    '  // github.com/casahacker/design-system\n' +
+    '  // hack the future\n',
+    'color:#32FA96;font-family:monospace;line-height:1.2;font-weight:bold'
+  );
+
+  // Konami code → terminal mode temporário
+  (function konami() {
+    const code = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+    let pos = 0;
+    document.addEventListener('keydown', e => {
+      const k = e.key;
+      if (k === code[pos] || k.toLowerCase() === code[pos]) {
+        pos++;
+        if (pos === code.length) {
+          activateTerminalMode();
+          pos = 0;
+        }
+      } else { pos = 0; }
+    });
+
+    function activateTerminalMode() {
+      if (document.documentElement.classList.contains('ch-terminal-mode')) {
+        document.documentElement.classList.remove('ch-terminal-mode');
+        return;
+      }
+      document.documentElement.classList.add('ch-terminal-mode');
+      // Mensagem flutuante
+      const tip = document.createElement('div');
+      tip.className = 'ch-easter-tip';
+      tip.textContent = '◆ terminal mode ativado · digite konami de novo pra sair';
+      document.body.appendChild(tip);
+      setTimeout(() => tip.remove(), 4000);
+    }
+  })();
+
+  // Digitar "hack" em qualquer lugar → glitch no H da brand
+  (function hackGlitch() {
+    let buf = '';
+    document.addEventListener('keydown', e => {
+      if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') return;
+      if (e.key.length === 1) buf = (buf + e.key.toLowerCase()).slice(-4);
+      if (buf === 'hack') {
+        const h = $('.shell-brand .h-mini');
+        if (h) {
+          h.classList.add('h-symbol--glitch');
+          setTimeout(() => h.classList.remove('h-symbol--glitch'), 250);
+        }
+        buf = '';
+      }
+    });
+  })();
+
+  /* --------------------------------------------------------------------- */
   /*  Scroll active section in nav into view                                */
   /* --------------------------------------------------------------------- */
   const activeLink = $('.nav-section a.active');

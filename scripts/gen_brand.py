@@ -44,14 +44,14 @@ write("pages/submarcas/index.html", page(
 # Individual submarca pages
 for slug, title, desc, color, foco in SUBMARCAS:
     logo_path = first_svg(slug)
-    logo_html = f'<img src="{logo_path}" alt="logo {title}" style="max-width: 280px; max-height: 120px; margin: 0 auto;">' if logo_path else f'<div class="t-h04 text-helper">{title}</div>'
+    logo_html = f'<img src="{logo_path}" alt="logo {title}" loading="lazy" decoding="async" style="max-width: 280px; max-height: 120px; margin: 0 auto;">' if logo_path else f'<div class="t-h04 text-helper">{title}</div>'
     write(f"pages/submarcas/{slug}.html", page(
         slug, title,
         f'<a href="../../index.html">home</a><span class="sep">/</span><a href="index.html">submarcas</a><span class="sep">/</span>{slug}',
         desc,
         "".join([
             sec("logo", "logo", "01",
-                f'<div class="logo-stage" style="background: var(--logo-stage-bg); padding: var(--spacing-09); border: 1px solid var(--logo-stage-border); text-align: center;">{logo_html}</div>'),
+                f'<div class="logo-stage bg-grafismo bg-grafismo--iso" style="background: var(--logo-stage-bg); padding: var(--spacing-09); border: 1px solid var(--logo-stage-border); text-align: center;">{logo_html}</div>'),
             sec("color", "cor signature", "02",
                 f'<div class="grid-3"><div class="tile" style="background:{color}; color: var(--ch-css)"><h4 style="color: var(--ch-css)">{title.lower()}</h4><p style="color: var(--ch-css)">{color}</p></div><div class="tile tile--bordered"><h4>foco</h4><p>{foco}</p></div><div class="tile tile--bordered"><h4>aplicação</h4><p>Materiais digitais e impressos relacionados ao programa.</p></div></div>'),
             sec("usage", "regras de uso", "03",
