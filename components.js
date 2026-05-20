@@ -234,7 +234,7 @@
     const n = document.createElement('div');
     n.className = `notification notification--${kind}`;
     n.setAttribute('role', 'status');
-    const icons = { success: '◆', error: '⚠', warning: '⚠', info: 'i' };
+    const icons = { success: '✓', error: '⚠', warning: '⚠', info: 'i' };
     n.innerHTML = `
       <div class="notification-icon" aria-hidden="true">${icons[kind] || 'i'}</div>
       <div class="notification-body">

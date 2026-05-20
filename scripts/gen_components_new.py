@@ -167,11 +167,11 @@ write("pages/components/inline-notification.html", component_page(
     demo_html=demo('<div class="stack">' +
         '<div class="notification notification--inline notification--info"><div class="notification-icon">i</div><div class="notification-body"><strong>nova versão disponível</strong><p>v1.1 chegou com toggle, slider e file uploader.</p></div><button class="notification-close" aria-label="dispensar">×</button></div>' +
         '<div class="notification notification--inline notification--warning"><div class="notification-icon">⚠</div><div class="notification-body"><strong>cuidado</strong><p>essa ação vai afetar 247 registros.</p></div></div>' +
-        '<div class="notification notification--inline notification--success"><div class="notification-icon">◆</div><div class="notification-body"><strong>dados sincronizados</strong><p>tudo certo, última atualização há 2 minutos.</p></div></div>' +
+        '<div class="notification notification--inline notification--success"><div class="notification-icon">✓</div><div class="notification-body"><strong>dados sincronizados</strong><p>tudo certo, última atualização há 2 minutos.</p></div></div>' +
         '</div>'),
     variants='<p class="t-secondary mb-04">Mesmas 4 cores do notification base (success/error/warning/info), mas com fundo --layer-02 e sem shadow.</p>' +
         demo('<div class="stack">' +
-        '<div class="notification notification--inline notification--success"><div class="notification-icon">◆</div><div class="notification-body"><strong>success</strong><p>operação concluída.</p></div></div>' +
+        '<div class="notification notification--inline notification--success"><div class="notification-icon">✓</div><div class="notification-body"><strong>success</strong><p>operação concluída.</p></div></div>' +
         '<div class="notification notification--inline notification--error"><div class="notification-icon">⚠</div><div class="notification-body"><strong>error</strong><p>algo deu errado.</p></div></div>' +
         '<div class="notification notification--inline notification--warning"><div class="notification-icon">⚠</div><div class="notification-body"><strong>warning</strong><p>atenção a isso.</p></div></div>' +
         '<div class="notification notification--inline notification--info"><div class="notification-icon">i</div><div class="notification-body"><strong>info</strong><p>fyi.</p></div></div>' +

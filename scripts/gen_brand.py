@@ -12,7 +12,7 @@ ROOT = "C:/Users/geraldo_casahacker/Downloads/design-system"
 PRIMARY_LOGO = {
     "hackerclubes":     "HACKERCLUBES_Artboard 103.svg",   # Code + Dos
     "inclusao-tech":    "INC_TECH_Artboard 159.svg",       # Code + Dos
-    "internet-segura":  "cartaz.svg",  # cartaz da campanha (sem logo limpo ainda)
+    "internet-segura":  "logo.svg",  # logo limpo · viewBox 123×35.25 (horizontal)
     "mao-na-massa":     "MÃO_MASSA_Artboard 196.svg",      # Code + Dos
     "minas-em-tech":    "MINAS_TECH_Artboard 179.svg",     # Dos + Pink (signature)
     "perifa-impacto":   "PERIFA_IMPACTO_Artboard 131.svg", # Dos + Purple (signature)
@@ -42,15 +42,26 @@ SUBMARCAS = [
     ("internet-segura",  "Internet Segura",  "Campanha de cidadania digital · slogan 'a internet que joga junto'. Material educativo sobre uso seguro da internet.","var(--ch-sub-internet-segura)", "Segurança digital · educação crítica"),
     ("minas-em-tech",    "Minas em Tech",    "Mulheres na tecnologia. Pink como cor signature celebra protagonismo feminino.",                                     "var(--ch-sub-minas-em-tech)",   "Mulheres na tecnologia"),
     ("mao-na-massa",     "Mão na Massa",     "Programa hands-on: oficinas práticas, makers, fabricação. Script orange traduz energia DIY.",                        "var(--ch-sub-mao-na-massa)",    "Faça-você-mesmo · oficinas"),
-    ("perifa-impacto",   "Perifa Impacto",   "Tecnologia + impacto social na periferia. Purple como signature — mesma cor da IA.",                                  "var(--ch-sub-perifa-impacto)",  "Periferia · impacto social · IA"),
+    ("perifa-impacto",   "PerifaImpacto",   "Tecnologia + impacto social na periferia. Purple como signature — mesma cor da IA.",                                  "var(--ch-sub-perifa-impacto)",  "Periferia · impacto social · IA"),
 ]
 
 # Submarcas index · cada card mostra a cor signature como barra superior
+# Slug → label-curto (caixa baixa, grafias oficiais)
+CHIP_LABEL = {
+    "hackerclubes":     "hackerclubes",
+    "inclusao-tech":    "inclusão tech",
+    "internet-segura":  "internet segura",
+    "minas-em-tech":    "minas em tech",
+    "mao-na-massa":     "mão na massa",
+    "perifa-impacto":   "perifaimpacto",
+}
+
 def _card(slug, title, desc):
+    chip = CHIP_LABEL.get(slug, slug)
     return (
         f'<a class="resource-card resource-card--sub" href="{slug}.html" '
         f'style="--card-accent: var(--ch-sub-{slug});">'
-        f'<div class="meta"><span class="submarca-chip" data-submarca="{slug}">{slug.replace("-","/")}</span></div>'
+        f'<div class="meta"><span class="submarca-chip" data-submarca="{slug}">{chip}</span></div>'
         f'<h4>{title}</h4><p>{desc}</p><span class="cta">explorar</span></a>'
     )
 cards_html = "".join(_card(s, t, d) for s, t, d, _, _ in SUBMARCAS)
@@ -86,13 +97,14 @@ PALETTE = {
         ("#f8fcf8", "CSS · fundo claro"),
     ],
     "internet-segura": [
+        ("#3b443c", "Dos · texto/contorno"),
+        ("#e8d048", "Amarelo · atenção (cor signature nova)"),
         ("#1563fa", "Azul · segurança digital"),
         ("#9427f0", "Roxo · alerta"),
         ("#f6221e", "Vermelho · perigo"),
         ("#3beec9", "Turquesa · proteção"),
-        ("#e8d048", "Amarelo · atenção"),
-        ("#15102a", "Roxo escuro · fundo"),
-        ("#f8fcf8", "Off-white · texto"),
+        ("#fb1e66", "Pink · ênfase"),
+        ("#f8fcf8", "Off-white · fundo"),
     ],
     "minas-em-tech": [
         ("#ff9ecf", "Pink · signature"),
@@ -129,13 +141,9 @@ def _palette_tiles(slug):
 # Individual submarca pages
 for slug, title, desc, color, foco in SUBMARCAS:
     logo_path = first_svg(slug)
-    # internet-segura usa o cartaz completo (sem logo limpo ainda) → maior
-    if slug == "internet-segura":
-        logo_html = f'<img src="{logo_path}" alt="cartaz {title}" loading="lazy" decoding="async" style="max-width: 100%; max-height: 480px; margin: 0 auto;">' if logo_path else f'<div class="t-h04 text-helper">{title}</div>'
-    else:
-        logo_html = f'<img src="{logo_path}" alt="logo {title}" loading="lazy" decoding="async" style="max-width: 280px; max-height: 120px; margin: 0 auto;">' if logo_path else f'<div class="t-h04 text-helper">{title}</div>'
+    logo_html = f'<img src="{logo_path}" alt="logo {title}" loading="lazy" decoding="async" style="max-width: 320px; max-height: 120px; margin: 0 auto;">' if logo_path else f'<div class="t-h04 text-helper">{title}</div>'
     palette_html = _palette_tiles(slug)
-    chip_html = f'<span class="submarca-chip" data-submarca="{slug}">{slug.replace("-","/")}</span>'
+    chip_html = f'<span class="submarca-chip" data-submarca="{slug}">{CHIP_LABEL.get(slug, slug)}</span>'
     write(f"pages/submarcas/{slug}.html", page(
         slug, title,
         f'<a href="../../index.html">home</a><span class="sep">/</span><a href="index.html">submarcas</a><span class="sep">/</span>{slug}',
@@ -157,7 +165,7 @@ for slug, title, desc, color, foco in SUBMARCAS:
                 f'<div class="grid-3">'
                 f'<div class="tile" style="background:{color}; color: var(--ch-sub-{slug}-fg);"><h4 style="color: inherit;">badge</h4><p style="color: inherit; opacity: 0.9;">aplicação como banner ou chip pro programa</p></div>'
                 f'<div class="tile tile--bordered" style="border-left: 4px solid {color};"><h4>card destacado</h4><p>Border-left signature pra cards relacionados ao programa.</p></div>'
-                f'<div class="callout callout--info" data-icon="◆" style="margin: 0; border-left-color: {color}; background: color-mix(in srgb, {color} 12%, transparent);"><div><strong>callout próprio</strong>Mensagem com cor signature como acento.</div></div>'
+                f'<div class="callout callout--info" data-icon="→" style="margin: 0; border-left-color: {color}; background: color-mix(in srgb, {color} 12%, transparent);"><div><strong>callout próprio</strong>Mensagem com cor signature como acento.</div></div>'
                 f'</div>'),
             sec("assets", "assets", "05",
                 f'<p class="t-body-02 t-secondary prose">Arquivos vetoriais em <code class="code-inline">assets/submarcas/{slug}/</code>. PRIMARY_LOGO definido em <code class="code-inline">scripts/gen_brand.py</code>.</p>'),
@@ -281,7 +289,7 @@ write("pages/impressos/loja.html", page(
                 "Sem efeitos de impressão que distorçam a identidade",
             ])),
         sec("submarcas", "merch das submarcas", "03",
-            '<p class="t-body-02 t-secondary prose">Cada submarca pode ter merch próprio mantendo sua cor signature. Exemplo: t-shirt Perifa Impacto em roxo, t-shirt Minas em Tech em roxo claro, etc.</p>'),
+            '<p class="t-body-02 t-secondary prose">Cada submarca pode ter merch próprio mantendo sua cor signature. Exemplo: t-shirt PerifaImpacto em roxo, t-shirt Minas em Tech em roxo claro, etc.</p>'),
     ]),
     toc=[{"id":"items","label":"Produtos"},{"id":"rules","label":"Regras de aplicação"},{"id":"submarcas","label":"Merch das submarcas"}],
 ))

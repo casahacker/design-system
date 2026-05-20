@@ -923,7 +923,7 @@ write("pages/dataviz/examples.html", page(
                 "Sincronize cores entre charts (hackerclubes = sempre cat-1)",
             ])),
     ]),
-    toc=[{"id":"dashboard-1","label":"Impacto hackerclubes"},{"id":"dashboard-2","label":"Perifa Impacto"},{"id":"dashboard-3","label":"Portal hacker clubes"},{"id":"layout-tips","label":"Tips de layout"}],
+    toc=[{"id":"dashboard-1","label":"Impacto hackerclubes"},{"id":"dashboard-2","label":"PerifaImpacto"},{"id":"dashboard-3","label":"Portal hacker clubes"},{"id":"layout-tips","label":"Tips de layout"}],
 ))
 
 print('done · all 8 dataviz pages')

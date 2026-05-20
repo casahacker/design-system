@@ -173,7 +173,7 @@ write("pages/guidelines/content.html", page(
         sec("tone", "tom de voz", "01",
             '<div class="grid-2"><div class="tile tile--bordered"><h4>somos</h4><ul class="checklist"><li>diretos · sem rodeio</li><li>ativos · "salvar" em vez de "as alterações foram salvas"</li><li>brasileiros · pt-br informal mas profissional</li><li>técnicos sem jargão · "json" sim, "monetização programática" não</li></ul></div><div class="tile tile--bordered"><h4>não somos</h4><ul class="checklist"><li>solenes · "prezado usuário" → "olá"</li><li>passivos · "houve um erro" → "deu ruim, tenta de novo"</li><li>genéricos · "operação concluída" → "post publicado"</li><li>infantis · "ops!" exagerado fica antipático</li></ul></div></div>'),
         sec("case", "caixa baixa", "02",
-            '<p class="t-body-02 t-secondary prose">Títulos, labels e botões em caixa baixa. CAIXA ALTA só pra labels técnicos (// CODE, // META). Nomes próprios mantêm capitalização: Casa Hacker, Perifa Impacto, IBM Carbon.</p>'),
+            '<p class="t-body-02 t-secondary prose">Títulos, labels e botões em caixa baixa. CAIXA ALTA só pra labels técnicos (// CODE, // META). Nomes próprios mantêm capitalização: Casa Hacker, PerifaImpacto, IBM Carbon.</p>'),
         sec("verbs", "verbos em ação", "03",
             table(["contexto","evita","prefere"], [
                 ["botão de salvar","salvar alterações","salvar"],
@@ -203,7 +203,7 @@ write("pages/guidelines/ai.html", page(
             '<div class="grid-2"><div class="tile tile--bordered"><h4>1. transparência</h4><p>Usuário sempre sabe quando está interagindo com IA. Indicador visual + texto explícito.</p></div><div class="tile tile--bordered"><h4>2. opt-in</h4><p>Funcionalidades de IA são opcionais. Usuário ativa, não vem ligado por padrão.</p></div><div class="tile tile--bordered"><h4>3. fontes citáveis</h4><p>Quando a IA cita fato, mostra a fonte. Resposta sem fonte é especulação.</p></div><div class="tile tile--bordered"><h4>4. correção pelo humano</h4><p>Usuário pode editar, refazer, desfazer. IA propõe — usuário decide.</p></div></div>'),
         sec("disclosure", "divulgação", "02",
             '<p class="t-body-02 t-secondary mb-05 prose">Conteúdo gerado por IA recebe marcação visual: tag com ícone, ou borda colorida característica.</p>' +
-            demo('<div class="row"><span class="tag tag--purple">◆ gerado por ia</span><span class="tag tag--purple">◆ resumido por ia</span><span class="tag tag--purple">◆ traduzido por ia</span></div>')),
+            demo('<div class="row"><span class="tag tag--purple-ai">gerado por ia</span><span class="tag tag--purple-ai">resumido por ia</span><span class="tag tag--purple-ai">traduzido por ia</span></div>')),
         sec("control", "controle do usuário", "03",
             checklist([
                 'Sempre oferecer "regenerar" e "editar"',
@@ -212,7 +212,7 @@ write("pages/guidelines/ai.html", page(
                 'Botão de "explicar essa sugestão" quando faz sentido',
             ])),
         sec("patterns", "padrões visuais", "04",
-            '<p class="t-body-02 t-secondary prose">Cor de destaque pra IA: <strong>--ch-purple</strong> (#AA78E6). Mesma cor do Perifa Impacto — porque tecnologia de ponta na periferia. Borda gradiente verde→roxo opcional pra destacar áreas de IA.</p>'),
+            '<p class="t-body-02 t-secondary prose">Cor de destaque pra IA: <strong>--ch-purple</strong> (#AA78E6). Mesma cor do PerifaImpacto — porque tecnologia de ponta na periferia. Borda gradiente verde→roxo opcional pra destacar áreas de IA.</p>'),
     ]),
     tags=[{"cls":"tag--purple","label":"novo"}],
     toc=[{"id":"principles","label":"Princípios"},{"id":"disclosure","label":"Divulgação"},{"id":"control","label":"Controle do usuário"},{"id":"patterns","label":"Padrões visuais"}],

@@ -52,9 +52,11 @@
   --ch-sec-b:          #B3D9FE;
   --ch-sec-r:          #FF9ECF;
   --ch-script:         #D79B2E;
+  --ch-yellow:         #E8D048;            /* Internet Segura · atenção informal */
+  --ch-yellow-light:   #F7E36D;
 
   /* Brand · extended (submarcas) */
-  --ch-purple:         #AA78E6;            /* Perifa Impacto */
+  --ch-purple:         #AA78E6;            /* PerifaImpacto */
   --ch-purple-light:   #D3BAF5;
   --ch-purple-dark:    #6C44A0;
 
@@ -80,8 +82,8 @@
   --ch-sub-hackerclubes-fg: #0E3A6B;
   --ch-sub-inclusao-tech:   #E1FFDE;       /* Sec Green Light · acolhimento */
   --ch-sub-inclusao-tech-fg:#0F5A33;
-  --ch-sub-internet-segura: #1563FA;       /* Azul cartaz · segurança digital */
-  --ch-sub-internet-segura-fg:#FFFFFF;
+  --ch-sub-internet-segura: #E8D048;       /* Amarelo signature · "internet que joga junto" */
+  --ch-sub-internet-segura-fg:#3B443C;
   --ch-sub-minas-em-tech:   #FF9ECF;       /* Pink · mulheres na tech (signature real) */
   --ch-sub-minas-em-tech-fg:#7A2752;
   --ch-sub-mao-na-massa:    #D79B2E;       /* Script orange · DIY energia */
@@ -1053,11 +1055,14 @@ body { padding-top: 32px; }
 }
 .tag--sm { height: 20px; padding: 0 var(--spacing-03); font-size: 11px; }
 .tag--code   { background: var(--tag-code-bg);   color: var(--tag-code-fg); }
-.tag--code::before { content: '◆'; }
 .tag--blue   { background: var(--tag-blue-bg);   color: var(--tag-blue-fg); }
 .tag--pink   { background: var(--tag-pink-bg);   color: var(--tag-pink-fg); }
 .tag--script { background: var(--tag-script-bg); color: var(--tag-script-fg); }
+.tag--yellow { background: rgba(232, 208, 72, 0.20); color: #5A4F0C; }
+[data-theme="dark"] .tag--yellow { background: rgba(232, 208, 72, 0.22); color: #F7E36D; }
 .tag--purple { background: var(--tag-purple-bg); color: var(--tag-purple-fg); }
+.tag--purple-ai { background: var(--tag-purple-bg); color: var(--tag-purple-fg); }
+.tag--purple-ai::before { content: '◆ '; }
 .tag--red    { background: var(--tag-red-bg);    color: var(--tag-red-fg); }
 .tag--outline{ background: transparent; border-color: var(--tag-outline-border); color: var(--tag-outline-fg); }
 .tag--dismissible button {
@@ -2064,7 +2069,8 @@ body { padding-top: 32px; }
   background: var(--tag-default-bg);
   color: var(--tag-default-fg);
 }
-.submarca-chip::before { content: '◆'; }
+.submarca-chip { font-weight: 500; }
+/* sem ◆ — chip identifica-se sozinho pela cor signature da submarca */
 .submarca-chip[data-submarca="hackerclubes"]    { background: var(--ch-sub-hackerclubes);    color: var(--ch-sub-hackerclubes-fg); }
 .submarca-chip[data-submarca="inclusao-tech"]   { background: var(--ch-sub-inclusao-tech);   color: var(--ch-sub-inclusao-tech-fg); }
 .submarca-chip[data-submarca="internet-segura"] { background: var(--ch-sub-internet-segura); color: var(--ch-sub-internet-segura-fg); }
