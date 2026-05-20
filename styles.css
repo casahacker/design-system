@@ -1221,6 +1221,44 @@ body { padding-top: 32px; }
   border: 1px solid var(--border-subtle-00);
   white-space: pre;
   margin-bottom: var(--spacing-04);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--ch-java) transparent;
+}
+.code-snippet::-webkit-scrollbar { height: 6px; }
+.code-snippet::-webkit-scrollbar-thumb { background: var(--ch-java); }
+
+/* Gradient indicador de scroll horizontal (mobile) */
+.code-snippet.has-overflow::after {
+  content: '';
+  position: sticky;
+  position: -webkit-sticky;
+  right: 0; top: 0; bottom: 0;
+  width: 40px;
+  display: block;
+  pointer-events: none;
+  background: linear-gradient(to right, transparent, var(--code-snippet-bg));
+  margin-left: -40px;
+  align-self: stretch;
+  flex-shrink: 0;
+}
+@media (max-width: 600px) {
+  .code-snippet {
+    font-size: 12px;
+    padding: var(--spacing-04);
+  }
+  .code-snippet::before {
+    content: '◀ scroll horizontal ▶';
+    display: block;
+    font: var(--code-01);
+    color: var(--ch-java);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: var(--spacing-03);
+    opacity: 0.5;
+  }
+  /* Esconde quando snippet cabe inteiro */
+  .code-snippet:not(.has-overflow)::before { display: none; }
 }
 .code-snippet .k { color: var(--ch-code); }
 .code-snippet .s { color: var(--ch-sec-r); }
@@ -2542,9 +2580,12 @@ kbd {
 .shell-theme-toggle:hover { color: var(--ch-code); border-color: rgba(255,255,255,0.1); }
 .shell-theme-toggle:focus-visible { outline: 2px solid var(--ch-code); outline-offset: 2px; }
 .shell-theme-toggle .theme-icon { color: currentColor; }
-.shell-theme-toggle .theme-icon--moon { display: none; }
-[data-theme="dark"] .shell-theme-toggle .theme-icon--sun { display: none; }
-[data-theme="dark"] .shell-theme-toggle .theme-icon--moon { display: block; }
+/* Light mode atual → mostra lua (clique vai pro dark) */
+.shell-theme-toggle .theme-icon--sun  { display: none; }
+.shell-theme-toggle .theme-icon--moon { display: block; }
+/* Dark mode atual → mostra sol (clique vai pro light) */
+[data-theme="dark"] .shell-theme-toggle .theme-icon--sun  { display: block; }
+[data-theme="dark"] .shell-theme-toggle .theme-icon--moon { display: none; }
 
 .back-to-top {
   position: fixed;
@@ -2604,16 +2645,72 @@ kbd {
    12 · PRINT
    ----------------------------------------------------------------------------- */
 @media print {
-  .shell-header, .sidebar, .theme-toggle, .menu-toggle, .skip-link, .code-copy { display: none !important; }
-  .shell-container { grid-template-columns: 1fr; }
+  /* Esconde elementos não-imprimíveis */
+  .shell-header, .sidebar, .sidebar-backdrop, .theme-toggle, .shell-theme-toggle,
+  .menu-toggle, .skip-link, .code-copy, .back-to-top, .a11y-bar, .a11y-bar-toggle,
+  .toast-stack, .command-palette-backdrop, .page-nav { display: none !important; }
+  .shell-container { grid-template-columns: 1fr; display: block; }
   .main { max-width: 100%; padding: 0; }
-  body { background: white; color: black; }
-  .demo { border: 1px solid #ccc; page-break-inside: avoid; }
-  .code-snippet { background: #f4f4f4; color: #333; border: 1px solid #ccc; }
+  body { background: white; color: black; font-size: 11pt; }
+
+  /* Page setup com URL e timestamp no rodapé */
+  @page {
+    margin: 18mm 16mm 22mm;
+    @bottom-left { content: "Casa Hacker DS · v1.0"; font-size: 9pt; color: #666; }
+    @bottom-right { content: counter(page) " / " counter(pages); font-size: 9pt; color: #666; }
+  }
+
   a { color: black; text-decoration: underline; }
   a[href^="http"]::after { content: ' (' attr(href) ')'; font-size: 0.85em; color: #666; }
-  h1, h2, h3 { page-break-after: avoid; }
-  .section { page-break-inside: avoid; }
+  a[href^="#"]::after, a[href^="mailto:"]::after { content: ''; }
+
+  /* Cabeçalhos não devem ficar órfãos no fim da página */
+  h1, h2, h3, h4 { page-break-after: avoid; break-after: avoid; }
+  h1 + *, h2 + *, h3 + * { page-break-before: avoid; }
+
+  /* Conteúdo que precisa permanecer agrupado */
+  .section, .demo, .anatomy, .tile, .resource-card, .token-tile,
+  .do-dont, .api-table tr, .data-table tr, .callout {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Code snippets imprimem em escala de cinza */
+  .code-snippet {
+    background: #f4f4f4 !important;
+    color: #333 !important;
+    border: 1px solid #ccc;
+    white-space: pre-wrap;
+    overflow: visible;
+    page-break-inside: avoid;
+  }
+  .code-snippet .k, .code-snippet .s, .code-snippet .c, .code-snippet .v, .code-snippet .n { color: #333; }
+
+  /* Imprime backgrounds (necessário pra paletas de cor) */
+  .token-swatch, .demo, .callout, .submarca-chip, .tag, .btn--primary {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Quebra forçada antes de section principais em páginas longas */
+  .page-header { page-break-after: avoid; }
+
+  /* Esconde elementos puramente decorativos */
+  .hero-h, .bit-divider, .h-symbol { display: none !important; }
+
+  /* Show TOC mais compacto */
+  .toc { background: transparent; border: 1px solid #ccc; padding: 8mm; }
+  .toc ol { columns: 2; column-gap: 6mm; }
+
+  /* Imprime URL canônica no topo */
+  .page-header::before {
+    content: 'casahacker.github.io/design-system';
+    display: block;
+    font-size: 8pt;
+    color: #999;
+    margin-bottom: 4mm;
+    font-family: monospace;
+  }
 }
 
 /* -----------------------------------------------------------------------------

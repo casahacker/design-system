@@ -314,18 +314,18 @@ anatomy_svg = '''<svg viewBox="0 0 640 380" class="chart-svg" role="img" aria-la
 
   <!-- annotation -->
   <line x1="571" y1="60" x2="571" y2="80" stroke="#DA1E28" stroke-width="1"/>
-  <text x="568" y="56" text-anchor="end" font-size="9" fill="#DA1E28" font-weight="600">recorde</text>
+  <text x="568" y="56" text-anchor="end" font-size="9" fill="var(--support-error)" font-weight="600">recorde</text>
 
   <!-- numbered markers -->
   <g font-family="IBM Plex Mono" font-weight="600" font-size="11">
-    <circle cx="60" cy="36" r="9" fill="#FFF" stroke="#91938C"/><text x="56" y="40" fill="#3C433C">1</text>
-    <circle cx="60" cy="52" r="9" fill="#FFF" stroke="#91938C"/><text x="56" y="56" fill="#3C433C">2</text>
-    <circle cx="40" cy="200" r="9" fill="#FFF" stroke="#91938C"/><text x="36" y="204" fill="#3C433C">3</text>
-    <circle cx="94" cy="93" r="9" fill="#FFF" stroke="#91938C"/><text x="90" y="97" fill="#3C433C">4</text>
-    <circle cx="100" cy="150" r="9" fill="#FFF" stroke="#91938C"/><text x="96" y="154" fill="#3C433C">5</text>
-    <circle cx="295" cy="210" r="9" fill="#FFF" stroke="#91938C"/><text x="291" y="214" fill="#3C433C">6</text>
-    <circle cx="350" cy="375" r="9" fill="#FFF" stroke="#91938C"/><text x="346" y="379" fill="#3C433C">7</text>
-    <circle cx="571" cy="56" r="9" fill="#FFF" stroke="#91938C"/><text x="567" y="60" fill="#3C433C">8</text>
+    <circle cx="60" cy="36" r="9" fill="var(--layer-01)" stroke="var(--text-tertiary)"/><text x="56" y="40" fill="var(--text-primary)">1</text>
+    <circle cx="60" cy="52" r="9" fill="var(--layer-01)" stroke="var(--text-tertiary)"/><text x="56" y="56" fill="var(--text-primary)">2</text>
+    <circle cx="40" cy="200" r="9" fill="var(--layer-01)" stroke="var(--text-tertiary)"/><text x="36" y="204" fill="var(--text-primary)">3</text>
+    <circle cx="94" cy="93" r="9" fill="var(--layer-01)" stroke="var(--text-tertiary)"/><text x="90" y="97" fill="var(--text-primary)">4</text>
+    <circle cx="100" cy="150" r="9" fill="var(--layer-01)" stroke="var(--text-tertiary)"/><text x="96" y="154" fill="var(--text-primary)">5</text>
+    <circle cx="295" cy="210" r="9" fill="var(--layer-01)" stroke="var(--text-tertiary)"/><text x="291" y="214" fill="var(--text-primary)">6</text>
+    <circle cx="350" cy="375" r="9" fill="var(--layer-01)" stroke="var(--text-tertiary)"/><text x="346" y="379" fill="var(--text-primary)">7</text>
+    <circle cx="571" cy="56" r="9" fill="var(--layer-01)" stroke="var(--text-tertiary)"/><text x="567" y="60" fill="var(--text-primary)">8</text>
   </g>
 </svg>'''
 
@@ -547,20 +547,20 @@ types_body += sec("treemap", "treemap", "11",
         chart_card("orçamento por programa", "alocação 2026",
                    f'''<svg class="chart-svg" viewBox="0 0 520 240" role="img" aria-label="treemap">
   <rect x="0" y="0" width="260" height="240" fill="{CAT[0]}" stroke="white" stroke-width="2"/>
-  <text x="130" y="125" text-anchor="middle" font-size="13" fill="#3C433C" font-weight="600">hackerclubes</text>
-  <text x="130" y="142" text-anchor="middle" font-size="11" fill="#3C433C">45%</text>
+  <text x="130" y="125" text-anchor="middle" font-size="13" fill="var(--text-primary)" font-weight="600">hackerclubes</text>
+  <text x="130" y="142" text-anchor="middle" font-size="11" fill="var(--text-primary)">45%</text>
   <rect x="260" y="0" width="170" height="140" fill="{CAT[1]}" stroke="white" stroke-width="2"/>
-  <text x="345" y="65" text-anchor="middle" font-size="12" fill="#FFF" font-weight="600">inclusão tech</text>
-  <text x="345" y="82" text-anchor="middle" font-size="10" fill="#FFF">25%</text>
+  <text x="345" y="65" text-anchor="middle" font-size="12" fill="var(--layer-01)" font-weight="600">inclusão tech</text>
+  <text x="345" y="82" text-anchor="middle" font-size="10" fill="var(--layer-01)">25%</text>
   <rect x="430" y="0" width="90" height="140" fill="{CAT[2]}" stroke="white" stroke-width="2"/>
-  <text x="475" y="65" text-anchor="middle" font-size="11" fill="#3C433C">minas</text>
-  <text x="475" y="82" text-anchor="middle" font-size="10" fill="#3C433C">15%</text>
+  <text x="475" y="65" text-anchor="middle" font-size="11" fill="var(--text-primary)">minas</text>
+  <text x="475" y="82" text-anchor="middle" font-size="10" fill="var(--text-primary)">15%</text>
   <rect x="260" y="140" width="170" height="100" fill="{CAT[3]}" stroke="white" stroke-width="2"/>
-  <text x="345" y="185" text-anchor="middle" font-size="11" fill="#3C433C">mão na massa</text>
-  <text x="345" y="200" text-anchor="middle" font-size="10" fill="#3C433C">10%</text>
+  <text x="345" y="185" text-anchor="middle" font-size="11" fill="var(--text-primary)">mão na massa</text>
+  <text x="345" y="200" text-anchor="middle" font-size="10" fill="var(--text-primary)">10%</text>
   <rect x="430" y="140" width="90" height="100" fill="{CAT[4]}" stroke="white" stroke-width="2"/>
-  <text x="475" y="185" text-anchor="middle" font-size="10" fill="#3C433C">perifa</text>
-  <text x="475" y="200" text-anchor="middle" font-size="10" fill="#3C433C">5%</text>
+  <text x="475" y="185" text-anchor="middle" font-size="10" fill="var(--text-primary)">perifa</text>
+  <text x="475" y="200" text-anchor="middle" font-size="10" fill="var(--text-primary)">5%</text>
 </svg>''',
                    "demonstração")))
 
@@ -732,10 +732,10 @@ write("pages/dataviz/labels.html", page(
   <text x="34" y="113" text-anchor="end">400</text>
   <text x="34" y="173" text-anchor="end">200</text>
   <line x1="40" y1="100" x2="504" y2="100" stroke="#DA1E28" stroke-dasharray="4 2" stroke-width="1.5"/>
-  <text x="500" y="93" text-anchor="end" fill="#DA1E28" font-size="9" font-weight="600">META · 400</text>
+  <text x="500" y="93" text-anchor="end" fill="var(--support-error)" font-size="9" font-weight="600">META · 400</text>
   <polyline class="line" stroke="{CAT[0]}" points="60,180 124,160 188,140 252,110 316,80 380,70 444,55"/>
   <circle class="point" cx="316" cy="80" r="5" fill="{CAT[0]}"/>
-  <text x="320" y="74" font-size="9" fill="#3C433C" font-weight="600">+ meta batida</text>
+  <text x="320" y="74" font-size="9" fill="var(--text-primary)" font-weight="600">+ meta batida</text>
 </svg>''',
                 "demonstração")),
         sec("rules", "regras", "05",

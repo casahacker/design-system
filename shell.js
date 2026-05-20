@@ -400,6 +400,37 @@
   backdrop?.addEventListener('click', closeMenu);
   $$('.sidebar a').forEach(a => a.addEventListener('click', closeMenu));
 
+  // Swipe-to-close · sidebar arrastando da direita pra esquerda fecha o drawer
+  if (sidebar) {
+    let touchStartX = null, touchCurrentX = null, dragging = false;
+    sidebar.addEventListener('touchstart', e => {
+      if (!sidebar.classList.contains('open')) return;
+      touchStartX = e.touches[0].clientX;
+      touchCurrentX = touchStartX;
+      dragging = true;
+      sidebar.style.transition = 'none';
+    }, { passive: true });
+    sidebar.addEventListener('touchmove', e => {
+      if (!dragging) return;
+      touchCurrentX = e.touches[0].clientX;
+      const dx = Math.min(0, touchCurrentX - touchStartX); // só arrasto pra esquerda (negativo)
+      sidebar.style.transform = `translateX(${dx}px)`;
+    }, { passive: true });
+    sidebar.addEventListener('touchend', () => {
+      if (!dragging) return;
+      dragging = false;
+      sidebar.style.transition = '';
+      sidebar.style.transform = '';
+      const dx = touchCurrentX - touchStartX;
+      if (dx < -60) closeMenu(); // fechou se arrastou >60px pra esquerda
+    });
+    sidebar.addEventListener('touchcancel', () => {
+      dragging = false;
+      sidebar.style.transition = '';
+      sidebar.style.transform = '';
+    });
+  }
+
   /* --------------------------------------------------------------------- */
   /*  Sidebar search · filter + hide empty sections                         */
   /* --------------------------------------------------------------------- */
@@ -675,6 +706,9 @@
   /* --------------------------------------------------------------------- */
   /*  Code snippet — copy button                                            */
   /* --------------------------------------------------------------------- */
+  const overflowCheck = (snippet) => {
+    snippet.classList.toggle('has-overflow', snippet.scrollWidth > snippet.clientWidth + 2);
+  };
   $$('.code-snippet').forEach(snippet => {
     if (snippet.querySelector('.code-copy')) return;
     const btn = document.createElement('button');
@@ -695,6 +729,14 @@
       }
     });
     snippet.appendChild(btn);
+    // Detecta overflow horizontal → CSS adiciona indicador "◀ scroll ▶"
+    overflowCheck(snippet);
+  });
+  // Re-checa em resize · debounce
+  let rt;
+  window.addEventListener('resize', () => {
+    clearTimeout(rt);
+    rt = setTimeout(() => $$('.code-snippet').forEach(overflowCheck), 120);
   });
 
   /* --------------------------------------------------------------------- */
