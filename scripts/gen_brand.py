@@ -56,6 +56,16 @@ CHIP_LABEL = {
     "perifa-impacto":   "perifaimpacto",
 }
 
+# Grafismo de assinatura por submarca (escolhidos por temática visual)
+SUBMARCA_GRAFISMO = {
+    "hackerclubes":     "PATTERNS_Artboard 19.svg",   # padrão modular educacional
+    "inclusao-tech":    "PATTERNS_Artboard 28.svg",   # padrão acolhedor
+    "internet-segura":  "PATTERNS_Artboard 33.svg",   # padrão estruturado
+    "minas-em-tech":    "PATTERNS_Artboard 31.svg",   # padrão fluido
+    "mao-na-massa":     "PATTERNS_Artboard 22.svg",   # padrão DIY/mosaico
+    "perifa-impacto":   "PATTERNS_Artboard 29.svg",   # padrão isométrico/3d
+}
+
 def _card(slug, title, desc):
     chip = CHIP_LABEL.get(slug, slug)
     return (
@@ -151,27 +161,48 @@ for slug, title, desc, color, foco in SUBMARCAS:
         "".join([
             sec("logo", "logo", "01 · marca",
                 f'<div class="row" style="margin-bottom: var(--spacing-05)">{chip_html}<span class="t-helper">{foco}</span></div>'
-                f'<div class="logo-stage bg-grafismo bg-grafismo--iso" style="background: var(--logo-stage-bg); padding: var(--spacing-09); border: 1px solid var(--logo-stage-border); text-align: center;">{logo_html}</div>'
-                f'<p class="t-helper" style="margin-top: var(--spacing-03)">Lockup horizontal padrão · {len([f for f in os.listdir(os.path.join(ROOT,"assets/submarcas",slug)) if not f.startswith(".")]) if os.path.isdir(os.path.join(ROOT,"assets/submarcas",slug)) else 0} variantes disponíveis em <code class="code-inline">assets/submarcas/{slug}/</code></p>'),
+                # Hero com grafismo de fundo (issue #36)
+                f'<div class="logo-stage" style="position:relative;background: var(--logo-stage-bg); padding: var(--spacing-09); border: 1px solid var(--logo-stage-border); text-align: center; overflow:hidden;">'
+                f'<div aria-hidden="true" style="position:absolute;inset:0;background-image:url(\'../../assets/grafismos/{SUBMARCA_GRAFISMO.get(slug, "PATTERNS_Artboard 19.svg")}\');background-size:160px;background-repeat:repeat;opacity:0.10;mix-blend-mode:multiply;pointer-events:none"></div>'
+                f'<div style="position:relative;z-index:1">{logo_html}</div>'
+                f'</div>'
+                f'<p class="t-helper" style="margin-top: var(--spacing-03)">Lockup horizontal padrão · {len([f for f in os.listdir(os.path.join(ROOT,"assets/submarcas",slug)) if not f.startswith(".")]) if os.path.isdir(os.path.join(ROOT,"assets/submarcas",slug)) else 0} variantes em <code class="code-inline">assets/submarcas/{slug}/</code> · grafismo signature: <code class="code-inline">{SUBMARCA_GRAFISMO.get(slug, "—")}</code></p>'),
             sec("color", "paleta", "02 · auditado dos assets reais",
                 '<p class="t-body-02 t-secondary mb-05 prose">Cores efetivamente utilizadas nos arquivos vetoriais. A primeira é a signature.</p>'
                 + palette_html),
             sec("usage", "regras de uso", "03",
                 do_dont(
                     ["Logo sobre fundo claro ou Dos","Cor signature pra destaques e ações","Manter clear space mínimo (1× altura do H)","Tipografia Roboto Flex + Plex Mono (padrão CHDS)"],
-                    [f"Substituir cor signature ({color.replace('var(--ch-sub-'+slug+')', '')}) por outra","Distorcer ou rotacionar logo","Usar logo abaixo do tamanho mínimo (24px)","Aplicar efeitos (sombra, gradiente, etc.) no logo"],
+                    [f"Substituir cor signature por outra","Distorcer ou rotacionar logo","Usar logo abaixo do tamanho mínimo (24px)","Aplicar efeitos (sombra, gradiente, etc.) no logo"],
                 )),
-            sec("examples", "exemplos in-context", "04",
+            # Mockups in-context (issue #30)
+            sec("mockups", "mockups in-context", "04 · aplicação real",
+                f'<p class="t-body-02 t-secondary mb-05 prose">Exemplos de como a identidade do programa aparece em peças reais. Use isso de referência ao produzir novos materiais.</p>'
                 f'<div class="grid-3">'
-                f'<div class="tile" style="background:{color}; color: var(--ch-sub-{slug}-fg);"><h4 style="color: inherit;">badge</h4><p style="color: inherit; opacity: 0.9;">aplicação como banner ou chip pro programa</p></div>'
-                f'<div class="tile tile--bordered" style="border-left: 4px solid {color};"><h4>card destacado</h4><p>Border-left signature pra cards relacionados ao programa.</p></div>'
-                f'<div class="callout callout--info" data-icon="→" style="margin: 0; border-left-color: {color}; background: color-mix(in srgb, {color} 12%, transparent);"><div><strong>callout próprio</strong>Mensagem com cor signature como acento.</div></div>'
+                # Mockup 1: flyer de evento (A4 vertical, miniatura)
+                f'<div style="background:{color}; color: var(--ch-sub-{slug}-fg); aspect-ratio: 1/1.414; padding: var(--spacing-05); display:flex; flex-direction:column; justify-content:space-between; position:relative; overflow:hidden">'
+                f'<div aria-hidden="true" style="position:absolute;inset:0;background-image:url(\'../../assets/grafismos/{SUBMARCA_GRAFISMO.get(slug, "PATTERNS_Artboard 19.svg")}\');background-size:80px;background-repeat:repeat;opacity:0.15;mix-blend-mode:multiply;pointer-events:none"></div>'
+                f'<div style="position:relative;z-index:1"><div style="font:var(--code-01);text-transform:uppercase;letter-spacing:0.1em;opacity:0.8">// flyer · evento</div></div>'
+                f'<div style="position:relative;z-index:1"><h4 style="color:inherit;font:300 22px/1 var(--font-sans);letter-spacing:-0.02em;margin-bottom:var(--spacing-03)">{title.lower()}</h4><p style="color:inherit;opacity:0.85;font:var(--code-02)">15.set · 14h<br>casa hacker · sp</p></div>'
+                f'<div style="position:relative;z-index:1;font:var(--code-01);opacity:0.7">2026</div>'
+                f'</div>'
+                # Mockup 2: social post (1:1)
+                f'<div style="background: var(--ch-dos); color: var(--ch-css); aspect-ratio: 1/1; padding: var(--spacing-05); display:flex; flex-direction:column; justify-content:space-between; position:relative; overflow:hidden">'
+                f'<div style="font:var(--code-01);color:{color};text-transform:uppercase;letter-spacing:0.1em">// post · instagram</div>'
+                f'<div><h4 style="color:var(--ch-css);font:600 26px/1.1 var(--font-sans);margin-bottom:var(--spacing-03)">{title.lower()}<br><span style="color:{color}">→</span></h4><p style="color:var(--ch-inspect);font:var(--code-02);max-width:80%">tecnologia + comunidade</p></div>'
+                f'<div style="font:var(--code-01);color:var(--ch-java)">@casahacker</div>'
+                f'</div>'
+                # Mockup 3: sticker / badge (round)
+                f'<div style="background:var(--layer-02); aspect-ratio: 1/1; padding: var(--spacing-05); display:flex; align-items:center; justify-content:center; position:relative">'
+                f'<div style="position:absolute;top:var(--spacing-03);left:var(--spacing-03);font:var(--code-01);color:var(--text-helper);text-transform:uppercase;letter-spacing:0.1em">// sticker</div>'
+                f'<div style="width:140px;height:140px;border-radius:50%;background:{color};color:var(--ch-sub-{slug}-fg);display:flex;align-items:center;justify-content:center;text-align:center;padding:var(--spacing-04);font:600 13px/1.15 var(--font-mono);text-transform:uppercase;letter-spacing:0.05em;box-shadow:0 4px 16px rgba(0,0,0,0.12)">{title.lower()}</div>'
+                f'</div>'
                 f'</div>'),
             sec("assets", "assets", "05",
-                f'<p class="t-body-02 t-secondary prose">Arquivos vetoriais em <code class="code-inline">assets/submarcas/{slug}/</code>. PRIMARY_LOGO definido em <code class="code-inline">scripts/gen_brand.py</code>.</p>'),
+                f'<p class="t-body-02 t-secondary prose">Arquivos vetoriais em <code class="code-inline">assets/submarcas/{slug}/</code>. PRIMARY_LOGO e SUBMARCA_GRAFISMO em <code class="code-inline">scripts/gen_brand.py</code>.</p>'),
         ]),
         tags=[{"cls":"tag--code","label":"stable"},{"cls":"tag--outline","label":foco}],
-        toc=[{"id":"logo","label":"Logo"},{"id":"color","label":"Paleta"},{"id":"usage","label":"Regras de uso"},{"id":"examples","label":"Exemplos"},{"id":"assets","label":"Assets"}],
+        toc=[{"id":"logo","label":"Logo"},{"id":"color","label":"Paleta"},{"id":"usage","label":"Regras de uso"},{"id":"mockups","label":"Mockups"},{"id":"assets","label":"Assets"}],
     ))
 
 # ----- IMPRESSOS -----------------------------------------------------------

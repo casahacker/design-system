@@ -12,10 +12,38 @@ def write(rel, html):
     print("written:", rel)
 
 
+# Map breadcrumb → section accent (paleta secundária por seção)
+def _infer_section(breadcrumb_html):
+    bc = (breadcrumb_html or "").lower()
+    if "foundations" in bc or "/elements/" in bc: return "foundations"
+    if "guidelines" in bc: return "guidelines"
+    if "components" in bc: return "components"
+    if "patterns" in bc: return "patterns"
+    if "dataviz" in bc or "data visualization" in bc: return "dataviz"
+    if "submarcas" in bc or "impressos" in bc: return "brand"
+    if "help" in bc or "contributing" in bc: return "help"
+    return None
+
+def _section_label(section_id):
+    return {
+        "foundations": "foundations",
+        "guidelines":  "guidelines",
+        "components":  "components",
+        "patterns":    "patterns",
+        "dataviz":     "data visualization",
+        "brand":       "brand",
+        "help":        "help",
+    }.get(section_id, section_id or "")
+
 # ----- page skeleton --------------------------------------------------------
-def page(page_id, title, breadcrumb, intro, sections, *, depth="../../", tags=None, toc=None, extra_head=""):
+def page(page_id, title, breadcrumb, intro, sections, *, depth="../../", tags=None, toc=None, extra_head="", section=None):
     tags = tags or []
     toc = toc or []
+    # Auto-infer section accent from breadcrumb se não passado explicitamente
+    section = section or _infer_section(breadcrumb)
+    eyebrow_html = ""
+    if section:
+        eyebrow_html = f'<div class="section-eyebrow section-eyebrow--{section}">{_section_label(section)}</div>'
     tags_html = (
         '<div class="page-tags">'
         + "".join(f'<span class="tag {t.get("cls","")}">{t["label"]}</span>' for t in tags)
@@ -45,6 +73,7 @@ def page(page_id, title, breadcrumb, intro, sections, *, depth="../../", tags=No
 
   <header class="page-header">
     <div class="page-breadcrumb">{breadcrumb}</div>
+    {eyebrow_html}
     <h1 class="page-title">{title.lower()}</h1>
     <p class="page-intro">{intro}</p>
     {tags_html}
