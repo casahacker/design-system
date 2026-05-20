@@ -61,6 +61,7 @@
   /* Submarca signature colors */
   --ch-sub-hackerclubes:    #0F62FE;       /* IBM Blue · tech educacional */
   --ch-sub-inclusao-tech:   #FF9ECF;       /* Pink secundária */
+  --ch-sub-internet-segura: #0353E9;       /* Azul segurança digital · "internet que joga junto" */
   --ch-sub-minas-em-tech:   #AA78E6;       /* Purple · mulheres na tech */
   --ch-sub-mao-na-massa:    #D79B2E;       /* Script orange · DIY */
   --ch-sub-perifa-impacto:  #AA78E6;       /* Purple · periferia + IA */
@@ -2098,6 +2099,79 @@ html.ch-terminal-mode .sidebar { background: #0a0a0a; }
   border: 1px solid var(--ch-code);
   animation: ch-fade-in var(--duration-fast-02);
   font-family: var(--font-pixel);
+}
+
+/* -----------------------------------------------------------------------------
+   PLAYGROUND · controles interativos pra demos de componentes
+   ----------------------------------------------------------------------------- */
+.playground {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 0;
+  background: var(--layer-01);
+  border: 1px solid var(--border-subtle-00);
+  margin-bottom: var(--spacing-05);
+}
+.playground-preview {
+  padding: var(--spacing-08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--layer-02);
+  border-right: 1px solid var(--border-subtle-00);
+  min-height: 200px;
+}
+.playground-controls { padding: var(--spacing-05); }
+.playground-controls h5 {
+  font: var(--label-01);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-helper);
+  margin-bottom: var(--spacing-04);
+}
+.playground-controls h5::before { content: '// '; color: var(--ch-code); }
+.playground-control { margin-bottom: var(--spacing-04); }
+.playground-control label {
+  display: block;
+  font: var(--label-02);
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-02);
+}
+.playground-control select,
+.playground-control input[type="text"] {
+  width: 100%;
+  height: 32px;
+  background: var(--field-01);
+  border: none;
+  border-bottom: 1px solid var(--border-strong-01);
+  padding: 0 var(--spacing-03);
+  font: var(--code-02);
+  color: var(--text-primary);
+  outline: none;
+}
+.playground-control select:focus,
+.playground-control input:focus { border-bottom-color: var(--ch-code); }
+.playground-control-checkbox {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-03);
+  font: var(--body-01);
+  color: var(--text-primary);
+  cursor: pointer;
+}
+.playground-code {
+  background: var(--code-snippet-bg);
+  color: var(--code-snippet-fg);
+  padding: var(--spacing-04);
+  font: var(--code-02);
+  overflow-x: auto;
+  white-space: pre;
+  border-top: 1px solid var(--border-subtle-00);
+  grid-column: 1 / -1;
+}
+@media (max-width: 800px) {
+  .playground { grid-template-columns: 1fr; }
+  .playground-preview { border-right: none; border-bottom: 1px solid var(--border-subtle-00); }
 }
 
 /* -----------------------------------------------------------------------------

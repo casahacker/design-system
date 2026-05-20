@@ -99,6 +99,7 @@
       { id: 'sub-index',       label: 'visão geral',      href: 'pages/submarcas/index.html' },
       { id: 'hackerclubes',    label: 'hacker/clubes',    href: 'pages/submarcas/hackerclubes.html' },
       { id: 'inclusao-tech',   label: 'inclusão/tech',    href: 'pages/submarcas/inclusao-tech.html' },
+      { id: 'internet-segura', label: 'internet/segura',  href: 'pages/submarcas/internet-segura.html' },
       { id: 'minas-em-tech',   label: 'minas/em tech',    href: 'pages/submarcas/minas-em-tech.html' },
       { id: 'mao-na-massa',    label: 'mão/na massa',     href: 'pages/submarcas/mao-na-massa.html' },
       { id: 'perifa-impacto',  label: 'perifa/impacto',   href: 'pages/submarcas/perifa-impacto.html' },

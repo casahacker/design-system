@@ -367,6 +367,50 @@
   }
 
   /* --------------------------------------------------------------------- */
+  /*  PLAYGROUND — props playground genérico                                 */
+  /*  HTML pattern:                                                          */
+  /*    <div class="playground" data-template="...">                         */
+  /*      <div class="playground-preview" data-target></div>                 */
+  /*      <div class="playground-controls">                                  */
+  /*        <select data-prop="variant"><option value="primary">...</option> */
+  /*      </div>                                                             */
+  /*      <pre class="playground-code"></pre>                                */
+  /*    </div>                                                               */
+  /* --------------------------------------------------------------------- */
+  function initPlayground(root) {
+    const tpl = root.dataset.template;
+    const preview = $('[data-target]', root);
+    const codeEl = $('.playground-code', root);
+    if (!tpl || !preview) return;
+
+    const controls = $$('[data-prop]', root);
+
+    function render() {
+      const props = {};
+      controls.forEach(c => {
+        const k = c.dataset.prop;
+        if (c.type === 'checkbox') props[k] = c.checked;
+        else props[k] = c.value;
+      });
+      // Substitui {{prop}} no template
+      let html = tpl;
+      for (const [k, v] of Object.entries(props)) {
+        const re = new RegExp(`\\{\\{${k}\\}\\}`, 'g');
+        html = html.replace(re, v === true ? '' : (v === false ? 'data-_off' : v));
+      }
+      // Remove placeholders not substituídos
+      html = html.replace(/\{\{[^}]+\}\}/g, '');
+      // Remove atributos data-_off
+      html = html.replace(/\sdata-_off/g, '');
+      preview.innerHTML = html;
+      if (codeEl) codeEl.textContent = html.trim();
+    }
+
+    controls.forEach(c => c.addEventListener('input', render));
+    render();
+  }
+
+  /* --------------------------------------------------------------------- */
   /*  AUTO-INIT                                                              */
   /* --------------------------------------------------------------------- */
   function initAll() {

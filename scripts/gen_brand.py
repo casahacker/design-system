@@ -4,23 +4,27 @@ import os
 
 ROOT = "C:/Users/geraldo_casahacker/Downloads/design-system"
 
-# Helper to grab a representative SVG from a submarca folder
+# Helper to grab a representative logo (SVG preferred, PNG fallback)
 def first_svg(folder):
     p = os.path.join(ROOT, "assets/submarcas", folder)
     if not os.path.isdir(p):
         return None
-    for f in sorted(os.listdir(p)):
-        if f.endswith(".svg"):
-            return f"../../assets/submarcas/{folder}/{f}"
+    files = sorted(os.listdir(p))
+    # Preferência: SVG > PNG
+    for ext in (".svg", ".png"):
+        for f in files:
+            if f.lower().endswith(ext):
+                return f"../../assets/submarcas/{folder}/{f}"
     return None
 
 # ----- SUBMARCAS ------------------------------------------------------------
 SUBMARCAS = [
-    ("hackerclubes",    "Hackerclubes",    "Programa de clubes de tecnologia em escolas. Identidade própria com o H modular adaptado.",  "var(--ch-sub-hackerclubes)",   "Tecnologia + educação básica"),
-    ("inclusao-tech",   "Inclusão Tech",   "Inclusão digital em comunidades vulneráveis. Cores acolhedoras e mensagem clara.",          "var(--ch-sub-inclusao-tech)",  "Inclusão · acessibilidade · diversidade"),
-    ("minas-em-tech",   "Minas em Tech",   "Mulheres na tecnologia. Identidade que celebra protagonismo feminino na área tech.",        "var(--ch-sub-minas-em-tech)",  "Mulheres na tecnologia"),
-    ("mao-na-massa",    "Mão na Massa",    "Programa de hands-on: oficinas práticas, makers, fabricação. Energia DIY.",                  "var(--ch-sub-mao-na-massa)",   "Faça-você-mesmo · oficinas"),
-    ("perifa-impacto",  "Perifa Impacto",  "Tecnologia + impacto social na periferia. Roxo como cor-signature. Mesma cor da IA.",        "var(--ch-sub-perifa-impacto)", "Periferia · impacto social · IA"),
+    ("hackerclubes",     "Hackerclubes",     "Programa de clubes de tecnologia em escolas. Identidade própria com o H modular adaptado.",                          "var(--ch-sub-hackerclubes)",    "Tecnologia + educação básica"),
+    ("inclusao-tech",    "Inclusão Tech",    "Inclusão digital em comunidades vulneráveis. Cores acolhedoras e mensagem clara.",                                   "var(--ch-sub-inclusao-tech)",   "Inclusão · acessibilidade · diversidade"),
+    ("internet-segura",  "Internet Segura",  "Campanha de cidadania digital · slogan 'a internet que joga junto'. Material educativo sobre uso seguro da internet.","var(--ch-sub-internet-segura)", "Segurança digital · educação crítica"),
+    ("minas-em-tech",    "Minas em Tech",    "Mulheres na tecnologia. Identidade que celebra protagonismo feminino na área tech.",                                 "var(--ch-sub-minas-em-tech)",   "Mulheres na tecnologia"),
+    ("mao-na-massa",     "Mão na Massa",     "Programa de hands-on: oficinas práticas, makers, fabricação. Energia DIY.",                                          "var(--ch-sub-mao-na-massa)",    "Faça-você-mesmo · oficinas"),
+    ("perifa-impacto",   "Perifa Impacto",   "Tecnologia + impacto social na periferia. Roxo como cor-signature. Mesma cor da IA.",                                "var(--ch-sub-perifa-impacto)",  "Periferia · impacto social · IA"),
 ]
 
 # Submarcas index
@@ -31,13 +35,13 @@ cards_html = "".join(
 write("pages/submarcas/index.html", page(
     "sub-index", "Submarcas",
     '<a href="../../index.html">home</a><span class="sep">/</span>submarcas',
-    "5 submarcas da Casa Hacker. Cada uma tem identidade própria (cor, tom, aplicação) mas herda o sistema visual base.",
+    "6 submarcas da Casa Hacker. Cada uma tem identidade própria (cor, tom, aplicação) mas herda o sistema visual base.",
     "".join([
-        sec("family", "família de marcas", "01 · 5 submarcas", f'<div class="resource-cards">{cards_html}</div>'),
+        sec("family", "família de marcas", "01 · 6 submarcas", f'<div class="resource-cards">{cards_html}</div>'),
         sec("philosophy", "filosofia", "02",
             '<p class="t-body-02 t-secondary prose">Submarcas estendem o sistema sem fragmentá-lo. Cada uma adiciona tokens próprios (cor signature, tipografia opcional) preservando a estrutura, spacing e princípios.</p>'),
     ]),
-    tags=[{"cls":"tag--code","label":"5 submarcas"}],
+    tags=[{"cls":"tag--code","label":"6 submarcas"}],
     toc=[{"id":"family","label":"Família"},{"id":"philosophy","label":"Filosofia"}],
 ))
 
