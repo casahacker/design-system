@@ -16,11 +16,11 @@ def first_svg(folder):
 
 # ----- SUBMARCAS ------------------------------------------------------------
 SUBMARCAS = [
-    ("hackerclubes",    "Hackerclubes",    "Programa de clubes de tecnologia em escolas. Identidade própria com o H modular adaptado.",  "#0F62FE", "Tecnologia + educação básica"),
-    ("inclusao-tech",   "Inclusão Tech",   "Inclusão digital em comunidades vulneráveis. Cores acolhedoras e mensagem clara.",          "#FF9ECF", "Inclusão · acessibilidade · diversidade"),
-    ("minas-em-tech",   "Minas em Tech",   "Mulheres na tecnologia. Identidade que celebra protagonismo feminino na área tech.",        "#AA78E6", "Mulheres na tecnologia"),
-    ("mao-na-massa",    "Mão na Massa",    "Programa de hands-on: oficinas práticas, makers, fabricação. Energia DIY.",                  "#D79B2E", "Faça-você-mesmo · oficinas"),
-    ("perifa-impacto",  "Perifa Impacto",  "Tecnologia + impacto social na periferia. Roxo como cor-signature. Mesma cor da IA.",        "#AA78E6", "Periferia · impacto social · IA"),
+    ("hackerclubes",    "Hackerclubes",    "Programa de clubes de tecnologia em escolas. Identidade própria com o H modular adaptado.",  "var(--ch-sub-hackerclubes)",   "Tecnologia + educação básica"),
+    ("inclusao-tech",   "Inclusão Tech",   "Inclusão digital em comunidades vulneráveis. Cores acolhedoras e mensagem clara.",          "var(--ch-sub-inclusao-tech)",  "Inclusão · acessibilidade · diversidade"),
+    ("minas-em-tech",   "Minas em Tech",   "Mulheres na tecnologia. Identidade que celebra protagonismo feminino na área tech.",        "var(--ch-sub-minas-em-tech)",  "Mulheres na tecnologia"),
+    ("mao-na-massa",    "Mão na Massa",    "Programa de hands-on: oficinas práticas, makers, fabricação. Energia DIY.",                  "var(--ch-sub-mao-na-massa)",   "Faça-você-mesmo · oficinas"),
+    ("perifa-impacto",  "Perifa Impacto",  "Tecnologia + impacto social na periferia. Roxo como cor-signature. Mesma cor da IA.",        "var(--ch-sub-perifa-impacto)", "Periferia · impacto social · IA"),
 ]
 
 # Submarcas index

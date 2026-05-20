@@ -58,6 +58,13 @@
   --ch-purple-light:   #D3BAF5;
   --ch-purple-dark:    #6C44A0;
 
+  /* Submarca signature colors */
+  --ch-sub-hackerclubes:    #0F62FE;       /* IBM Blue · tech educacional */
+  --ch-sub-inclusao-tech:   #FF9ECF;       /* Pink secundária */
+  --ch-sub-minas-em-tech:   #AA78E6;       /* Purple · mulheres na tech */
+  --ch-sub-mao-na-massa:    #D79B2E;       /* Script orange · DIY */
+  --ch-sub-perifa-impacto:  #AA78E6;       /* Purple · periferia + IA */
+
   /* Carbon · backgrounds */
   --background:           var(--ch-css);
   --background-hover:     var(--ch-console);
@@ -2007,6 +2014,50 @@ body { padding-top: 32px; }
 .h-symbol span.on { background: var(--ch-code); }
 .h-symbol--dark span.on { background: var(--ch-dos); }
 [data-theme="dark"] .h-symbol--dark span.on { background: var(--ch-css); }
+
+/* H · loading: acende quadrado por quadrado em sequência */
+.h-symbol--loading span.on {
+  animation: ch-h-pixel-in 1200ms var(--ease-productive) infinite;
+}
+.h-symbol--loading span.on:nth-child(1) { animation-delay: 0ms; }
+.h-symbol--loading span.on:nth-child(3) { animation-delay: 100ms; }
+.h-symbol--loading span.on:nth-child(5) { animation-delay: 200ms; }
+.h-symbol--loading span.on:nth-child(6) { animation-delay: 300ms; }
+.h-symbol--loading span.on:nth-child(7) { animation-delay: 400ms; }
+.h-symbol--loading span.on:nth-child(9) { animation-delay: 500ms; }
+@keyframes ch-h-pixel-in {
+  0%, 60%, 100% { opacity: 1; transform: scale(1); }
+  10% { opacity: 0; transform: scale(0.4); }
+  30% { opacity: 1; transform: scale(1.1); }
+}
+
+/* H · breathing: pulsa suavemente quando há atividade */
+.h-symbol--breathing {
+  animation: ch-h-breathe 2.4s ease-in-out infinite;
+}
+@keyframes ch-h-breathe {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+
+/* H · hover lift: micro-tilt ao hover */
+.h-symbol--hover { transition: transform var(--duration-fast-02) var(--ease-productive); }
+.h-symbol--hover:hover { transform: rotate(-3deg) scale(1.08); }
+
+/* H · glitch raro · easter egg ativado via JS pontual */
+.h-symbol--glitch span.on {
+  animation: ch-h-glitch 220ms linear;
+}
+@keyframes ch-h-glitch {
+  0%   { transform: translate(0); }
+  20%  { transform: translate(-2px, 1px); background: var(--ch-sec-r); }
+  40%  { transform: translate(2px, -1px); background: var(--ch-sec-b); }
+  60%  { transform: translate(-1px, -1px); background: var(--ch-code); }
+  100% { transform: translate(0); background: var(--ch-code); }
+}
+
+/* Mini h-symbol no shell header com hover */
+.shell-brand:hover .h-mini { animation: ch-h-breathe 1.4s ease-in-out infinite; }
 
 /* -----------------------------------------------------------------------------
    10 · UTILITIES
