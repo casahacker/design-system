@@ -53,11 +53,28 @@ def parse_html(path):
     intro_m = re.search(r'<p class="page-intro">\s*([^<]+(?:<[^>]+>[^<]*)*?)\s*</p>', text)
     h2s = re.findall(r'<section[^>]*\bid="([^"]+)"[^>]*>\s*<div class="section-head"><h2>([^<]+)</h2>', text)
 
+    # Indexação ampla (issue #38): tables, checklists, code snippets, tags
+    strip_tags = lambda s: re.sub(r'<[^>]+>', ' ', s).replace('&nbsp;', ' ')
+    table_texts = re.findall(r'<table class="(?:api-table|data-table)[^"]*"[^>]*>(.*?)</table>', text, re.S)
+    tables_combined = ' '.join(strip_tags(t) for t in table_texts)
+    checklist_texts = re.findall(r'<ul class="checklist"[^>]*>(.*?)</ul>', text, re.S)
+    checklists_combined = ' '.join(strip_tags(c) for c in checklist_texts)
+    page_tags = re.findall(r'<div class="page-tags">(.*?)</div>', text, re.S)
+    page_tag_labels = []
+    for pt in page_tags:
+        page_tag_labels.extend(re.findall(r'<span class="tag [^"]*">([^<]+)</span>', pt))
+    code_texts = re.findall(r'<div class="code-snippet"[^>]*>(.*?)</div>', text, re.S)
+    code_combined = ' '.join(strip_tags(c) for c in code_texts)
+    keywords = ' '.join([tables_combined, checklists_combined, code_combined])
+    keywords = re.sub(r'\s+', ' ', keywords).strip()[:600]
+
     return {
         'ch_page': ch_page_m.group(1) if ch_page_m else '',
         'title': (title_m.group(1).split('·')[0].strip() if title_m else ''),
         'intro': re.sub(r'<[^>]+>', '', intro_m.group(1)).strip()[:200] if intro_m else '',
         'h2': [{'id': h[0], 'label': h[1]} for h in h2s],
+        'tags': page_tag_labels,
+        'keywords': keywords,
     }
 
 

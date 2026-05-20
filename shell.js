@@ -504,16 +504,21 @@
       const title = (page.title || '').toLowerCase();
       const intro = (page.intro || '').toLowerCase();
       const section = (page.section || '').toLowerCase();
+      const tags = (page.tags || []).join(' ').toLowerCase();
+      const keywords = (page.keywords || '').toLowerCase();
       let s = 0;
       if (title === q) s += 100;
       if (title.startsWith(q)) s += 50;
       if (title.includes(q)) s += 30;
       if (section.includes(q)) s += 20;
       if (intro.includes(q)) s += 10;
+      if (tags.includes(q)) s += 12;
       // h2 matches
       (page.h2 || []).forEach(h => {
         if (h.label.toLowerCase().includes(q)) s += 15;
       });
+      // keywords (api tables, checklists, code) · peso menor
+      if (keywords.includes(q)) s += 5;
       return s;
     }
 

@@ -155,30 +155,56 @@ write("pages/patterns/dialogs.html", page(
 ))
 
 # Empty states
+def _empty_state(icon_name, title_str, desc, primary, secondary=None, kind=""):
+    sec_btn = f'<button class="btn btn--ghost">{secondary}</button>' if secondary else ''
+    return demo(
+        f'<div style="text-align:center;padding:var(--spacing-09)">'
+        f'<div style="width:64px;height:64px;margin:0 auto var(--spacing-05);background:var(--layer-02);border:1px solid var(--border-subtle-00);display:flex;align-items:center;justify-content:center;color:var(--text-helper)">'
+        f'<svg class="ico ico--32" aria-hidden="true"><use href="../../assets/icons/sprite.svg#{icon_name}"/></svg>'
+        f'</div>'
+        f'<h3 class="t-h03 mb-04">{title_str}</h3>'
+        f'<p class="t-secondary mb-06" style="max-width:380px;margin:0 auto var(--spacing-06)">{desc}</p>'
+        f'<div class="row" style="justify-content:center"><button class="btn btn--primary">{primary}</button>{sec_btn}</div>'
+        f'</div>'
+    )
+
 write("pages/patterns/empty-states.html", page(
     "empty-states", "Empty states",
     '<a href="../../index.html">home</a><span class="sep">/</span><a href="index.html">patterns</a><span class="sep">/</span>empty states',
-    "Telas sem conteúdo viram oportunidades: explicar contexto, sugerir próxima ação, evitar frustração do usuário.",
+    "Telas sem conteúdo viram oportunidades: explicar contexto, sugerir próxima ação, evitar frustração. Cinco variantes cobrem os casos mais comuns.",
     "".join([
         sec("anatomy", "anatomia", "01",
-            demo('<div style="text-align: center; padding: var(--spacing-09);"><div style="width: 64px; height: 64px; margin: 0 auto var(--spacing-05); background: var(--layer-02); display: flex; align-items: center; justify-content: center; font: 28px var(--font-mono); color: var(--text-helper)">∅</div><h3 class="t-h03 mb-04">nenhum item por aqui</h3><p class="t-secondary mb-06" style="max-width: 380px; margin-left: auto; margin-right: auto;">você ainda não criou nenhum projeto. comece criando o primeiro.</p><button class="btn btn--primary">criar projeto</button></div>')),
-        sec("when", "tipos", "02",
-            table(["tipo","exemplo"], [
-                ["Sem dados (first run)","\"você ainda não tem projetos\""],
-                ["Sem resultado de filtro","\"nenhum resultado pra 'xyz'\""],
-                ["Erro de carregamento","\"não rolou carregar — tenta de novo\""],
-                ["Sem permissão","\"você não tem acesso a essa área\""],
-            ])),
-        sec("ingredients", "ingredientes", "03",
+            '<p class="t-body-02 t-secondary mb-05 prose">Estrutura universal · 4 elementos opcionais conforme o caso.</p>' +
+            _empty_state("folder", "nenhum projeto ainda", "você ainda não criou nenhum projeto. comece criando o primeiro.", "criar projeto") +
             checklist([
-                "Ícone ou ilustração leve (BIT-aligned)",
-                "Título curto explicativo",
+                "Ícone ou ilustração leve · 32-64px BIT-aligned",
+                "Título curto explicativo · 3-6 palavras",
                 "Descrição com 1 linha de contexto",
-                "Botão primary com ação clara",
-                "Botão ghost opcional pra ação secundária",
+                "Botão primary com ação clara · imperativa",
+                "Botão ghost opcional pra ação secundária (saiba mais, voltar, etc.)",
             ])),
+        sec("first-run", "01 · first run · sem dados", "primeira vez do usuário",
+            '<p class="t-body-02 t-secondary mb-05 prose">Usuário acabou de entrar e a tela ainda não tem nada. Foco em orientar a primeira ação.</p>' +
+            _empty_state("plus", "comece pelo primeiro post", "você ainda não publicou nada por aqui. clica abaixo pra escrever o primeiro post.", "escrever post", "ver tutorial")),
+        sec("no-results", "02 · sem resultado de busca/filtro", "match vazio",
+            '<p class="t-body-02 t-secondary mb-05 prose">Usuário buscou ou filtrou e nada retornou. Sugerir limpar filtro ou termos alternativos.</p>' +
+            _empty_state("search", "nada encontrado pra \"perifa\"", "tenta usar palavras diferentes, ou tira alguns filtros pra ampliar a busca.", "limpar filtros", "ver todos")),
+        sec("error", "03 · erro de carregamento", "falha técnica",
+            '<p class="t-body-02 t-secondary mb-05 prose">Server caiu, rede travou. Reconhece o erro sem culpar o usuário · sugere retry.</p>' +
+            _empty_state("error", "deu ruim no carregamento", "o servidor não respondeu. tenta de novo em alguns segundos.", "tentar de novo", "reportar problema")),
+        sec("permission", "04 · sem permissão", "blocked",
+            '<p class="t-body-02 t-secondary mb-05 prose">Usuário acessou área que não pode ver. Explica o porquê e sugere o que fazer.</p>' +
+            _empty_state("lock", "você não tem acesso aqui", "essa área é só pra admins. peça pra alguém com permissão te liberar.", "voltar pra home", "solicitar acesso")),
+        sec("coming-soon", "05 · em construção", "feature futura",
+            '<p class="t-body-02 t-secondary mb-05 prose">Feature foi anunciada mas ainda não rolou. Manter a expectativa sem prometer prazo.</p>' +
+            _empty_state("clock", "essa parte tá vindo", "estamos construindo. fica de olho aqui ou se inscreve pra ser avisado.", "me avisa quando rolar", "voltar")),
+        sec("usage", "regras", "06",
+            do_dont(
+                ["Mensagem direta · sem culpar usuário","Ação primary clara · verbo no infinitivo","Ícone simbólico · não tela inteira de ilustração","Tom de voz Casa Hacker · 'deu ruim' > 'erro inesperado'","Texto pequeno · 1 linha de contexto, max"],
+                ["'oops!' ou 'whoops' · infantil demais","'erro 500 internal server error' · jargão técnico","Empty state que vira tela cheia de ilustração","Sem nenhuma ação · usuário fica perdido","'algo deu errado' · vago demais"],
+            )),
     ]),
-    toc=[{"id":"anatomy","label":"Anatomia"},{"id":"when","label":"Tipos"},{"id":"ingredients","label":"Ingredientes"}],
+    toc=[{"id":"anatomy","label":"Anatomia"},{"id":"first-run","label":"First run"},{"id":"no-results","label":"Sem resultado"},{"id":"error","label":"Erro"},{"id":"permission","label":"Sem permissão"},{"id":"coming-soon","label":"Em construção"},{"id":"usage","label":"Regras"}],
 ))
 
 # Login
