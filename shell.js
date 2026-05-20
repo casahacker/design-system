@@ -200,6 +200,10 @@
       <nav class="shell-actions" aria-label="links secundários">
         <a href="${base}index.html" class="shell-link optional-mobile">home</a>
         <a href="${base}pages/about/index.html" class="shell-link optional-mobile">sobre</a>
+        <button class="shell-theme-toggle" id="themeToggle" type="button" aria-label="alternar tema claro/escuro" aria-pressed="false">
+          <svg class="theme-icon theme-icon--sun" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="3"/><g stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="8" y1="1" x2="8" y2="3"/><line x1="8" y1="13" x2="8" y2="15"/><line x1="1" y1="8" x2="3" y2="8"/><line x1="13" y1="8" x2="15" y2="8"/><line x1="3" y1="3" x2="4.5" y2="4.5"/><line x1="11.5" y1="11.5" x2="13" y2="13"/><line x1="13" y1="3" x2="11.5" y2="4.5"/><line x1="4.5" y1="11.5" x2="3" y2="13"/></g></svg>
+          <svg class="theme-icon theme-icon--moon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M14 9.5A6 6 0 0 1 6.5 2a6 6 0 1 0 7.5 7.5z"/></svg>
+        </button>
         <a href="https://github.com/casahacker/design-system" target="_blank" rel="noopener noreferrer" class="shell-link">github ↗</a>
       </nav>
     </header>
@@ -275,13 +279,15 @@
   }
 
   /* --------------------------------------------------------------------- */
-  /*  THEME TOGGLE BUTTON                                                   */
+  /*  THEME TOGGLE (in header)                                              */
   /* --------------------------------------------------------------------- */
-  const themeBtn = document.createElement('button');
-  themeBtn.className = 'btn btn--secondary btn--sm theme-toggle';
-  themeBtn.setAttribute('aria-label', 'alternar tema claro/escuro');
-  themeBtn.innerHTML = '◑ theme';
-  themeBtn.addEventListener('click', () => {
+  const themeBtn = document.getElementById('themeToggle');
+  const reflectTheme = () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    themeBtn?.setAttribute('aria-pressed', String(isDark));
+  };
+  reflectTheme();
+  themeBtn?.addEventListener('click', () => {
     const cur = document.documentElement.getAttribute('data-theme');
     if (cur === 'dark') {
       document.documentElement.removeAttribute('data-theme');
@@ -290,8 +296,52 @@
       document.documentElement.setAttribute('data-theme', 'dark');
       try { localStorage.setItem('chds-theme', 'dark'); } catch (e) {}
     }
+    reflectTheme();
   });
-  document.body.appendChild(themeBtn);
+
+  /* --------------------------------------------------------------------- */
+  /*  PREV / NEXT navigation in footer                                      */
+  /* --------------------------------------------------------------------- */
+  (function injectPrevNext() {
+    if (!main) return;
+    const flat = [];
+    navConfig.forEach(s => s.items.forEach(i => flat.push(i)));
+    const idx = flat.findIndex(i => i.id === pageId);
+    if (idx < 0) return;
+    const prev = flat[idx - 1];
+    const next = flat[idx + 1];
+    if (!prev && !next) return;
+    const html = `
+      <nav class="page-nav" aria-label="navegação entre páginas">
+        ${prev ? `<a class="page-nav-link page-nav-prev" href="${base}${prev.href}">
+          <span class="page-nav-label">← anterior</span>
+          <span class="page-nav-title">${prev.label}</span>
+        </a>` : '<span></span>'}
+        ${next ? `<a class="page-nav-link page-nav-next" href="${base}${next.href}">
+          <span class="page-nav-label">próximo →</span>
+          <span class="page-nav-title">${next.label}</span>
+        </a>` : '<span></span>'}
+      </nav>`;
+    const footer = main.querySelector('.shell-footer');
+    if (footer) footer.insertAdjacentHTML('beforebegin', html);
+    else main.insertAdjacentHTML('beforeend', html);
+  })();
+
+  /* --------------------------------------------------------------------- */
+  /*  BACK TO TOP button (visible on scroll > 600)                          */
+  /* --------------------------------------------------------------------- */
+  (function backToTop() {
+    const btn = document.createElement('button');
+    btn.className = 'back-to-top';
+    btn.type = 'button';
+    btn.setAttribute('aria-label', 'voltar ao topo');
+    btn.innerHTML = '↑';
+    document.body.appendChild(btn);
+    const onScroll = () => btn.classList.toggle('visible', window.scrollY > 600);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    onScroll();
+  })();
 
   /* --------------------------------------------------------------------- */
   /*  Sidebar — section collapse                                            */
