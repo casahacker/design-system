@@ -81,10 +81,14 @@
       { id: 'status',       label: 'status indicators',   href: 'pages/patterns/status-indicators.html' },
     ]},
     { id: 'dataviz', section: 'data visualization', items: [
-      { id: 'dv-overview',  label: 'overview',            href: 'pages/dataviz/index.html' },
-      { id: 'dv-anatomy',   label: 'chart anatomy',       href: 'pages/dataviz/anatomy.html' },
-      { id: 'dv-types',     label: 'chart types',         href: 'pages/dataviz/types.html' },
-      { id: 'dv-colors',    label: 'color palettes',      href: 'pages/dataviz/colors.html' },
+      { id: 'dv-overview',     label: 'overview',          href: 'pages/dataviz/index.html' },
+      { id: 'dv-anatomy',      label: 'chart anatomy',     href: 'pages/dataviz/anatomy.html' },
+      { id: 'dv-types',        label: 'chart types',       href: 'pages/dataviz/types.html' },
+      { id: 'dv-colors',       label: 'color palettes',    href: 'pages/dataviz/colors.html' },
+      { id: 'dv-labels',       label: 'labels & axes',     href: 'pages/dataviz/labels.html' },
+      { id: 'dv-interaction',  label: 'interaction',       href: 'pages/dataviz/interaction.html' },
+      { id: 'dv-accessibility',label: 'accessibility',     href: 'pages/dataviz/accessibility.html' },
+      { id: 'dv-examples',     label: 'examples',          href: 'pages/dataviz/examples.html' },
     ]},
     { id: 'submarcas', section: 'submarcas', items: [
       { id: 'sub-index',       label: 'visão geral',      href: 'pages/submarcas/index.html' },
