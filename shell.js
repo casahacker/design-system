@@ -432,6 +432,41 @@
   }
 
   /* --------------------------------------------------------------------- */
+  /*  TOC scrollspy · marca o link da seção atual                           */
+  /* --------------------------------------------------------------------- */
+  (function tocSpy() {
+    const tocLinks = $$('.toc a[href^="#"]');
+    if (!tocLinks.length) return;
+    const sections = tocLinks
+      .map(a => document.getElementById(a.getAttribute('href').slice(1)))
+      .filter(Boolean);
+    if (!sections.length || !('IntersectionObserver' in window)) return;
+
+    const linkByID = new Map(tocLinks.map(a => [a.getAttribute('href').slice(1), a]));
+    let lastActive = null;
+    const setActive = (id) => {
+      if (lastActive === id) return;
+      tocLinks.forEach(a => a.classList.remove('toc-active'));
+      const link = linkByID.get(id);
+      if (link) link.classList.add('toc-active');
+      lastActive = id;
+    };
+
+    const io = new IntersectionObserver((entries) => {
+      // Pega a seção mais visível
+      const visible = entries
+        .filter(e => e.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+      if (visible.length) setActive(visible[0].target.id);
+    }, {
+      rootMargin: '-100px 0px -60% 0px',
+      threshold: [0, 0.5, 1],
+    });
+
+    sections.forEach(s => io.observe(s));
+  })();
+
+  /* --------------------------------------------------------------------- */
   /*  Smooth in-page scroll (offset-aware)                                  */
   /* --------------------------------------------------------------------- */
   document.addEventListener('click', e => {

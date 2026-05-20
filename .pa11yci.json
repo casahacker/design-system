@@ -1,0 +1,48 @@
+{
+  "defaults": {
+    "standard": "WCAG2AA",
+    "timeout": 30000,
+    "wait": 500,
+    "chromeLaunchConfig": { "args": ["--no-sandbox"] },
+    "ignore": [
+      "warning",
+      "notice"
+    ]
+  },
+  "urls": [
+    "http://localhost:8080/index.html",
+    "http://localhost:8080/404.html",
+    "http://localhost:8080/pages/about/index.html",
+    "http://localhost:8080/pages/about/principles.html",
+    "http://localhost:8080/pages/about/who-uses.html",
+    "http://localhost:8080/pages/about/ecosystem.html",
+    "http://localhost:8080/pages/guidelines/index.html",
+    "http://localhost:8080/pages/guidelines/accessibility.html",
+    "http://localhost:8080/pages/guidelines/content.html",
+    "http://localhost:8080/pages/guidelines/ai.html",
+    "http://localhost:8080/pages/elements/color.html",
+    "http://localhost:8080/pages/elements/typography.html",
+    "http://localhost:8080/pages/elements/spacing.html",
+    "http://localhost:8080/pages/elements/grid.html",
+    "http://localhost:8080/pages/elements/iconography.html",
+    "http://localhost:8080/pages/elements/motion.html",
+    "http://localhost:8080/pages/elements/themes.html",
+    "http://localhost:8080/pages/components/index.html",
+    "http://localhost:8080/pages/components/button.html",
+    "http://localhost:8080/pages/components/modal.html",
+    "http://localhost:8080/pages/components/form.html",
+    "http://localhost:8080/pages/components/data-table.html",
+    "http://localhost:8080/pages/components/notification.html",
+    "http://localhost:8080/pages/patterns/index.html",
+    "http://localhost:8080/pages/patterns/bit-system.html",
+    "http://localhost:8080/pages/patterns/global-header.html",
+    "http://localhost:8080/pages/dataviz/index.html",
+    "http://localhost:8080/pages/dataviz/types.html",
+    "http://localhost:8080/pages/dataviz/accessibility.html",
+    "http://localhost:8080/pages/submarcas/index.html",
+    "http://localhost:8080/pages/impressos/index.html",
+    "http://localhost:8080/pages/contributing/index.html",
+    "http://localhost:8080/pages/help/index.html",
+    "http://localhost:8080/pages/help/faq.html"
+  ]
+}

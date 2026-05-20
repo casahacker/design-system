@@ -861,9 +861,17 @@ body { padding-top: 32px; }
   font: var(--body-01);
   color: var(--text-primary);
   text-decoration: none;
+  transition: color var(--duration-fast-02);
 }
 .toc a:hover { color: var(--ch-code-active); }
 [data-theme="dark"] .toc a:hover { color: var(--ch-code); }
+.toc a.toc-active {
+  color: var(--ch-code-active);
+  font-weight: 500;
+}
+[data-theme="dark"] .toc a.toc-active { color: var(--ch-code); }
+.toc li:has(a.toc-active)::before { color: var(--ch-code-active); font-weight: 600; }
+[data-theme="dark"] .toc li:has(a.toc-active)::before { color: var(--ch-code); }
 
 .section { margin-bottom: var(--spacing-12); scroll-margin-top: 72px; }
 .section-head {
