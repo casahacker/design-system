@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="ch-page" content="inline-notif">
+<meta name="ch-base" content="../../">
+<meta name="description" content="Banner persistente in-page pra info importante mas não-bloqueante. Diferente do toast (timed): inline fica até o usuário interagir ou dispensar.">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<title>inline-notification · Casa Hacker DS</title>
+<link rel="stylesheet" href="../../styles.css">
+
+</head>
+<body>
+<main class="main">
+
+  <header class="page-header">
+    <div class="page-breadcrumb"><a href="../../index.html">home</a><span class="sep">/</span><a href="index.html">components</a><span class="sep">/</span>inline-notification</div>
+    <h1 class="page-title">inline-notification</h1>
+    <p class="page-intro">Banner persistente in-page pra info importante mas não-bloqueante. Diferente do toast (timed): inline fica até o usuário interagir ou dispensar.</p>
+    <div class="page-tags"><span class="tag tag--code">stable</span></div>
+  </header>
+
+  <aside class="toc"><h5>nesta página</h5><ol><li><a href="#overview">Overview</a></li><li><a href="#variants">Variantes</a></li><li><a href="#modifiers">Modifiers</a></li><li><a href="#usage">Quando usar</a></li><li><a href="#a11y">Acessibilidade</a></li><li><a href="#code">Código</a></li><li><a href="#related">Relacionados</a></li></ol></aside>
+
+  <section class="section" id="overview"><div class="section-head"><h2>overview</h2><span class="meta">01</span></div><div class="demo "><div class="stack"><div class="notification notification--inline notification--info"><div class="notification-icon">i</div><div class="notification-body"><strong>nova versão disponível</strong><p>v1.1 chegou com toggle, slider e file uploader.</p></div><button class="notification-close" aria-label="dispensar">×</button></div><div class="notification notification--inline notification--warning"><div class="notification-icon">⚠</div><div class="notification-body"><strong>cuidado</strong><p>essa ação vai afetar 247 registros.</p></div></div><div class="notification notification--inline notification--success"><div class="notification-icon">◆</div><div class="notification-body"><strong>dados sincronizados</strong><p>tudo certo, última atualização há 2 minutos.</p></div></div></div></div></section><section class="section" id="variants"><div class="section-head"><h2>variantes</h2><span class="meta">02</span></div><p class="t-secondary mb-04">Mesmas 4 cores do notification base (success/error/warning/info), mas com fundo --layer-02 e sem shadow.</p><div class="demo "><div class="stack"><div class="notification notification--inline notification--success"><div class="notification-icon">◆</div><div class="notification-body"><strong>success</strong><p>operação concluída.</p></div></div><div class="notification notification--inline notification--error"><div class="notification-icon">⚠</div><div class="notification-body"><strong>error</strong><p>algo deu errado.</p></div></div><div class="notification notification--inline notification--warning"><div class="notification-icon">⚠</div><div class="notification-body"><strong>warning</strong><p>atenção a isso.</p></div></div><div class="notification notification--inline notification--info"><div class="notification-icon">i</div><div class="notification-body"><strong>info</strong><p>fyi.</p></div></div></div></div></section><section class="section" id="modifiers"><div class="section-head"><h2>modifiers · api</h2><span class="meta">03</span></div><table class="api-table"><thead><tr><th>prop</th><th>tipo</th><th>default</th><th>descrição</th></tr></thead><tbody><tr><td>.notification--inline</td><td>class</td><td>—</td><td>variante banner (vs toast/notification regular)</td></tr><tr><td>.notification--success</td><td>class</td><td>—</td><td>verde</td></tr><tr><td>.notification--error</td><td>class</td><td>—</td><td>vermelho</td></tr><tr><td>.notification--warning</td><td>class</td><td>—</td><td>amarelo</td></tr><tr><td>.notification--info</td><td>class</td><td>—</td><td>neutro</td></tr><tr><td>.notification-close</td><td>class</td><td>—</td><td>botão dispensar (opcional)</td></tr></tbody></table></section><section class="section" id="usage"><div class="section-head"><h2>quando usar</h2><span class="meta">04</span></div><div class="do-dont"><div class="tile do"><h4>use</h4><ul class="bare"><li>Info persistente que precisa ser vista (banner de update)</li><li>Aviso contextual no topo de uma seção</li><li>Confirmação que fica até o usuário ler</li></ul></div><div class="tile dont"><h4>não use</h4><ul class="bare"><li>Feedback rápido pós-ação — usa toast</li><li>Erro crítico bloqueante — usa modal</li><li>Notificação genérica do app — usa notification regular</li></ul></div></div></section><section class="section" id="a11y"><div class="section-head"><h2>acessibilidade</h2><span class="meta">05 · wcag aa</span></div><ul class="checklist"><li>role="status" pra info/success</li><li>role="alert" pra erro crítico</li><li>Botão close com aria-label</li><li>Não auto-dismiss (diferente do toast)</li><li>aria-live="polite" se aparecer dinamicamente</li></ul></section><section class="section" id="code"><div class="section-head"><h2>código</h2><span class="meta">06 · html</span></div><div class="code-snippet">&lt;<span class="k">div</span> <span class="v">class</span>=<span class="s">"notification notification--inline notification--info"</span> <span class="v">role</span>=<span class="s">"status"</span>&gt;
+  &lt;<span class="k">div</span> <span class="v">class</span>=<span class="s">"notification-icon"</span>&gt;i&lt;/<span class="k">div</span>&gt;
+  &lt;<span class="k">div</span> <span class="v">class</span>=<span class="s">"notification-body"</span>&gt;
+    &lt;<span class="k">strong</span>&gt;título&lt;/<span class="k">strong</span>&gt;
+    &lt;<span class="k">p</span>&gt;mensagem.&lt;/<span class="k">p</span>&gt;
+  &lt;/<span class="k">div</span>&gt;
+  &lt;<span class="k">button</span> <span class="v">class</span>=<span class="s">"notification-close"</span>&gt;×&lt;/<span class="k">button</span>&gt;
+&lt;/<span class="k">div</span>&gt;</div></section><section class="section" id="related"><div class="section-head"><h2>componentes relacionados</h2><span class="meta">07</span></div><div class="resource-cards"><a class="resource-card" href="notification.html"><div class="meta">componente</div><h4>Notification (toast)</h4><p>Pra feedback rápido pós-ação.</p><span class="cta">explorar</span></a></div></section>
+
+</main>
+<script src="../../shell.js"></script>
+<script src="../../components.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="ch-page" content="toggle">
+<meta name="ch-base" content="../../">
+<meta name="description" content="Switch on/off pra preferências binárias. Diferente de checkbox: toggle aplica mudança imediatamente, checkbox espera submit.">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<title>toggle · Casa Hacker DS</title>
+<link rel="stylesheet" href="../../styles.css">
+
+</head>
+<body>
+<main class="main">
+
+  <header class="page-header">
+    <div class="page-breadcrumb"><a href="../../index.html">home</a><span class="sep">/</span><a href="index.html">components</a><span class="sep">/</span>toggle</div>
+    <h1 class="page-title">toggle</h1>
+    <p class="page-intro">Switch on/off pra preferências binárias. Diferente de checkbox: toggle aplica mudança imediatamente, checkbox espera submit.</p>
+    <div class="page-tags"><span class="tag tag--code">stable</span></div>
+  </header>
+
+  <aside class="toc"><h5>nesta página</h5><ol><li><a href="#overview">Overview</a></li><li><a href="#variants">Variantes</a></li><li><a href="#sizes">Tamanhos</a></li><li><a href="#states">Estados</a></li><li><a href="#modifiers">Modifiers</a></li><li><a href="#usage">Quando usar</a></li><li><a href="#a11y">Acessibilidade</a></li><li><a href="#code">Código</a></li><li><a href="#related">Relacionados</a></li></ol></aside>
+
+  <section class="section" id="overview"><div class="section-head"><h2>overview</h2><span class="meta">01</span></div><div class="demo "><div class="stack"><label class="toggle"><input type="checkbox" checked><span class="toggle-track"></span><span>notificações</span></label><label class="toggle"><input type="checkbox"><span class="toggle-track"></span><span>modo escuro automático</span></label><label class="toggle"><input type="checkbox" disabled><span class="toggle-track"></span><span>desabilitado</span></label></div></div></section><section class="section" id="variants"><div class="section-head"><h2>variantes</h2><span class="meta">02</span></div><div class="stack-06"><div><h3 class="t-h02 mb-04">Default (medium)</h3><div class="demo "><label class="toggle"><input type="checkbox" checked><span class="toggle-track"></span><span>label</span></label></div></div><div><h3 class="t-h02 mb-04">Small</h3><div class="demo "><label class="toggle toggle--sm"><input type="checkbox" checked><span class="toggle-track"></span><span>label menor</span></label></div></div></div></section><section class="section" id="sizes"><div class="section-head"><h2>tamanhos</h2><span class="meta">03</span></div><p class="t-secondary">Default: track 40×24, knob 18px. Small: 32×18, knob 14px.</p></section><section class="section" id="states"><div class="section-head"><h2>estados</h2><span class="meta">04</span></div><div class="demo "><div class="stack"><label class="toggle"><input type="checkbox"><span class="toggle-track"></span><span>off</span></label><label class="toggle"><input type="checkbox" checked><span class="toggle-track"></span><span>on</span></label><label class="toggle"><input type="checkbox" disabled><span class="toggle-track"></span><span>off + disabled</span></label><label class="toggle"><input type="checkbox" checked disabled><span class="toggle-track"></span><span>on + disabled</span></label></div></div></section><section class="section" id="modifiers"><div class="section-head"><h2>modifiers · api</h2><span class="meta">05</span></div><table class="api-table"><thead><tr><th>prop</th><th>tipo</th><th>default</th><th>descrição</th></tr></thead><tbody><tr><td>.toggle</td><td>class</td><td>—</td><td>container</td></tr><tr><td>.toggle-track</td><td>class</td><td>—</td><td>trilho visual</td></tr><tr><td>.toggle--sm</td><td>class</td><td>—</td><td>variante 32×18</td></tr><tr><td>type="checkbox"</td><td>input</td><td>—</td><td>semântica nativa</td></tr><tr><td>checked</td><td>attr</td><td>—</td><td>estado inicial on</td></tr><tr><td>disabled</td><td>attr</td><td>—</td><td>desabilita</td></tr></tbody></table></section><section class="section" id="usage"><div class="section-head"><h2>quando usar</h2><span class="meta">06</span></div><div class="do-dont"><div class="tile do"><h4>use</h4><ul class="bare"><li>Preferências binárias com efeito imediato (notificações on/off)</li><li>Settings de configuração</li><li>Opção isolada (1 toggle por linha)</li></ul></div><div class="tile dont"><h4>não use</h4><ul class="bare"><li>Form com múltiplos campos esperando submit — usa checkbox</li><li>Escolha entre 2+ opções — usa radio</li><li>Ação destrutiva — usa button confirmação</li></ul></div></div></section><section class="section" id="a11y"><div class="section-head"><h2>acessibilidade</h2><span class="meta">07 · wcag aa</span></div><ul class="checklist"><li>role="switch" implícito via input[type="checkbox"]</li><li>aria-checked reflete estado</li><li>Funciona via Tab + Space</li><li>Foco visível com outline 2px</li><li>Label clicável (toda a área .toggle)</li></ul></section><section class="section" id="code"><div class="section-head"><h2>código</h2><span class="meta">08 · html</span></div><div class="code-snippet">&lt;<span class="k">label</span> <span class="v">class</span>=<span class="s">"toggle"</span>&gt;
+  &lt;<span class="k">input</span> <span class="v">type</span>=<span class="s">"checkbox"</span> <span class="v">checked</span>&gt;
+  &lt;<span class="k">span</span> <span class="v">class</span>=<span class="s">"toggle-track"</span>&gt;&lt;/<span class="k">span</span>&gt;
+  &lt;<span class="k">span</span>&gt;notificações&lt;/<span class="k">span</span>&gt;
+&lt;/<span class="k">label</span>&gt;</div></section><section class="section" id="related"><div class="section-head"><h2>componentes relacionados</h2><span class="meta">09</span></div><div class="resource-cards"><a class="resource-card" href="checkbox.html"><div class="meta">componente</div><h4>Checkbox</h4><p>Pra seleção em forms (espera submit).</p><span class="cta">explorar</span></a><a class="resource-card" href="radio-button.html"><div class="meta">componente</div><h4>Radio</h4><p>Pra escolha entre múltiplas opções.</p><span class="cta">explorar</span></a></div></section>
+
+</main>
+<script src="../../shell.js"></script>
+<script src="../../components.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="ch-page" content="slider">
+<meta name="ch-base" content="../../">
+<meta name="description" content="Seleção de valor contínuo dentro de um range. Útil pra volume, brilho, opacidade, valores numéricos visuais.">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<title>slider · Casa Hacker DS</title>
+<link rel="stylesheet" href="../../styles.css">
+
+</head>
+<body>
+<main class="main">
+
+  <header class="page-header">
+    <div class="page-breadcrumb"><a href="../../index.html">home</a><span class="sep">/</span><a href="index.html">components</a><span class="sep">/</span>slider</div>
+    <h1 class="page-title">slider</h1>
+    <p class="page-intro">Seleção de valor contínuo dentro de um range. Útil pra volume, brilho, opacidade, valores numéricos visuais.</p>
+    <div class="page-tags"><span class="tag tag--code">stable</span></div>
+  </header>
+
+  <aside class="toc"><h5>nesta página</h5><ol><li><a href="#overview">Overview</a></li><li><a href="#variants">Variantes</a></li><li><a href="#states">Estados</a></li><li><a href="#behaviors">Comportamentos</a></li><li><a href="#modifiers">Modifiers</a></li><li><a href="#usage">Quando usar</a></li><li><a href="#a11y">Acessibilidade</a></li><li><a href="#code">Código</a></li></ol></aside>
+
+  <section class="section" id="overview"><div class="section-head"><h2>overview</h2><span class="meta">01</span></div><div class="demo "><div class="slider-row max-w-xs"><div class="slider"><input type="range" min="0" max="100" value="60"></div><div class="slider-value">60</div></div></div></section><section class="section" id="variants"><div class="section-head"><h2>variantes</h2><span class="meta">02</span></div><div class="stack-06"><div><h3 class="t-h02 mb-04">Slider simples</h3><div class="demo "><div class="max-w-xs"><label class="form-label">brilho</label><div class="slider-row"><div class="slider"><input type="range" min="0" max="100" value="40"></div><div class="slider-value">40</div></div></div></div></div><div><h3 class="t-h02 mb-04">Sem display de valor</h3><div class="demo "><div class="slider max-w-xs"><input type="range" min="0" max="10" value="3"></div></div></div></div></section><section class="section" id="states"><div class="section-head"><h2>estados</h2><span class="meta">03</span></div><div class="demo "><div class="stack max-w-xs"><div class="slider"><input type="range" min="0" max="100" value="0"></div><div class="slider"><input type="range" min="0" max="100" value="50"></div><div class="slider"><input type="range" min="0" max="100" value="100"></div><div class="slider"><input type="range" min="0" max="100" value="50" disabled></div></div></div></section><section class="section" id="behaviors"><div class="section-head"><h2>comportamentos</h2><span class="meta">04</span></div><ul class="checklist"><li>← / → ajustam 1 step</li><li>↑ / ↓ ajustam 1 step</li><li>Home / End vão pro min / max</li><li>PageUp / PageDown ajustam ~10 steps</li><li>JS auto-sincroniza .slider-value se presente</li></ul></section><section class="section" id="modifiers"><div class="section-head"><h2>modifiers · api</h2><span class="meta">05</span></div><table class="api-table"><thead><tr><th>prop</th><th>tipo</th><th>default</th><th>descrição</th></tr></thead><tbody><tr><td>.slider</td><td>class</td><td>—</td><td>wrapper do input</td></tr><tr><td>.slider-row</td><td>class</td><td>—</td><td>grid 1fr 80px (slider + valor)</td></tr><tr><td>.slider-value</td><td>class</td><td>—</td><td>display do valor atual</td></tr><tr><td>min</td><td>attr</td><td>—</td><td>valor mínimo</td></tr><tr><td>max</td><td>attr</td><td>—</td><td>valor máximo</td></tr><tr><td>step</td><td>attr</td><td>—</td><td>incremento</td></tr><tr><td>value</td><td>attr</td><td>—</td><td>valor inicial</td></tr></tbody></table></section><section class="section" id="usage"><div class="section-head"><h2>quando usar</h2><span class="meta">06</span></div><div class="do-dont"><div class="tile do"><h4>use</h4><ul class="bare"><li>Valores contínuos (brilho, volume)</li><li>Quando precisão exata não é crítica</li><li>Quando visualização do range ajuda (zoom, escala)</li></ul></div><div class="tile dont"><h4>não use</h4><ul class="bare"><li>Valores discretos pequenos (1-5) — usa radio</li><li>Quando precisão é crítica — usa number input</li><li>Múltiplos sliders empilhados sem labels</li></ul></div></div></section><section class="section" id="a11y"><div class="section-head"><h2>acessibilidade</h2><span class="meta">07 · wcag aa</span></div><ul class="checklist"><li>role="slider" implícito via input[type="range"]</li><li>aria-valuemin/max/now implícitos</li><li>Funciona 100% via teclado (setas + Home/End/PageUp/Down)</li><li>Foco visível com box-shadow no thumb</li><li>Sempre acompanhar de label associado</li></ul></section><section class="section" id="code"><div class="section-head"><h2>código</h2><span class="meta">08 · html</span></div><div class="code-snippet">&lt;<span class="k">div</span> <span class="v">class</span>=<span class="s">"slider-row"</span>&gt;
+  &lt;<span class="k">div</span> <span class="v">class</span>=<span class="s">"slider"</span>&gt;
+    &lt;<span class="k">input</span> <span class="v">type</span>=<span class="s">"range"</span> <span class="v">min</span>=<span class="s">"0"</span> <span class="v">max</span>=<span class="s">"100"</span> <span class="v">value</span>=<span class="s">"60"</span>&gt;
+  &lt;/<span class="k">div</span>&gt;
+  &lt;<span class="k">div</span> <span class="v">class</span>=<span class="s">"slider-value"</span>&gt;60&lt;/<span class="k">div</span>&gt;
+&lt;/<span class="k">div</span>&gt;</div></section>
+
+</main>
+<script src="../../shell.js"></script>
+<script src="../../components.js"></script>
+</body>
+</html>

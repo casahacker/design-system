@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="ch-page" content="file-uploader">
+<meta name="ch-base" content="../../">
+<meta name="description" content="Upload de arquivos com drag-and-drop ou click. Lista de arquivos selecionados com remoção individual.">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<title>file-uploader · Casa Hacker DS</title>
+<link rel="stylesheet" href="../../styles.css">
+
+</head>
+<body>
+<main class="main">
+
+  <header class="page-header">
+    <div class="page-breadcrumb"><a href="../../index.html">home</a><span class="sep">/</span><a href="index.html">components</a><span class="sep">/</span>file-uploader</div>
+    <h1 class="page-title">file-uploader</h1>
+    <p class="page-intro">Upload de arquivos com drag-and-drop ou click. Lista de arquivos selecionados com remoção individual.</p>
+    <div class="page-tags"><span class="tag tag--code">stable</span></div>
+  </header>
+
+  <aside class="toc"><h5>nesta página</h5><ol><li><a href="#overview">Overview</a></li><li><a href="#variants">Variantes</a></li><li><a href="#behaviors">Comportamentos</a></li><li><a href="#modifiers">Modifiers</a></li><li><a href="#usage">Quando usar</a></li><li><a href="#a11y">Acessibilidade</a></li><li><a href="#code">Código</a></li></ol></aside>
+
+  <section class="section" id="overview"><div class="section-head"><h2>overview</h2><span class="meta">01</span></div><div class="demo "><div class="file-uploader" tabindex="0"><div class="uploader-icon">↑</div><div class="uploader-text">arraste arquivos ou <strong>clica pra escolher</strong></div><div class="uploader-hint">máx 10MB · png, jpg, pdf</div><input type="file" multiple></div><ul class="file-list"></ul></div></section><section class="section" id="variants"><div class="section-head"><h2>variantes</h2><span class="meta">02</span></div><div class="stack-06"><div><h3 class="t-h02 mb-04">Multi-file</h3><div class="demo "><div class="file-uploader" tabindex="0"><div class="uploader-icon">↑</div><div class="uploader-text">arraste vários arquivos</div><div class="uploader-hint">aceita múltiplos</div><input type="file" multiple></div><ul class="file-list"></ul></div></div><div><h3 class="t-h02 mb-04">Single file</h3><div class="demo "><div class="file-uploader max-w-xs" tabindex="0"><div class="uploader-icon">↑</div><div class="uploader-text">enviar foto de perfil</div><div class="uploader-hint">jpg ou png · até 5MB</div><input type="file" accept="image/*"></div><ul class="file-list"></ul></div></div></div></section><section class="section" id="behaviors"><div class="section-head"><h2>comportamentos</h2><span class="meta">03</span></div><ul class="checklist"><li>Click na zona abre o file picker</li><li>Drag-and-drop de arquivo(s) sobre a zona destaca borda</li><li>Drop registra os arquivos</li><li>Lista mostra nome, tamanho formatado (KB/MB) e botão remover</li><li>Remover é só visual — em produção precisa interagir com upload state</li></ul></section><section class="section" id="modifiers"><div class="section-head"><h2>modifiers · api</h2><span class="meta">04</span></div><table class="api-table"><thead><tr><th>prop</th><th>tipo</th><th>default</th><th>descrição</th></tr></thead><tbody><tr><td>.file-uploader</td><td>class</td><td>—</td><td>zona drop</td></tr><tr><td>.file-list</td><td>class</td><td>—</td><td>lista de arquivos selecionados</td></tr><tr><td>.is-dragover</td><td>class</td><td>—</td><td>estado durante drag (auto)</td></tr><tr><td>accept</td><td>attr</td><td>—</td><td>filtro de tipos (image/*, .pdf)</td></tr><tr><td>multiple</td><td>attr</td><td>—</td><td>permite múltiplos</td></tr></tbody></table></section><section class="section" id="usage"><div class="section-head"><h2>quando usar</h2><span class="meta">05</span></div><div class="do-dont"><div class="tile do"><h4>use</h4><ul class="bare"><li>Upload de avatar, documentos, attachments</li><li>Quando preview rápido ajuda (lista do que foi escolhido)</li><li>Quando drag-and-drop melhora UX (anexar email)</li></ul></div><div class="tile dont"><h4>não use</h4><ul class="bare"><li>Sem indicação de progress quando upload demora — adiciona .progress</li><li>Sem validação de tipo/tamanho</li><li>Sem feedback de erro quando falha</li></ul></div></div></section><section class="section" id="a11y"><div class="section-head"><h2>acessibilidade</h2><span class="meta">06 · wcag aa</span></div><ul class="checklist"><li>Zona com tabindex='0' pra ser focável</li><li>Input file sempre presente (mesmo escondido) — fallback total</li><li>role="button" implícito quando interativo</li><li>Lista de arquivos anunciada por SR (region com aria-live)</li><li>Botão remover com aria-label</li></ul></section><section class="section" id="code"><div class="section-head"><h2>código</h2><span class="meta">07 · html</span></div><div class="code-snippet">&lt;<span class="k">div</span> <span class="v">class</span>=<span class="s">"file-uploader"</span> <span class="v">tabindex</span>=<span class="s">"0"</span>&gt;
+  &lt;<span class="k">div</span> <span class="v">class</span>=<span class="s">"uploader-icon"</span>&gt;↑&lt;/<span class="k">div</span>&gt;
+  &lt;<span class="k">div</span> <span class="v">class</span>=<span class="s">"uploader-text"</span>&gt;arraste ou &lt;<span class="k">strong</span>&gt;escolha&lt;/<span class="k">strong</span>&gt;&lt;/<span class="k">div</span>&gt;
+  &lt;<span class="k">div</span> <span class="v">class</span>=<span class="s">"uploader-hint"</span>&gt;máx 10MB · png, jpg&lt;/<span class="k">div</span>&gt;
+  &lt;<span class="k">input</span> <span class="v">type</span>=<span class="s">"file"</span> <span class="v">multiple</span>&gt;
+&lt;/<span class="k">div</span>&gt;
+&lt;<span class="k">ul</span> <span class="v">class</span>=<span class="s">"file-list"</span>&gt;&lt;/<span class="k">ul</span>&gt;</div></section>
+
+</main>
+<script src="../../shell.js"></script>
+<script src="../../components.js"></script>
+</body>
+</html>

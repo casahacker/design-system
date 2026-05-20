@@ -253,6 +253,85 @@
   }
 
   /* --------------------------------------------------------------------- */
+  /*  NUMBER INPUT — stepper buttons                                         */
+  /* --------------------------------------------------------------------- */
+  function initNumberInput(root) {
+    const input = $('input[type="number"]', root);
+    const dec = $('[data-action="dec"]', root);
+    const inc = $('[data-action="inc"]', root);
+    if (!input) return;
+    const step = parseFloat(input.step) || 1;
+    const min = input.min !== '' ? parseFloat(input.min) : -Infinity;
+    const max = input.max !== '' ? parseFloat(input.max) : Infinity;
+    const update = (delta) => {
+      const cur = parseFloat(input.value) || 0;
+      const next = Math.min(max, Math.max(min, cur + delta));
+      input.value = next;
+      input.dispatchEvent(new Event('input', { bubbles: true }));
+      input.dispatchEvent(new Event('change', { bubbles: true }));
+      if (dec) dec.disabled = next <= min;
+      if (inc) inc.disabled = next >= max;
+    };
+    dec?.addEventListener('click', () => update(-step));
+    inc?.addEventListener('click', () => update(step));
+  }
+
+  /* --------------------------------------------------------------------- */
+  /*  FILE UPLOADER — drag & drop + click                                    */
+  /* --------------------------------------------------------------------- */
+  function initFileUploader(root) {
+    const input = $('input[type="file"]', root);
+    const list = root.parentElement?.querySelector('.file-list');
+    if (!input) return;
+
+    const fmt = (b) => {
+      if (b < 1024) return b + ' B';
+      if (b < 1024*1024) return (b/1024).toFixed(1) + ' KB';
+      return (b/(1024*1024)).toFixed(1) + ' MB';
+    };
+    const render = (files) => {
+      if (!list) return;
+      list.innerHTML = '';
+      Array.from(files).forEach((f, i) => {
+        const li = document.createElement('li');
+        li.className = 'file-list-item';
+        li.innerHTML = `<span class="file-name">${f.name}</span><span class="file-size">${fmt(f.size)}</span><button type="button" class="file-remove" aria-label="remover">×</button>`;
+        li.querySelector('.file-remove').addEventListener('click', () => li.remove());
+        list.appendChild(li);
+      });
+    };
+
+    root.addEventListener('click', (e) => {
+      if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'BUTTON') input.click();
+    });
+    input.addEventListener('change', () => render(input.files));
+
+    ['dragenter','dragover'].forEach(evt => root.addEventListener(evt, (e) => {
+      e.preventDefault(); root.classList.add('is-dragover');
+    }));
+    ['dragleave','drop'].forEach(evt => root.addEventListener(evt, (e) => {
+      e.preventDefault(); root.classList.remove('is-dragover');
+    }));
+    root.addEventListener('drop', (e) => {
+      const files = e.dataTransfer.files;
+      input.files = files;
+      render(files);
+    });
+  }
+
+  /* --------------------------------------------------------------------- */
+  /*  SLIDER — sync value label                                              */
+  /* --------------------------------------------------------------------- */
+  function initSlider(root) {
+    const input = $('input[type="range"]', root);
+    const out = $('.slider-value', root.parentElement);
+    if (!input || !out) return;
+    const sync = () => out.textContent = input.value;
+    input.addEventListener('input', sync);
+    sync();
+  }
+
+  /* --------------------------------------------------------------------- */
   /*  AUTO-INIT                                                              */
   /* --------------------------------------------------------------------- */
   function initAll() {
@@ -261,6 +340,9 @@
     $$('.modal-backdrop').forEach(initModal);
     $$('.dropdown').forEach(initDropdown);
     $$('.notification').forEach(initNotification);
+    $$('.number-input').forEach(initNumberInput);
+    $$('.file-uploader').forEach(initFileUploader);
+    $$('.slider').forEach(initSlider);
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initAll);
