@@ -212,25 +212,39 @@ write("pages/patterns/login.html", page(
 write("pages/patterns/status-indicators.html", page(
     "status", "Status indicators",
     '<a href="../../index.html">home</a><span class="sep">/</span><a href="index.html">patterns</a><span class="sep">/</span>status indicators',
-    "Sinalizações de estado de sistema: online/offline, sync, processando, erro. Padrões consistentes pra ambientes técnicos.",
+    "Sinalizações de estado: online/offline, sync, erro. Cor + dot + label, com semântica de screen reader correta (aria-live).",
     "".join([
-        sec("library", "biblioteca", "01",
+        sec("library", "biblioteca · status badges", "01",
             demo('<div class="row" style="gap: var(--spacing-06)"><span class="status-badge status-badge--stable">stable</span><span class="status-badge status-badge--beta">beta</span><span class="status-badge status-badge--new">new</span><span class="status-badge status-badge--draft">draft</span></div>')),
-        sec("system-states", "estados de sistema", "02",
-            table(["estado","indicação","cor"], [
-                ["Online","ponto verde + texto","--ch-code"],
-                ["Offline","ponto cinza + texto","--ch-java"],
-                ["Sincronizando","spinner pequeno","--ch-code"],
-                ["Erro","triângulo + texto","--support-error"],
-                ["Aviso","triângulo + texto","--support-warning"],
+        sec("system-states", "estados de sistema · dot + label", "02",
+            '<p class="t-body-02 t-secondary mb-05 prose">Padrão recomendado: <strong>dot + label</strong>. O dot tem <code class="code-inline">aria-hidden="true"</code> (decorativo); o label é a verdade. Mudanças dinâmicas usam <code class="code-inline">role="status"</code> + <code class="code-inline">aria-live="polite"</code>.</p>' +
+            demo(
+                '<div class="stack" role="status" aria-live="polite" aria-atomic="true" style="gap: var(--spacing-04)">'
+                '<div class="row" style="gap: var(--spacing-03)"><span class="status-dot status-dot--online" aria-hidden="true"></span><span>online · 4 usuários conectados</span></div>'
+                '<div class="row" style="gap: var(--spacing-03)"><span class="status-dot status-dot--offline" aria-hidden="true"></span><span>offline · última conexão há 2min</span></div>'
+                '<div class="row" style="gap: var(--spacing-03)"><span class="status-dot status-dot--sync" aria-hidden="true"></span><span>sincronizando · 60% concluído</span></div>'
+                '<div class="row" style="gap: var(--spacing-03)"><span class="status-dot status-dot--error" aria-hidden="true"></span><span>erro · falha ao sincronizar</span></div>'
+                '<div class="row" style="gap: var(--spacing-03)"><span class="status-dot status-dot--warning" aria-hidden="true"></span><span>atenção · disco quase cheio</span></div>'
+                '</div>'
+            )),
+        sec("dynamic", "estado dinâmico · aria-live", "03",
+            '<p class="t-body-02 t-secondary mb-05 prose">Container que muda em tempo real precisa de <code class="code-inline">aria-live</code> pra que leitores de tela anunciem a mudança:</p>' +
+            code('<span class="c">&lt;!-- container com aria-live --&gt;</span>\n&lt;<span class="k">div</span> <span class="v">role</span>=<span class="s">"status"</span> <span class="v">aria-live</span>=<span class="s">"polite"</span> <span class="v">aria-atomic</span>=<span class="s">"true"</span>&gt;\n  &lt;<span class="k">span</span> <span class="v">class</span>=<span class="s">"status-dot status-dot--online"</span> <span class="v">aria-hidden</span>=<span class="s">"true"</span>&gt;&lt;/<span class="k">span</span>&gt;\n  &lt;<span class="k">span</span>&gt;online · 4 usuários conectados&lt;/<span class="k">span</span>&gt;\n&lt;/<span class="k">div</span>&gt;\n\n<span class="c">// JS atualiza o texto · screen reader anuncia sozinho</span>\n<span class="k">container</span>.querySelector(<span class="s">\'span:last-child\'</span>).textContent = <span class="s">\'offline · sem conexão\'</span>;')),
+        sec("table-format", "tabela de estados", "04",
+            table(["estado","dot class","aria-live","cor"], [
+                ["Online","status-dot--online","polite","--ch-code-active"],
+                ["Offline","status-dot--offline","polite","--ch-java"],
+                ["Sincronizando","status-dot--sync (pulsa)","polite","--ch-code"],
+                ["Erro","status-dot--error","assertive","--support-error"],
+                ["Aviso","status-dot--warning","polite","--support-warning"],
             ])),
-        sec("rules", "regras", "03",
+        sec("rules", "regras", "05",
             do_dont(
-                ["Cor + ícone + texto (nunca só cor)","Estado anunciado por SR (role='status')","Atualização em tempo real com aria-live"],
-                ["Só cor pra transmitir significado","Mudar de estado sem feedback visual","Pontos coloridos sem label adjacente"],
+                ["Cor + dot + texto sempre · nunca só cor","Container com role='status' + aria-live='polite' pra updates","aria-atomic='true' pra ler o estado completo","aria-live='assertive' só pra erros críticos","Dot decorativo · aria-hidden='true'"],
+                ["Só cor pra transmitir significado","Mudar de estado sem feedback visual","Pontos coloridos sem label adjacente","aria-live='assertive' em tudo · atrapalha screen reader","Tooltip sozinho como única indicação"],
             )),
     ]),
-    toc=[{"id":"library","label":"Biblioteca"},{"id":"system-states","label":"Estados de sistema"},{"id":"rules","label":"Regras"}],
+    toc=[{"id":"library","label":"Biblioteca"},{"id":"system-states","label":"Estados"},{"id":"dynamic","label":"aria-live"},{"id":"table-format","label":"Tabela"},{"id":"rules","label":"Regras"}],
 ))
 
 # Data Viz movido pra scripts/gen_dataviz.py (rebuild completo, 8 páginas)

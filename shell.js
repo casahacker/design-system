@@ -740,6 +740,25 @@
   });
 
   /* --------------------------------------------------------------------- */
+  /*  Motion · click-to-play (page de motion live demos)                    */
+  /* --------------------------------------------------------------------- */
+  $$('[data-motion-play]').forEach(btn => {
+    const box = btn.querySelector('[data-motion-box]');
+    if (!box) return;
+    btn.addEventListener('click', () => {
+      // Reset position then animate
+      box.style.transform = 'translateY(-50%) translateX(0)';
+      requestAnimationFrame(() => {
+        box.style.transform = 'translateY(-50%) translateX(200px)';
+      });
+      // Reset back after 1s pra deixar tudo limpo
+      setTimeout(() => {
+        box.style.transform = 'translateY(-50%) translateX(0)';
+      }, 1100);
+    });
+  });
+
+  /* --------------------------------------------------------------------- */
   /*  Icon library · click to copy icon name                                */
   /* --------------------------------------------------------------------- */
   $$('.icon-cell').forEach(cell => {

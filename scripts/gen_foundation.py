@@ -382,12 +382,50 @@ write("pages/elements/iconography.html", page(
     toc=[{"id":"library","label":"Biblioteca"},{"id":"sizes","label":"Tamanhos"},{"id":"color","label":"Cor"},{"id":"h-symbol","label":"H símbolo"},{"id":"h-symbol-variants","label":"Variações"},{"id":"usage","label":"Quando usar"},{"id":"code","label":"Código"}],
 ))
 
+# --- Motion demo: bloco que anima ao clicar/hover, mostrando cada token visualmente
+def _motion_demo(label, var_name, duration_or_ease, kind):
+    # kind = 'duration' ou 'ease'
+    if kind == 'duration':
+        anim = f'transition: transform {duration_or_ease} var(--ease-productive)'
+    else:
+        anim = f'transition: transform 600ms {duration_or_ease}'
+    return (
+        f'<div style="display:flex;flex-direction:column;gap:var(--spacing-03);padding:var(--spacing-04);background:var(--layer-01);border:1px solid var(--border-subtle-00)">'
+        f'<div style="font:var(--code-01);color:var(--text-helper);text-transform:uppercase;letter-spacing:0.08em">{label}</div>'
+        f'<div style="font:var(--code-02);color:var(--text-tertiary)">{var_name}</div>'
+        f'<button type="button" data-motion-play '
+        f'style="position:relative;height:48px;background:var(--layer-02);border:1px dashed var(--border-subtle-01);overflow:hidden;cursor:pointer;padding:0;text-align:left">'
+        f'<span data-motion-box style="position:absolute;left:6px;top:50%;transform:translateY(-50%);width:32px;height:32px;background:var(--ch-code);{anim}"></span>'
+        f'<span style="position:absolute;right:var(--spacing-04);top:50%;transform:translateY(-50%);font:var(--code-01);color:var(--text-helper)">▶ play</span>'
+        f'</button>'
+        f'</div>'
+    )
+
+motion_durations_demo = '<div class="grid-3" style="gap:var(--spacing-04)">' + ''.join([
+    _motion_demo('Fast 01', '--duration-fast-01', '70ms', 'duration'),
+    _motion_demo('Fast 02', '--duration-fast-02', '110ms', 'duration'),
+    _motion_demo('Moderate 01', '--duration-moderate-01', '150ms', 'duration'),
+    _motion_demo('Moderate 02', '--duration-moderate-02', '240ms', 'duration'),
+    _motion_demo('Slow 01', '--duration-slow-01', '400ms', 'duration'),
+    _motion_demo('Slow 02', '--duration-slow-02', '700ms', 'duration'),
+]) + '</div>'
+
+motion_easings_demo = '<div class="grid-3" style="gap:var(--spacing-04)">' + ''.join([
+    _motion_demo('Productive', '--ease-productive', 'cubic-bezier(0.2,0,0.38,0.9)', 'ease'),
+    _motion_demo('Expressive', '--ease-expressive', 'cubic-bezier(0.4,0.14,0.3,1)', 'ease'),
+    _motion_demo('Entrance', '--ease-entrance', 'cubic-bezier(0,0,0.38,0.9)', 'ease'),
+    _motion_demo('Exit', '--ease-exit', 'cubic-bezier(0.2,0,1,0.9)', 'ease'),
+    _motion_demo('Standard', '--ease-standard', 'cubic-bezier(0.5,0,0.1,1)', 'ease'),
+]) + '</div>'
+
 write("pages/elements/motion.html", page(
     "motion", "Motion",
     '<a href="../../index.html">home</a><span class="sep">/</span><a href="../about/index.html">foundations</a><span class="sep">/</span>motion',
-    "Animações com propósito: curtas, com easing certo, e sempre respeitando prefers-reduced-motion. Tokens Carbon de duration e easing.",
+    "Animações com propósito: curtas, com easing certo, e sempre respeitando prefers-reduced-motion. Tokens Carbon de duration e easing — demonstrados aqui com animações ao vivo (clique nos blocos pra ver).",
     "".join([
-        sec("durations", "durations", "01 · 6 tokens",
+        sec("durations", "durations · live", "01 · 6 tokens",
+            '<p class="t-body-02 t-secondary mb-05 prose">Clique em cada bloco pra ver a duração em ação. O quadrado verde anima 200px à direita.</p>' +
+            demo(motion_durations_demo) +
             table(["token","valor","uso"], [
                 ["--duration-fast-01","70ms","micro-interações (button press)"],
                 ["--duration-fast-02","110ms","hover transitions"],
@@ -396,7 +434,9 @@ write("pages/elements/motion.html", page(
                 ["--duration-slow-01","400ms","page transitions"],
                 ["--duration-slow-02","700ms","animações narrativas"],
             ])),
-        sec("easings", "easings", "02 · 5 curvas",
+        sec("easings", "easings · live", "02 · 5 curvas",
+            '<p class="t-body-02 t-secondary mb-05 prose">Curvas com duração fixa de 600ms pra exagerar a diferença das curvas.</p>' +
+            demo(motion_easings_demo) +
             table(["token","curva","uso"], [
                 ["--ease-productive","cubic-bezier(0.2,0,0.38,0.9)","UI default"],
                 ["--ease-expressive","cubic-bezier(0.4,0.14,0.3,1)","entradas chamativas"],
