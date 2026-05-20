@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="ch-page" content="accordion">
+<meta name="ch-base" content="../../">
+<meta name="description" content="Accordion — divulgação progressiva, single ou multi-mode, ARIA-compliant.">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<title>Accordion · Casa Hacker DS</title>
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+<main class="main">
+
+  <header class="page-header">
+    <div class="page-breadcrumb">
+      <a href="../../index.html">home</a><span class="sep">/</span><a href="index.html">components</a><span class="sep">/</span>accordion
+    </div>
+    <h1 class="page-title">accordion</h1>
+    <p class="page-intro">
+      Accordion entrega muito conteúdo em pouco espaço através de divulgação progressiva.
+      Usuário escolhe quais seções expandir. Bom pra FAQ, configurações agrupadas, especificações.
+    </p>
+    <div class="page-tags"><span class="tag tag--code">stable</span></div>
+  </header>
+
+  <aside class="toc">
+    <h5>nesta página</h5>
+    <ol>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#variants">Variantes</a></li>
+      <li><a href="#states">Estados</a></li>
+      <li><a href="#anatomy">Anatomia</a></li>
+      <li><a href="#behaviors">Comportamentos</a></li>
+      <li><a href="#modifiers">Modifiers</a></li>
+      <li><a href="#usage">Quando usar</a></li>
+      <li><a href="#a11y">Acessibilidade</a></li>
+      <li><a href="#code">Código</a></li>
+    </ol>
+  </aside>
+
+  <section class="section" id="overview">
+    <div class="section-head"><h2>overview</h2><span class="meta">01</span></div>
+    <div class="demo">
+      <div class="accordion" data-mode="single" style="max-width: 600px;">
+        <div class="accordion-item open">
+          <button class="accordion-header" type="button">primeiro item · expandido <span class="chevron">›</span></button>
+          <div class="accordion-body">Conteúdo da primeira seção. Pode ter qualquer coisa aqui: texto, listas, outros componentes.</div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" type="button">segundo item · colapsado <span class="chevron">›</span></button>
+          <div class="accordion-body">Conteúdo da segunda seção.</div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" type="button">terceiro item · colapsado <span class="chevron">›</span></button>
+          <div class="accordion-body">Conteúdo da terceira seção.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="variants">
+    <div class="section-head"><h2>variantes</h2><span class="meta">02 · single / multi</span></div>
+    <table class="data-table">
+      <thead><tr><th>variante</th><th>comportamento</th></tr></thead>
+      <tbody>
+        <tr><td>single (default)</td><td>abrir um fecha os outros · economia visual</td></tr>
+        <tr><td>multi</td><td>permite múltiplos abertos simultaneamente · permite comparação</td></tr>
+      </tbody>
+    </table>
+    <div class="subsection mt-06">
+      <h3>multi</h3>
+      <p class="t-comment">Vários itens abertos ao mesmo tempo.</p>
+      <div class="demo">
+        <div class="accordion" data-mode="multi" style="max-width: 600px;">
+          <div class="accordion-item open"><button class="accordion-header" type="button">item 1 <span class="chevron">›</span></button><div class="accordion-body">Aberto.</div></div>
+          <div class="accordion-item open"><button class="accordion-header" type="button">item 2 <span class="chevron">›</span></button><div class="accordion-body">Também aberto.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="states">
+    <div class="section-head"><h2>estados</h2><span class="meta">03</span></div>
+    <table class="data-table">
+      <thead><tr><th>estado</th><th>indicação</th></tr></thead>
+      <tbody>
+        <tr><td>collapsed</td><td>chevron apontando à direita</td></tr>
+        <tr><td>expanded</td><td>chevron rotacionado 90° · body visível</td></tr>
+        <tr><td>hover</td><td>background-hover no header</td></tr>
+        <tr><td>focus</td><td>outline 2px no header</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section" id="anatomy">
+    <div class="section-head"><h2>anatomia</h2><span class="meta">04</span></div>
+    <div class="anatomy">
+      <svg width="500" height="220" viewBox="0 0 500 220" fill="none">
+        <rect x="40" y="40" width="420" height="50" fill="#FFFFFF" stroke="#D7DCD7"/>
+        <text x="60" y="70" font-family="Roboto Flex" font-size="16" fill="#3C433C" font-weight="600">label do item</text>
+        <text x="430" y="70" font-family="IBM Plex Mono" font-size="14" fill="#32FA96">›</text>
+        <rect x="40" y="90" width="420" height="80" fill="#FFFFFF" stroke="#D7DCD7"/>
+        <text x="60" y="130" font-family="Roboto Flex" font-size="14" fill="#5C625C">corpo do item — texto, listas, componentes</text>
+        <circle cx="50" cy="65" r="9" fill="#FFF" stroke="#91938C"/>
+        <text x="46" y="69" font-family="IBM Plex Mono" font-size="11" fill="#3C433C" font-weight="600">1</text>
+        <circle cx="430" cy="65" r="9" fill="#FFF" stroke="#91938C"/>
+        <text x="426" y="69" font-family="IBM Plex Mono" font-size="11" fill="#3C433C" font-weight="600">2</text>
+        <circle cx="50" cy="130" r="9" fill="#FFF" stroke="#91938C"/>
+        <text x="46" y="134" font-family="IBM Plex Mono" font-size="11" fill="#3C433C" font-weight="600">3</text>
+      </svg>
+      <ol class="anatomy-legend">
+        <li>Header — clicável, mostra label do item</li>
+        <li>Chevron — indica estado (apontando = colapsado, virado = expandido)</li>
+        <li>Body — revela ao expandir</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="behaviors">
+    <div class="section-head"><h2>comportamentos</h2><span class="meta">05</span></div>
+    <ul class="checklist">
+      <li>Click no header alterna expansão</li>
+      <li>Enter ou Space no header também alterna (focus no header)</li>
+      <li>No modo single, abrir um fecha os outros</li>
+      <li>Transição de chevron: 110ms</li>
+      <li>Estado inicial controlado por classe <code class="code-inline">.open</code> no item</li>
+    </ul>
+  </section>
+
+  <section class="section" id="modifiers">
+    <div class="section-head"><h2>modifiers · api</h2><span class="meta">06</span></div>
+    <table class="api-table">
+      <thead><tr><th>atributo</th><th>tipo</th><th>default</th><th>descrição</th></tr></thead>
+      <tbody>
+        <tr><td>data-mode</td><td>"single" | "multi"</td><td>"single"</td><td>modo de expansão</td></tr>
+        <tr><td>.open (no item)</td><td>class</td><td>—</td><td>estado inicial expandido</td></tr>
+        <tr><td>aria-expanded</td><td>boolean</td><td>"false"</td><td>setado automaticamente pelo JS</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section" id="usage">
+    <div class="section-head"><h2>quando usar</h2><span class="meta">07</span></div>
+    <div class="do-dont">
+      <div class="tile do"><h4>use</h4><ul class="bare">
+        <li>organizar conteúdo extenso em seções</li>
+        <li>reduzir scroll em interfaces mobile</li>
+        <li>FAQ, configurações, especificações técnicas</li>
+        <li>entre 3 e 7 itens — sweet spot de navegabilidade</li>
+      </ul></div>
+      <div class="tile dont"><h4>não use</h4><ul class="bare">
+        <li>conteúdo crítico que precisa ser visto — usa seções abertas</li>
+        <li>mais de 7 itens — vira lista difícil de navegar</li>
+        <li>navegação primária — usa tabs ou sidebar</li>
+        <li>conteúdo que cabe na tela toda sem expansão</li>
+      </ul></div>
+    </div>
+  </section>
+
+  <section class="section" id="a11y">
+    <div class="section-head"><h2>acessibilidade</h2><span class="meta">08 · wcag aa</span></div>
+    <ul class="checklist">
+      <li>Header é elemento <code class="code-inline">&lt;button&gt;</code>, não div</li>
+      <li>aria-expanded reflete o estado (true / false)</li>
+      <li>aria-controls aponta pro ID do body</li>
+      <li>Foco visível no header</li>
+      <li>Funciona via teclado (Enter / Space)</li>
+      <li>Estado expand/collapse é anunciado por leitor de tela</li>
+    </ul>
+  </section>
+
+  <section class="section" id="code">
+    <div class="section-head"><h2>código</h2><span class="meta">09 · html + js</span></div>
+    <div class="code-snippet"><span class="c">&lt;!-- markup --&gt;</span>
+&lt;<span class="k">div</span> <span class="v">class</span>=<span class="s">"accordion"</span> <span class="v">data-mode</span>=<span class="s">"single"</span>&gt;
+  &lt;<span class="k">div</span> <span class="v">class</span>=<span class="s">"accordion-item open"</span>&gt;
+    &lt;<span class="k">button</span> <span class="v">class</span>=<span class="s">"accordion-header"</span>&gt;label&lt;<span class="k">span</span> <span class="v">class</span>=<span class="s">"chevron"</span>&gt;›&lt;/<span class="k">span</span>&gt;&lt;/<span class="k">button</span>&gt;
+    &lt;<span class="k">div</span> <span class="v">class</span>=<span class="s">"accordion-body"</span>&gt;conteúdo&lt;/<span class="k">div</span>&gt;
+  &lt;/<span class="k">div</span>&gt;
+&lt;/<span class="k">div</span>&gt;
+
+<span class="c">// JS é auto-inicializado pelo components.js</span></div>
+  </section>
+
+</main>
+<script src="../../shell.js"></script>
+<script src="../../components.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="ch-page" content="link">
+<meta name="ch-base" content="../../">
+<meta name="description" content="Navegação inline em texto, ou standalone como CTA secundário. Sempre sublinhado pra acessibilidade.">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<title>link · Casa Hacker DS</title>
+<link rel="stylesheet" href="../../styles.css">
+
+</head>
+<body>
+<main class="main">
+
+  <header class="page-header">
+    <div class="page-breadcrumb"><a href="../../index.html">home</a><span class="sep">/</span><a href="index.html">components</a><span class="sep">/</span>link</div>
+    <h1 class="page-title">link</h1>
+    <p class="page-intro">Navegação inline em texto, ou standalone como CTA secundário. Sempre sublinhado pra acessibilidade.</p>
+    <div class="page-tags"><span class="tag tag--code">stable</span></div>
+  </header>
+
+  <aside class="toc"><h5>nesta página</h5><ol><li><a href="#overview">Overview</a></li><li><a href="#variants">Variantes</a></li><li><a href="#states">Estados</a></li><li><a href="#modifiers">Modifiers</a></li><li><a href="#usage">Quando usar</a></li><li><a href="#a11y">Acessibilidade</a></li><li><a href="#code">Código</a></li><li><a href="#related">Relacionados</a></li></ol></aside>
+
+  <section class="section" id="overview"><div class="section-head"><h2>overview</h2><span class="meta">01</span></div><div class="demo "><div class="stack"><p>Inline: leia mais sobre <a class="link" href="#">tokens de cor</a> e <a class="link" href="#">tipografia</a>.</p><a class="link link--standalone" href="#">ver documentação completa</a></div></div></section><section class="section" id="variants"><div class="section-head"><h2>variantes</h2><span class="meta">02</span></div><div class="stack-06"><div><h3 class="t-h02 mb-04">Inline</h3><p class="t-comment mb-04">Dentro de texto corrido.</p><div class="demo "><p>Texto com <a class="link" href="#">link inline</a> no meio.</p></div></div><div><h3 class="t-h02 mb-04">Standalone</h3><p class="t-comment mb-04">CTA secundário, com seta.</p><div class="demo "><a class="link link--standalone" href="#">próximo passo</a></div></div></div></section><section class="section" id="states"><div class="section-head"><h2>estados</h2><span class="meta">03</span></div><div class="row" style="gap: var(--spacing-06)"><a class="link" href="#">default</a><a class="link" href="#" style="color: var(--link-primary-hover)">hover</a><a class="link" href="#" style="outline: 2px solid var(--focus); outline-offset: 2px;">focus</a><a class="link" href="#" style="color: var(--text-disabled); pointer-events: none">disabled</a></div></section><section class="section" id="modifiers"><div class="section-head"><h2>modifiers · api</h2><span class="meta">04</span></div><table class="api-table"><thead><tr><th>prop</th><th>tipo</th><th>default</th><th>descrição</th></tr></thead><tbody><tr><td>.link</td><td>class</td><td>—</td><td>link inline (sublinhado verde)</td></tr><tr><td>.link--standalone</td><td>class</td><td>—</td><td>CTA com seta, sem sublinhado</td></tr></tbody></table></section><section class="section" id="usage"><div class="section-head"><h2>quando usar</h2><span class="meta">05</span></div><div class="do-dont"><div class="tile do"><h4>use</h4><ul class="bare"><li>Navegação pra outra página/rota</li><li>Referências externas (abre em nova aba com rel=noopener)</li><li>Inline em texto corrido</li><li>Standalone como 'continuar', 'ver mais'</li></ul></div><div class="tile dont"><h4>não use</h4><ul class="bare"><li>Ação (use button)</li><li>"clique aqui" — usa o texto descritivo</li><li>Sem sublinhado inline</li><li>Link sobre ícone sem aria-label</li></ul></div></div></section><section class="section" id="a11y"><div class="section-head"><h2>acessibilidade</h2><span class="meta">06 · wcag aa</span></div><ul class="checklist"><li>Sempre &lt;a href="..."&gt;, não JS-only div</li><li>Texto descritivo ("ler artigo", não "clique")</li><li>target="_blank" sempre com rel="noopener noreferrer"</li><li>Foco visível 2px solid focus</li><li>External link sinalizado (↗) quando relevante</li></ul></section><section class="section" id="code"><div class="section-head"><h2>código</h2><span class="meta">07 · html</span></div><div class="code-snippet"><span class="c">&lt;!-- inline --&gt;</span>
+&lt;<span class="k">p</span>&gt;Leia mais sobre &lt;<span class="k">a</span> <span class="v">class</span>=<span class="s">"link"</span> <span class="v">href</span>=<span class="s">"/color"</span>&gt;cor&lt;/<span class="k">a</span>&gt;.&lt;/<span class="k">p</span>&gt;
+
+<span class="c">&lt;!-- standalone --&gt;</span>
+&lt;<span class="k">a</span> <span class="v">class</span>=<span class="s">"link link--standalone"</span> <span class="v">href</span>=<span class="s">"/next"</span>&gt;próximo passo&lt;/<span class="k">a</span>&gt;
+
+<span class="c">&lt;!-- externo --&gt;</span>
+&lt;<span class="k">a</span> <span class="v">class</span>=<span class="s">"link"</span> <span class="v">href</span>=<span class="s">"https://x.com"</span> <span class="v">target</span>=<span class="s">"_blank"</span> <span class="v">rel</span>=<span class="s">"noopener"</span>&gt;site externo ↗&lt;/<span class="k">a</span>&gt;</div></section><section class="section" id="related"><div class="section-head"><h2>componentes relacionados</h2><span class="meta">08</span></div><div class="resource-cards"><a class="resource-card" href="button.html"><div class="meta">componente</div><h4>Button</h4><p>Pra disparar ações, não navegação.</p><span class="cta">explorar</span></a></div></section>
+
+</main>
+<script src="../../shell.js"></script>
+<script src="../../components.js"></script>
+</body>
+</html>

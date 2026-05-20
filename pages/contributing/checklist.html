@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="ch-page" content="checklist">
+<meta name="ch-base" content="../../">
+<meta name="description" content="Lista do que precisa estar pronto antes de um componente entrar no sistema. Use como guia ao propor PR.">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<title>Component checklist · Casa Hacker DS</title>
+<link rel="stylesheet" href="../../styles.css">
+
+</head>
+<body>
+<main class="main">
+
+  <header class="page-header">
+    <div class="page-breadcrumb"><a href="../../index.html">home</a><span class="sep">/</span><a href="index.html">contributing</a><span class="sep">/</span>component checklist</div>
+    <h1 class="page-title">component checklist</h1>
+    <p class="page-intro">Lista do que precisa estar pronto antes de um componente entrar no sistema. Use como guia ao propor PR.</p>
+    
+  </header>
+
+  <aside class="toc"><h5>nesta página</h5><ol><li><a href="#a11y">Acessibilidade</a></li><li><a href="#design">Design</a></li><li><a href="#docs">Documentação</a></li><li><a href="#code">Código</a></li></ol></aside>
+
+  <section class="section" id="a11y"><div class="section-head"><h2>acessibilidade</h2><span class="meta">01</span></div><ul class="checklist"><li>Operável só com teclado</li><li>Estado focado é evidente visualmente (outline 2px)</li><li>Contraste 4.5:1 em texto / 3:1 em bordas</li><li>ARIA aplicado conforme APG do tipo de componente</li><li>Funciona em leitor de tela (testar com NVDA ou VoiceOver)</li><li>prefers-reduced-motion respeitado se há animação</li><li>Áreas de toque ≥ 44×44px</li></ul></section><section class="section" id="design"><div class="section-head"><h2>design</h2><span class="meta">02</span></div><ul class="checklist"><li>Usa tokens semânticos, não cores cruas</li><li>Spacing em múltiplos do BIT</li><li>Funciona em ambos os temas (light e dark)</li><li>Estados cobertos: default, hover, focus, active, disabled</li><li>Responsivo (mobile <600 / tablet <1024 / desktop)</li></ul></section><section class="section" id="docs"><div class="section-head"><h2>documentação</h2><span class="meta">03</span></div><ul class="checklist"><li>Página com TOC + 10 seções (overview, variants, sizes, states, anatomy, behaviors, modifiers, usage, a11y, code)</li><li>Demo interativa funcional</li><li>Anatomy SVG anotada</li><li>Exemplos de uso claros (do/don't)</li><li>Código copiável (HTML/CSS/JS)</li><li>Listado em components/index.html</li><li>Adicionado ao navConfig do shell.js</li></ul></section><section class="section" id="code"><div class="section-head"><h2>código</h2><span class="meta">04</span></div><ul class="checklist"><li>CSS no styles.css (não inline)</li><li>JS interativo no components.js (não inline)</li><li>BEM-like naming (.component, .component__elem, .component--modifier)</li><li>Sem dependências externas (manter zero-build)</li><li>Funciona em browsers modernos (Chrome, Firefox, Safari, Edge)</li></ul></section>
+
+</main>
+<script src="../../shell.js"></script>
+<script src="../../components.js"></script>
+</body>
+</html>

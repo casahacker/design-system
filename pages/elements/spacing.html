@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="ch-page" content="spacing">
+<meta name="ch-base" content="../../">
+<meta name="description" content="O BIT (8px) é a unidade primitiva. Toda a escala de spacing são múltiplos ou frações dele, garantindo ritmo visual consistente em digital e físico.">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<title>Spacing · BIT · Casa Hacker DS</title>
+<link rel="stylesheet" href="../../styles.css">
+
+</head>
+<body>
+<main class="main">
+
+  <header class="page-header">
+    <div class="page-breadcrumb"><a href="../../index.html">home</a><span class="sep">/</span><a href="../about/index.html">foundations</a><span class="sep">/</span>spacing</div>
+    <h1 class="page-title">spacing · bit</h1>
+    <p class="page-intro">O BIT (8px) é a unidade primitiva. Toda a escala de spacing são múltiplos ou frações dele, garantindo ritmo visual consistente em digital e físico.</p>
+    
+  </header>
+
+  <aside class="toc"><h5>nesta página</h5><ol><li><a href="#scale">Escala</a></li><li><a href="#bit">O BIT</a></li><li><a href="#density">Modos de densidade</a></li><li><a href="#usage">Quando usar cada valor</a></li><li><a href="#code">Código</a></li></ol></aside>
+
+  <section class="section" id="scale"><div class="section-head"><h2>escala</h2><span class="meta">01 · 13 tokens</span></div><p class="t-body-02 t-secondary mb-05" style="max-width:720px">Spacing-01 a spacing-13. Os primeiros 2 são frações do BIT (2px, 4px); os demais são múltiplos.</p><table class="data-table"><thead><tr><th>token</th><th>valor</th><th>múltiplo do BIT</th><th>uso típico</th></tr></thead><tbody><tr><td>--spacing-01</td><td>2px</td><td>¼ BIT</td><td>ajuste fino · ícones inline</td></tr><tr><td>--spacing-02</td><td>4px</td><td>½ BIT</td><td>gap mínimo entre elementos</td></tr><tr><td>--spacing-03</td><td>8px</td><td>1 BIT</td><td>padding compacto · gap default</td></tr><tr><td>--spacing-04</td><td>12px</td><td>1.5</td><td>padding interno de form</td></tr><tr><td>--spacing-05</td><td>16px</td><td>2</td><td>padding standard</td></tr><tr><td>--spacing-06</td><td>24px</td><td>3</td><td>gap entre componentes</td></tr><tr><td>--spacing-07</td><td>32px</td><td>4</td><td>gap entre seções</td></tr><tr><td>--spacing-08</td><td>40px</td><td>5</td><td>padding generoso</td></tr><tr><td>--spacing-09</td><td>48px</td><td>6</td><td>margin de seção</td></tr><tr><td>--spacing-10</td><td>64px</td><td>8</td><td>main padding</td></tr><tr><td>--spacing-11</td><td>80px</td><td>10</td><td>hero spacing</td></tr><tr><td>--spacing-12</td><td>96px</td><td>12</td><td>margin entre macro-seções</td></tr><tr><td>--spacing-13</td><td>160px</td><td>20</td><td>display spacing</td></tr></tbody></table></section><section class="section" id="bit"><div class="section-head"><h2>o bit</h2><span class="meta">02 · unidade primitiva</span></div><p class="t-body-02 t-secondary mb-05" style="max-width:720px">BIT = 8px. Por que 8? É divisível por 2 e 4, encaixa em telas retina (×2, ×3), e cria um grid invisível que conecta padding, sizing, ícones e linha-altura.</p><div class="demo "><div style="display:grid;grid-template-columns:repeat(8,32px);gap:1px;background:var(--ch-code);padding:1px;width:fit-content;"><div style="background:var(--layer-01);height:32px"></div><div style="display:grid;grid-template-columns:repeat(8,32px);gap:1px;background:var(--ch-code);padding:1px;width:fit-content;"><div style="background:var(--layer-01);height:32px"></div><div style="display:grid;grid-template-columns:repeat(8,32px);gap:1px;background:var(--ch-code);padding:1px;width:fit-content;"><div style="background:var(--layer-01);height:32px"></div><div style="display:grid;grid-template-columns:repeat(8,32px);gap:1px;background:var(--ch-code);padding:1px;width:fit-content;"><div style="background:var(--layer-01);height:32px"></div><div style="display:grid;grid-template-columns:repeat(8,32px);gap:1px;background:var(--ch-code);padding:1px;width:fit-content;"><div style="background:var(--layer-01);height:32px"></div><div style="display:grid;grid-template-columns:repeat(8,32px);gap:1px;background:var(--ch-code);padding:1px;width:fit-content;"><div style="background:var(--layer-01);height:32px"></div><div style="display:grid;grid-template-columns:repeat(8,32px);gap:1px;background:var(--ch-code);padding:1px;width:fit-content;"><div style="background:var(--layer-01);height:32px"></div><div style="display:grid;grid-template-columns:repeat(8,32px);gap:1px;background:var(--ch-code);padding:1px;width:fit-content;"><div style="background:var(--layer-01);height:32px"></div></div><p class="t-helper mt-04">8 BITs no horizontal · 32px cada · grid de 264px</p></div></section><section class="section" id="density"><div class="section-head"><h2>modos de densidade</h2><span class="meta">03</span></div><p class="t-body-02 t-secondary mb-05" style="max-width:720px">Componentes podem assumir 3 densidades. Para usar, troque os tokens base por seus equivalentes denser.</p><table class="data-table"><thead><tr><th>modo</th><th>altura input</th><th>altura btn</th><th>uso</th></tr></thead><tbody><tr><td>compact</td><td>32px</td><td>32px</td><td>tabelas densas, toolbars</td></tr><tr><td>default</td><td>40px</td><td>48px</td><td>produto padrão</td></tr><tr><td>expressive</td><td>56px</td><td>64px</td><td>landings, formulários longos</td></tr></tbody></table></section><section class="section" id="usage"><div class="section-head"><h2>quando usar cada valor</h2><span class="meta">04</span></div><div class="do-dont"><div class="tile do"><h4>use</h4><ul class="bare"><li>Múltiplos do BIT — mesmo se for valor pequeno (8px sim, 7px não)</li><li>spacing-03 (8px) como gap default entre rows</li><li>spacing-09 (48px) como margin de section em desktop</li><li>spacing-05 (16px) como padding interno padrão</li></ul></div><div class="tile dont"><h4>não use</h4><ul class="bare"><li>Valores arbitrários (13px, 17px) — quebra o ritmo</li><li>spacing-01 / 02 em layouts macro</li><li>spacing-13 (160px) em mobile — quebra responsividade</li><li>spacings diferentes pra coisas iguais — gera inconsistência</li></ul></div></div></section><section class="section" id="code"><div class="section-head"><h2>código</h2><span class="meta">05 · css</span></div><div class="code-snippet"><span class="c">/* uso de spacing tokens */</span>
+<span class="k">.my-card</span> {
+  padding: <span class="k">var</span>(--spacing-05) <span class="k">var</span>(--spacing-06);
+  margin-bottom: <span class="k">var</span>(--spacing-07);
+  gap: <span class="k">var</span>(--spacing-04);
+}
+
+<span class="c">/* responsivo */</span>
+<span class="k">@media</span> (max-width: <span class="v">600px</span>) {
+  <span class="k">.my-card</span> { padding: <span class="k">var</span>(--spacing-04); }
+}</div></section>
+
+</main>
+<script src="../../shell.js"></script>
+<script src="../../components.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="ch-page" content="loading">
+<meta name="ch-base" content="../../">
+<meta name="description" content="Indicadores de estado de carregamento: spinner pra ações curtas, skeleton pra blocos de conteúdo, progress pra operações com tempo conhecido.">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<title>loading · Casa Hacker DS</title>
+<link rel="stylesheet" href="../../styles.css">
+
+</head>
+<body>
+<main class="main">
+
+  <header class="page-header">
+    <div class="page-breadcrumb"><a href="../../index.html">home</a><span class="sep">/</span><a href="index.html">components</a><span class="sep">/</span>loading</div>
+    <h1 class="page-title">loading</h1>
+    <p class="page-intro">Indicadores de estado de carregamento: spinner pra ações curtas, skeleton pra blocos de conteúdo, progress pra operações com tempo conhecido.</p>
+    <div class="page-tags"><span class="tag tag--code">stable</span></div>
+  </header>
+
+  <aside class="toc"><h5>nesta página</h5><ol><li><a href="#overview">Overview</a></li><li><a href="#variants">Variantes</a></li><li><a href="#sizes">Tamanhos</a></li><li><a href="#modifiers">Modifiers</a></li><li><a href="#usage">Quando usar</a></li><li><a href="#a11y">Acessibilidade</a></li><li><a href="#code">Código</a></li></ol></aside>
+
+  <section class="section" id="overview"><div class="section-head"><h2>overview</h2><span class="meta">01</span></div><div class="demo "><div class="row" style="gap: var(--spacing-08); align-items: center"><span class="spinner"></span><span class="spinner spinner--sm"></span><span class="spinner spinner--lg"></span></div></div></section><section class="section" id="variants"><div class="section-head"><h2>variantes</h2><span class="meta">02</span></div><div class="stack-06"><div><h3 class="t-h02 mb-04">Spinner</h3><p class="t-comment mb-04">Operação rápida sem tempo conhecido.</p><div class="demo "><span class="spinner"></span></div></div><div><h3 class="t-h02 mb-04">Skeleton</h3><p class="t-comment mb-04">Placeholder enquanto conteúdo carrega.</p><div class="demo "><div style="max-width: 360px"><div class="skeleton" style="height: 20px; margin-bottom: 8px"></div><div class="skeleton" style="height: 14px; width: 80%; margin-bottom: 8px"></div><div class="skeleton" style="height: 14px; width: 60%"></div></div></div></div><div><h3 class="t-h02 mb-04">Progress determinado</h3><p class="t-comment mb-04">Quando o tempo é conhecido.</p><div class="demo "><div class="progress"><div class="progress-bar" style="width: 60%"></div></div></div></div><div><h3 class="t-h02 mb-04">Progress indeterminado</h3><div class="demo "><div class="progress progress--indeterminate"><div class="progress-bar"></div></div></div></div></div></section><section class="section" id="sizes"><div class="section-head"><h2>tamanhos</h2><span class="meta">03</span></div><div class="demo "><div class="row" style="gap: var(--spacing-06); align-items: center"><span class="spinner spinner--sm"></span><span class="spinner"></span><span class="spinner spinner--lg"></span></div></div></section><section class="section" id="modifiers"><div class="section-head"><h2>modifiers · api</h2><span class="meta">04</span></div><table class="api-table"><thead><tr><th>prop</th><th>tipo</th><th>default</th><th>descrição</th></tr></thead><tbody><tr><td>.spinner</td><td>class</td><td>—</td><td>círculo girando 32px</td></tr><tr><td>.spinner--sm</td><td>class</td><td>—</td><td>16px</td></tr><tr><td>.spinner--lg</td><td>class</td><td>—</td><td>64px</td></tr><tr><td>.skeleton</td><td>class</td><td>—</td><td>placeholder shimmer</td></tr><tr><td>.progress</td><td>class</td><td>—</td><td>barra de progresso</td></tr><tr><td>.progress--indeterminate</td><td>class</td><td>—</td><td>sem porcentagem</td></tr></tbody></table></section><section class="section" id="usage"><div class="section-head"><h2>quando usar</h2><span class="meta">05</span></div><div class="do-dont"><div class="tile do"><h4>use</h4><ul class="bare"><li>Spinner pra <2s sem tempo conhecido</li><li>Skeleton pra carregamento de página/lista</li><li>Progress pra upload/download com tempo</li><li>Skeleton mantém layout estável (sem CLS)</li></ul></div><div class="tile dont"><h4>não use</h4><ul class="bare"><li>Spinner pra >5s sem feedback adicional</li><li>Progress fake (porcentagem aleatória)</li><li>Skeleton com forma muito diferente do conteúdo real</li></ul></div></div></section><section class="section" id="a11y"><div class="section-head"><h2>acessibilidade</h2><span class="meta">06 · wcag aa</span></div><ul class="checklist"><li>aria-busy="true" no container que está carregando</li><li>role="status" e aria-live="polite" pra anunciar mudanças</li><li>aria-label="carregando" no spinner</li><li>Respeitar prefers-reduced-motion (spin reduzido)</li></ul></section><section class="section" id="code"><div class="section-head"><h2>código</h2><span class="meta">07 · html</span></div><div class="code-snippet"><span class="c">&lt;!-- spinner --&gt;</span>
+&lt;<span class="k">span</span> <span class="v">class</span>=<span class="s">"spinner"</span> <span class="v">role</span>=<span class="s">"status"</span> <span class="v">aria-label</span>=<span class="s">"carregando"</span>&gt;&lt;/<span class="k">span</span>&gt;
+
+<span class="c">&lt;!-- skeleton --&gt;</span>
+&lt;<span class="k">div</span> <span class="v">class</span>=<span class="s">"skeleton"</span> <span class="v">style</span>=<span class="s">"height: 20px"</span>&gt;&lt;/<span class="k">div</span>&gt;
+
+<span class="c">&lt;!-- progress --&gt;</span>
+&lt;<span class="k">div</span> <span class="v">class</span>=<span class="s">"progress"</span>&gt;
+  &lt;<span class="k">div</span> <span class="v">class</span>=<span class="s">"progress-bar"</span> <span class="v">style</span>=<span class="s">"width: 60%"</span>&gt;&lt;/<span class="k">div</span>&gt;
+&lt;/<span class="k">div</span>&gt;</div></section>
+
+</main>
+<script src="../../shell.js"></script>
+<script src="../../components.js"></script>
+</body>
+</html>

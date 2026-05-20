@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="ch-page" content="ui-shell">
+<meta name="ch-base" content="../../">
+<meta name="description" content="O esqueleto da aplicação: header fixo + sidebar colapsável + main + footer. Injetado por shell.js em qualquer página com &lt;main class='main'&gt;.">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<title>ui-shell · Casa Hacker DS</title>
+<link rel="stylesheet" href="../../styles.css">
+
+</head>
+<body>
+<main class="main">
+
+  <header class="page-header">
+    <div class="page-breadcrumb"><a href="../../index.html">home</a><span class="sep">/</span><a href="index.html">components</a><span class="sep">/</span>ui-shell</div>
+    <h1 class="page-title">ui-shell</h1>
+    <p class="page-intro">O esqueleto da aplicação: header fixo + sidebar colapsável + main + footer. Injetado por shell.js em qualquer página com &lt;main class='main'&gt;.</p>
+    <div class="page-tags"><span class="tag tag--code">stable</span></div>
+  </header>
+
+  <aside class="toc"><h5>nesta página</h5><ol><li><a href="#overview">Overview</a></li><li><a href="#variants">Variantes</a></li><li><a href="#behaviors">Comportamentos</a></li><li><a href="#modifiers">Modifiers</a></li><li><a href="#usage">Quando usar</a></li><li><a href="#a11y">Acessibilidade</a></li><li><a href="#code">Código</a></li></ol></aside>
+
+  <section class="section" id="overview"><div class="section-head"><h2>overview</h2><span class="meta">01</span></div><div class="demo "><div style="background: var(--ch-dos); color: var(--ch-css); padding: var(--spacing-04); display: flex; align-items: center; gap: var(--spacing-04); margin-bottom: var(--spacing-04)"><div class="h-mini" style="width: 16px; height: 16px"><span class="on"></span><span></span><span class="on"></span><span></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span class="on"></span></div><span class="t-label-02">casa hacker / ds</span><span style="margin-left: auto; color: var(--ch-inspect); font: var(--label-01)">GITHUB ↗</span></div><div style="display: grid; grid-template-columns: 200px 1fr; min-height: 200px; border: 1px solid var(--border-subtle-00)"><div style="padding: var(--spacing-04); background: var(--layer-01); border-right: 1px solid var(--border-subtle-00)"><div class="t-label-01" style="color: var(--text-helper); margin-bottom: var(--spacing-03)">// SECTION</div><div style="padding: var(--spacing-02) 0; border-left: 2px solid var(--ch-code); padding-left: var(--spacing-03); background: var(--background-selected)">item ativo</div><div style="padding: var(--spacing-02) 0; padding-left: var(--spacing-03)">item</div></div><div style="padding: var(--spacing-05)"><h4>main content</h4><p class="t-secondary">conteúdo da página</p></div></div></div></section><section class="section" id="variants"><div class="section-head"><h2>variantes</h2><span class="meta">02</span></div><p class="t-secondary">Composição única: 1 header + 1 sidebar + 1 main + 1 footer. Variantes futuras (sem sidebar, sem footer) podem ser adicionadas.</p></section><section class="section" id="behaviors"><div class="section-head"><h2>comportamentos</h2><span class="meta">03</span></div><ul class="checklist"><li>Header fixo (sticky top: 0)</li><li>Sidebar colapsável por seção, estado persistido em localStorage</li><li>Mobile: sidebar vira drawer com backdrop</li><li>Atalho '/' foca a busca da sidebar</li><li>Esc fecha sidebar mobile</li><li>Active section auto-expande na sidebar</li></ul></section><section class="section" id="modifiers"><div class="section-head"><h2>modifiers · api</h2><span class="meta">04</span></div><table class="api-table"><thead><tr><th>prop</th><th>tipo</th><th>default</th><th>descrição</th></tr></thead><tbody><tr><td>.shell-header</td><td>class</td><td>—</td><td>header dos · sticky</td></tr><tr><td>.sidebar</td><td>class</td><td>—</td><td>nav lateral · colapsa por seção</td></tr><tr><td>.main</td><td>class</td><td>—</td><td>conteúdo principal · max-width 1280px</td></tr><tr><td>.shell-footer</td><td>class</td><td>—</td><td>rodapé</td></tr><tr><td>meta[name="ch-page"]</td><td>meta</td><td>—</td><td>id da página atual</td></tr><tr><td>meta[name="ch-base"]</td><td>meta</td><td>—</td><td>path relativo ao root</td></tr></tbody></table></section><section class="section" id="usage"><div class="section-head"><h2>quando usar</h2><span class="meta">05</span></div><div class="do-dont"><div class="tile do"><h4>use</h4><ul class="bare"><li>Páginas internas do produto</li><li>Sites de documentação</li><li>Apps com nav fixa</li><li>Páginas com 5+ seções</li></ul></div><div class="tile dont"><h4>não use</h4><ul class="bare"><li>Landing pages — usa layout próprio</li><li>Email templates</li><li>Single-purpose pages (login isolado)</li></ul></div></div></section><section class="section" id="a11y"><div class="section-head"><h2>acessibilidade</h2><span class="meta">06 · wcag aa</span></div><ul class="checklist"><li>Skip-link 'pular pra conteúdo' visível no foco</li><li>&lt;nav aria-label="navegação primária"&gt;</li><li>aria-current="page" no link ativo</li><li>Sidebar com toggle aria-expanded</li><li>Mobile: focus trap quando drawer aberto</li></ul></section><section class="section" id="code"><div class="section-head"><h2>código</h2><span class="meta">07 · html</span></div><div class="code-snippet"><span class="c">&lt;!-- toda página tem essa estrutura --&gt;</span>
+&lt;<span class="k">html</span>&gt;
+&lt;<span class="k">head</span>&gt;
+  &lt;<span class="k">meta</span> <span class="v">name</span>=<span class="s">"ch-page"</span> <span class="v">content</span>=<span class="s">"my-page"</span>&gt;
+  &lt;<span class="k">meta</span> <span class="v">name</span>=<span class="s">"ch-base"</span> <span class="v">content</span>=<span class="s">"../../"</span>&gt;
+  &lt;<span class="k">link</span> <span class="v">rel</span>=<span class="s">"stylesheet"</span> <span class="v">href</span>=<span class="s">"../../styles.css"</span>&gt;
+&lt;/<span class="k">head</span>&gt;
+&lt;<span class="k">body</span>&gt;
+  &lt;<span class="k">main</span> <span class="v">class</span>=<span class="s">"main"</span>&gt;
+    &lt;!-- conteúdo --&gt;
+  &lt;/<span class="k">main</span>&gt;
+  &lt;<span class="k">script</span> <span class="v">src</span>=<span class="s">"../../shell.js"</span>&gt;&lt;/<span class="k">script</span>&gt;
+&lt;/<span class="k">body</span>&gt;</div></section>
+
+</main>
+<script src="../../shell.js"></script>
+<script src="../../components.js"></script>
+</body>
+</html>

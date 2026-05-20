@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="ch-page" content="typography">
+<meta name="ch-base" content="../../">
+<meta name="description" content="Sistema tipográfico Casa Hacker — IBM Plex Mono, Roboto Flex variable, VT323. Escala, line-height, tracking e playground.">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<title>Typography · Casa Hacker DS</title>
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  .specimen {
+    background: var(--layer-02);
+    padding: var(--spacing-07);
+    border: 1px solid var(--border-subtle-00);
+    margin-bottom: var(--spacing-05);
+  }
+  .specimen .label {
+    font: var(--label-01); text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--text-helper); margin-bottom: var(--spacing-03);
+  }
+  .specimen .label::before { content: '// '; color: var(--ch-code); }
+  .vf-playground { background: var(--layer-02); padding: var(--spacing-07); border: 1px solid var(--border-subtle-00); }
+  .vf-playground .preview {
+    font-family: 'Roboto Flex', system-ui, sans-serif;
+    font-size: 64px; line-height: 1;
+    margin-bottom: var(--spacing-06);
+    transition: font-variation-settings 100ms linear;
+  }
+  .vf-control { display: grid; grid-template-columns: 160px 1fr 60px; gap: var(--spacing-04); align-items: center; margin-bottom: var(--spacing-03); }
+  .vf-control label { font: var(--code-02); color: var(--text-secondary); }
+  .vf-control input { width: 100%; }
+  .vf-control output { font: var(--code-02); color: var(--ch-code-active); text-align: right; }
+  [data-theme="dark"] .vf-control output { color: var(--ch-code); }
+  .scale-row { display: grid; grid-template-columns: 100px 1fr 100px; gap: var(--spacing-05); padding: var(--spacing-04) 0; border-bottom: 1px solid var(--border-subtle-00); align-items: baseline; }
+  .scale-row .token { font: var(--code-01); color: var(--ch-code-active); text-transform: uppercase; }
+  [data-theme="dark"] .scale-row .token { color: var(--ch-code); }
+  .scale-row .meta { font: var(--code-01); color: var(--text-helper); text-align: right; }
+  @media (max-width: 800px) { .scale-row { grid-template-columns: 1fr; gap: var(--spacing-02); } .scale-row .meta { text-align: left; } }
+</style>
+</head>
+<body>
+<main class="main">
+
+  <header class="page-header">
+    <div class="page-breadcrumb">
+      <a href="../../index.html">home</a><span class="sep">/</span><a href="../about/index.html">foundations</a><span class="sep">/</span>typography
+    </div>
+    <h1 class="page-title">typography</h1>
+    <p class="page-intro">
+      Três famílias self-hosted formam a base tipográfica do CHDS. <strong>IBM Plex Mono</strong> pra UI técnica
+      (labels, code, metadados), <strong>Roboto Flex</strong> variable pra corpo de texto e títulos,
+      <strong>VT323</strong> pra acentos pixel-art em momentos lúdicos.
+    </p>
+  </header>
+
+  <aside class="toc">
+    <h5>nesta página</h5>
+    <ol>
+      <li><a href="#families">Famílias</a></li>
+      <li><a href="#scale">Escala tipográfica</a></li>
+      <li><a href="#weights">Pesos</a></li>
+      <li><a href="#playground">Playground variável</a></li>
+      <li><a href="#tracking">Tracking & line-height</a></li>
+      <li><a href="#usage">Quando usar cada uma</a></li>
+      <li><a href="#a11y">Acessibilidade</a></li>
+      <li><a href="#code">Código</a></li>
+    </ol>
+  </aside>
+
+  <section class="section" id="families">
+    <div class="section-head"><h2>famílias</h2><span class="meta">01 · 3 fontes</span></div>
+
+    <div class="specimen">
+      <div class="label">ibm plex mono · 6 pesos · 1 itálico</div>
+      <div style="font-family: var(--font-mono); font-size: 56px; line-height: 1.05; font-weight: 400;">// hack the future</div>
+      <div style="font-family: var(--font-mono); margin-top: var(--spacing-04); color: var(--text-secondary); font-size: 14px; line-height: 1.5;">
+        Plex Mono carrega a identidade técnica. Usada em labels, código inline, metadados e qualquer momento
+        "terminal". Disponível em Light · Regular · Italic · Medium · SemiBold · Bold.
+      </div>
+    </div>
+
+    <div class="specimen">
+      <div class="label">roboto flex · variable · 13 eixos</div>
+      <div style="font-family: var(--font-sans); font-size: 64px; line-height: 0.95; font-weight: 300; letter-spacing: -0.03em;">casa hacker</div>
+      <div style="font-family: var(--font-sans); margin-top: var(--spacing-04); color: var(--text-secondary); font-size: 14px; line-height: 1.5;">
+        Roboto Flex é variable: 1 arquivo, 1000 pesos, 13 eixos de customização. Body de texto, títulos
+        de página, copy longa. <code class="code-inline">font-weight: 100 a 1000</code>.
+      </div>
+    </div>
+
+    <div class="specimen">
+      <div class="label">vt323 · pixel · 1 peso</div>
+      <div style="font-family: var(--font-pixel); font-size: 64px; line-height: 0.9;">retrowave 80s</div>
+      <div style="font-family: var(--font-sans); margin-top: var(--spacing-04); color: var(--text-secondary); font-size: 14px; line-height: 1.5;">
+        VT323 é um specimen de terminal antigo. Usar com parcimônia, em momentos festivos: badges de evento,
+        contadores, easter eggs. Não usar em corpo de texto.
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="scale">
+    <div class="section-head"><h2>escala tipográfica</h2><span class="meta">02 · 14 tokens</span></div>
+    <p class="t-body-02 t-secondary mb-05" style="max-width: 720px;">
+      Cada nível tem token CSS (<code class="code-inline">var(--heading-04)</code>) que aplica peso, tamanho
+      e line-height numa única declaração via <code class="code-inline">font</code>.
+    </p>
+
+    <div class="scale-row"><div class="token">code-01</div><div style="font: var(--code-01)">12 / 16 · mono</div><div class="meta">labels secundários</div></div>
+    <div class="scale-row"><div class="token">code-02</div><div style="font: var(--code-02)">14 / 20 · mono</div><div class="meta">code inline · meta</div></div>
+    <div class="scale-row"><div class="token">label-01</div><div style="font: var(--label-01)">12 / 16 · 500</div><div class="meta">eyebrow uppercase</div></div>
+    <div class="scale-row"><div class="token">label-02</div><div style="font: var(--label-02)">14 / 18 · 500</div><div class="meta">botões, abas</div></div>
+    <div class="scale-row"><div class="token">helper-01</div><div style="font: var(--helper-text-01)">12 / 16 · mono</div><div class="meta">helper de form</div></div>
+    <div class="scale-row"><div class="token">body-01</div><div style="font: var(--body-01)">14 / 20 · sans</div><div class="meta">corpo compacto</div></div>
+    <div class="scale-row"><div class="token">body-02</div><div style="font: var(--body-02)">16 / 24 · sans</div><div class="meta">corpo padrão</div></div>
+    <div class="scale-row"><div class="token">heading-01</div><div style="font: var(--heading-01)">14 / 18 · 600</div><div class="meta">label de card</div></div>
+    <div class="scale-row"><div class="token">heading-02</div><div style="font: var(--heading-02)">16 / 22 · 600</div><div class="meta">h3 dentro de seção</div></div>
+    <div class="scale-row"><div class="token">heading-03</div><div style="font: var(--heading-03)">20 / 28</div><div class="meta">subseção</div></div>
+    <div class="scale-row"><div class="token">heading-04</div><div style="font: var(--heading-04)">28 / 36</div><div class="meta">h2 de seção</div></div>
+    <div class="scale-row"><div class="token">heading-05</div><div style="font: var(--heading-05)">32 / 40</div><div class="meta">h2 de página menor</div></div>
+    <div class="scale-row"><div class="token">heading-06</div><div style="font: var(--heading-06)">42 / 50 · 300</div><div class="meta">h1 médio</div></div>
+    <div class="scale-row"><div class="token">heading-07</div><div style="font: var(--heading-07)">54 / 64 · 300</div><div class="meta">h1 página</div></div>
+  </section>
+
+  <section class="section" id="weights">
+    <div class="section-head"><h2>pesos</h2><span class="meta">03 · plex mono</span></div>
+    <p class="t-body-02 t-secondary mb-05" style="max-width: 720px;">
+      IBM Plex Mono tem 6 pesos. Roboto Flex é variable, qualquer valor entre 100 e 1000.
+    </p>
+    <div class="grid-3">
+      <div class="tile tile--bordered"><div style="font-family: var(--font-mono); font-weight: 300; font-size: 28px;">Light · 300</div><p style="margin-top: var(--spacing-03)">titles pesados que pedem leveza visual.</p></div>
+      <div class="tile tile--bordered"><div style="font-family: var(--font-mono); font-weight: 400; font-size: 28px;">Regular · 400</div><p style="margin-top: var(--spacing-03)">peso default · corpo.</p></div>
+      <div class="tile tile--bordered"><div style="font-family: var(--font-mono); font-weight: 400; font-style: italic; font-size: 28px;">Italic · 400i</div><p style="margin-top: var(--spacing-03)">ênfase · termos estrangeiros.</p></div>
+      <div class="tile tile--bordered"><div style="font-family: var(--font-mono); font-weight: 500; font-size: 28px;">Medium · 500</div><p style="margin-top: var(--spacing-03)">labels de botão · destaque sutil.</p></div>
+      <div class="tile tile--bordered"><div style="font-family: var(--font-mono); font-weight: 600; font-size: 28px;">SemiBold · 600</div><p style="margin-top: var(--spacing-03)">títulos de seção compactos.</p></div>
+      <div class="tile tile--bordered"><div style="font-family: var(--font-mono); font-weight: 700; font-size: 28px;">Bold · 700</div><p style="margin-top: var(--spacing-03)">máxima ênfase · usar com parcimônia.</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="playground">
+    <div class="section-head"><h2>playground variável</h2><span class="meta">04 · roboto flex</span></div>
+    <p class="t-body-02 t-secondary mb-05" style="max-width: 720px;">
+      Roboto Flex expõe 13 eixos. Os 5 mais úteis estão no playground abaixo. Tente combinar weight alto com
+      width condensado, ou slant negativo pra um itálico técnico.
+    </p>
+    <div class="vf-playground">
+      <div class="preview" id="vfPreview">hack a casa</div>
+      <div class="vf-control">
+        <label for="vfwght">weight (wght)</label>
+        <input type="range" id="vfwght" min="100" max="1000" value="300" step="10">
+        <output id="vfwghtOut">300</output>
+      </div>
+      <div class="vf-control">
+        <label for="vfwdth">width (wdth)</label>
+        <input type="range" id="vfwdth" min="25" max="151" value="100" step="1">
+        <output id="vfwdthOut">100</output>
+      </div>
+      <div class="vf-control">
+        <label for="vfslnt">slant (slnt)</label>
+        <input type="range" id="vfslnt" min="-10" max="0" value="0" step="1">
+        <output id="vfslntOut">0</output>
+      </div>
+      <div class="vf-control">
+        <label for="vfopsz">optical (opsz)</label>
+        <input type="range" id="vfopsz" min="8" max="144" value="64" step="1">
+        <output id="vfopszOut">64</output>
+      </div>
+      <div class="vf-control">
+        <label for="vfsize">font-size (px)</label>
+        <input type="range" id="vfsize" min="16" max="128" value="64" step="1">
+        <output id="vfsizeOut">64</output>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="tracking">
+    <div class="section-head"><h2>tracking & line-height</h2><span class="meta">05 · regras</span></div>
+    <table class="data-table">
+      <thead><tr><th>contexto</th><th>line-height</th><th>letter-spacing</th></tr></thead>
+      <tbody>
+        <tr><td>corpo de texto (body-01, body-02)</td><td>1.5 (20/14, 24/16)</td><td>0</td></tr>
+        <tr><td>títulos pequenos (heading-01 a 03)</td><td>~1.3</td><td>0</td></tr>
+        <tr><td>títulos médios (heading-04, 05)</td><td>~1.25</td><td>-0.015em</td></tr>
+        <tr><td>display (heading-06, 07)</td><td>~1.15</td><td>-0.025em a -0.035em</td></tr>
+        <tr><td>label uppercase (label-01)</td><td>1.33</td><td>0.08em a 0.15em</td></tr>
+        <tr><td>code/mono</td><td>1.4 a 1.5</td><td>0</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section" id="usage">
+    <div class="section-head"><h2>quando usar cada uma</h2><span class="meta">06 · diretrizes</span></div>
+    <div class="do-dont">
+      <div class="tile do"><h4>use</h4><ul class="bare">
+        <li>Plex Mono pra labels, code, meta, eyebrow</li>
+        <li>Roboto Flex pra body, títulos, lead text</li>
+        <li>VT323 só em momentos celebrativos (badges, easter eggs)</li>
+        <li>1 família por elemento — não misturar mono+sans no mesmo botão</li>
+      </ul></div>
+      <div class="tile dont"><h4>não use</h4><ul class="bare">
+        <li>Plex Mono em parágrafos longos — fica cansativo</li>
+        <li>VT323 em corpo de texto ou áreas legibilidade-crítica</li>
+        <li>4+ pesos diferentes na mesma tela</li>
+        <li>tamanhos fora da escala (ex: 17px arbitrário)</li>
+      </ul></div>
+    </div>
+  </section>
+
+  <section class="section" id="a11y">
+    <div class="section-head"><h2>acessibilidade</h2><span class="meta">07 · wcag aa</span></div>
+    <ul class="checklist">
+      <li>Tamanho mínimo de 12px (label-01) — abaixo disso fica ilegível em mobile</li>
+      <li>Line-height nunca inferior a 1.2 em texto corrido</li>
+      <li>Letter-spacing positivo (≥0.08em) em texto uppercase pra preservar leitura</li>
+      <li>Suporte a zoom 200% sem quebra de layout — usar rem/em onde possível</li>
+      <li>Sem texto em imagem — sempre HTML semântico pra leitura por SR</li>
+      <li>Pesos extremos (100, 1000) só em uso pontual, nunca em corpo</li>
+    </ul>
+  </section>
+
+  <section class="section" id="code">
+    <div class="section-head"><h2>código</h2><span class="meta">08 · css</span></div>
+    <div class="code-snippet"><span class="c">/* uso direto via token */</span>
+<span class="k">.page-title</span> { font: <span class="k">var</span>(--heading-07); }
+<span class="k">.body-text</span>  { font: <span class="k">var</span>(--body-02); }
+<span class="k">.eyebrow</span>    { font: <span class="k">var</span>(--label-01); text-transform: uppercase; letter-spacing: <span class="v">0.08em</span>; }
+
+<span class="c">/* roboto flex variable */</span>
+<span class="k">.display</span> {
+  font-family: <span class="s">'Roboto Flex'</span>, system-ui, sans-serif;
+  font-variation-settings: <span class="s">'wght'</span> <span class="v">300</span>, <span class="s">'wdth'</span> <span class="v">100</span>, <span class="s">'opsz'</span> <span class="v">96</span>;
+  font-size: <span class="v">64px</span>;
+  letter-spacing: <span class="v">-0.025em</span>;
+}</div>
+  </section>
+
+</main>
+<script>
+  // VF playground
+  const preview = document.getElementById('vfPreview');
+  const params = { wght: 300, wdth: 100, slnt: 0, opsz: 64 };
+  let size = 64;
+  function apply() {
+    preview.style.fontVariationSettings = `'wght' ${params.wght}, 'wdth' ${params.wdth}, 'slnt' ${params.slnt}, 'opsz' ${params.opsz}`;
+    preview.style.fontSize = size + 'px';
+  }
+  ['wght','wdth','slnt','opsz'].forEach(axis => {
+    const inp = document.getElementById('vf'+axis);
+    const out = document.getElementById('vf'+axis+'Out');
+    inp.addEventListener('input', e => { params[axis] = +e.target.value; out.value = e.target.value; apply(); });
+  });
+  const sizeInp = document.getElementById('vfsize');
+  const sizeOut = document.getElementById('vfsizeOut');
+  sizeInp.addEventListener('input', e => { size = +e.target.value; sizeOut.value = e.target.value; apply(); });
+  apply();
+</script>
+<script src="../../shell.js"></script>
+<script src="../../components.js"></script>
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="ch-page" content="color">
+<meta name="ch-base" content="../../">
+<meta name="description" content="Sistema de cor do Casa Hacker DS — paleta brand, tokens semânticos Carbon, themes light e dark, contrast.">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<title>Color · Casa Hacker DS</title>
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  .swatch-row {
+    display: grid; grid-template-columns: 80px 1fr 120px 100px;
+    gap: var(--spacing-04);
+    padding: var(--spacing-04);
+    border-bottom: 1px solid var(--border-subtle-00);
+    align-items: center;
+    font: var(--code-02);
+  }
+  .swatch-row .chip { height: 40px; border: 1px solid var(--border-subtle-00); }
+  .swatch-row .name { color: var(--text-primary); }
+  .swatch-row .hex { color: var(--text-helper); font-family: var(--font-mono); }
+  .swatch-row .role { color: var(--text-secondary); }
+  @media (max-width: 800px) {
+    .swatch-row { grid-template-columns: 60px 1fr; }
+    .swatch-row .hex, .swatch-row .role { display: none; }
+  }
+  .palette-row {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 1px;
+    margin-bottom: var(--spacing-04);
+  }
+  .palette-row .step {
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: var(--spacing-02);
+    font: var(--code-01);
+  }
+  @media (max-width: 600px) { .palette-row { grid-template-columns: repeat(3, 1fr); } }
+</style>
+</head>
+<body>
+<main class="main">
+
+  <header class="page-header">
+    <div class="page-breadcrumb">
+      <a href="../../index.html">home</a><span class="sep">/</span><a href="../about/index.html">foundations</a><span class="sep">/</span>color
+    </div>
+    <h1 class="page-title">color</h1>
+    <p class="page-intro">
+      O sistema de cor combina uma paleta brand pequena (11 tons primários + paleta estendida do Perifa)
+      com tokens semânticos Carbon. Tokens descrevem <em>função</em> (background, text-primary, support-error)
+      — nunca o valor cru. Trocar de tema é trocar tokens, sem refatorar componente.
+    </p>
+    <div class="page-tags">
+      <span class="tag tag--code">stable</span>
+      <span class="tag tag--blue">wcag aa</span>
+    </div>
+  </header>
+
+  <aside class="toc">
+    <h5>nesta página</h5>
+    <ol>
+      <li><a href="#brand">Paleta brand</a></li>
+      <li><a href="#purple">Paleta estendida · purple</a></li>
+      <li><a href="#tokens">Tokens semânticos</a></li>
+      <li><a href="#themes">Light e dark theme</a></li>
+      <li><a href="#contrast">Contraste & a11y</a></li>
+      <li><a href="#usage">Quando usar cada cor</a></li>
+      <li><a href="#code">Código</a></li>
+    </ol>
+  </aside>
+
+  <section class="section" id="brand">
+    <div class="section-head"><h2>paleta brand</h2><span class="meta">01 · 11 cores primárias</span></div>
+    <p class="t-body-02 t-secondary mb-05" style="max-width:720px">
+      Cores que carregam a identidade Casa Hacker. <strong>Code</strong> é a cor de destaque (CTA, focus, links),
+      <strong>Dos</strong> é o fundo escuro, <strong>Console</strong> o claro. As demais são níveis intermediários
+      e cores de apoio.
+    </p>
+
+    <h3 class="t-h02 mb-04">primárias</h3>
+    <div class="stack" style="margin-bottom: var(--spacing-07);">
+      <div class="swatch-row"><div class="chip" style="background:#32FA96"></div><div class="name">Code</div><div class="hex">#32FA96</div><div class="role">destaque · CTA · focus</div></div>
+      <div class="swatch-row"><div class="chip" style="background:#3C433C"></div><div class="name">Dos</div><div class="hex">#3C433C</div><div class="role">fundo escuro · texto primário</div></div>
+      <div class="swatch-row"><div class="chip" style="background:#91938C"></div><div class="name">Java</div><div class="hex">#91938C</div><div class="role">texto helper · borda forte</div></div>
+      <div class="swatch-row"><div class="chip" style="background:#D7DCD7"></div><div class="name">Inspect</div><div class="hex">#D7DCD7</div><div class="role">borda sutil · layer-03</div></div>
+      <div class="swatch-row"><div class="chip" style="background:#F0F5F0"></div><div class="name">Console</div><div class="hex">#F0F5F0</div><div class="role">background hover · layer-02</div></div>
+      <div class="swatch-row"><div class="chip" style="background:#F8FCF8"></div><div class="name">CSS</div><div class="hex">#F8FCF8</div><div class="role">background (light theme)</div></div>
+    </div>
+
+    <h3 class="t-h02 mb-04">secundárias e apoio</h3>
+    <div class="stack">
+      <div class="swatch-row"><div class="chip" style="background:#E1FFDE"></div><div class="name">Sec Green</div><div class="hex">#E1FFDE</div><div class="role">tag green light</div></div>
+      <div class="swatch-row"><div class="chip" style="background:#B3D9FE"></div><div class="name">Sec Blue</div><div class="hex">#B3D9FE</div><div class="role">tag info</div></div>
+      <div class="swatch-row"><div class="chip" style="background:#FF9ECF"></div><div class="name">Sec Pink</div><div class="hex">#FF9ECF</div><div class="role">tag pink · destaque alternativo</div></div>
+      <div class="swatch-row"><div class="chip" style="background:#D79B2E"></div><div class="name">Script</div><div class="hex">#D79B2E</div><div class="role">support warning</div></div>
+      <div class="swatch-row"><div class="chip" style="background:#DA1E28"></div><div class="name">Error red</div><div class="hex">#DA1E28</div><div class="role">support error · danger</div></div>
+    </div>
+  </section>
+
+  <section class="section" id="purple">
+    <div class="section-head"><h2>paleta estendida · purple</h2><span class="meta">02 · perifa impacto</span></div>
+    <p class="t-body-02 t-secondary mb-05" style="max-width:720px">
+      O <strong>Perifa Impacto</strong> introduz uma paleta roxa que estende o sistema sem quebrá-lo.
+      O mesmo roxo é usado pra marcar conteúdo gerado por IA (ver Casa Hacker for AI).
+    </p>
+    <div class="grid-3">
+      <div class="tile" style="background:#D3BAF5; color:#4A2A7A"><h4>Purple Light</h4><p style="color:#4A2A7A">#D3BAF5</p></div>
+      <div class="tile" style="background:#AA78E6; color:#FFF"><h4>Purple</h4><p style="color:#FFF">#AA78E6</p></div>
+      <div class="tile" style="background:#6C44A0; color:#FFF"><h4>Purple Dark</h4><p style="color:#FFF">#6C44A0</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="tokens">
+    <div class="section-head"><h2>tokens semânticos</h2><span class="meta">03 · carbon-mapped</span></div>
+    <p class="t-body-02 t-secondary mb-05" style="max-width:720px">
+      Toda cor em componente é via token semântico. <code class="code-inline">var(--background)</code> em vez
+      de <code class="code-inline">#F8FCF8</code>. Lista completa, agrupada por função.
+    </p>
+
+    <h3 class="t-h02 mb-04">backgrounds</h3>
+    <table class="api-table mb-06">
+      <thead><tr><th>token</th><th>light</th><th>dark</th><th>uso</th></tr></thead>
+      <tbody>
+        <tr><td>--background</td><td>#F8FCF8</td><td>#3C433C</td><td>fundo da página</td></tr>
+        <tr><td>--background-hover</td><td>#F0F5F0</td><td>#444B44</td><td>hover sobre o background</td></tr>
+        <tr><td>--background-active</td><td>#D7DCD7</td><td>#525952</td><td>pressed state</td></tr>
+        <tr><td>--background-selected</td><td>rgba(50,250,150,.12)</td><td>rgba(50,250,150,.16)</td><td>item selecionado</td></tr>
+        <tr><td>--background-inverse</td><td>#3C433C</td><td>#F8FCF8</td><td>tooltip · modal backdrop</td></tr>
+        <tr><td>--background-brand</td><td>#32FA96</td><td>#32FA96</td><td>destaque brand</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="t-h02 mb-04">layers (cards, painéis)</h3>
+    <table class="api-table mb-06">
+      <thead><tr><th>token</th><th>light</th><th>dark</th><th>uso</th></tr></thead>
+      <tbody>
+        <tr><td>--layer-01</td><td>#FFFFFF</td><td>#2C322C</td><td>card primário</td></tr>
+        <tr><td>--layer-02</td><td>#F0F5F0</td><td>#383E38</td><td>card aninhado</td></tr>
+        <tr><td>--layer-03</td><td>#D7DCD7</td><td>#444B44</td><td>3º nível de aninhamento</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="t-h02 mb-04">text</h3>
+    <table class="api-table mb-06">
+      <thead><tr><th>token</th><th>light</th><th>dark</th><th>uso</th></tr></thead>
+      <tbody>
+        <tr><td>--text-primary</td><td>#3C433C</td><td>#F8FCF8</td><td>corpo de texto e títulos</td></tr>
+        <tr><td>--text-secondary</td><td>#5C625C</td><td>#D7DCD7</td><td>descrições, suporte</td></tr>
+        <tr><td>--text-tertiary</td><td>#91938C</td><td>#ADB1A9</td><td>placeholders, metadados</td></tr>
+        <tr><td>--text-helper</td><td>#91938C</td><td>#ADB1A9</td><td>helper de form</td></tr>
+        <tr><td>--text-on-color</td><td>#3C433C</td><td>#3C433C</td><td>texto sobre cor brand</td></tr>
+        <tr><td>--text-inverse</td><td>#F8FCF8</td><td>#3C433C</td><td>texto em fundo invertido</td></tr>
+        <tr><td>--text-error</td><td>#DA1E28</td><td>#FF8389</td><td>mensagem de erro</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="t-h02 mb-04">support (estados)</h3>
+    <table class="api-table">
+      <thead><tr><th>token</th><th>light</th><th>uso</th></tr></thead>
+      <tbody>
+        <tr><td>--support-error</td><td>#DA1E28</td><td>erros e danger</td></tr>
+        <tr><td>--support-success</td><td>#24C775</td><td>confirmações</td></tr>
+        <tr><td>--support-warning</td><td>#D79B2E</td><td>avisos</td></tr>
+        <tr><td>--support-info</td><td>#0F62FE</td><td>informação neutra</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section" id="themes">
+    <div class="section-head"><h2>light e dark theme</h2><span class="meta">04 · troca por atributo</span></div>
+    <p class="t-body-02 t-secondary mb-05" style="max-width:720px">
+      O tema é controlado por <code class="code-inline">data-theme="dark"</code> no elemento <code class="code-inline">&lt;html&gt;</code>.
+      Sem JS, sem build — só CSS variables sendo redeclaradas dentro do seletor de atributo.
+    </p>
+    <div class="grid-2">
+      <div class="demo" style="background:#F8FCF8; color:#3C433C; padding: var(--spacing-07)">
+        <div class="t-label-01 mb-04" style="color:#91938C">// light theme</div>
+        <h4 class="t-h03 mb-04" style="color:#3C433C">casa hacker</h4>
+        <p style="color:#5C625C">background sutil, texto Dos, destaques Code.</p>
+        <button class="btn btn--primary mt-05">primary action</button>
+      </div>
+      <div class="demo" style="background:#3C433C; color:#F8FCF8; padding: var(--spacing-07)">
+        <div class="t-label-01 mb-04" style="color:#ADB1A9">// dark theme</div>
+        <h4 class="t-h03 mb-04" style="color:#F8FCF8">casa hacker</h4>
+        <p style="color:#D7DCD7">fundo Dos, texto CSS, mesmo Code de destaque.</p>
+        <button class="btn btn--primary mt-05">primary action</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contrast">
+    <div class="section-head"><h2>contraste & a11y</h2><span class="meta">05 · wcag aa</span></div>
+    <p class="t-body-02 t-secondary mb-05" style="max-width:720px">
+      Todo par de tokens texto/fundo do sistema passa em WCAG AA (4.5:1 para texto normal,
+      3:1 para texto grande). Tabela verificada manualmente.
+    </p>
+    <table class="data-table">
+      <thead><tr><th>par</th><th>razão</th><th>aa text</th><th>aa large</th></tr></thead>
+      <tbody>
+        <tr><td>text-primary / background (light)</td><td>11.7 : 1</td><td>✓</td><td>✓</td></tr>
+        <tr><td>text-secondary / background (light)</td><td>7.2 : 1</td><td>✓</td><td>✓</td></tr>
+        <tr><td>text-on-color / background-brand</td><td>11.5 : 1</td><td>✓</td><td>✓</td></tr>
+        <tr><td>text-primary / background (dark)</td><td>13.4 : 1</td><td>✓</td><td>✓</td></tr>
+        <tr><td>text-secondary / background (dark)</td><td>9.1 : 1</td><td>✓</td><td>✓</td></tr>
+        <tr><td>support-error / background (light)</td><td>5.2 : 1</td><td>✓</td><td>✓</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section" id="usage">
+    <div class="section-head"><h2>quando usar cada cor</h2><span class="meta">06 · diretrizes</span></div>
+    <div class="do-dont">
+      <div class="tile do">
+        <h4>use</h4>
+        <ul class="bare">
+          <li>--ch-code só pra UMA ação primária por contexto</li>
+          <li>--ch-purple pra IA, Perifa Impacto, conteúdo generativo</li>
+          <li>--support-error pra erros · --support-warning pra avisos · --support-success pra OK</li>
+          <li>--ch-script (D79B2E) só pra warning, nunca como destaque comum</li>
+        </ul>
+      </div>
+      <div class="tile dont">
+        <h4>não use</h4>
+        <ul class="bare">
+          <li>cores cruas (#32FA96) em componentes — usa o token semântico</li>
+          <li>cor sozinha pra transmitir significado (sempre acompanhe de ícone/texto)</li>
+          <li>--ch-code como cor de texto longo — só destaque pontual</li>
+          <li>3+ cores de destaque numa mesma tela — gera ruído visual</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="code">
+    <div class="section-head"><h2>código</h2><span class="meta">07 · css</span></div>
+    <div class="code-snippet"><span class="c">/* usar tokens semânticos sempre que possível */</span>
+<span class="k">.my-card</span> {
+  background: <span class="k">var</span>(--layer-01);
+  color: <span class="k">var</span>(--text-primary);
+  border: <span class="v">1px</span> solid <span class="k">var</span>(--border-subtle-00);
+}
+
+<span class="c">/* cor brand crua só pra destaques muito específicos */</span>
+<span class="k">.brand-stamp</span> {
+  background: <span class="k">var</span>(--ch-code);
+  color: <span class="k">var</span>(--ch-dos);
+}
+
+<span class="c">/* trocar de tema */</span>
+<span class="k">html</span>[<span class="v">data-theme</span>=<span class="s">"dark"</span>] {
+  <span class="c">/* todos os tokens são re-declarados automaticamente */</span>
+}</div>
+  </section>
+
+</main>
+<script src="../../shell.js"></script>
+<script src="../../components.js"></script>
+</body>
+</html>

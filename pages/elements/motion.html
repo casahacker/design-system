@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="ch-page" content="motion">
+<meta name="ch-base" content="../../">
+<meta name="description" content="Animações com propósito: curtas, com easing certo, e sempre respeitando prefers-reduced-motion. Tokens Carbon de duration e easing.">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<title>Motion · Casa Hacker DS</title>
+<link rel="stylesheet" href="../../styles.css">
+
+</head>
+<body>
+<main class="main">
+
+  <header class="page-header">
+    <div class="page-breadcrumb"><a href="../../index.html">home</a><span class="sep">/</span><a href="../about/index.html">foundations</a><span class="sep">/</span>motion</div>
+    <h1 class="page-title">motion</h1>
+    <p class="page-intro">Animações com propósito: curtas, com easing certo, e sempre respeitando prefers-reduced-motion. Tokens Carbon de duration e easing.</p>
+    
+  </header>
+
+  <aside class="toc"><h5>nesta página</h5><ol><li><a href="#durations">Durations</a></li><li><a href="#easings">Easings</a></li><li><a href="#reduced">Reduced motion</a></li><li><a href="#usage">Quando animar</a></li><li><a href="#code">Código</a></li></ol></aside>
+
+  <section class="section" id="durations"><div class="section-head"><h2>durations</h2><span class="meta">01 · 6 tokens</span></div><table class="data-table"><thead><tr><th>token</th><th>valor</th><th>uso</th></tr></thead><tbody><tr><td>--duration-fast-01</td><td>70ms</td><td>micro-interações (button press)</td></tr><tr><td>--duration-fast-02</td><td>110ms</td><td>hover transitions</td></tr><tr><td>--duration-moderate-01</td><td>150ms</td><td>tabs, dropdowns</td></tr><tr><td>--duration-moderate-02</td><td>240ms</td><td>modal slide-in</td></tr><tr><td>--duration-slow-01</td><td>400ms</td><td>page transitions</td></tr><tr><td>--duration-slow-02</td><td>700ms</td><td>animações narrativas</td></tr></tbody></table></section><section class="section" id="easings"><div class="section-head"><h2>easings</h2><span class="meta">02 · 5 curvas</span></div><table class="data-table"><thead><tr><th>token</th><th>curva</th><th>uso</th></tr></thead><tbody><tr><td>--ease-productive</td><td>cubic-bezier(0.2,0,0.38,0.9)</td><td>UI default</td></tr><tr><td>--ease-expressive</td><td>cubic-bezier(0.4,0.14,0.3,1)</td><td>entradas chamativas</td></tr><tr><td>--ease-entrance</td><td>cubic-bezier(0,0,0.38,0.9)</td><td>elemento entrando</td></tr><tr><td>--ease-exit</td><td>cubic-bezier(0.2,0,1,0.9)</td><td>elemento saindo</td></tr><tr><td>--ease-standard</td><td>cubic-bezier(0.5,0,0.1,1)</td><td>easing genérico</td></tr></tbody></table></section><section class="section" id="reduced"><div class="section-head"><h2>reduced motion</h2><span class="meta">03</span></div><p class="t-body-02 t-secondary mb-05" style="max-width:720px">Usuários com <code class="code-inline">prefers-reduced-motion: reduce</code> têm todas as animações reduzidas a ~0ms. Implementado globalmente no CSS — sem precisar tratar em cada componente.</p><div class="code-snippet"><span class="k">@media</span> (<span class="v">prefers-reduced-motion</span>: <span class="v">reduce</span>) {
+  *, *::before, *::after {
+    animation-duration: <span class="v">0.01ms</span> !important;
+    transition-duration: <span class="v">0.01ms</span> !important;
+  }
+}</div></section><section class="section" id="usage"><div class="section-head"><h2>quando animar</h2><span class="meta">04</span></div><div class="do-dont"><div class="tile do"><h4>use</h4><ul class="bare"><li>Feedback de interação (button press, focus ring)</li><li>Mudança de estado (modal abrindo, drawer)</li><li>Entrada de elementos recém-carregados</li><li>Indicação de loading (spinner, skeleton)</li></ul></div><div class="tile dont"><h4>não use</h4><ul class="bare"><li>Decoração pura sem propósito</li><li>Animações longas (>500ms) em UI funcional</li><li>Parallax em conteúdo de leitura</li><li>Auto-play em elementos sem controle de pause</li></ul></div></div></section><section class="section" id="code"><div class="section-head"><h2>código</h2><span class="meta">05</span></div><div class="code-snippet"><span class="c">/* transição padrão */</span>
+<span class="k">.btn</span> {
+  transition: all <span class="k">var</span>(--duration-fast-02) <span class="k">var</span>(--ease-productive);
+}
+
+<span class="c">/* animação keyframe */</span>
+<span class="k">@keyframes</span> ch-slide-up {
+  <span class="v">from</span> { opacity: <span class="v">0</span>; transform: translateY(<span class="v">16px</span>); }
+  <span class="v">to</span>   { opacity: <span class="v">1</span>; transform: translateY(<span class="v">0</span>); }
+}
+
+<span class="k">.modal</span> {
+  animation: ch-slide-up <span class="k">var</span>(--duration-moderate-02) <span class="k">var</span>(--ease-entrance);
+}</div></section>
+
+</main>
+<script src="../../shell.js"></script>
+<script src="../../components.js"></script>
+</body>
+</html>

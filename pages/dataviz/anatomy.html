@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="ch-page" content="dv-anatomy">
+<meta name="ch-base" content="../../">
+<meta name="description" content="Componentes universais de qualquer chart: título, eixos, legenda, séries, tooltip, área de plot.">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<title>Chart anatomy · Casa Hacker DS</title>
+<link rel="stylesheet" href="../../styles.css">
+
+</head>
+<body>
+<main class="main">
+
+  <header class="page-header">
+    <div class="page-breadcrumb"><a href="../../index.html">home</a><span class="sep">/</span><a href="index.html">dataviz</a><span class="sep">/</span>anatomy</div>
+    <h1 class="page-title">chart anatomy</h1>
+    <p class="page-intro">Componentes universais de qualquer chart: título, eixos, legenda, séries, tooltip, área de plot.</p>
+    
+  </header>
+
+  <aside class="toc"><h5>nesta página</h5><ol><li><a href="#parts">Componentes</a></li><li><a href="#checklist">Elementos obrigatórios</a></li><li><a href="#a11y">Acessibilidade</a></li></ol></aside>
+
+  <section class="section" id="parts"><div class="section-head"><h2>componentes</h2><span class="meta">01</span></div><div class="demo "><div style="max-width: 560px"><div class="t-label-01 mb-04" style="color: var(--text-helper)">// vendas por mês · 2026</div><div style="background: var(--layer-01); border: 1px solid var(--border-subtle-00); padding: var(--spacing-05); height: 200px; position: relative"><div style="height: 100%; display: flex; align-items: flex-end; gap: 8px;"><div style="background: var(--ch-code); flex: 1; height: 30%"></div><div style="background: var(--ch-code); flex: 1; height: 37%"></div><div style="background: var(--ch-code); flex: 1; height: 44%"></div><div style="background: var(--ch-code); flex: 1; height: 51%"></div><div style="background: var(--ch-code); flex: 1; height: 58%"></div><div style="background: var(--ch-code); flex: 1; height: 65%"></div><div style="background: var(--ch-code); flex: 1; height: 72%"></div><div style="background: var(--ch-code); flex: 1; height: 79%"></div><div style="background: var(--ch-code); flex: 1; height: 86%"></div><div style="background: var(--ch-code); flex: 1; height: 93%"></div><div style="background: var(--ch-code); flex: 1; height: 30%"></div><div style="background: var(--ch-code); flex: 1; height: 37%"></div></div></div><div class="row mt-04" style="gap: var(--spacing-05); font: var(--code-01); color: var(--text-helper)"><span><span style="display:inline-block;width:8px;height:8px;background:var(--ch-code);margin-right:4px"></span>vendas</span></div></div></div></section><section class="section" id="checklist"><div class="section-head"><h2>elementos obrigatórios</h2><span class="meta">02</span></div><ul class="checklist"><li>Título descritivo acima</li><li>Eixos com labels claros (incluir unidade)</li><li>Legenda quando há 2+ séries</li><li>Tooltip on hover com valor exato</li><li>Gridlines sutis em --border-subtle-00</li><li>Cores da paleta dataviz (não as cores brand cruas)</li></ul></section><section class="section" id="a11y"><div class="section-head"><h2>acessibilidade</h2><span class="meta">03</span></div><ul class="checklist"><li>Texto alternativo descrevendo trend</li><li>Tabela de dados como fallback semântico</li><li>role="img" no SVG do chart</li><li>Cores distinguíveis em daltonismo (testar)</li><li>Padrões visuais (hachura) como alternativa à cor</li></ul></section>
+
+</main>
+<script src="../../shell.js"></script>
+<script src="../../components.js"></script>
+</body>
+</html>

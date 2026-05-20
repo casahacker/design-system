@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="ch-page" content="checkbox">
+<meta name="ch-base" content="../../">
+<meta name="description" content="Permite selecionar múltiplas opções independentes. Para opções mutuamente exclusivas, use radio button.">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<title>checkbox · Casa Hacker DS</title>
+<link rel="stylesheet" href="../../styles.css">
+
+</head>
+<body>
+<main class="main">
+
+  <header class="page-header">
+    <div class="page-breadcrumb"><a href="../../index.html">home</a><span class="sep">/</span><a href="index.html">components</a><span class="sep">/</span>checkbox</div>
+    <h1 class="page-title">checkbox</h1>
+    <p class="page-intro">Permite selecionar múltiplas opções independentes. Para opções mutuamente exclusivas, use radio button.</p>
+    <div class="page-tags"><span class="tag tag--code">stable</span></div>
+  </header>
+
+  <aside class="toc"><h5>nesta página</h5><ol><li><a href="#overview">Overview</a></li><li><a href="#variants">Variantes</a></li><li><a href="#states">Estados</a></li><li><a href="#modifiers">Modifiers</a></li><li><a href="#usage">Quando usar</a></li><li><a href="#a11y">Acessibilidade</a></li><li><a href="#code">Código</a></li><li><a href="#related">Relacionados</a></li></ol></aside>
+
+  <section class="section" id="overview"><div class="section-head"><h2>overview</h2><span class="meta">01</span></div><div class="demo "><div class="stack"><label class="checkbox-row"><input type="checkbox" checked> opção marcada</label><label class="checkbox-row"><input type="checkbox"> opção desmarcada</label><label class="checkbox-row"><input type="checkbox" disabled> opção desabilitada</label></div></div></section><section class="section" id="variants"><div class="section-head"><h2>variantes</h2><span class="meta">02</span></div><p class="t-secondary">Variante única.</p></section><section class="section" id="states"><div class="section-head"><h2>estados</h2><span class="meta">03</span></div><div class="demo "><div class="stack"><label class="checkbox-row"><input type="checkbox"> default</label><label class="checkbox-row"><input type="checkbox" checked> checked</label><label class="checkbox-row"><input type="checkbox" disabled> disabled</label><label class="checkbox-row"><input type="checkbox" checked disabled> checked + disabled</label></div></div></section><section class="section" id="modifiers"><div class="section-head"><h2>modifiers · api</h2><span class="meta">04</span></div><table class="api-table"><thead><tr><th>prop</th><th>tipo</th><th>default</th><th>descrição</th></tr></thead><tbody><tr><td>type="checkbox"</td><td>attr</td><td>—</td><td>required</td></tr><tr><td>checked</td><td>attr</td><td>—</td><td>estado inicial</td></tr><tr><td>disabled</td><td>attr</td><td>—</td><td>desabilita</td></tr><tr><td>required</td><td>attr</td><td>—</td><td>obrigatório em form</td></tr><tr><td>indeterminate</td><td>prop JS</td><td>—</td><td>estado parcial (pai de checkboxes mistos)</td></tr></tbody></table></section><section class="section" id="usage"><div class="section-head"><h2>quando usar</h2><span class="meta">05</span></div><div class="do-dont"><div class="tile do"><h4>use</h4><ul class="bare"><li>Múltipla seleção independente</li><li>Opção on/off isolada</li><li>Concordo com termos (1 checkbox)</li></ul></div><div class="tile dont"><h4>não use</h4><ul class="bare"><li>Escolha mutuamente exclusiva — usa radio</li><li>Mais de 7 opções juntas — usa multi-select</li><li>Quando só uma alternativa faz sentido</li></ul></div></div></section><section class="section" id="a11y"><div class="section-head"><h2>acessibilidade</h2><span class="meta">06 · wcag aa</span></div><ul class="checklist"><li>Sempre dentro de &lt;label&gt; ou com label associado por for/id</li><li>accent-color: var(--ch-code) pra usar a cor brand</li><li>Foco visível</li><li>Estado checked anunciado por SR</li></ul></section><section class="section" id="code"><div class="section-head"><h2>código</h2><span class="meta">07 · html</span></div><div class="code-snippet">&lt;<span class="k">label</span> <span class="v">class</span>=<span class="s">"checkbox-row"</span>&gt;
+  &lt;<span class="k">input</span> <span class="v">type</span>=<span class="s">"checkbox"</span>&gt; concordo com os termos
+&lt;/<span class="k">label</span>&gt;</div></section><section class="section" id="related"><div class="section-head"><h2>componentes relacionados</h2><span class="meta">08</span></div><div class="resource-cards"><a class="resource-card" href="radio-button.html"><div class="meta">componente</div><h4>Radio button</h4><p>Pra escolha mutuamente exclusiva.</p><span class="cta">explorar</span></a><a class="resource-card" href="form.html"><div class="meta">componente</div><h4>Form</h4><p>Composição com outros campos.</p><span class="cta">explorar</span></a></div></section>
+
+</main>
+<script src="../../shell.js"></script>
+<script src="../../components.js"></script>
+</body>
+</html>

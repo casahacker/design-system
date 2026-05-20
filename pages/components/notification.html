@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="ch-page" content="notification">
+<meta name="ch-base" content="../../">
+<meta name="description" content="Feedback inline ou toast pra resultado de ações: sucesso, erro, aviso, info. Pode ser dispensável.">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<title>notification · Casa Hacker DS</title>
+<link rel="stylesheet" href="../../styles.css">
+
+</head>
+<body>
+<main class="main">
+
+  <header class="page-header">
+    <div class="page-breadcrumb"><a href="../../index.html">home</a><span class="sep">/</span><a href="index.html">components</a><span class="sep">/</span>notification</div>
+    <h1 class="page-title">notification</h1>
+    <p class="page-intro">Feedback inline ou toast pra resultado de ações: sucesso, erro, aviso, info. Pode ser dispensável.</p>
+    <div class="page-tags"><span class="tag tag--code">stable</span></div>
+  </header>
+
+  <aside class="toc"><h5>nesta página</h5><ol><li><a href="#overview">Overview</a></li><li><a href="#variants">Variantes</a></li><li><a href="#states">Estados</a></li><li><a href="#behaviors">Comportamentos</a></li><li><a href="#modifiers">Modifiers</a></li><li><a href="#usage">Quando usar</a></li><li><a href="#a11y">Acessibilidade</a></li><li><a href="#code">Código</a></li></ol></aside>
+
+  <section class="section" id="overview"><div class="section-head"><h2>overview</h2><span class="meta">01</span></div><div class="demo "><div class="stack" style="max-width: 480px;"><div class="notification notification--success"><div class="notification-icon">◆</div><div class="notification-body"><strong>tudo certo</strong><p>post publicado com sucesso.</p></div><button class="notification-close" aria-label="fechar">×</button></div><div class="notification notification--error"><div class="notification-icon">⚠</div><div class="notification-body"><strong>deu ruim</strong><p>não foi possível enviar. tenta de novo em alguns segundos.</p></div><button class="notification-close" aria-label="fechar">×</button></div><div class="notification notification--warning"><div class="notification-icon">⚠</div><div class="notification-body"><strong>atenção</strong><p>essa ação tem consequências.</p></div></div><div class="notification notification--info"><div class="notification-icon">i</div><div class="notification-body"><strong>fyi</strong><p>nova versão disponível.</p></div></div></div></div></section><section class="section" id="variants"><div class="section-head"><h2>variantes</h2><span class="meta">02</span></div><p class="t-secondary mb-04">Inline (default) e Toast (programático via <code class="code-inline">window.CHDS.toast()</code>).</p><div class="demo "><button class="btn btn--primary" onclick="window.CHDS && window.CHDS.toast({title:'toast disparado',message:'demo de toast programático',kind:'success'})">disparar toast</button></div></section><section class="section" id="states"><div class="section-head"><h2>estados</h2><span class="meta">03</span></div><div class="demo "><div class="stack" style="max-width: 480px"><div class="notification notification--success"><div class="notification-icon">◆</div><div class="notification-body"><strong>com ação</strong><p>tem botão de fechar.</p></div><button class="notification-close">×</button></div><div class="notification notification--info"><div class="notification-icon">i</div><div class="notification-body"><strong>sem ação</strong><p>não pode ser dispensada.</p></div></div></div></div></section><section class="section" id="behaviors"><div class="section-head"><h2>comportamentos</h2><span class="meta">04</span></div><ul class="checklist"><li>Click no × dispara animação de saída (200ms) e remove do DOM</li><li>Toast desaparece sozinho após 4.5s (configurável)</li><li>Toast novo empilha em cima dos anteriores (.toast-stack)</li><li>Toast stack tem aria-live='polite' pra anunciar</li></ul></section><section class="section" id="modifiers"><div class="section-head"><h2>modifiers · api</h2><span class="meta">05</span></div><table class="api-table"><thead><tr><th>prop</th><th>tipo</th><th>default</th><th>descrição</th></tr></thead><tbody><tr><td>.notification--success</td><td>class</td><td>—</td><td>verde</td></tr><tr><td>.notification--error</td><td>class</td><td>—</td><td>vermelho</td></tr><tr><td>.notification--warning</td><td>class</td><td>—</td><td>amarelo</td></tr><tr><td>.notification--info</td><td>class</td><td>—</td><td>neutro</td></tr><tr><td>.notification-close</td><td>class</td><td>—</td><td>botão dispensar</td></tr><tr><td>CHDS.toast()</td><td>function</td><td>—</td><td>toast programático {title, message, kind, timeout}</td></tr></tbody></table></section><section class="section" id="usage"><div class="section-head"><h2>quando usar</h2><span class="meta">06</span></div><div class="do-dont"><div class="tile do"><h4>use</h4><ul class="bare"><li>Feedback de ação do usuário</li><li>Erro recuperável</li><li>Confirmação de operação assíncrona</li></ul></div><div class="tile dont"><h4>não use</h4><ul class="bare"><li>Conteúdo persistente — usa tile/banner</li><li>Erro crítico bloqueante — usa modal</li><li>Empilhar 5+ notifications — vira ruído</li></ul></div></div></section><section class="section" id="a11y"><div class="section-head"><h2>acessibilidade</h2><span class="meta">07 · wcag aa</span></div><ul class="checklist"><li>role="alert" pra erros críticos (interrompe SR)</li><li>role="status" pra info/success (não-interruptivo)</li><li>aria-live="polite" pra updates dinâmicos</li><li>Botão close com aria-label</li><li>Tempo suficiente pra ler (mínimo 5s pra texto curto)</li></ul></section><section class="section" id="code"><div class="section-head"><h2>código</h2><span class="meta">08 · html</span></div><div class="code-snippet"><span class="c">&lt;!-- inline --&gt;</span>
+&lt;<span class="k">div</span> <span class="v">class</span>=<span class="s">"notification notification--success"</span>&gt;
+  &lt;<span class="k">div</span> <span class="v">class</span>=<span class="s">"notification-icon"</span>&gt;◆&lt;/<span class="k">div</span>&gt;
+  &lt;<span class="k">div</span> <span class="v">class</span>=<span class="s">"notification-body"</span>&gt;
+    &lt;<span class="k">strong</span>&gt;tudo certo&lt;/<span class="k">strong</span>&gt;
+    &lt;<span class="k">p</span>&gt;post publicado.&lt;/<span class="k">p</span>&gt;
+  &lt;/<span class="k">div</span>&gt;
+  &lt;<span class="k">button</span> <span class="v">class</span>=<span class="s">"notification-close"</span>&gt;×&lt;/<span class="k">button</span>&gt;
+&lt;/<span class="k">div</span>&gt;
+
+<span class="c">// programático</span>
+CHDS.toast({
+  title: <span class="s">"enviado"</span>,
+  message: <span class="s">"obrigado!"</span>,
+  kind: <span class="s">"success"</span>
+});</div></section>
+
+</main>
+<script src="../../shell.js"></script>
+<script src="../../components.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="ch-page" content="dropdown">
+<meta name="ch-base" content="../../">
+<meta name="description" content="Select customizado com ARIA listbox. Suporta navegação por teclado (setas, Enter, Esc), clique e visualização de selecionado.">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<title>dropdown · Casa Hacker DS</title>
+<link rel="stylesheet" href="../../styles.css">
+
+</head>
+<body>
+<main class="main">
+
+  <header class="page-header">
+    <div class="page-breadcrumb"><a href="../../index.html">home</a><span class="sep">/</span><a href="index.html">components</a><span class="sep">/</span>dropdown</div>
+    <h1 class="page-title">dropdown</h1>
+    <p class="page-intro">Select customizado com ARIA listbox. Suporta navegação por teclado (setas, Enter, Esc), clique e visualização de selecionado.</p>
+    <div class="page-tags"><span class="tag tag--code">stable</span></div>
+  </header>
+
+  <aside class="toc"><h5>nesta página</h5><ol><li><a href="#overview">Overview</a></li><li><a href="#variants">Variantes</a></li><li><a href="#behaviors">Comportamentos</a></li><li><a href="#modifiers">Modifiers</a></li><li><a href="#usage">Quando usar</a></li><li><a href="#a11y">Acessibilidade</a></li><li><a href="#code">Código</a></li></ol></aside>
+
+  <section class="section" id="overview"><div class="section-head"><h2>overview</h2><span class="meta">01</span></div><div class="demo "><div class="dropdown" style="max-width: 280px;"><button class="dropdown-trigger" type="button">selecione um tema <span class="chevron">▼</span></button><div class="dropdown-menu"><div class="dropdown-item selected" data-value="light">light</div><div class="dropdown-item" data-value="dark">dark</div><div class="dropdown-item" data-value="auto">auto</div></div></div></div></section><section class="section" id="variants"><div class="section-head"><h2>variantes</h2><span class="meta">02</span></div><p class="t-secondary">Variante única.</p></section><section class="section" id="behaviors"><div class="section-head"><h2>comportamentos</h2><span class="meta">03</span></div><ul class="checklist"><li>Click no trigger abre/fecha o menu</li><li>↓ / ↑ navegam as opções</li><li>Enter / Space seleciona a opção focada</li><li>Esc fecha sem selecionar</li><li>Click fora fecha</li><li>Disparou evento custom chds:change com {value, label}</li></ul></section><section class="section" id="modifiers"><div class="section-head"><h2>modifiers · api</h2><span class="meta">04</span></div><table class="api-table"><thead><tr><th>prop</th><th>tipo</th><th>default</th><th>descrição</th></tr></thead><tbody><tr><td>.dropdown</td><td>class</td><td>—</td><td>container</td></tr><tr><td>.dropdown-trigger</td><td>class</td><td>—</td><td>botão clicável</td></tr><tr><td>.dropdown-menu</td><td>class</td><td>—</td><td>lista de opções</td></tr><tr><td>.dropdown-item</td><td>class</td><td>—</td><td>opção</td></tr><tr><td>.selected</td><td>class</td><td>—</td><td>item selecionado</td></tr><tr><td>data-value</td><td>attr</td><td>—</td><td>valor enviado no evento</td></tr></tbody></table></section><section class="section" id="usage"><div class="section-head"><h2>quando usar</h2><span class="meta">05</span></div><div class="do-dont"><div class="tile do"><h4>use</h4><ul class="bare"><li>5-15 opções</li><li>Necessidade de busca/filtro futuro</li><li>Opções com labels longos</li></ul></div><div class="tile dont"><h4>não use</h4><ul class="bare"><li>1-4 opções — usa radio button</li><li>20+ opções — usa search/combobox</li><li>Opções mutuamente complementares — usa checkbox</li></ul></div></div></section><section class="section" id="a11y"><div class="section-head"><h2>acessibilidade</h2><span class="meta">06 · wcag aa</span></div><ul class="checklist"><li>role="listbox" no menu</li><li>role="option" nas opções</li><li>aria-haspopup="listbox" e aria-expanded no trigger</li><li>Foco mantido visível na opção atual</li><li>Funciona via teclado totalmente</li></ul></section><section class="section" id="code"><div class="section-head"><h2>código</h2><span class="meta">07 · html</span></div><div class="code-snippet">&lt;<span class="k">div</span> <span class="v">class</span>=<span class="s">"dropdown"</span>&gt;
+  &lt;<span class="k">button</span> <span class="v">class</span>=<span class="s">"dropdown-trigger"</span> <span class="v">type</span>=<span class="s">"button"</span>&gt;
+    label &lt;<span class="k">span</span> <span class="v">class</span>=<span class="s">"chevron"</span>&gt;▼&lt;/<span class="k">span</span>&gt;
+  &lt;/<span class="k">button</span>&gt;
+  &lt;<span class="k">div</span> <span class="v">class</span>=<span class="s">"dropdown-menu"</span>&gt;
+    &lt;<span class="k">div</span> <span class="v">class</span>=<span class="s">"dropdown-item"</span> <span class="v">data-value</span>=<span class="s">"1"</span>&gt;opção 1&lt;/<span class="k">div</span>&gt;
+    &lt;<span class="k">div</span> <span class="v">class</span>=<span class="s">"dropdown-item"</span> <span class="v">data-value</span>=<span class="s">"2"</span>&gt;opção 2&lt;/<span class="k">div</span>&gt;
+  &lt;/<span class="k">div</span>&gt;
+&lt;/<span class="k">div</span>&gt;</div></section>
+
+</main>
+<script src="../../shell.js"></script>
+<script src="../../components.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="ch-page" content="data-table">
+<meta name="ch-base" content="../../">
+<meta name="description" content="Tabelas pra exibir dados estruturados. Suporta variantes default, zebra (alternada) e compact (densa).">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<title>data-table · Casa Hacker DS</title>
+<link rel="stylesheet" href="../../styles.css">
+
+</head>
+<body>
+<main class="main">
+
+  <header class="page-header">
+    <div class="page-breadcrumb"><a href="../../index.html">home</a><span class="sep">/</span><a href="index.html">components</a><span class="sep">/</span>data-table</div>
+    <h1 class="page-title">data-table</h1>
+    <p class="page-intro">Tabelas pra exibir dados estruturados. Suporta variantes default, zebra (alternada) e compact (densa).</p>
+    <div class="page-tags"><span class="tag tag--code">stable</span></div>
+  </header>
+
+  <aside class="toc"><h5>nesta página</h5><ol><li><a href="#overview">Overview</a></li><li><a href="#variants">Variantes</a></li><li><a href="#sizes">Tamanhos</a></li><li><a href="#modifiers">Modifiers</a></li><li><a href="#usage">Quando usar</a></li><li><a href="#a11y">Acessibilidade</a></li><li><a href="#code">Código</a></li></ol></aside>
+
+  <section class="section" id="overview"><div class="section-head"><h2>overview</h2><span class="meta">01</span></div><div class="demo "><table class="data-table"><thead><tr><th>nome</th><th>função</th><th>status</th></tr></thead><tbody><tr><td>Code</td><td>destaque · CTA</td><td><span class="tag tag--code">stable</span></td></tr><tr><td>Dos</td><td>fundo escuro</td><td><span class="tag tag--code">stable</span></td></tr><tr><td>Purple</td><td>perifa · ia</td><td><span class="tag tag--purple">new</span></td></tr></tbody></table></div></section><section class="section" id="variants"><div class="section-head"><h2>variantes</h2><span class="meta">02</span></div><div class="stack-06"><div><h3 class="t-h02 mb-04">Default</h3><div class="demo "><table class="data-table"><thead><tr><th>col 1</th><th>col 2</th></tr></thead><tbody><tr><td>linha 1</td><td>valor</td></tr><tr><td>linha 2</td><td>valor</td></tr></tbody></table></div></div><div><h3 class="t-h02 mb-04">Zebra</h3><div class="demo "><table class="data-table data-table--zebra"><thead><tr><th>col 1</th><th>col 2</th></tr></thead><tbody><tr><td>linha 1</td><td>valor</td></tr><tr><td>linha 2</td><td>valor</td></tr><tr><td>linha 3</td><td>valor</td></tr></tbody></table></div></div><div><h3 class="t-h02 mb-04">Compact</h3><div class="demo "><table class="data-table data-table--compact"><thead><tr><th>col 1</th><th>col 2</th></tr></thead><tbody><tr><td>row a</td><td>v</td></tr><tr><td>row b</td><td>v</td></tr></tbody></table></div></div></div></section><section class="section" id="sizes"><div class="section-head"><h2>tamanhos</h2><span class="meta">03</span></div><p class="t-secondary">Compact reduz padding pra 8px e usa font-size 14px. Default tem padding 16px e font-size 16px.</p></section><section class="section" id="modifiers"><div class="section-head"><h2>modifiers · api</h2><span class="meta">04</span></div><table class="api-table"><thead><tr><th>prop</th><th>tipo</th><th>default</th><th>descrição</th></tr></thead><tbody><tr><td>.data-table</td><td>class</td><td>—</td><td>tabela base</td></tr><tr><td>.data-table--compact</td><td>class</td><td>—</td><td>variante densa</td></tr><tr><td>.data-table--zebra</td><td>class</td><td>—</td><td>linhas alternadas</td></tr></tbody></table></section><section class="section" id="usage"><div class="section-head"><h2>quando usar</h2><span class="meta">05</span></div><div class="do-dont"><div class="tile do"><h4>use</h4><ul class="bare"><li>Dados tabulares com colunas relacionadas</li><li>Comparação entre linhas</li><li>Listagens com 5+ campos</li></ul></div><div class="tile dont"><h4>não use</h4><ul class="bare"><li>Layout — usa CSS grid/flex</li><li>Listas simples (1-2 colunas) — usa &lt;ul&gt;</li><li>Dashboards com cards — usa tile grid</li></ul></div></div></section><section class="section" id="a11y"><div class="section-head"><h2>acessibilidade</h2><span class="meta">06 · wcag aa</span></div><ul class="checklist"><li>&lt;table&gt; semântico, não divs</li><li>&lt;th scope="col"&gt; em headers</li><li>&lt;caption&gt; descrevendo a tabela (visível ou .sr-only)</li><li>Responsivo: scroll horizontal em mobile ou transformação em cards</li></ul></section><section class="section" id="code"><div class="section-head"><h2>código</h2><span class="meta">07 · html</span></div><div class="code-snippet">&lt;<span class="k">table</span> <span class="v">class</span>=<span class="s">"data-table"</span>&gt;
+  &lt;<span class="k">caption</span>&gt;tokens de cor&lt;/<span class="k">caption</span>&gt;
+  &lt;<span class="k">thead</span>&gt;
+    &lt;<span class="k">tr</span>&gt;&lt;<span class="k">th</span> <span class="v">scope</span>=<span class="s">"col"</span>&gt;nome&lt;/<span class="k">th</span>&gt;&lt;<span class="k">th</span> <span class="v">scope</span>=<span class="s">"col"</span>&gt;valor&lt;/<span class="k">th</span>&gt;&lt;/<span class="k">tr</span>&gt;
+  &lt;/<span class="k">thead</span>&gt;
+  &lt;<span class="k">tbody</span>&gt;
+    &lt;<span class="k">tr</span>&gt;&lt;<span class="k">td</span>&gt;Code&lt;/<span class="k">td</span>&gt;&lt;<span class="k">td</span>&gt;#32FA96&lt;/<span class="k">td</span>&gt;&lt;/<span class="k">tr</span>&gt;
+  &lt;/<span class="k">tbody</span>&gt;
+&lt;/<span class="k">table</span>&gt;</div></section>
+
+</main>
+<script src="../../shell.js"></script>
+<script src="../../components.js"></script>
+</body>
+</html>

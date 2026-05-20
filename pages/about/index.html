@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="ch-page" content="about">
+<meta name="ch-base" content="../../">
+<meta name="description" content="Sobre o Casa Hacker Design System — visão geral, filosofia e como o sistema se estrutura.">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<title>Sobre o sistema · Casa Hacker DS</title>
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+<main class="main">
+
+  <header class="page-header">
+    <div class="page-breadcrumb">
+      <a href="../../index.html">home</a><span class="sep">/</span>sobre o sistema
+    </div>
+    <h1 class="page-title">sobre o <span class="green">sistema</span></h1>
+    <p class="page-intro">
+      Casa Hacker DS é um sistema de design open-source que estende o
+      <a class="link" href="https://carbondesignsystem.com/" target="_blank" rel="noopener">IBM Carbon Design System</a>
+      com a identidade visual da Casa Hacker. Pensado para times de produto, design e desenvolvimento
+      que constroem ferramentas, eventos e materiais para a comunidade tech brasileira.
+    </p>
+    <div class="page-tags">
+      <span class="tag tag--code">v1.0</span>
+      <span class="tag tag--blue">open source</span>
+      <span class="tag tag--outline">pt-br</span>
+    </div>
+  </header>
+
+  <aside class="toc">
+    <h5>nesta página</h5>
+    <ol>
+      <li><a href="#why">Por que um DS próprio</a></li>
+      <li><a href="#what">O que tem aqui</a></li>
+      <li><a href="#how">Como o sistema é organizado</a></li>
+      <li><a href="#tech">Stack técnico</a></li>
+      <li><a href="#versioning">Versionamento</a></li>
+      <li><a href="#next">Próximos passos</a></li>
+    </ol>
+  </aside>
+
+  <section class="section" id="why">
+    <div class="section-head"><h2>por que um ds próprio</h2><span class="meta">01 · motivação</span></div>
+    <p class="t-body-02 t-secondary mb-05" style="max-width: 720px;">
+      Cada projeto da Casa Hacker reinventava cores, tipografia, espaçamento e componentes do zero.
+      Resultado: inconsistência visual, retrabalho e dificuldade de manter acessibilidade. O CHDS
+      consolida decisões de design em um único lugar para que todos os produtos da casa partam do mesmo
+      vocabulário visual.
+    </p>
+    <div class="grid-3">
+      <div class="tile tile--bordered"><h4>consistência</h4><p>Um único conjunto de tokens garante que a paleta, espaçamento e tipografia sejam idênticos em todos os produtos.</p></div>
+      <div class="tile tile--bordered"><h4>velocidade</h4><p>Times param de "redesenhar o botão". Decisões de baixo nível ficam resolvidas, foco vai pra solução do problema.</p></div>
+      <div class="tile tile--bordered"><h4>acessibilidade</h4><p>WCAG 2.1 AA por padrão. Contrastes, foco visível e navegação por teclado já vêm garantidos.</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="what">
+    <div class="section-head"><h2>o que tem aqui</h2><span class="meta">02 · escopo</span></div>
+    <table class="data-table">
+      <thead><tr><th>área</th><th>conteúdo</th><th>status</th></tr></thead>
+      <tbody>
+        <tr><td>foundations</td><td>color, typography, spacing/BIT, grid 2x, iconography, motion, themes</td><td><span class="status-badge status-badge--stable">stable</span></td></tr>
+        <tr><td>guidelines</td><td>accessibility, content & voice, Casa Hacker for AI</td><td><span class="status-badge status-badge--stable">stable</span></td></tr>
+        <tr><td>components</td><td>22 componentes (button, modal, form, table, etc.)</td><td><span class="status-badge status-badge--stable">stable</span></td></tr>
+        <tr><td>patterns</td><td>BIT modular, colored symbol, grafismos, login, dialogs, status</td><td><span class="status-badge status-badge--stable">stable</span></td></tr>
+        <tr><td>data viz</td><td>anatomy, chart types, color palettes</td><td><span class="status-badge status-badge--beta">beta</span></td></tr>
+        <tr><td>submarcas</td><td>5 marcas-filha com identidade própria</td><td><span class="status-badge status-badge--stable">stable</span></td></tr>
+        <tr><td>impressos</td><td>papelaria, eventos, loja & merch</td><td><span class="status-badge status-badge--stable">stable</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section" id="how">
+    <div class="section-head"><h2>como o sistema é organizado</h2><span class="meta">03 · arquitetura</span></div>
+    <div class="grid-2">
+      <div class="tile tile--bordered"><h4>tokens</h4><p>Valores primitivos (cores, espaçamento, tipografia) e tokens semânticos (background, layer, text-primary) mapeados via CSS custom properties. Mudança de tema = mudança de tokens, sem refatorar componente.</p></div>
+      <div class="tile tile--bordered"><h4>componentes</h4><p>Cada componente é documentado com anatomia, variantes, estados, comportamentos, modificadores, casos de uso, acessibilidade e código pronto pra copiar.</p></div>
+      <div class="tile tile--bordered"><h4>padrões</h4><p>Combinações de componentes resolvendo problemas recorrentes — formulários, autenticação, navegação, estados vazios.</p></div>
+      <div class="tile tile--bordered"><h4>marca</h4><p>Submarcas e materiais impressos seguem as mesmas regras do sistema digital, garantindo que a Casa Hacker fale uma única voz no físico e no virtual.</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="tech">
+    <div class="section-head"><h2>stack técnico</h2><span class="meta">04 · build</span></div>
+    <p class="t-body-02 t-secondary mb-05" style="max-width: 720px;">
+      O CHDS é deliberadamente <strong>zero-build</strong>: HTML, CSS e JS vanilla servidos diretamente. Sem
+      bundler, sem framework, sem dependências externas. Funciona em qualquer servidor estático — inclusive
+      GitHub Pages.
+    </p>
+    <ul class="checklist">
+      <li>HTML semântico (sem JSX, sem template engines)</li>
+      <li>CSS custom properties para tokens — nada de Sass ou PostCSS</li>
+      <li>JS vanilla em <code class="code-inline">shell.js</code> (nav + theme + TOC) e <code class="code-inline">components.js</code> (modal/tabs/dropdown/accordion)</li>
+      <li>Fontes self-hosted em WOFF2 — IBM Plex Mono, Roboto Flex variable, VT323</li>
+      <li>SVG inline pra ícones e símbolos — zero icon font</li>
+    </ul>
+  </section>
+
+  <section class="section" id="versioning">
+    <div class="section-head"><h2>versionamento</h2><span class="meta">05 · semver</span></div>
+    <p class="t-body-02 t-secondary mb-05" style="max-width: 720px;">
+      Seguimos Semantic Versioning. Major (1.x.x) quebra retrocompatibilidade,
+      minor (x.1.x) adiciona features, patch (x.x.1) corrige bugs e ajustes visuais sem mudar API.
+    </p>
+    <table class="data-table">
+      <thead><tr><th>versão</th><th>data</th><th>destaques</th></tr></thead>
+      <tbody>
+        <tr><td>1.0.0</td><td>2026-05</td><td>Rewrite completo, todas as páginas em padrão Carbon, JS interativo, GH Pages-ready</td></tr>
+        <tr><td>0.1.0</td><td>2026-05</td><td>Versão inicial, button + foundations parciais</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section" id="next">
+    <div class="section-head"><h2>próximos passos</h2><span class="meta">06 · explore</span></div>
+    <div class="resource-cards">
+      <a class="resource-card" href="principles.html"><div class="meta">leitura · 5 min</div><h4>princípios</h4><p>Os 5 valores que guiam as decisões de design do sistema.</p><span class="cta">ler princípios</span></a>
+      <a class="resource-card" href="../elements/color.html"><div class="meta">explorar</div><h4>color</h4><p>Paleta, tokens semânticos, themes claro e escuro.</p><span class="cta">ver tokens</span></a>
+      <a class="resource-card" href="../contributing/index.html"><div class="meta">construir junto</div><h4>contribuir</h4><p>Como propor componentes, padrões e melhorias.</p><span class="cta">contribuir</span></a>
+    </div>
+  </section>
+
+</main>
+<script src="../../shell.js"></script>
+<script src="../../components.js"></script>
+</body>
+</html>

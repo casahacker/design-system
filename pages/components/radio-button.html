@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="ch-page" content="radio-button">
+<meta name="ch-base" content="../../">
+<meta name="description" content="Seleção mutuamente exclusiva: só uma opção do grupo pode estar ativa. Pra múltipla seleção, use checkbox.">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<title>radio-button · Casa Hacker DS</title>
+<link rel="stylesheet" href="../../styles.css">
+
+</head>
+<body>
+<main class="main">
+
+  <header class="page-header">
+    <div class="page-breadcrumb"><a href="../../index.html">home</a><span class="sep">/</span><a href="index.html">components</a><span class="sep">/</span>radio-button</div>
+    <h1 class="page-title">radio-button</h1>
+    <p class="page-intro">Seleção mutuamente exclusiva: só uma opção do grupo pode estar ativa. Pra múltipla seleção, use checkbox.</p>
+    <div class="page-tags"><span class="tag tag--code">stable</span></div>
+  </header>
+
+  <aside class="toc"><h5>nesta página</h5><ol><li><a href="#overview">Overview</a></li><li><a href="#variants">Variantes</a></li><li><a href="#states">Estados</a></li><li><a href="#modifiers">Modifiers</a></li><li><a href="#usage">Quando usar</a></li><li><a href="#a11y">Acessibilidade</a></li><li><a href="#code">Código</a></li><li><a href="#related">Relacionados</a></li></ol></aside>
+
+  <section class="section" id="overview"><div class="section-head"><h2>overview</h2><span class="meta">01</span></div><div class="demo "><fieldset style="border: none"><legend class="form-label" style="margin-bottom: var(--spacing-04)">tema preferido</legend><label class="radio-row"><input type="radio" name="theme" value="light" checked> light</label><label class="radio-row"><input type="radio" name="theme" value="dark"> dark</label><label class="radio-row"><input type="radio" name="theme" value="auto"> auto (sistema)</label></fieldset></div></section><section class="section" id="variants"><div class="section-head"><h2>variantes</h2><span class="meta">02</span></div><p class="t-secondary">Variante única.</p></section><section class="section" id="states"><div class="section-head"><h2>estados</h2><span class="meta">03</span></div><div class="demo "><div class="stack"><label class="radio-row"><input type="radio" name="s"> default</label><label class="radio-row"><input type="radio" name="s" checked> checked</label><label class="radio-row"><input type="radio" name="s" disabled> disabled</label><label class="radio-row"><input type="radio" name="s" checked disabled> checked + disabled</label></div></div></section><section class="section" id="modifiers"><div class="section-head"><h2>modifiers · api</h2><span class="meta">04</span></div><table class="api-table"><thead><tr><th>prop</th><th>tipo</th><th>default</th><th>descrição</th></tr></thead><tbody><tr><td>type="radio"</td><td>attr</td><td>—</td><td>required</td></tr><tr><td>name</td><td>attr</td><td>—</td><td>agrupa radios mutuamente exclusivos</td></tr><tr><td>checked</td><td>attr</td><td>—</td><td>estado inicial</td></tr><tr><td>disabled</td><td>attr</td><td>—</td><td>desabilita</td></tr></tbody></table></section><section class="section" id="usage"><div class="section-head"><h2>quando usar</h2><span class="meta">05</span></div><div class="do-dont"><div class="tile do"><h4>use</h4><ul class="bare"><li>2-7 opções mutuamente exclusivas</li><li>Decisão importante onde todas as opções são visíveis</li></ul></div><div class="tile dont"><h4>não use</h4><ul class="bare"><li>Só 1 opção possível — não usa</li><li>8+ opções — usa dropdown</li><li>Múltipla seleção — usa checkbox</li></ul></div></div></section><section class="section" id="a11y"><div class="section-head"><h2>acessibilidade</h2><span class="meta">06 · wcag aa</span></div><ul class="checklist"><li>&lt;fieldset&gt; + &lt;legend&gt; pra agrupar radios relacionados</li><li>Todos com mesmo name agrupam exclusivamente</li><li>↑ / ↓ navegam dentro do grupo (comportamento nativo)</li><li>Label associado por for/id OU envolvendo o input</li></ul></section><section class="section" id="code"><div class="section-head"><h2>código</h2><span class="meta">07 · html</span></div><div class="code-snippet">&lt;<span class="k">fieldset</span>&gt;
+  &lt;<span class="k">legend</span>&gt;tema&lt;/<span class="k">legend</span>&gt;
+  &lt;<span class="k">label</span> <span class="v">class</span>=<span class="s">"radio-row"</span>&gt;
+    &lt;<span class="k">input</span> <span class="v">type</span>=<span class="s">"radio"</span> <span class="v">name</span>=<span class="s">"theme"</span> <span class="v">value</span>=<span class="s">"light"</span>&gt; light
+  &lt;/<span class="k">label</span>&gt;
+  &lt;<span class="k">label</span> <span class="v">class</span>=<span class="s">"radio-row"</span>&gt;
+    &lt;<span class="k">input</span> <span class="v">type</span>=<span class="s">"radio"</span> <span class="v">name</span>=<span class="s">"theme"</span> <span class="v">value</span>=<span class="s">"dark"</span>&gt; dark
+  &lt;/<span class="k">label</span>&gt;
+&lt;/<span class="k">fieldset</span>&gt;</div></section><section class="section" id="related"><div class="section-head"><h2>componentes relacionados</h2><span class="meta">08</span></div><div class="resource-cards"><a class="resource-card" href="checkbox.html"><div class="meta">componente</div><h4>Checkbox</h4><p>Pra seleção múltipla independente.</p><span class="cta">explorar</span></a></div></section>
+
+</main>
+<script src="../../shell.js"></script>
+<script src="../../components.js"></script>
+</body>
+</html>

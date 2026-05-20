@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="ch-page" content="dialogs">
+<meta name="ch-base" content="../../">
+<meta name="description" content="Quando usar modal, alert, toast — escolha do componente certo conforme urgência e nível de interrupção.">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<title>Dialogs · Casa Hacker DS</title>
+<link rel="stylesheet" href="../../styles.css">
+
+</head>
+<body>
+<main class="main">
+
+  <header class="page-header">
+    <div class="page-breadcrumb"><a href="../../index.html">home</a><span class="sep">/</span><a href="index.html">patterns</a><span class="sep">/</span>dialogs</div>
+    <h1 class="page-title">dialogs</h1>
+    <p class="page-intro">Quando usar modal, alert, toast — escolha do componente certo conforme urgência e nível de interrupção.</p>
+    
+  </header>
+
+  <aside class="toc"><h5>nesta página</h5><ol><li><a href="#comparison">Comparação</a></li><li><a href="#modal-usage">Modal — quando</a></li><li><a href="#toast-usage">Toast — quando</a></li></ol></aside>
+
+  <section class="section" id="comparison"><div class="section-head"><h2>comparação</h2><span class="meta">01</span></div><table class="data-table"><thead><tr><th>tipo</th><th>interrompe?</th><th>duração</th><th>usa quando</th></tr></thead><tbody><tr><td>Modal</td><td>sim</td><td>até usuário fechar</td><td>confirmação, form focado, conteúdo crítico</td></tr><tr><td>Notification inline</td><td>não</td><td>persistente até dispensar</td><td>feedback de ação, info contextual</td></tr><tr><td>Toast</td><td>não</td><td>timed (4-6s)</td><td>feedback rápido pós-ação (salvo, copiado)</td></tr><tr><td>Alert nativo</td><td>sim</td><td>até usuário fechar</td><td>emergência (não usar — quebra UX)</td></tr></tbody></table></section><section class="section" id="modal-usage"><div class="section-head"><h2>modal — quando</h2><span class="meta">02</span></div><div class="do-dont"><div class="tile do"><h4>use</h4><ul class="bare"><li>Confirmação destrutiva (deletar conta)</li><li>Formulário curto fora do contexto</li><li>Conteúdo crítico que precisa decisão</li></ul></div><div class="tile dont"><h4>não use</h4><ul class="bare"><li>Notificação simples — usa toast</li><li>Conteúdo longo — usa página</li><li>Pré-requisito de fluxo — usa wizard</li></ul></div></div></section><section class="section" id="toast-usage"><div class="section-head"><h2>toast — quando</h2><span class="meta">03</span></div><div class="do-dont"><div class="tile do"><h4>use</h4><ul class="bare"><li>Feedback rápido pós-ação ("salvo")</li><li>Notificação não-bloqueante</li><li>Confirmação leve</li></ul></div><div class="tile dont"><h4>não use</h4><ul class="bare"><li>Erro crítico — usa modal</li><li>Conteúdo persistente — usa notification inline</li><li>Empilhar muitos toasts simultaneamente</li></ul></div></div></section>
+
+</main>
+<script src="../../shell.js"></script>
+<script src="../../components.js"></script>
+</body>
+</html>

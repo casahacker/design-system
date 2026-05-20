@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="ch-page" content="tooltip">
+<meta name="ch-base" content="../../">
+<meta name="description" content="Mensagem contextual ao hover/focus. CSS-only via atributo data-tooltip — sem JS necessário pra casos simples.">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<title>tooltip · Casa Hacker DS</title>
+<link rel="stylesheet" href="../../styles.css">
+
+</head>
+<body>
+<main class="main">
+
+  <header class="page-header">
+    <div class="page-breadcrumb"><a href="../../index.html">home</a><span class="sep">/</span><a href="index.html">components</a><span class="sep">/</span>tooltip</div>
+    <h1 class="page-title">tooltip</h1>
+    <p class="page-intro">Mensagem contextual ao hover/focus. CSS-only via atributo data-tooltip — sem JS necessário pra casos simples.</p>
+    <div class="page-tags"><span class="tag tag--code">stable</span></div>
+  </header>
+
+  <aside class="toc"><h5>nesta página</h5><ol><li><a href="#overview">Overview</a></li><li><a href="#variants">Variantes</a></li><li><a href="#behaviors">Comportamentos</a></li><li><a href="#modifiers">Modifiers</a></li><li><a href="#usage">Quando usar</a></li><li><a href="#a11y">Acessibilidade</a></li><li><a href="#code">Código</a></li></ol></aside>
+
+  <section class="section" id="overview"><div class="section-head"><h2>overview</h2><span class="meta">01</span></div><div class="demo "><div class="row" style="gap: var(--spacing-08)"><button class="btn btn--secondary" data-tooltip="dica simples">hover aqui</button><button class="btn btn--secondary" data-tooltip="atalho: ctrl+s">salvar</button><button class="btn btn--ghost" data-tooltip="remover este item">×</button></div></div></section><section class="section" id="variants"><div class="section-head"><h2>variantes</h2><span class="meta">02</span></div><p class="t-secondary">Variante única.</p></section><section class="section" id="behaviors"><div class="section-head"><h2>comportamentos</h2><span class="meta">03</span></div><ul class="checklist"><li>Aparece em hover OU focus (acessibilidade por teclado)</li><li>Delay zero (sem espera frustrante)</li><li>Posição default: acima do elemento</li><li>z-index: var(--z-tooltip) garante topo</li><li>CSS-only — funciona sem JS</li></ul></section><section class="section" id="modifiers"><div class="section-head"><h2>modifiers · api</h2><span class="meta">04</span></div><table class="api-table"><thead><tr><th>prop</th><th>tipo</th><th>default</th><th>descrição</th></tr></thead><tbody><tr><td>data-tooltip</td><td>attr</td><td>—</td><td>texto do tooltip</td></tr></tbody></table></section><section class="section" id="usage"><div class="section-head"><h2>quando usar</h2><span class="meta">05</span></div><div class="do-dont"><div class="tile do"><h4>use</h4><ul class="bare"><li>Atalhos de teclado</li><li>Esclarecer ícone-only buttons</li><li>Definição de termos técnicos</li><li>Status indicators</li></ul></div><div class="tile dont"><h4>não use</h4><ul class="bare"><li>Texto longo — usa popover ou modal</li><li>Informação crítica que precisa ser vista</li><li>Tooltip aninhado</li><li>Mobile (não tem hover) — usa long-press ou inline</li></ul></div></div></section><section class="section" id="a11y"><div class="section-head"><h2>acessibilidade</h2><span class="meta">06 · wcag aa</span></div><ul class="checklist"><li>Funciona via focus do teclado</li><li>aria-describedby idealmente (limitação do CSS-only puro)</li><li>Não impede interação — só decora</li><li>Pra a11y completo, usar versão JS com aria-describedby setado</li></ul></section><section class="section" id="code"><div class="section-head"><h2>código</h2><span class="meta">07 · html</span></div><div class="code-snippet"><span class="c">&lt;!-- CSS-only --&gt;</span>
+&lt;<span class="k">button</span> <span class="v">class</span>=<span class="s">"btn btn--secondary"</span> <span class="v">data-tooltip</span>=<span class="s">"atalho: ctrl+s"</span>&gt;
+  salvar
+&lt;/<span class="k">button</span>&gt;</div></section>
+
+</main>
+<script src="../../shell.js"></script>
+<script src="../../components.js"></script>
+</body>
+</html>

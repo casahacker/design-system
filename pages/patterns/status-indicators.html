@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="ch-page" content="status">
+<meta name="ch-base" content="../../">
+<meta name="description" content="Sinalizações de estado de sistema: online/offline, sync, processando, erro. Padrões consistentes pra ambientes técnicos.">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<title>Status indicators · Casa Hacker DS</title>
+<link rel="stylesheet" href="../../styles.css">
+
+</head>
+<body>
+<main class="main">
+
+  <header class="page-header">
+    <div class="page-breadcrumb"><a href="../../index.html">home</a><span class="sep">/</span><a href="index.html">patterns</a><span class="sep">/</span>status indicators</div>
+    <h1 class="page-title">status indicators</h1>
+    <p class="page-intro">Sinalizações de estado de sistema: online/offline, sync, processando, erro. Padrões consistentes pra ambientes técnicos.</p>
+    
+  </header>
+
+  <aside class="toc"><h5>nesta página</h5><ol><li><a href="#library">Biblioteca</a></li><li><a href="#system-states">Estados de sistema</a></li><li><a href="#rules">Regras</a></li></ol></aside>
+
+  <section class="section" id="library"><div class="section-head"><h2>biblioteca</h2><span class="meta">01</span></div><div class="demo "><div class="row" style="gap: var(--spacing-06)"><span class="status-badge status-badge--stable">stable</span><span class="status-badge status-badge--beta">beta</span><span class="status-badge status-badge--new">new</span><span class="status-badge status-badge--draft">draft</span></div></div></section><section class="section" id="system-states"><div class="section-head"><h2>estados de sistema</h2><span class="meta">02</span></div><table class="data-table"><thead><tr><th>estado</th><th>indicação</th><th>cor</th></tr></thead><tbody><tr><td>Online</td><td>ponto verde + texto</td><td>--ch-code</td></tr><tr><td>Offline</td><td>ponto cinza + texto</td><td>--ch-java</td></tr><tr><td>Sincronizando</td><td>spinner pequeno</td><td>--ch-code</td></tr><tr><td>Erro</td><td>triângulo + texto</td><td>--support-error</td></tr><tr><td>Aviso</td><td>triângulo + texto</td><td>--support-warning</td></tr></tbody></table></section><section class="section" id="rules"><div class="section-head"><h2>regras</h2><span class="meta">03</span></div><div class="do-dont"><div class="tile do"><h4>use</h4><ul class="bare"><li>Cor + ícone + texto (nunca só cor)</li><li>Estado anunciado por SR (role='status')</li><li>Atualização em tempo real com aria-live</li></ul></div><div class="tile dont"><h4>não use</h4><ul class="bare"><li>Só cor pra transmitir significado</li><li>Mudar de estado sem feedback visual</li><li>Pontos coloridos sem label adjacente</li></ul></div></div></section>
+
+</main>
+<script src="../../shell.js"></script>
+<script src="../../components.js"></script>
+</body>
+</html>

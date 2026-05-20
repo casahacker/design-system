@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="ch-page" content="forms-pat">
+<meta name="ch-base" content="../../">
+<meta name="description" content="Composição de formulários longos: agrupamento por seção, validação, ações no rodapé. Single column como padrão.">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<title>Forms · Casa Hacker DS</title>
+<link rel="stylesheet" href="../../styles.css">
+
+</head>
+<body>
+<main class="main">
+
+  <header class="page-header">
+    <div class="page-breadcrumb"><a href="../../index.html">home</a><span class="sep">/</span><a href="index.html">patterns</a><span class="sep">/</span>forms</div>
+    <h1 class="page-title">forms</h1>
+    <p class="page-intro">Composição de formulários longos: agrupamento por seção, validação, ações no rodapé. Single column como padrão.</p>
+    
+  </header>
+
+  <aside class="toc"><h5>nesta página</h5><ol><li><a href="#structure">Estrutura</a></li><li><a href="#validation">Validação</a></li><li><a href="#actions">Ações</a></li><li><a href="#when">Quando usar</a></li></ol></aside>
+
+  <section class="section" id="structure"><div class="section-head"><h2>estrutura</h2><span class="meta">01</span></div><p class="t-body-02 t-secondary mb-05" style="max-width:720px">1 coluna · labels acima · seções com título quando >5 campos · ações no rodapé alinhadas à esquerda.</p><div class="demo "><form style="max-width: 480px"><div class="t-label-01 mb-04" style="color: var(--text-helper)">// dados pessoais</div><div class="form-group"><label class="form-label" for="fn">nome <span class="req">*</span></label><input class="input" id="fn" required></div><div class="form-group"><label class="form-label" for="fe">email <span class="req">*</span></label><input class="input" type="email" id="fe" required></div><div class="t-label-01 mb-04 mt-06" style="color: var(--text-helper)">// preferências</div><div class="form-group"><label class="checkbox-row"><input type="checkbox"> receber newsletter</label></div><div class="row" style="margin-top: var(--spacing-06)"><button type="submit" class="btn btn--primary">cadastrar</button><button type="button" class="btn btn--ghost">cancelar</button></div></form></div></section><section class="section" id="validation"><div class="section-head"><h2>validação</h2><span class="meta">02</span></div><ul class="checklist"><li>Validar no blur do campo (não a cada keystroke)</li><li>Mostrar erro abaixo do campo</li><li>Manter helper text — não substituir por erro</li><li>Resumo de erros no topo só pra forms longos</li><li>Foco no primeiro campo com erro ao submeter</li></ul></section><section class="section" id="actions"><div class="section-head"><h2>ações</h2><span class="meta">03</span></div><p class="t-body-02 t-secondary" style="max-width:720px">Primary à esquerda (ação principal), ghost à direita (cancelar). Em flows multi-step, usar "voltar" (ghost) à esquerda e "próximo" (primary) à direita.</p></section><section class="section" id="when"><div class="section-head"><h2>quando usar</h2><span class="meta">04</span></div><div class="do-dont"><div class="tile do"><h4>use</h4><ul class="bare"><li>Single column como default</li><li>Agrupamento em seções com título quando >5 campos</li><li>Helper text antecipando dúvidas</li></ul></div><div class="tile dont"><h4>não use</h4><ul class="bare"><li>Two-column em forms longos — quebra fluxo de leitura</li><li>Validar a cada keystroke — irritante</li><li>Esconder requirements até o erro</li></ul></div></div></section>
+
+</main>
+<script src="../../shell.js"></script>
+<script src="../../components.js"></script>
+</body>
+</html>

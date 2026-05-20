@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="ch-page" content="dv-colors">
+<meta name="ch-base" content="../../">
+<meta name="description" content="Paletas distintas pra dados categóricos (qualitativos), sequenciais (quantidades) e divergentes (extremos).">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<title>Color palettes · Casa Hacker DS</title>
+<link rel="stylesheet" href="../../styles.css">
+
+</head>
+<body>
+<main class="main">
+
+  <header class="page-header">
+    <div class="page-breadcrumb"><a href="../../index.html">home</a><span class="sep">/</span><a href="index.html">dataviz</a><span class="sep">/</span>colors</div>
+    <h1 class="page-title">color palettes</h1>
+    <p class="page-intro">Paletas distintas pra dados categóricos (qualitativos), sequenciais (quantidades) e divergentes (extremos).</p>
+    
+  </header>
+
+  <aside class="toc"><h5>nesta página</h5><ol><li><a href="#categorical">Categórica</a></li><li><a href="#sequential">Sequencial</a></li><li><a href="#divergent">Divergente</a></li><li><a href="#rules">Regras</a></li></ol></aside>
+
+  <section class="section" id="categorical"><div class="section-head"><h2>categórica · 8 cores</h2><span class="meta">01</span></div><p class="t-body-02 t-secondary mb-05" style="max-width:720px">Pra séries qualitativas (categorias sem ordem). Distinguíveis em daltonismo.</p><div class="demo "><div style="display: flex; height: 64px;"><div style="flex:1; background:#32FA96"></div><div style="flex:1; background:#AA78E6"></div><div style="flex:1; background:#D79B2E"></div><div style="flex:1; background:#B3D9FE"></div><div style="flex:1; background:#FF9ECF"></div><div style="flex:1; background:#3C433C"></div><div style="flex:1; background:#5CFFAA"></div><div style="flex:1; background:#D3BAF5"></div></div><p class="t-helper mt-04">code · purple · script · sec-blue · sec-pink · dos · code-light · purple-light</p></div></section><section class="section" id="sequential"><div class="section-head"><h2>sequencial · 7 steps</h2><span class="meta">02</span></div><p class="t-body-02 t-secondary mb-05" style="max-width:720px">Pra dados ordenados (intensidade, frequência). Gradiente do claro ao escuro.</p><div class="demo "><div style="display: flex; height: 64px;"><div style="flex:1; background:#E1FFDE"></div><div style="flex:1; background:#C2F5DA"></div><div style="flex:1; background:#9BE5BF"></div><div style="flex:1; background:#5CFFAA"></div><div style="flex:1; background:#32FA96"></div><div style="flex:1; background:#24C775"></div><div style="flex:1; background:#0F5A33"></div></div></div></section><section class="section" id="divergent"><div class="section-head"><h2>divergente · 7 steps</h2><span class="meta">03</span></div><p class="t-body-02 t-secondary mb-05" style="max-width:720px">Pra dados com ponto neutro e dois extremos (ex: variação positiva/negativa).</p><div class="demo "><div style="display: flex; height: 64px;"><div style="flex:1; background:#DA1E28"></div><div style="flex:1; background:#FF8389"></div><div style="flex:1; background:#FFCCE3"></div><div style="flex:1; background:#F0F5F0"></div><div style="flex:1; background:#C2F5DA"></div><div style="flex:1; background:#5CFFAA"></div><div style="flex:1; background:#24C775"></div></div></div></section><section class="section" id="rules"><div class="section-head"><h2>regras</h2><span class="meta">04</span></div><ul class="checklist"><li>Cor nunca é único portador de significado — sempre incluir label/legenda</li><li>Testar em daltonismo (deuteranopia, protanopia)</li><li>Para impressão preto-e-branco, garantir distinção por luminância</li><li>Não misturar paleta categórica com sequencial no mesmo chart</li></ul></section>
+
+</main>
+<script src="../../shell.js"></script>
+<script src="../../components.js"></script>
+</body>
+</html>

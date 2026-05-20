@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="ch-page" content="help-faq">
+<meta name="ch-base" content="../../">
+<meta name="description" content="Perguntas frequentes sobre o Casa Hacker Design System.">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<title>FAQ · Casa Hacker DS</title>
+<link rel="stylesheet" href="../../styles.css">
+
+</head>
+<body>
+<main class="main">
+
+  <header class="page-header">
+    <div class="page-breadcrumb"><a href="../../index.html">home</a><span class="sep">/</span><a href="index.html">help</a><span class="sep">/</span>faq</div>
+    <h1 class="page-title">faq</h1>
+    <p class="page-intro">Perguntas frequentes sobre o Casa Hacker Design System.</p>
+    
+  </header>
+
+  <aside class="toc"><h5>nesta página</h5><ol><li><a href="#usage">Uso</a></li><li><a href="#contributing">Contribuição</a></li><li><a href="#tech">Técnico</a></li></ol></aside>
+
+  <section class="section" id="usage"><div class="section-head"><h2>uso</h2><span class="meta">01</span></div><div class="accordion" data-mode="single"><div class="accordion-item open"><button class="accordion-header" type="button">posso usar o CHDS num projeto comercial? <span class="chevron">›</span></button><div class="accordion-body">Sim. Código é MIT, conteúdo de marca é CC BY-SA. Use à vontade, com atribuição.</div></div><div class="accordion-item"><button class="accordion-header" type="button">preciso de framework (react, vue) pra usar? <span class="chevron">›</span></button><div class="accordion-body">Não. É HTML/CSS/JS vanilla. Funciona em qualquer stack — basta importar styles.css e (opcionalmente) shell.js + components.js.</div></div><div class="accordion-item"><button class="accordion-header" type="button">como mudar a cor primária pra outra? <span class="chevron">›</span></button><div class="accordion-body">Sobrescreva <code class="code-inline">--ch-code</code> no :root e nas variantes dark. Os tokens semânticos que apontam pra ela atualizam em cadeia.</div></div></div></section><section class="section" id="contributing"><div class="section-head"><h2>contribuição</h2><span class="meta">02</span></div><div class="accordion" data-mode="single"><div class="accordion-item"><button class="accordion-header" type="button">como propor um componente novo? <span class="chevron">›</span></button><div class="accordion-body">Abre uma issue descrevendo o problema (não a solução) primeiro. Após validação, segue o <a class="link" href="../contributing/pdlc.html">PDLC</a>.</div></div><div class="accordion-item"><button class="accordion-header" type="button">posso traduzir o sistema pra outra língua? <span class="chevron">›</span></button><div class="accordion-body">No momento priorizamos pt-br. Traduções comunitárias em fork são bem-vindas. PR pra inglês pode ser aceito no futuro como segunda língua oficial.</div></div></div></section><section class="section" id="tech"><div class="section-head"><h2>técnico</h2><span class="meta">03</span></div><div class="accordion" data-mode="single"><div class="accordion-item"><button class="accordion-header" type="button">por que zero-build? <span class="chevron">›</span></button><div class="accordion-body">Pra reduzir barreira de entrada (qualquer pessoa edita HTML/CSS sem npm install), facilitar deploy em qualquer estático, e evitar dependência de toolchain JS.</div></div><div class="accordion-item"><button class="accordion-header" type="button">qual o suporte de browsers? <span class="chevron">›</span></button><div class="accordion-body">Browsers evergreen: Chrome, Firefox, Safari, Edge — últimas 2 versões. CSS custom properties são essenciais — IE11 não é suportado.</div></div><div class="accordion-item"><button class="accordion-header" type="button">posso usar só os tokens sem os componentes? <span class="chevron">›</span></button><div class="accordion-body">Sim — basta importar a parte de :root do styles.css e usar via var().</div></div></div></section>
+
+</main>
+<script src="../../shell.js"></script>
+<script src="../../components.js"></script>
+</body>
+</html>

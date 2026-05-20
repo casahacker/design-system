@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="ch-page" content="login">
+<meta name="ch-base" content="../../">
+<meta name="description" content="Padrão de autenticação: formulário minimalista, social login opcional, links pra cadastro e recuperação.">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<title>Login · Casa Hacker DS</title>
+<link rel="stylesheet" href="../../styles.css">
+
+</head>
+<body>
+<main class="main">
+
+  <header class="page-header">
+    <div class="page-breadcrumb"><a href="../../index.html">home</a><span class="sep">/</span><a href="index.html">patterns</a><span class="sep">/</span>login</div>
+    <h1 class="page-title">login</h1>
+    <p class="page-intro">Padrão de autenticação: formulário minimalista, social login opcional, links pra cadastro e recuperação.</p>
+    
+  </header>
+
+  <aside class="toc"><h5>nesta página</h5><ol><li><a href="#standard">Padrão</a></li><li><a href="#variants">Variantes</a></li><li><a href="#rules">Regras</a></li></ol></aside>
+
+  <section class="section" id="standard"><div class="section-head"><h2>padrão</h2><span class="meta">01</span></div><div class="demo "><div style="max-width: 380px; margin: 0 auto; padding: var(--spacing-07); background: var(--layer-01); border: 1px solid var(--border-subtle-00)"><div class="h-symbol h-symbol--dark" style="width: 32px; height: 32px; margin-bottom: var(--spacing-05)"><span class="on"></span><span></span><span class="on"></span><span></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span class="on"></span></div><h3 class="t-h03 mb-06">entrar na casa hacker</h3><div class="form-group"><label class="form-label" for="le">email</label><input class="input" type="email" id="le"></div><div class="form-group"><label class="form-label" for="lp">senha</label><input class="input" type="password" id="lp"><div class="form-helper"><a class="link" href="#">esqueci a senha</a></div></div><button class="btn btn--primary" style="width: 100%; justify-content: center;">entrar</button><p class="t-helper mt-06" style="text-align: center">primeira vez? <a class="link" href="#">cria sua conta</a></p></div></div></section><section class="section" id="variants"><div class="section-head"><h2>variantes</h2><span class="meta">02</span></div><ul class="checklist"><li>Email + senha (default)</li><li>Magic link (sem senha)</li><li>Social login (GitHub, Google)</li><li>SSO empresarial</li></ul></section><section class="section" id="rules"><div class="section-head"><h2>regras</h2><span class="meta">03</span></div><div class="do-dont"><div class="tile do"><h4>use</h4><ul class="bare"><li>Centralizar visualmente</li><li>Mostrar 'esqueci a senha' próximo do campo</li><li>Link claro pra cadastro</li><li>Botão primary largura total</li></ul></div><div class="tile dont"><h4>não use</h4><ul class="bare"><li>Pedir 5+ campos no login</li><li>Captcha sem necessidade real</li><li>Esconder requisitos de senha</li><li>Auto-submit sem confirmação</li></ul></div></div></section>
+
+</main>
+<script src="../../shell.js"></script>
+<script src="../../components.js"></script>
+</body>
+</html>

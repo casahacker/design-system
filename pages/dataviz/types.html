@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="ch-page" content="dv-types">
+<meta name="ch-base" content="../../">
+<meta name="description" content="Cada tipo de chart responde a uma pergunta diferente. Escolha errada de chart cria mais confusão que clareza.">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<title>Chart types · Casa Hacker DS</title>
+<link rel="stylesheet" href="../../styles.css">
+
+</head>
+<body>
+<main class="main">
+
+  <header class="page-header">
+    <div class="page-breadcrumb"><a href="../../index.html">home</a><span class="sep">/</span><a href="index.html">dataviz</a><span class="sep">/</span>types</div>
+    <h1 class="page-title">chart types</h1>
+    <p class="page-intro">Cada tipo de chart responde a uma pergunta diferente. Escolha errada de chart cria mais confusão que clareza.</p>
+    
+  </header>
+
+  <aside class="toc"><h5>nesta página</h5><ol><li><a href="#matrix">Matriz de decisão</a></li><li><a href="#examples">Exemplos visuais</a></li><li><a href="#avoid">Evitar</a></li></ol></aside>
+
+  <section class="section" id="matrix"><div class="section-head"><h2>matriz de decisão</h2><span class="meta">01</span></div><table class="data-table"><thead><tr><th>pergunta</th><th>chart</th><th>exemplo</th></tr></thead><tbody><tr><td>Comparação entre categorias</td><td>Bar chart</td><td>vendas por produto</td></tr><tr><td>Tendência ao longo do tempo</td><td>Line chart</td><td>usuários por mês</td></tr><tr><td>Composição (parte do todo)</td><td>Pie / donut (até 5 fatias)</td><td>share por segmento</td></tr><tr><td>Distribuição</td><td>Histograma</td><td>idade dos usuários</td></tr><tr><td>Correlação</td><td>Scatter plot</td><td>preço × demanda</td></tr><tr><td>Stacked composition + tempo</td><td>Stacked area</td><td>receita por canal × mês</td></tr><tr><td>Hierarquia</td><td>Treemap</td><td>gastos por categoria</td></tr></tbody></table></section><section class="section" id="examples"><div class="section-head"><h2>exemplos visuais</h2><span class="meta">02</span></div><div class="grid-2"><div class="demo">BAR <div style="display:inline-block;width:20px;height:20px;background:var(--ch-code);margin:0 2px;vertical-align:bottom"></div><div style="display:inline-block;width:20px;height:28px;background:var(--ch-code);margin:0 2px;vertical-align:bottom"></div><div style="display:inline-block;width:20px;height:36px;background:var(--ch-code);margin:0 2px;vertical-align:bottom"></div><div style="display:inline-block;width:20px;height:44px;background:var(--ch-code);margin:0 2px;vertical-align:bottom"></div><div style="display:inline-block;width:20px;height:52px;background:var(--ch-code);margin:0 2px;vertical-align:bottom"></div><div style="display:inline-block;width:20px;height:60px;background:var(--ch-code);margin:0 2px;vertical-align:bottom"></div><div style="display:inline-block;width:20px;height:68px;background:var(--ch-code);margin:0 2px;vertical-align:bottom"></div><div style="display:inline-block;width:20px;height:26px;background:var(--ch-code);margin:0 2px;vertical-align:bottom"></div></div><div class="demo"><svg width="200" height="80" viewBox="0 0 200 80"><polyline points="10,60 40,40 70,50 100,20 130,30 160,15 190,25" stroke="#32FA96" stroke-width="2" fill="none"/></svg> LINE</div><div class="demo"><svg width="80" height="80" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="#32FA96"/><path d="M16 16 L16 2 A14 14 0 0 1 28 24 Z" fill="#AA78E6"/><path d="M16 16 L28 24 A14 14 0 0 1 16 30 Z" fill="#3C433C"/></svg> PIE</div><div class="demo"><svg width="200" height="80" viewBox="0 0 200 80"><circle cx="10" cy="10" r="3" fill="#32FA96"/><circle cx="33" cy="27" r="3" fill="#32FA96"/><circle cx="56" cy="44" r="3" fill="#32FA96"/><circle cx="79" cy="61" r="3" fill="#32FA96"/><circle cx="102" cy="18" r="3" fill="#32FA96"/><circle cx="125" cy="35" r="3" fill="#32FA96"/><circle cx="148" cy="52" r="3" fill="#32FA96"/><circle cx="171" cy="69" r="3" fill="#32FA96"/><circle cx="14" cy="26" r="3" fill="#32FA96"/><circle cx="37" cy="43" r="3" fill="#32FA96"/><circle cx="60" cy="60" r="3" fill="#32FA96"/><circle cx="83" cy="17" r="3" fill="#32FA96"/><circle cx="106" cy="34" r="3" fill="#32FA96"/><circle cx="129" cy="51" r="3" fill="#32FA96"/><circle cx="152" cy="68" r="3" fill="#32FA96"/><circle cx="175" cy="25" r="3" fill="#32FA96"/><circle cx="18" cy="42" r="3" fill="#32FA96"/><circle cx="41" cy="59" r="3" fill="#32FA96"/><circle cx="64" cy="16" r="3" fill="#32FA96"/><circle cx="87" cy="33" r="3" fill="#32FA96"/></svg> SCATTER</div></div></section><section class="section" id="avoid"><div class="section-head"><h2>evitar</h2><span class="meta">03</span></div><div class="do-dont"><div class="tile do"><h4>use</h4><ul class="bare"><li>Bar pra comparar 2-30 categorias</li><li>Line pra tendência temporal</li><li>Stacked area pra composições ao longo do tempo</li><li>Tabela quando precisão > tendência</li></ul></div><div class="tile dont"><h4>não use</h4><ul class="bare"><li>Pie com 6+ fatias (vira mosaico ilegível)</li><li>Donut com label dentro (raramente cabe)</li><li>3D charts (distorcem percepção)</li><li>Dual-axis (confuso, propenso a interpretação errada)</li></ul></div></div></section>
+
+</main>
+<script src="../../shell.js"></script>
+<script src="../../components.js"></script>
+</body>
+</html>
