@@ -47,11 +47,44 @@ write("pages/components/index.html", page(
 ))
 
 # ----- BUTTON ----------------------------------------------------------------
+# Interactive playground · issue #12 (showcase pattern para outros componentes)
+button_playground = (
+    '<div class="playground" data-playground="button">'
+    '<div class="playground-preview">'
+    '<button class="btn btn--primary" data-preview-btn>label</button>'
+    '</div>'
+    '<div class="playground-controls">'
+    '<label class="playground-control">'
+    '<span>variant</span>'
+    '<select data-prop="variant"><option value="primary" selected>primary</option><option value="secondary">secondary</option><option value="tertiary">tertiary</option><option value="ghost">ghost</option><option value="danger">danger</option></select>'
+    '</label>'
+    '<label class="playground-control">'
+    '<span>size</span>'
+    '<select data-prop="size"><option value="sm">small (32px)</option><option value="" selected>default (48px)</option><option value="lg">large (64px)</option><option value="xl">extra large (80px)</option></select>'
+    '</label>'
+    '<label class="playground-control">'
+    '<span>label</span>'
+    '<input type="text" value="label" data-prop="label" maxlength="20">'
+    '</label>'
+    '<label class="playground-control">'
+    '<span>state</span>'
+    '<select data-prop="state"><option value="" selected>default</option><option value="disabled">disabled</option></select>'
+    '</label>'
+    '</div>'
+    '<details class="playground-output">'
+    '<summary>código gerado</summary>'
+    '<div class="code-snippet" data-playground-code><span class="k">&lt;button</span> <span class="v">class</span>=<span class="s">"btn btn--primary"</span><span class="k">&gt;</span>label<span class="k">&lt;/button&gt;</span></div>'
+    '</details>'
+    '</div>'
+)
+
 write("pages/components/button.html", component_page(
     page_id="button",
     name="button",
     intro="Botões comunicam ações que os usuários podem tomar. 5 variantes pra diferentes níveis de hierarquia, 4 tamanhos.",
-    demo_html=demo('<div class="row"><button class="btn btn--primary">primary</button><button class="btn btn--secondary">secondary</button><button class="btn btn--tertiary">tertiary</button><button class="btn btn--ghost">ghost</button><button class="btn btn--danger">danger</button></div>'),
+    demo_html=demo('<div class="row"><button class="btn btn--primary">primary</button><button class="btn btn--secondary">secondary</button><button class="btn btn--tertiary">tertiary</button><button class="btn btn--ghost">ghost</button><button class="btn btn--danger">danger</button></div>') +
+        '<h3 class="t-h02 mt-07 mb-04">playground interativo</h3><p class="t-secondary mb-05">Ajuste props · veja preview + código atualizar em tempo real.</p>' +
+        button_playground,
     variants='<div class="stack-06">' + ''.join(
         f'<div><h3 class="t-h02 mb-04">{label}</h3><p class="t-comment mb-04">{desc}</p>' +
         demo(f'<button class="btn btn--{cls}">{label}</button>') + '</div>'

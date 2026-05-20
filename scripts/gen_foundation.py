@@ -313,10 +313,9 @@ ICON_GROUPS = [
 ]
 def _icon_cell(name):
     return (
-        f'<div class="icon-cell" style="display:flex;flex-direction:column;align-items:center;gap:var(--spacing-02);padding:var(--spacing-04);background:var(--layer-01);border:1px solid var(--border-subtle-00);transition:all 110ms;cursor:pointer" '
-        f'data-icon-name="{name}" title="clique pra copiar &quot;{name}&quot;">'
+        f'<div class="icon-cell" data-icon-name="{name}" title="clique pra copiar &quot;{name}&quot;">'
         f'<svg class="ico ico--24" aria-hidden="true"><use href="../../assets/icons/sprite.svg#{name}"/></svg>'
-        f'<span style="font:var(--code-01);color:var(--text-helper)">{name}</span>'
+        f'<span class="icon-name">{name}</span>'
         f'</div>'
     )
 def _icon_group(label, names):
@@ -390,13 +389,12 @@ def _motion_demo(label, var_name, duration_or_ease, kind):
     else:
         anim = f'transition: transform 600ms {duration_or_ease}'
     return (
-        f'<div style="display:flex;flex-direction:column;gap:var(--spacing-03);padding:var(--spacing-04);background:var(--layer-01);border:1px solid var(--border-subtle-00)">'
-        f'<div style="font:var(--code-01);color:var(--text-helper);text-transform:uppercase;letter-spacing:0.08em">{label}</div>'
-        f'<div style="font:var(--code-02);color:var(--text-tertiary)">{var_name}</div>'
-        f'<button type="button" data-motion-play '
-        f'style="position:relative;height:48px;background:var(--layer-02);border:1px dashed var(--border-subtle-01);overflow:hidden;cursor:pointer;padding:0;text-align:left">'
-        f'<span data-motion-box style="position:absolute;left:6px;top:50%;transform:translateY(-50%);width:32px;height:32px;background:var(--ch-code);{anim}"></span>'
-        f'<span style="position:absolute;right:var(--spacing-04);top:50%;transform:translateY(-50%);font:var(--code-01);color:var(--text-helper)">▶ play</span>'
+        f'<div class="motion-demo">'
+        f'<div class="motion-demo-label">{label}</div>'
+        f'<div class="motion-demo-var">{var_name}</div>'
+        f'<button type="button" data-motion-play class="motion-demo-stage">'
+        f'<span data-motion-box class="motion-demo-box" style="{anim}"></span>'
+        f'<span class="motion-demo-play">▶ play</span>'
         f'</button>'
         f'</div>'
     )

@@ -745,6 +745,39 @@
   });
 
   /* --------------------------------------------------------------------- */
+  /*  Component playground · live preview + code (button example)           */
+  /* --------------------------------------------------------------------- */
+  $$('.playground[data-playground]').forEach(pg => {
+    const kind = pg.dataset.playground;
+    const previewBtn = pg.querySelector('[data-preview-btn]');
+    const codeBox = pg.querySelector('[data-playground-code]');
+    const controls = pg.querySelectorAll('[data-prop]');
+    if (!previewBtn || !controls.length) return;
+
+    const update = () => {
+      const props = {};
+      controls.forEach(c => { props[c.dataset.prop] = c.value; });
+
+      if (kind === 'button') {
+        // Update preview
+        previewBtn.textContent = props.label || 'label';
+        previewBtn.className = 'btn btn--' + (props.variant || 'primary');
+        if (props.size) previewBtn.classList.add('btn--' + props.size);
+        if (props.state === 'disabled') previewBtn.setAttribute('disabled', '');
+        else previewBtn.removeAttribute('disabled');
+        // Update code snippet
+        const cls = 'btn btn--' + (props.variant || 'primary') + (props.size ? ' btn--' + props.size : '');
+        const disabledAttr = props.state === 'disabled' ? ' disabled' : '';
+        if (codeBox) {
+          codeBox.innerHTML = '<span class="k">&lt;button</span> <span class="v">class</span>=<span class="s">"' + cls + '"</span>' + (disabledAttr ? ' <span class="v">disabled</span>' : '') + '<span class="k">&gt;</span>' + (props.label || 'label') + '<span class="k">&lt;/button&gt;</span>';
+        }
+      }
+    };
+    controls.forEach(c => c.addEventListener('input', update));
+    update();
+  });
+
+  /* --------------------------------------------------------------------- */
   /*  Motion · click-to-play (page de motion live demos)                    */
   /* --------------------------------------------------------------------- */
   $$('[data-motion-play]').forEach(btn => {

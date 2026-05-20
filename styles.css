@@ -1053,6 +1053,152 @@ body { padding-top: 32px; }
   color: var(--tag-default-fg);
   border: 1px solid transparent;
 }
+/* ----- Playground · interactive props editor ---------------------------- */
+.playground {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: var(--spacing-04);
+  background: var(--layer-02);
+  border: 1px solid var(--border-subtle-00);
+  margin-bottom: var(--spacing-05);
+}
+.playground-preview {
+  padding: var(--spacing-09) var(--spacing-07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  border-right: 1px solid var(--border-subtle-00);
+}
+.playground-controls {
+  padding: var(--spacing-05);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-04);
+  background: var(--layer-01);
+}
+.playground-control {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-02);
+}
+.playground-control > span {
+  font: var(--label-01);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-helper);
+}
+.playground-control select,
+.playground-control input {
+  height: 32px;
+  padding: 0 var(--spacing-03);
+  background: var(--field-01);
+  border: 1px solid var(--border-subtle-01);
+  font: var(--code-02);
+  color: var(--text-primary);
+  outline: none;
+}
+.playground-control select:focus,
+.playground-control input:focus { border-color: var(--ch-code); }
+
+.playground-output { grid-column: 1 / -1; border-top: 1px solid var(--border-subtle-00); }
+.playground-output summary {
+  padding: var(--spacing-03) var(--spacing-05);
+  cursor: pointer;
+  font: var(--label-02);
+  color: var(--text-secondary);
+  list-style: none;
+}
+.playground-output summary::before {
+  content: '▸ '; color: var(--ch-code-active);
+  display: inline-block;
+  transition: transform var(--duration-fast-02);
+}
+[data-theme="dark"] .playground-output summary::before { color: var(--ch-code); }
+.playground-output[open] summary::before { transform: rotate(90deg); }
+.playground-output .code-snippet { margin: 0; border: none; }
+
+@media (max-width: 800px) {
+  .playground { grid-template-columns: 1fr; }
+  .playground-preview { border-right: none; border-bottom: 1px solid var(--border-subtle-00); min-height: 120px; padding: var(--spacing-07); }
+}
+
+/* ----- Icon cell · galeria de iconography ------------------------------- */
+.icon-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-02);
+  padding: var(--spacing-04);
+  background: var(--layer-01);
+  border: 1px solid var(--border-subtle-00);
+  transition: all 110ms;
+  cursor: pointer;
+}
+.icon-cell:hover { background: var(--background-hover); border-color: var(--ch-code); }
+.icon-cell .icon-name {
+  font: var(--code-01);
+  color: var(--text-helper);
+}
+
+/* ----- Motion demo card · página motion --------------------------------- */
+.motion-demo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-03);
+  padding: var(--spacing-04);
+  background: var(--layer-01);
+  border: 1px solid var(--border-subtle-00);
+}
+.motion-demo-label {
+  font: var(--code-01);
+  color: var(--text-helper);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.motion-demo-var {
+  font: var(--code-02);
+  color: var(--text-tertiary);
+}
+.motion-demo-stage {
+  position: relative;
+  height: 48px;
+  background: var(--layer-02);
+  border: 1px dashed var(--border-subtle-01);
+  overflow: hidden;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+}
+.motion-demo-box {
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  background: var(--ch-code);
+}
+.motion-demo-play {
+  position: absolute;
+  right: var(--spacing-04);
+  top: 50%;
+  transform: translateY(-50%);
+  font: var(--code-01);
+  color: var(--text-helper);
+}
+
+/* ----- Common utilities adicionais -------------------------------------- */
+.mt-03 { margin-top: var(--spacing-03); }
+.mb-03 { margin-bottom: var(--spacing-03); }
+.relative-z1 { position: relative; z-index: 1; }
+.t-helper-uc {
+  font: var(--code-01);
+  color: var(--text-helper);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
 /* ----- Icon utility · uso de sprite SVG --------------------------------- */
 .ico {
   width: 16px; height: 16px;
