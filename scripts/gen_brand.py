@@ -4,13 +4,31 @@ import os
 
 ROOT = "C:/Users/geraldo_casahacker/Downloads/design-system"
 
-# Helper to grab a representative logo (SVG preferred, PNG fallback)
+# Explicit primary logo map · auditado contra paletas reais
+# Cada submarca tem 16-24 variantes (Illustrator export numerado). Sem nomes
+# descritivos, fallback alfabético escolhe variantes mono/inverso por engano.
+# Esta tabela aponta pro lockup horizontal full-color (cor signature + Dos
+# ou + neutra clara), que funciona bem em ambos os temas.
+PRIMARY_LOGO = {
+    "hackerclubes":     "HACKERCLUBES_Artboard 103.svg",   # Code + Dos
+    "inclusao-tech":    "INC_TECH_Artboard 159.svg",       # Code + Dos
+    "internet-segura":  "cartaz.svg",  # cartaz da campanha (sem logo limpo ainda)
+    "mao-na-massa":     "MÃO_MASSA_Artboard 196.svg",      # Code + Dos
+    "minas-em-tech":    "MINAS_TECH_Artboard 179.svg",     # Dos + Pink (signature)
+    "perifa-impacto":   "PERIFA_IMPACTO_Artboard 131.svg", # Dos + Purple (signature)
+}
+
 def first_svg(folder):
+    """Retorna logo principal da submarca. Usa PRIMARY_LOGO map; fallback alfabético se ausente."""
     p = os.path.join(ROOT, "assets/submarcas", folder)
     if not os.path.isdir(p):
         return None
+    # 1. Tenta o primary explícito
+    primary = PRIMARY_LOGO.get(folder)
+    if primary and os.path.exists(os.path.join(p, primary)):
+        return f"../../assets/submarcas/{folder}/{primary}"
+    # 2. Fallback: primeiro SVG > primeiro PNG
     files = sorted(os.listdir(p))
-    # Preferência: SVG > PNG
     for ext in (".svg", ".png"):
         for f in files:
             if f.lower().endswith(ext):
@@ -19,19 +37,23 @@ def first_svg(folder):
 
 # ----- SUBMARCAS ------------------------------------------------------------
 SUBMARCAS = [
-    ("hackerclubes",     "Hackerclubes",     "Programa de clubes de tecnologia em escolas. Identidade própria com o H modular adaptado.",                          "var(--ch-sub-hackerclubes)",    "Tecnologia + educação básica"),
-    ("inclusao-tech",    "Inclusão Tech",    "Inclusão digital em comunidades vulneráveis. Cores acolhedoras e mensagem clara.",                                   "var(--ch-sub-inclusao-tech)",   "Inclusão · acessibilidade · diversidade"),
+    ("hackerclubes",     "Hackerclubes",     "Programa de clubes de tecnologia em escolas. Usa toda a paleta CH com Sec Blue como acento educacional.",            "var(--ch-sub-hackerclubes)",    "Tecnologia + educação básica"),
+    ("inclusao-tech",    "Inclusão Tech",    "Inclusão digital em comunidades vulneráveis. Sec Green Light como cor de acolhimento.",                              "var(--ch-sub-inclusao-tech)",   "Inclusão · acessibilidade · diversidade"),
     ("internet-segura",  "Internet Segura",  "Campanha de cidadania digital · slogan 'a internet que joga junto'. Material educativo sobre uso seguro da internet.","var(--ch-sub-internet-segura)", "Segurança digital · educação crítica"),
-    ("minas-em-tech",    "Minas em Tech",    "Mulheres na tecnologia. Identidade que celebra protagonismo feminino na área tech.",                                 "var(--ch-sub-minas-em-tech)",   "Mulheres na tecnologia"),
-    ("mao-na-massa",     "Mão na Massa",     "Programa de hands-on: oficinas práticas, makers, fabricação. Energia DIY.",                                          "var(--ch-sub-mao-na-massa)",    "Faça-você-mesmo · oficinas"),
-    ("perifa-impacto",   "Perifa Impacto",   "Tecnologia + impacto social na periferia. Roxo como cor-signature. Mesma cor da IA.",                                "var(--ch-sub-perifa-impacto)",  "Periferia · impacto social · IA"),
+    ("minas-em-tech",    "Minas em Tech",    "Mulheres na tecnologia. Pink como cor signature celebra protagonismo feminino.",                                     "var(--ch-sub-minas-em-tech)",   "Mulheres na tecnologia"),
+    ("mao-na-massa",     "Mão na Massa",     "Programa hands-on: oficinas práticas, makers, fabricação. Script orange traduz energia DIY.",                        "var(--ch-sub-mao-na-massa)",    "Faça-você-mesmo · oficinas"),
+    ("perifa-impacto",   "Perifa Impacto",   "Tecnologia + impacto social na periferia. Purple como signature — mesma cor da IA.",                                  "var(--ch-sub-perifa-impacto)",  "Periferia · impacto social · IA"),
 ]
 
-# Submarcas index
-cards_html = "".join(
-    f'<a class="resource-card" href="{slug}.html"><div class="meta">submarca</div><h4>{title}</h4><p>{desc}</p><span class="cta">explorar</span></a>'
-    for slug, title, desc, _, _ in SUBMARCAS
-)
+# Submarcas index · cada card mostra a cor signature como barra superior
+def _card(slug, title, desc):
+    return (
+        f'<a class="resource-card resource-card--sub" href="{slug}.html" '
+        f'style="--card-accent: var(--ch-sub-{slug});">'
+        f'<div class="meta"><span class="submarca-chip" data-submarca="{slug}">{slug.replace("-","/")}</span></div>'
+        f'<h4>{title}</h4><p>{desc}</p><span class="cta">explorar</span></a>'
+    )
+cards_html = "".join(_card(s, t, d) for s, t, d, _, _ in SUBMARCAS)
 write("pages/submarcas/index.html", page(
     "sub-index", "Submarcas",
     '<a href="../../index.html">home</a><span class="sep">/</span>submarcas',
@@ -45,29 +67,103 @@ write("pages/submarcas/index.html", page(
     toc=[{"id":"family","label":"Família"},{"id":"philosophy","label":"Filosofia"}],
 ))
 
+# Palette real extraída dos SVGs de cada submarca (cores efetivamente usadas
+# nos artboards do Illustrator). Pares (hex, role).
+PALETTE = {
+    "hackerclubes": [
+        ("#32fa96", "Code · primária"),
+        ("#3c433c", "Dos · texto/fundo"),
+        ("#b3d9fe", "Sec Blue · acento tech"),
+        ("#ff9ecf", "Sec Pink · variação"),
+        ("#e1ffde", "Sec Green Light · variação"),
+        ("#f8fcf8", "CSS · fundo claro"),
+    ],
+    "inclusao-tech": [
+        ("#32fa96", "Code · primária"),
+        ("#3c433c", "Dos · texto/fundo"),
+        ("#e1ffde", "Sec Green Light · acolhimento"),
+        ("#91938c", "Java · neutra"),
+        ("#f8fcf8", "CSS · fundo claro"),
+    ],
+    "internet-segura": [
+        ("#1563fa", "Azul · segurança digital"),
+        ("#9427f0", "Roxo · alerta"),
+        ("#f6221e", "Vermelho · perigo"),
+        ("#3beec9", "Turquesa · proteção"),
+        ("#e8d048", "Amarelo · atenção"),
+        ("#15102a", "Roxo escuro · fundo"),
+        ("#f8fcf8", "Off-white · texto"),
+    ],
+    "minas-em-tech": [
+        ("#ff9ecf", "Pink · signature"),
+        ("#ffdfef", "Pink Light · variação"),
+        ("#aa78e6", "Purple · acento"),
+        ("#3c433c", "Dos · texto"),
+        ("#f8fcf8", "CSS · fundo"),
+    ],
+    "mao-na-massa": [
+        ("#32fa96", "Code · primária"),
+        ("#3c433c", "Dos · texto/fundo"),
+        ("#91938c", "Java · neutra"),
+        ("#f8fcf8", "CSS · fundo claro"),
+    ],
+    "perifa-impacto": [
+        ("#aa78e6", "Purple · signature"),
+        ("#3c433c", "Dos · texto/fundo"),
+        ("#b3d9fe", "Sec Blue · variação"),
+        ("#ff9ecf", "Sec Pink · variação"),
+        ("#32fa96", "Code · variação"),
+        ("#f8fcf8", "CSS · fundo claro"),
+    ],
+}
+
+def _palette_tiles(slug):
+    swatches = PALETTE.get(slug, [])
+    if not swatches: return ""
+    tiles = "".join(
+        f'<div class="token-tile"><div class="token-swatch {"light" if hex.lower() in ["#f8fcf8","#e1ffde","#b3d9fe","#ff9ecf","#ffdfef"] else ""}" style="background:{hex}"><span class="hex">{hex}</span></div><div class="token-info"><span class="name">{role.split(" · ")[0]}</span><span class="role">{role.split(" · ")[1] if " · " in role else ""}</span></div></div>'
+        for hex, role in swatches
+    )
+    return f'<div class="token-grid">{tiles}</div>'
+
 # Individual submarca pages
 for slug, title, desc, color, foco in SUBMARCAS:
     logo_path = first_svg(slug)
-    logo_html = f'<img src="{logo_path}" alt="logo {title}" loading="lazy" decoding="async" style="max-width: 280px; max-height: 120px; margin: 0 auto;">' if logo_path else f'<div class="t-h04 text-helper">{title}</div>'
+    # internet-segura usa o cartaz completo (sem logo limpo ainda) → maior
+    if slug == "internet-segura":
+        logo_html = f'<img src="{logo_path}" alt="cartaz {title}" loading="lazy" decoding="async" style="max-width: 100%; max-height: 480px; margin: 0 auto;">' if logo_path else f'<div class="t-h04 text-helper">{title}</div>'
+    else:
+        logo_html = f'<img src="{logo_path}" alt="logo {title}" loading="lazy" decoding="async" style="max-width: 280px; max-height: 120px; margin: 0 auto;">' if logo_path else f'<div class="t-h04 text-helper">{title}</div>'
+    palette_html = _palette_tiles(slug)
+    chip_html = f'<span class="submarca-chip" data-submarca="{slug}">{slug.replace("-","/")}</span>'
     write(f"pages/submarcas/{slug}.html", page(
         slug, title,
         f'<a href="../../index.html">home</a><span class="sep">/</span><a href="index.html">submarcas</a><span class="sep">/</span>{slug}',
         desc,
         "".join([
-            sec("logo", "logo", "01",
-                f'<div class="logo-stage bg-grafismo bg-grafismo--iso" style="background: var(--logo-stage-bg); padding: var(--spacing-09); border: 1px solid var(--logo-stage-border); text-align: center;">{logo_html}</div>'),
-            sec("color", "cor signature", "02",
-                f'<div class="grid-3"><div class="tile" style="background:{color}; color: var(--ch-css)"><h4 style="color: var(--ch-css)">{title.lower()}</h4><p style="color: var(--ch-css)">{color}</p></div><div class="tile tile--bordered"><h4>foco</h4><p>{foco}</p></div><div class="tile tile--bordered"><h4>aplicação</h4><p>Materiais digitais e impressos relacionados ao programa.</p></div></div>'),
+            sec("logo", "logo", "01 · marca",
+                f'<div class="row" style="margin-bottom: var(--spacing-05)">{chip_html}<span class="t-helper">{foco}</span></div>'
+                f'<div class="logo-stage bg-grafismo bg-grafismo--iso" style="background: var(--logo-stage-bg); padding: var(--spacing-09); border: 1px solid var(--logo-stage-border); text-align: center;">{logo_html}</div>'
+                f'<p class="t-helper" style="margin-top: var(--spacing-03)">Lockup horizontal padrão · {len([f for f in os.listdir(os.path.join(ROOT,"assets/submarcas",slug)) if not f.startswith(".")]) if os.path.isdir(os.path.join(ROOT,"assets/submarcas",slug)) else 0} variantes disponíveis em <code class="code-inline">assets/submarcas/{slug}/</code></p>'),
+            sec("color", "paleta", "02 · auditado dos assets reais",
+                '<p class="t-body-02 t-secondary mb-05 prose">Cores efetivamente utilizadas nos arquivos vetoriais. A primeira é a signature.</p>'
+                + palette_html),
             sec("usage", "regras de uso", "03",
                 do_dont(
                     ["Logo sobre fundo claro ou Dos","Cor signature pra destaques e ações","Manter clear space mínimo (1× altura do H)","Tipografia Roboto Flex + Plex Mono (padrão CHDS)"],
-                    [f"Substituir cor signature ({color}) por outra","Distorcer ou rotacionar logo","Usar logo abaixo do tamanho mínimo (24px)","Aplicar efeitos (sombra, gradiente, etc.) no logo"],
+                    [f"Substituir cor signature ({color.replace('var(--ch-sub-'+slug+')', '')}) por outra","Distorcer ou rotacionar logo","Usar logo abaixo do tamanho mínimo (24px)","Aplicar efeitos (sombra, gradiente, etc.) no logo"],
                 )),
-            sec("assets", "assets", "04",
-                f'<p class="t-body-02 t-secondary prose">Arquivos disponíveis em <code class="code-inline">assets/submarcas/{slug}/</code>. Versões SVG vetorial pra todos os usos.</p>'),
+            sec("examples", "exemplos in-context", "04",
+                f'<div class="grid-3">'
+                f'<div class="tile" style="background:{color}; color: var(--ch-sub-{slug}-fg);"><h4 style="color: inherit;">badge</h4><p style="color: inherit; opacity: 0.9;">aplicação como banner ou chip pro programa</p></div>'
+                f'<div class="tile tile--bordered" style="border-left: 4px solid {color};"><h4>card destacado</h4><p>Border-left signature pra cards relacionados ao programa.</p></div>'
+                f'<div class="callout callout--info" data-icon="◆" style="margin: 0; border-left-color: {color}; background: color-mix(in srgb, {color} 12%, transparent);"><div><strong>callout próprio</strong>Mensagem com cor signature como acento.</div></div>'
+                f'</div>'),
+            sec("assets", "assets", "05",
+                f'<p class="t-body-02 t-secondary prose">Arquivos vetoriais em <code class="code-inline">assets/submarcas/{slug}/</code>. PRIMARY_LOGO definido em <code class="code-inline">scripts/gen_brand.py</code>.</p>'),
         ]),
-        tags=[{"cls":"tag--code","label":"stable"}],
-        toc=[{"id":"logo","label":"Logo"},{"id":"color","label":"Cor signature"},{"id":"usage","label":"Regras de uso"},{"id":"assets","label":"Assets"}],
+        tags=[{"cls":"tag--code","label":"stable"},{"cls":"tag--outline","label":foco}],
+        toc=[{"id":"logo","label":"Logo"},{"id":"color","label":"Paleta"},{"id":"usage","label":"Regras de uso"},{"id":"examples","label":"Exemplos"},{"id":"assets","label":"Assets"}],
     ))
 
 # ----- IMPRESSOS -----------------------------------------------------------

@@ -58,13 +58,36 @@
   --ch-purple-light:   #D3BAF5;
   --ch-purple-dark:    #6C44A0;
 
-  /* Submarca signature colors */
-  --ch-sub-hackerclubes:    #0F62FE;       /* IBM Blue · tech educacional */
-  --ch-sub-inclusao-tech:   #FF9ECF;       /* Pink secundária */
-  --ch-sub-internet-segura: #0353E9;       /* Azul segurança digital · "internet que joga junto" */
-  --ch-sub-minas-em-tech:   #AA78E6;       /* Purple · mulheres na tech */
-  --ch-sub-mao-na-massa:    #D79B2E;       /* Script orange · DIY */
+  /* DS Section accent colors · cada seção do site herda uma cor da paleta */
+  /* secundária pra criar diferenciação visual + uso real da paleta completa */
+  --sec-foundations: var(--ch-code);        /* verde · raiz/base */
+  --sec-foundations-soft: var(--ch-sec-g);  /* light bg */
+  --sec-guidelines:  var(--ch-sec-b);       /* sky blue · normativo */
+  --sec-guidelines-soft: rgba(179, 217, 254, 0.18);
+  --sec-components:  var(--ch-purple);      /* purple · construção */
+  --sec-components-soft: rgba(170, 120, 230, 0.16);
+  --sec-patterns:    var(--ch-sec-r);       /* pink · composição */
+  --sec-patterns-soft: rgba(255, 158, 207, 0.18);
+  --sec-dataviz:     var(--ch-script);      /* orange · analítico */
+  --sec-dataviz-soft: rgba(215, 155, 46, 0.16);
+  --sec-brand:       var(--ch-code);        /* code green · identidade */
+  --sec-brand-soft:  rgba(50, 250, 150, 0.12);
+  --sec-help:        var(--ch-java);        /* neutro · suporte */
+  --sec-help-soft:   rgba(145, 147, 140, 0.18);
+
+  /* Submarca signature colors (auditado contra assets reais · 2026-05) */
+  --ch-sub-hackerclubes:    #B3D9FE;       /* Sec Blue · tech educacional (azul claro) */
+  --ch-sub-hackerclubes-fg: #0E3A6B;
+  --ch-sub-inclusao-tech:   #E1FFDE;       /* Sec Green Light · acolhimento */
+  --ch-sub-inclusao-tech-fg:#0F5A33;
+  --ch-sub-internet-segura: #1563FA;       /* Azul cartaz · segurança digital */
+  --ch-sub-internet-segura-fg:#FFFFFF;
+  --ch-sub-minas-em-tech:   #FF9ECF;       /* Pink · mulheres na tech (signature real) */
+  --ch-sub-minas-em-tech-fg:#7A2752;
+  --ch-sub-mao-na-massa:    #D79B2E;       /* Script orange · DIY energia */
+  --ch-sub-mao-na-massa-fg: #FFFFFF;
   --ch-sub-perifa-impacto:  #AA78E6;       /* Purple · periferia + IA */
+  --ch-sub-perifa-impacto-fg:#FFFFFF;
 
   /* Carbon · backgrounds */
   --background:           var(--ch-css);
@@ -545,7 +568,28 @@ button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
   cursor: pointer;
   text-align: left;
 }
-.nav-section-toggle::before { content: '//'; color: var(--ch-code); }
+.nav-section-toggle::before { content: '//'; color: var(--ch-code); transition: color var(--duration-fast-02); }
+
+/* Cada seção tem cor de acento própria (paleta secundária ativa) */
+.nav-section[data-section-id="foundation"]   .nav-section-toggle::before { color: var(--sec-foundations); }
+.nav-section[data-section-id="guidelines"]   .nav-section-toggle::before { color: var(--sec-guidelines); }
+.nav-section[data-section-id="components"]   .nav-section-toggle::before { color: var(--sec-components); }
+.nav-section[data-section-id="patterns"]     .nav-section-toggle::before { color: var(--sec-patterns); }
+.nav-section[data-section-id="dataviz"]      .nav-section-toggle::before { color: var(--sec-dataviz); }
+.nav-section[data-section-id="submarcas"]    .nav-section-toggle::before { color: var(--sec-brand); }
+.nav-section[data-section-id="impressos"]    .nav-section-toggle::before { color: var(--sec-brand); }
+.nav-section[data-section-id="help"]         .nav-section-toggle::before { color: var(--sec-help); }
+.nav-section[data-section-id="contributing"] .nav-section-toggle::before { color: var(--sec-help); }
+/* Active link border-left segue a cor da seção */
+.nav-section[data-section-id="foundation"]   a.active { border-left-color: var(--sec-foundations); }
+.nav-section[data-section-id="guidelines"]   a.active { border-left-color: var(--sec-guidelines); }
+.nav-section[data-section-id="components"]   a.active { border-left-color: var(--sec-components); }
+.nav-section[data-section-id="patterns"]     a.active { border-left-color: var(--sec-patterns); }
+.nav-section[data-section-id="dataviz"]      a.active { border-left-color: var(--sec-dataviz); }
+.nav-section[data-section-id="submarcas"]    a.active { border-left-color: var(--sec-brand); }
+.nav-section[data-section-id="impressos"]    a.active { border-left-color: var(--sec-brand); }
+.nav-section[data-section-id="help"]         a.active { border-left-color: var(--sec-help); }
+.nav-section[data-section-id="contributing"] a.active { border-left-color: var(--sec-help); }
 .nav-section-toggle .chevron {
   margin-left: auto;
   transition: transform var(--duration-fast-02);
@@ -1946,6 +1990,88 @@ body { padding-top: 32px; }
 .status-badge--new    { background: var(--ch-code); color: var(--ch-dos); border-color: var(--ch-code); }
 .status-badge--draft  { color: var(--text-helper); border-color: var(--border-subtle-01); }
 
+/* ----- Callout box · usa a paleta secundária completa ---------------------- */
+.callout {
+  padding: var(--spacing-05) var(--spacing-06);
+  border-left: 3px solid;
+  margin: var(--spacing-05) 0;
+  background: var(--layer-02);
+  font: var(--body-01);
+  color: var(--text-secondary);
+  line-height: 1.55;
+  display: flex;
+  gap: var(--spacing-04);
+  align-items: flex-start;
+}
+.callout::before {
+  content: attr(data-icon);
+  font: var(--label-02);
+  flex-shrink: 0;
+  width: 24px;
+  line-height: 1.4;
+}
+.callout strong { display: block; margin-bottom: var(--spacing-02); color: var(--text-primary); font: var(--heading-02); }
+
+.callout--info     { border-left-color: var(--sec-guidelines); background: var(--sec-guidelines-soft); }
+.callout--info::before    { color: var(--sec-guidelines); content: 'ⓘ'; }
+
+.callout--success  { border-left-color: var(--ch-code-active); background: var(--background-selected); }
+.callout--success::before { color: var(--ch-code-active); content: '✓'; }
+[data-theme="dark"] .callout--success::before { color: var(--ch-code); }
+
+.callout--warning  { border-left-color: var(--sec-dataviz); background: var(--sec-dataviz-soft); }
+.callout--warning::before { color: var(--sec-dataviz); content: '⚠'; }
+
+.callout--ai       { border-left-color: var(--sec-components); background: var(--sec-components-soft); }
+.callout--ai::before      { color: var(--sec-components); content: '◆'; }
+
+.callout--brand    { border-left-color: var(--sec-patterns); background: var(--sec-patterns-soft); }
+.callout--brand::before   { color: var(--sec-patterns); content: '◇'; }
+
+.callout--tip      { border-left-color: var(--sec-foundations); background: var(--sec-foundations-soft); }
+.callout--tip::before     { color: var(--ch-code-active); content: '→'; }
+[data-theme="dark"] .callout--tip::before { color: var(--ch-code); }
+
+/* ----- Section eyebrow · cor da seção ---------------------------------- */
+.section-eyebrow {
+  display: inline-block;
+  font: var(--label-01);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-helper);
+  padding-left: var(--spacing-04);
+  border-left: 3px solid;
+  margin-bottom: var(--spacing-03);
+}
+.section-eyebrow--foundations { border-left-color: var(--sec-foundations); }
+.section-eyebrow--guidelines  { border-left-color: var(--sec-guidelines); }
+.section-eyebrow--components  { border-left-color: var(--sec-components); }
+.section-eyebrow--patterns    { border-left-color: var(--sec-patterns); }
+.section-eyebrow--dataviz     { border-left-color: var(--sec-dataviz); }
+.section-eyebrow--brand       { border-left-color: var(--sec-brand); }
+.section-eyebrow--help        { border-left-color: var(--sec-help); }
+
+/* ----- Submarca chip · auto-styled por data-submarca attribute ----------- */
+.submarca-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-02);
+  padding: var(--spacing-02) var(--spacing-04);
+  font: var(--label-01);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 0;
+  background: var(--tag-default-bg);
+  color: var(--tag-default-fg);
+}
+.submarca-chip::before { content: '◆'; }
+.submarca-chip[data-submarca="hackerclubes"]    { background: var(--ch-sub-hackerclubes);    color: var(--ch-sub-hackerclubes-fg); }
+.submarca-chip[data-submarca="inclusao-tech"]   { background: var(--ch-sub-inclusao-tech);   color: var(--ch-sub-inclusao-tech-fg); }
+.submarca-chip[data-submarca="internet-segura"] { background: var(--ch-sub-internet-segura); color: var(--ch-sub-internet-segura-fg); }
+.submarca-chip[data-submarca="minas-em-tech"]   { background: var(--ch-sub-minas-em-tech);   color: var(--ch-sub-minas-em-tech-fg); }
+.submarca-chip[data-submarca="mao-na-massa"]    { background: var(--ch-sub-mao-na-massa);    color: var(--ch-sub-mao-na-massa-fg); }
+.submarca-chip[data-submarca="perifa-impacto"]  { background: var(--ch-sub-perifa-impacto);  color: var(--ch-sub-perifa-impacto-fg); }
+
 /* Resource cards (for "Related" sections) */
 .resource-cards {
   display: grid;
@@ -1972,6 +2098,19 @@ body { padding-top: 32px; }
   top: 0; left: 0; width: 100%; height: 2px;
   background: var(--ch-code);
 }
+
+/* Submarca card: barra colorida superior sempre visível + intensifica no hover */
+.resource-card--sub::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 4px;
+  background: var(--card-accent, var(--ch-code));
+  opacity: 0.75;
+  transition: opacity var(--duration-fast-02);
+}
+.resource-card--sub:hover { border-color: var(--card-accent, var(--ch-code)); }
+.resource-card--sub:hover::before { opacity: 1; height: 6px; }
+.resource-card--sub .meta { margin-bottom: var(--spacing-04); }
 .resource-card .meta {
   font: var(--code-01);
   color: var(--text-helper);
