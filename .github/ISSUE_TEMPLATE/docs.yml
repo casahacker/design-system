@@ -1,0 +1,23 @@
+name: 📝 Docs fix / improvement
+description: Correção ou melhoria de documentação
+labels: ["documentation"]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Página
+      placeholder: ex. /pages/elements/color.html
+    validations:
+      required: true
+
+  - type: textarea
+    id: what
+    attributes:
+      label: O que está errado ou faltando?
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Sugestão (opcional)

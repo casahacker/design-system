@@ -1,0 +1,22 @@
+name: ✨ Feature request
+description: Sugerir nova feature ou melhoria não-componente
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: O que você quer?
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Por quê? Qual problema resolve?
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternativas que você considerou

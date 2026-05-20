@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Discussão geral
+    url: https://github.com/casahacker/design-system/discussions
+    about: Dúvidas, ideias e conversas sobre o sistema
+  - name: 📖 Documentação
+    url: https://casahacker.github.io/design-system/
+    about: Leia a documentação completa antes de abrir issue

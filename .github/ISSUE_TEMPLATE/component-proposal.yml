@@ -1,0 +1,48 @@
+name: 🧩 Component proposal
+description: Propor um componente novo
+labels: ["component", "enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Antes de abrir esta proposta, verifique se o componente não existe nos [components](https://casahacker.github.io/design-system/pages/components/).
+
+  - type: input
+    id: name
+    attributes:
+      label: Nome do componente
+      placeholder: ex. Slider, Toggle, Stepper
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problema que resolve
+      description: Que necessidade real motiva esse componente? Tem exemplo de uso?
+    validations:
+      required: true
+
+  - type: textarea
+    id: existing
+    attributes:
+      label: Já tem solução parecida no Carbon ou outro DS?
+      placeholder: Link + breve descrição
+    validations:
+      required: false
+
+  - type: textarea
+    id: api
+    attributes:
+      label: API proposta
+      description: Markup, props/atributos, variants
+
+  - type: checkboxes
+    id: a11y
+    attributes:
+      label: Acessibilidade
+      options:
+        - label: Funciona via teclado
+        - label: ARIA APG conhecido aplicável
+        - label: Contraste AA garantido
+        - label: Funciona com leitor de tela
