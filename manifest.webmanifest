@@ -1,0 +1,21 @@
+{
+  "name": "Casa Hacker Design System",
+  "short_name": "CHDS",
+  "description": "Sistema de design da Casa Hacker — forked do IBM Carbon, reskinned com identidade Casa Hacker.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#F8FCF8",
+  "theme_color": "#3C433C",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "developer", "design"]
+}

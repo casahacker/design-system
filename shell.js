@@ -160,7 +160,23 @@
       link.href = base + 'favicon.svg';
       head.appendChild(link);
     }
+    if (!head.querySelector('link[rel="manifest"]')) {
+      const m = document.createElement('link');
+      m.rel = 'manifest';
+      m.href = base + 'manifest.webmanifest';
+      head.appendChild(m);
+    }
   })();
+
+  /* --------------------------------------------------------------------- */
+  /*  SERVICE WORKER · offline + caching                                    */
+  /* --------------------------------------------------------------------- */
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register(base + 'sw.js', { scope: base })
+        .catch(err => console.warn('[chds] sw registration failed:', err));
+    });
+  }
 
   /* --------------------------------------------------------------------- */
   /*  ACCESSIBILITY BAR · obrigatória em produtos Casa Hacker               */
