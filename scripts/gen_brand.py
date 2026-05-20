@@ -189,7 +189,7 @@ for slug, title, desc, color, foco in SUBMARCAS:
                 # Mockup 2: social post (1:1)
                 f'<div style="background: var(--ch-dos); color: var(--ch-css); aspect-ratio: 1/1; padding: var(--spacing-05); display:flex; flex-direction:column; justify-content:space-between; position:relative; overflow:hidden">'
                 f'<div style="font:var(--code-01);color:{color};text-transform:uppercase;letter-spacing:0.1em">// post · instagram</div>'
-                f'<div><h4 style="color:var(--ch-css);font:600 26px/1.1 var(--font-sans);margin-bottom:var(--spacing-03)">{title.lower()}<br><span style="color:{color}">→</span></h4><p style="color:var(--ch-inspect);font:var(--code-02);max-width:80%">tecnologia + comunidade</p></div>'
+                f'<div><h4 style="color:var(--ch-css);font:600 26px/1.1 var(--font-sans);margin-bottom:var(--spacing-03)">{title.lower()}<br><span style="color:{color}">→</span></h4><p style="color:var(--ch-inspect);font:var(--code-02);max-width:80%">a partir de onde tudo já acontece</p></div>'
                 f'<div style="font:var(--code-01);color:var(--ch-java)">@casahacker</div>'
                 f'</div>'
                 # Mockup 3: sticker / badge (round)

@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parent.parent
 # Mapeia label de seção pelos ch-page IDs
 SECTION_LABELS = {
     'home': 'home', 'about': 'sobre', 'principles': 'sobre',
-    'who-uses': 'sobre', 'ecosystem': 'sobre',
+    'who-uses': 'sobre', 'ecosystem': 'sobre', 'manifesto': 'sobre',
     'g-overview': 'guidelines', 'g-a11y': 'guidelines',
     'g-content': 'guidelines', 'g-ai': 'guidelines',
     'color': 'foundations', 'typography': 'foundations',

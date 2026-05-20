@@ -4,6 +4,95 @@ from common import page, sec, demo, do_dont, code, checklist, table, grid, relat
 # =============================================================================
 # ABOUT (3 pages, index já existe)
 # =============================================================================
+# ----- MANIFESTO + MISSÃO (texto oficial) -----------------------------------
+MISSAO = "Fazer das tecnologias e a inovação social um lugar para todos."
+
+# Manifesto canônico · DO NOT EDIT sem alinhamento com a Casa Hacker.
+# Fonte oficial passada pelo Geraldo Barros · 2026.
+MANIFESTO_PARAGRAFOS = [
+    "O futuro não é uma coisa distante; ele está nas escolhas que a gente faz agora, nas mãos de quem transforma pouco recurso em muita criatividade.",
+    "Quando a Casa Hacker nasce, nasce junto a certeza de que as periferias não são um lugar de espera, são um lugar de começo: começo de ideias, de tecnologias, de inovação, de jeitos novos de viver e decidir o futuro da própria história.",
+    "A gente parte da confiança de que a virada não vem de fora, vem da própria periferia quando tem acesso a oportunidade, ferramentas, conexões e respeito.",
+    "Sabemos que muita gente cresceu sem ver portas abertas para estudar ciência, tecnologia e inovação, trabalhar com o que ama ou transformar um projeto de bairro em política pública. Mas, mesmo quando essas portas não aparecem, as periferias seguem inventando caminhos: criam redes comunitárias, criam negócio de impacto com o que tem em casa, ensinam o que aprenderam para o território. A Casa Hacker se compromete a fortalecer esses caminhos, criando oportunidades reais para que o que já existe na base ganhe estrutura, visibilidade e perspectivas de futuro.",
+    "Nosso compromisso é tratar tecnologia como direito e como linguagem de poder, e não como privilégio de poucos. Isso quer dizer montar espaços onde todos possam aprender, experimentar e criar com tecnologia de um jeito seguro, acessível e criativo. Quer dizer caminhar com escolas, organizações e coletivos para que a educação em ciência, tecnologia e inovação social fale a língua da periferia, abra portas para trabalho e gere soluções que nascem do território e voltam para ele em forma de renda, fortalecimento, cuidado e participação.",
+    "A mudança que buscamos não é um projeto rápido, é uma construção diária de vínculos, confiança e autonomia. Ao apoiar lideranças, coletivos e iniciativas locais, queremos que mais gente da quebrada ocupe os lugares onde as decisões são tomadas.",
+    "Nosso compromisso é seguir deslocando o centro: tirar a periferia do rodapé da conversa e colocá-la como autora principal das respostas para os desafios do nosso tempo.",
+    "O futuro não é uma coisa distante porque ele já está sendo escrito agora, em cada aula num laboratório hacker, em cada jovem que descobre que pode programar, em cada morador que entende seus direitos digitais e decide usá-los para proteger seu território.",
+    "A Casa Hacker existe para que esse futuro saia do possível e vire cotidiano: um Brasil em que a ciência, tecnologia e inovação social estejam nas mãos de quem sempre foi deixado de lado, e em que as periferias sejam reconhecidas como o lugar onde novas ideias de tecnologia, ciência, justiça, trabalho, cultura e democracia ganham forma.",
+    "Quem quiser caminhar junto é bem-vindo: vamos programar outros futuros, a partir de onde tudo já acontece.",
+]
+
+manifesto_paragrafos_html = ''.join(
+    f'<p class="t-body-02" style="font-size:18px;line-height:1.7;color:var(--text-primary);max-width:680px;margin-bottom:var(--spacing-05)">{p}</p>'
+    for p in MANIFESTO_PARAGRAFOS
+)
+
+write("pages/about/manifesto.html", page(
+    "manifesto", "Manifesto",
+    '<a href="../../index.html">home</a><span class="sep">/</span><a href="index.html">sobre</a><span class="sep">/</span>manifesto',
+    "O futuro não é uma coisa distante.",
+    "".join([
+        # Hero · missão em destaque
+        sec("missao", "missão", "01 · norte",
+            f'<div style="background:var(--ch-code);color:var(--ch-dos);padding:var(--spacing-08);border-left:6px solid var(--ch-dos);margin-bottom:var(--spacing-06)">'
+            f'<div style="font:var(--label-01);text-transform:uppercase;letter-spacing:0.1em;opacity:0.7;margin-bottom:var(--spacing-04)">// MISSÃO</div>'
+            f'<p style="font:300 32px/1.3 var(--font-sans);letter-spacing:-0.015em;color:inherit">{MISSAO}</p>'
+            f'</div>'),
+        # Manifesto · texto completo
+        sec("manifesto", "manifesto · o futuro não é uma coisa distante", "02 · texto oficial",
+            '<div style="border-left:3px solid var(--ch-code);padding-left:var(--spacing-06);margin-bottom:var(--spacing-07)">'
+            f'<div style="font:var(--label-01);text-transform:uppercase;letter-spacing:0.1em;color:var(--text-helper);margin-bottom:var(--spacing-04)">// MANIFESTO CASA HACKER</div>'
+            + manifesto_paragrafos_html
+            + '</div>'),
+        # Frases-chave (uso no DS)
+        sec("phrases", "frases-chave · fonte canônica", "03 · pra design",
+            '<p class="t-body-02 t-secondary mb-05 prose">Frases do manifesto que podem ser usadas em peças visuais, posts, slides e demais materiais. Use o texto exato · não invente paráfrases.</p>'
+            '<div class="grid-2" style="gap:var(--spacing-04)">'
+            + ''.join(
+                f'<div class="callout callout--tip" data-icon="→" style="margin:0"><div><strong>{label}</strong>"{frase}"</div></div>'
+                for label, frase in [
+                    ("Tagline principal", "o futuro não é uma coisa distante"),
+                    ("Tagline secundária", "vamos programar outros futuros"),
+                    ("Tagline · territorial", "a partir de onde tudo já acontece"),
+                    ("Periferia · posicionamento", "periferias não são um lugar de espera, são um lugar de começo"),
+                    ("Tecnologia · framing", "tecnologia como direito e como linguagem de poder"),
+                    ("Causa · acessibilidade", "espaços onde todos possam aprender, experimentar e criar com tecnologia"),
+                    ("Convite · convocatório", "quem quiser caminhar junto é bem-vindo"),
+                    ("Compromisso · estrutural", "deslocando o centro: tirar a periferia do rodapé da conversa"),
+                ]
+            )
+            + '</div>'),
+        # Diretrizes de uso
+        sec("usage", "como usar o manifesto", "04 · diretrizes",
+            do_dont(
+                [
+                    'Usar frases exatas do manifesto · texto oficial é fonte canônica',
+                    'Citar o manifesto em peças institucionais e apresentações',
+                    'Linkar pra esta página em rodapés e about pages',
+                    '"o futuro não é uma coisa distante" como tagline principal',
+                    'Atribuir frases ao manifesto coletivo · não a indivíduos',
+                    'Em peças longas, usar 1 parágrafo inteiro · não trechinhos soltos',
+                ],
+                [
+                    'Parafrasear ou inventar versões "mais curtas"',
+                    'Misturar frases de outros materiais não-oficiais',
+                    'Tom oficial em conteúdo informal de redes sociais',
+                    '"hackear o futuro" ou variações inventadas',
+                    'Versões em inglês não-aprovadas',
+                    'Cortar contexto · "o futuro não é distante" sozinho perde força',
+                ],
+            )),
+    ]),
+    tags=[{"cls":"tag--code","label":"manifesto oficial"}, {"cls":"tag--outline","label":"fonte canônica"}],
+    toc=[
+        {"id":"missao","label":"Missão"},
+        {"id":"manifesto","label":"Manifesto"},
+        {"id":"phrases","label":"Frases-chave"},
+        {"id":"usage","label":"Como usar"},
+    ],
+))
+
+
 write("pages/about/principles.html", page(
     "principles", "Princípios",
     '<a href="../../index.html">home</a><span class="sep">/</span><a href="index.html">sobre</a><span class="sep">/</span>princípios',

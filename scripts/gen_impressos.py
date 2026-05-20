@@ -195,8 +195,8 @@ def banner_rollup():
 </g>
 <text x="22" y="110" font-family="Roboto Flex, sans-serif" font-size="14" font-weight="300" fill="#F8FCF8" letter-spacing="-0.3">hack a</text>
 <text x="22" y="124" font-family="Roboto Flex, sans-serif" font-size="14" font-weight="700" fill="#32FA96">casa</text>
-<text x="22" y="145" font-family="IBM Plex Mono, monospace" font-size="6" fill="#D7DCD7">// hackathon brasileiro de tecnologia comunitária</text>
-<text x="22" y="155" font-family="IBM Plex Mono, monospace" font-size="6" fill="#D7DCD7">// edição 2026</text>
+<text x="22" y="145" font-family="IBM Plex Mono, monospace" font-size="6" fill="#D7DCD7">// tecnologia como direito, não privilégio</text>
+<text x="22" y="155" font-family="IBM Plex Mono, monospace" font-size="6" fill="#D7DCD7">// periferia · lugar de começo</text>
 <!-- info -->
 <rect x="22" y="170" width="56" height="1" fill="#32FA96"/>
 <text x="22" y="183" font-family="IBM Plex Mono, monospace" font-size="6" fill="#32FA96">15-17 setembro</text>
@@ -287,7 +287,7 @@ def tote_bag():
   <rect x="24" y="48" width="12" height="12"/>
 </g>
 <text x="100" y="175" font-family="IBM Plex Mono, monospace" font-size="9" fill="#3C433C" text-anchor="middle">casa hacker</text>
-<text x="100" y="190" font-family="IBM Plex Mono, monospace" font-size="6" fill="#91938C" text-anchor="middle">// tecnologia + comunidade</text>
+<text x="100" y="190" font-family="IBM Plex Mono, monospace" font-size="6" fill="#91938C" text-anchor="middle">// a partir de onde tudo já acontece</text>
 </svg>'''
 
 

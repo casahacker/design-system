@@ -22,9 +22,10 @@
   /*  NAV CONFIG                                                            */
   /* --------------------------------------------------------------------- */
   const navConfig = [
-    { id: 'about', section: 'sobre o sistema', items: [
+    { id: 'about', section: 'sobre', items: [
       { id: 'home',         label: 'visão geral',         href: 'index.html' },
       { id: 'about',        label: 'sobre o sistema',     href: 'pages/about/index.html' },
+      { id: 'manifesto',    label: 'manifesto + missão',  href: 'pages/about/manifesto.html' },
       { id: 'principles',   label: 'princípios',          href: 'pages/about/principles.html' },
       { id: 'who-uses',     label: 'quem usa',            href: 'pages/about/who-uses.html' },
       { id: 'ecosystem',    label: 'ecossistema',         href: 'pages/about/ecosystem.html' },
@@ -292,6 +293,7 @@
       <footer class="shell-footer" role="contentinfo">
         <span class="left">casa hacker design system · v1.0 · forked from ibm carbon</span>
         <span class="right">
+          <a href="${base}pages/about/manifesto.html">manifesto</a> ·
           <a href="${base}pages/help/index.html">help</a> ·
           <a href="${base}pages/contributing/index.html">contribuir</a> ·
           made with ◆ in br

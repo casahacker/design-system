@@ -46,23 +46,24 @@ def graf_bg(num, opacity=0.12, mix="multiply"):
 
 # ---------- INSTAGRAM POSTS (1080×1080 → viewBox 1080) ---------------------
 def post_anuncio_evento():
-    """Anúncio de evento · azul + grafismo + H grande."""
+    """Anúncio de evento · tagline canônica do manifesto."""
     return f'''<svg viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-label="post anúncio de evento">
 <rect width="1080" height="1080" fill="{SIG}"/>
 <image href="../../assets/grafismos/PATTERNS_Artboard 19.svg" x="0" y="0" width="1080" height="1080" opacity="0.18"/>
 <text x="80" y="120" font-family="IBM Plex Mono" font-size="36" fill="{DOS}" letter-spacing="3">// HACKERCLUBES</text>
-<text x="80" y="430" font-family="Roboto Flex" font-size="160" font-weight="300" fill="{DOS}" letter-spacing="-6">vem ser</text>
-<text x="80" y="580" font-family="Roboto Flex" font-size="160" font-weight="700" fill="{DOS}" letter-spacing="-6">curioso</text>
-<rect x="80" y="650" width="180" height="6" fill="{DOS}"/>
-<text x="80" y="730" font-family="IBM Plex Mono" font-size="40" fill="{DOS}">// inscrições abertas até 15.set</text>
-<g transform="translate(720, 760)">{h_pixel(0, 0, 32, CODE)}</g>
+<text x="80" y="380" font-family="Roboto Flex" font-size="120" font-weight="300" fill="{DOS}" letter-spacing="-4">o futuro</text>
+<text x="80" y="500" font-family="Roboto Flex" font-size="120" font-weight="300" fill="{DOS}" letter-spacing="-4">não é uma</text>
+<text x="80" y="620" font-family="Roboto Flex" font-size="120" font-weight="700" fill="{DOS}" letter-spacing="-4">coisa distante</text>
+<rect x="80" y="680" width="180" height="6" fill="{DOS}"/>
+<text x="80" y="750" font-family="IBM Plex Mono" font-size="32" fill="{DOS}">// inscrições abertas no seu clube</text>
+<g transform="translate(720, 800)">{h_pixel(0, 0, 32, CODE)}</g>
 <text x="80" y="990" font-family="IBM Plex Mono" font-size="28" fill="{DOS}">casahacker.org/clubes</text>
 </svg>'''
 
 
 def post_citacao():
-    """Post de citação · fundo dos com aspas grandes."""
-    return f'''<svg viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="post citação">
+    """Post citação · frase canônica do manifesto."""
+    return f'''<svg viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="post citação manifesto">
 <rect width="1080" height="1080" fill="{DOS}"/>
 <g fill="{SIG}" opacity="0.10">
   <rect x="120" y="120" width="40" height="40"/>
@@ -71,13 +72,14 @@ def post_citacao():
   <rect x="820" y="880" width="40" height="40"/>
 </g>
 <text x="120" y="280" font-family="Roboto Flex" font-size="280" font-weight="700" fill="{SIG}" opacity="0.4">"</text>
-<text x="120" y="540" font-family="Roboto Flex" font-size="62" font-weight="400" fill="{CSS}" letter-spacing="-1">
-  <tspan x="120" dy="0">tecnologia não é</tspan>
-  <tspan x="120" dy="78">só de quem teve</tspan>
-  <tspan x="120" dy="78">acesso primeiro.</tspan>
+<text x="120" y="500" font-family="Roboto Flex" font-size="56" font-weight="400" fill="{CSS}" letter-spacing="-1">
+  <tspan x="120" dy="0">tecnologia como direito</tspan>
+  <tspan x="120" dy="72">e como linguagem de poder,</tspan>
+  <tspan x="120" dy="72">não como privilégio</tspan>
+  <tspan x="120" dy="72">de poucos.</tspan>
 </text>
-<rect x="120" y="780" width="80" height="3" fill="{CODE}"/>
-<text x="120" y="830" font-family="IBM Plex Mono" font-size="32" fill="{CODE}">// luna · 16 anos · clube parque belém</text>
+<rect x="120" y="820" width="80" height="3" fill="{CODE}"/>
+<text x="120" y="870" font-family="IBM Plex Mono" font-size="24" fill="{CODE}">// manifesto casa hacker</text>
 <g transform="translate(120, 950)">{h_pixel(0, 0, 18, SIG)}</g>
 <text x="200" y="985" font-family="IBM Plex Mono" font-size="24" fill="{INSPECT}">@hackerclubes</text>
 </svg>'''
@@ -160,40 +162,41 @@ def post_lancamento():
 
 
 def post_bastidores():
-    """Post bastidores · foto + texto."""
+    """Post bastidores · território + autoria."""
     return f'''<svg viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="post bastidores">
 <rect width="1080" height="1080" fill="{DOS}"/>
-<!-- foto simulada (gradient + grafismo) -->
 <rect x="80" y="80" width="920" height="540" fill="{INSPECT}"/>
 <image href="../../assets/grafismos/PATTERNS_Artboard 31.svg" x="80" y="80" width="920" height="540" opacity="0.25"/>
 <g transform="translate(440, 280)">{h_pixel(0, 0, 50, SIG_DARK)}</g>
 <text x="540" y="490" font-family="IBM Plex Mono" font-size="22" fill="{JAVA}" text-anchor="middle">// foto da turma</text>
-<text x="80" y="700" font-family="IBM Plex Mono" font-size="32" fill="{SIG}" letter-spacing="2">// BASTIDORES</text>
-<text x="80" y="800" font-family="Roboto Flex" font-size="62" font-weight="400" fill="{CSS}" letter-spacing="-1">
-  <tspan x="80" dy="0">turma do clube ibirapuera</tspan>
-  <tspan x="80" dy="76">apresentou app de queda</tspan>
-  <tspan x="80" dy="76">de idosos pra prefeitura</tspan>
+<text x="80" y="700" font-family="IBM Plex Mono" font-size="32" fill="{SIG}" letter-spacing="2">// PROJETO DO TERRITÓRIO</text>
+<text x="80" y="800" font-family="Roboto Flex" font-size="58" font-weight="400" fill="{CSS}" letter-spacing="-1">
+  <tspan x="80" dy="0">solução nasceu na rua,</tspan>
+  <tspan x="80" dy="72">voltou pra rua em forma</tspan>
+  <tspan x="80" dy="72">de fortalecimento.</tspan>
 </text>
-<text x="80" y="1040" font-family="IBM Plex Mono" font-size="24" fill="{SIG}">// novembro 2025</text>
+<text x="80" y="1040" font-family="IBM Plex Mono" font-size="22" fill="{SIG}">// clube · novembro 2025</text>
 </svg>'''
 
 
 # ---------- INSTAGRAM STORIES (1080×1920) ----------------------------------
 def story_save_date():
-    """Story save the date vertical."""
+    """Story save the date · tagline canônica."""
     return f'''<svg viewBox="0 0 540 960" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="story save the date">
 <rect width="540" height="960" fill="{SIG}"/>
 <image href="../../assets/grafismos/PATTERNS_Artboard 33.svg" x="0" y="0" width="540" height="960" opacity="0.20"/>
-<text x="40" y="100" font-family="IBM Plex Mono" font-size="20" fill="{DOS}" letter-spacing="2">// SAVE THE DATE</text>
-<text x="40" y="370" font-family="Roboto Flex" font-size="120" font-weight="300" fill="{DOS}" letter-spacing="-3">hack</text>
-<text x="40" y="490" font-family="Roboto Flex" font-size="120" font-weight="700" fill="{SIG_DARK}" letter-spacing="-3">a casa</text>
-<rect x="40" y="540" width="120" height="4" fill="{DOS}"/>
-<text x="40" y="620" font-family="IBM Plex Mono" font-size="24" fill="{DOS}">
+<text x="40" y="100" font-family="IBM Plex Mono" font-size="20" fill="{DOS}" letter-spacing="2">// ENCONTRO</text>
+<text x="40" y="320" font-family="Roboto Flex" font-size="78" font-weight="300" fill="{DOS}" letter-spacing="-2">vamos</text>
+<text x="40" y="410" font-family="Roboto Flex" font-size="78" font-weight="300" fill="{DOS}" letter-spacing="-2">programar</text>
+<text x="40" y="500" font-family="Roboto Flex" font-size="78" font-weight="700" fill="{SIG_DARK}" letter-spacing="-2">outros</text>
+<text x="40" y="590" font-family="Roboto Flex" font-size="78" font-weight="700" fill="{SIG_DARK}" letter-spacing="-2">futuros</text>
+<rect x="40" y="630" width="120" height="4" fill="{DOS}"/>
+<text x="40" y="700" font-family="IBM Plex Mono" font-size="20" fill="{DOS}">
   <tspan x="40" dy="0">// 15-17 setembro</tspan>
-  <tspan x="40" dy="36">// casa hacker · sp</tspan>
+  <tspan x="40" dy="30">// casa hacker · sp</tspan>
 </text>
-<g transform="translate(40, 780)">{h_pixel(0, 0, 20, DOS)}</g>
-<text x="40" y="900" font-family="IBM Plex Mono" font-size="20" fill="{DOS}">arrasta pra cima ↑</text>
+<g transform="translate(40, 800)">{h_pixel(0, 0, 18, DOS)}</g>
+<text x="40" y="900" font-family="IBM Plex Mono" font-size="18" fill="{DOS}">arrasta pra cima ↑</text>
 </svg>'''
 
 
@@ -241,18 +244,18 @@ def story_quiz():
 
 # ---------- LINKEDIN POST (1200×627) ---------------------------------------
 def linkedin_institutional():
-    """Banner LinkedIn institucional."""
-    return f'''<svg viewBox="0 0 1200 627" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="linkedin banner">
+    """Banner LinkedIn institucional · tagline canônica."""
+    return f'''<svg viewBox="0 0 1200 627" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="linkedin banner institucional">
 <rect width="1200" height="627" fill="{DOS}"/>
 <image href="../../assets/grafismos/PATTERNS_Artboard 19.svg" x="0" y="0" width="1200" height="627" opacity="0.10"/>
 <g transform="translate(80, 100)">{h_pixel(0, 0, 36, SIG)}</g>
-<text x="80" y="270" font-family="Roboto Flex" font-size="64" font-weight="300" fill="{CSS}" letter-spacing="-2">tecnologia que</text>
-<text x="80" y="350" font-family="Roboto Flex" font-size="64" font-weight="700" fill="{SIG}" letter-spacing="-2">começa na escola</text>
-<rect x="80" y="400" width="120" height="4" fill="{CODE}"/>
-<text x="80" y="460" font-family="IBM Plex Mono" font-size="22" fill="{INSPECT}">
+<text x="80" y="260" font-family="Roboto Flex" font-size="52" font-weight="300" fill="{CSS}" letter-spacing="-2">vamos programar</text>
+<text x="80" y="330" font-family="Roboto Flex" font-size="52" font-weight="700" fill="{SIG}" letter-spacing="-2">outros futuros</text>
+<rect x="80" y="380" width="120" height="4" fill="{CODE}"/>
+<text x="80" y="440" font-family="IBM Plex Mono" font-size="22" fill="{INSPECT}">
   <tspan x="80" dy="0">// 142 hackerclubes ativos</tspan>
-  <tspan x="80" dy="30">// 4.800 jovens impactados</tspan>
-  <tspan x="80" dy="30">// 18 cidades brasileiras</tspan>
+  <tspan x="80" dy="30">// 4.800+ jovens · 18 cidades</tspan>
+  <tspan x="80" dy="30">// a partir de onde tudo já acontece</tspan>
 </text>
 <text x="80" y="600" font-family="IBM Plex Mono" font-size="20" fill="{SIG}">casahacker.org/clubes</text>
 </svg>'''
@@ -367,35 +370,39 @@ def slide_chart():
 
 
 def slide_quote():
-    return f'''<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="slide quote">
+    """Slide quote · frase canônica do manifesto sobre periferia."""
+    return f'''<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="slide quote manifesto">
 <rect width="1920" height="1080" fill="{SIG}"/>
 <image href="../../assets/grafismos/PATTERNS_Artboard 31.svg" x="0" y="0" width="1920" height="1080" opacity="0.10"/>
 <text x="120" y="280" font-family="Roboto Flex" font-size="220" font-weight="700" fill="{SIG_DARK}" opacity="0.5">"</text>
-<text x="120" y="600" font-family="Roboto Flex" font-size="60" font-weight="400" fill="{DOS}" letter-spacing="-1">
-  <tspan x="120" dy="0">o clube me deu coragem</tspan>
-  <tspan x="120" dy="80">de me imaginar trabalhando</tspan>
-  <tspan x="120" dy="80">com tecnologia.</tspan>
+<text x="120" y="540" font-family="Roboto Flex" font-size="56" font-weight="400" fill="{DOS}" letter-spacing="-1">
+  <tspan x="120" dy="0">as periferias não são</tspan>
+  <tspan x="120" dy="76">um lugar de espera,</tspan>
+  <tspan x="120" dy="76">são um lugar de começo:</tspan>
+  <tspan x="120" dy="76">de ideias, de tecnologias,</tspan>
+  <tspan x="120" dy="76">de inovação.</tspan>
 </text>
-<rect x="120" y="840" width="80" height="4" fill="{DOS}"/>
-<text x="120" y="900" font-family="IBM Plex Mono" font-size="24" fill="{DOS}">// pedro · 17 anos · ex-clubista hoje no porto digital</text>
-<text x="120" y="1010" font-family="IBM Plex Mono" font-size="18" fill="{DOS}">15 / 18</text>
+<rect x="120" y="960" width="80" height="4" fill="{DOS}"/>
+<text x="120" y="1015" font-family="IBM Plex Mono" font-size="22" fill="{DOS}">// manifesto casa hacker</text>
 </svg>'''
 
 
 def slide_closing():
+    """Slide closing · convite final do manifesto."""
     return f'''<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="slide closing">
 <rect width="1920" height="1080" fill="{DOS}"/>
 <image href="../../assets/grafismos/PATTERNS_Artboard 33.svg" x="0" y="0" width="1920" height="1080" opacity="0.08"/>
-<text x="120" y="280" font-family="Roboto Flex" font-size="120" font-weight="300" fill="{CSS}" letter-spacing="-4">vamos</text>
-<text x="120" y="440" font-family="Roboto Flex" font-size="180" font-weight="700" fill="{CODE}" letter-spacing="-6">conversar?</text>
-<rect x="120" y="500" width="160" height="6" fill="{SIG}"/>
-<g font-family="IBM Plex Mono" font-size="32" fill="{INSPECT}">
-  <text x="120" y="640">// hackerclubes@casahacker.org</text>
-  <text x="120" y="700">// casahacker.org/clubes</text>
-  <text x="120" y="760">// @hackerclubes nas redes</text>
+<text x="120" y="280" font-family="Roboto Flex" font-size="100" font-weight="300" fill="{CSS}" letter-spacing="-3">quem quiser</text>
+<text x="120" y="380" font-family="Roboto Flex" font-size="100" font-weight="300" fill="{CSS}" letter-spacing="-3">caminhar junto</text>
+<text x="120" y="510" font-family="Roboto Flex" font-size="120" font-weight="700" fill="{CODE}" letter-spacing="-4">é bem-vindo</text>
+<rect x="120" y="560" width="160" height="6" fill="{SIG}"/>
+<g font-family="IBM Plex Mono" font-size="28" fill="{INSPECT}">
+  <text x="120" y="680">// hackerclubes@casahacker.org</text>
+  <text x="120" y="730">// casahacker.org/clubes</text>
+  <text x="120" y="780">// @hackerclubes nas redes</text>
 </g>
-<g transform="translate(120, 870)">{h_pixel(0, 0, 28, SIG)}</g>
-<text x="180" y="908" font-family="IBM Plex Mono" font-size="22" fill="{SIG}">obrigado.</text>
+<g transform="translate(120, 880)">{h_pixel(0, 0, 28, SIG)}</g>
+<text x="180" y="918" font-family="IBM Plex Mono" font-size="22" fill="{SIG}">obrigado.</text>
 <text x="120" y="1010" font-family="IBM Plex Mono" font-size="18" fill="{JAVA}">18 / 18</text>
 </svg>'''
 
@@ -572,29 +579,30 @@ write("pages/submarcas/hackerclubes.html", page(
             f'<div class="tile tile--bordered"><h4>4.800+</h4><p>jovens impactados desde 2020</p></div>'
             f'<div class="tile tile--bordered"><h4>87%</h4><p>taxa de continuidade após o 1º ano</p></div></div>'),
 
-        # Tagline + tom de voz · 02
-        sec("voice", "tagline + tom de voz", "02 · 12-17 anos",
-            '<p class="t-body-02 t-secondary mb-05 prose">Público-alvo: <strong>jovens de 12-17 anos</strong> e orientadores educadores. Tom direto, brasileiro, sem condescendência. Nunca infantilizar · curiosidade respeitada.</p>'
+        # Tagline + tom de voz · 02 (frases do manifesto)
+        sec("voice", "tagline + tom de voz", "02 · público amplo",
+            '<p class="t-body-02 t-secondary mb-05 prose">Público: jovens, orientadores, comunidades. Tom direto, brasileiro, sem condescendência. Frases-fonte vêm do <a class="link" href="../about/manifesto.html">manifesto oficial</a> · não inventar paráfrases.</p>'
             '<div class="grid-2 mb-05">'
             '<div class="tile" style="background:var(--ch-sub-hackerclubes);color:var(--ch-sub-hackerclubes-fg);padding:var(--spacing-07)">'
-            '<div class="t-label-01" style="color:inherit;opacity:0.7">// TAGLINE OFICIAL</div>'
-            '<h3 style="font:300 36px/1.1 var(--font-sans);color:inherit;margin-top:var(--spacing-04);letter-spacing:-0.02em">vem ser <strong>curioso</strong></h3>'
+            '<div class="t-label-01" style="color:inherit;opacity:0.7">// TAGLINE PRINCIPAL · DO MANIFESTO</div>'
+            '<h3 style="font:300 32px/1.2 var(--font-sans);color:inherit;margin-top:var(--spacing-04);letter-spacing:-0.02em">o futuro não é uma coisa <strong>distante</strong></h3>'
             '</div>'
             '<div class="tile tile--bordered">'
-            '<div class="t-label-01">// TAGLINES ALTERNATIVAS</div>'
-            '<p class="mt-03" style="font:var(--code-02);color:var(--text-primary);line-height:1.8">→ tecnologia começa na escola<br>→ pensa, faz, compartilha<br>→ quem tem ideia tem clube<br>→ não precisa esperar ser adulto</p>'
+            '<div class="t-label-01">// TAGLINES ALTERNATIVAS · DO MANIFESTO</div>'
+            '<p class="mt-03" style="font:var(--code-02);color:var(--text-primary);line-height:1.85">→ vamos programar outros futuros<br>→ a partir de onde tudo já acontece<br>→ periferia: lugar de começo<br>→ tecnologia como direito</p>'
             '</div>'
             '</div>'
+            + '<p class="t-body-02 t-secondary mb-05 prose"><strong>Princípio:</strong> tratar tecnologia como direito e linguagem de poder, não como privilégio. Conteúdo deve refletir essa postura.</p>'
             + do_dont(
-                ['Linguagem direta · "vem aprender python"',
-                 'Verbos de ação · "constrói", "cria", "explora"',
+                ['Frases exatas do manifesto · texto canônico',
+                 'Verbos de ação · "programa", "inventa", "ocupa"',
                  'Caixa baixa nas labels · estilo CHDS',
-                 'Acolhe diferenças · "tem clube pra todo mundo"',
-                 'Referências reais da galera · não tenta soar millennial'],
+                 'Linguagem que vem do território · "quebrada", "rua"',
+                 'Referenciar autonomia, território, direito'],
                 ['Tom paternalista · "querido jovem"',
                  'Infantilização · "pequenos hackers"',
-                 'Gírias forçadas · "iradissimo" "marreta"',
-                 'Promessas vazias · "torne-se um programador"',
+                 'Inventar taglines · usar as do manifesto',
+                 'Promessas individualistas · "vire programador"',
                  'Termos elitistas · "engenheiro de software"']
             )),
 
