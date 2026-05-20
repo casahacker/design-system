@@ -25,6 +25,7 @@ GENERATORS = [
     ("dataviz",          "gen_dataviz.py"),
     ("brand+help",       "gen_brand.py"),
     ("impressos",        "gen_impressos.py"),
+    ("hackerclubes",     "gen_hackerclubes.py"),  # roda APÓS gen_brand · sobrescreve
     ("search-index",     "gen_search_index.py"),
 ]
 QUICK_SUBSET = {"foundations", "components-a", "components-b", "components-new", "search-index"}
