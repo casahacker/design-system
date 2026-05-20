@@ -1,0 +1,88 @@
+name: Sync barra-acessibilidade
+
+# Verifica semanalmente se há novidades no repo upstream casahacker/barra-acessibilidade.
+# Quando houver mudança, abre um PR automático com a versão atualizada.
+#
+# Como funciona:
+# 1. Checkout do repo DS + checkout do barra-acessibilidade em vendor/
+# 2. Compara hash dos arquivos relevantes (bar.js, bar.css)
+# 3. Se mudou, copia pro vendor/barra-acessibilidade/ + abre PR
+#
+# Trigger: cron semanal (segunda 10h UTC = 7h BRT) ou manualmente
+
+on:
+  schedule:
+    - cron: "0 10 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  check-and-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout DS
+        uses: actions/checkout@v4
+        with:
+          path: ds
+
+      - name: Checkout barra-acessibilidade
+        uses: actions/checkout@v4
+        with:
+          repository: casahacker/barra-acessibilidade
+          path: barra
+          # Continue mesmo se o repo não existir publicamente ainda
+          continue-on-error: true
+
+      - name: Diff against vendored copy
+        id: diff
+        run: |
+          set -e
+          mkdir -p ds/vendor/barra-acessibilidade
+          if [ ! -d barra ]; then
+            echo "barra repo not found · skipping"
+            echo "changed=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          # Lista arquivos relevantes (ajustar conforme estrutura do upstream)
+          for f in bar.js bar.css index.html README.md; do
+            src="barra/$f"
+            dst="ds/vendor/barra-acessibilidade/$f"
+            if [ -f "$src" ]; then
+              if [ ! -f "$dst" ] || ! cmp -s "$src" "$dst"; then
+                cp "$src" "$dst"
+                echo "updated: $f"
+                echo "changed=true" >> $GITHUB_OUTPUT
+              fi
+            fi
+          done
+
+      - name: Record upstream SHA
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          cd barra
+          SHA=$(git rev-parse HEAD)
+          DATE=$(date -u +"%Y-%m-%d")
+          echo "Vendored from casahacker/barra-acessibilidade @ $SHA on $DATE" \
+            > ../ds/vendor/barra-acessibilidade/VERSION
+
+      - name: Create PR
+        if: steps.diff.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          path: ds
+          branch: bot/sync-barra-acessibilidade
+          title: "chore: sync barra-acessibilidade upstream"
+          body: |
+            Auto-PR: detectamos mudanças em
+            https://github.com/casahacker/barra-acessibilidade
+
+            Arquivos sincronizados em `vendor/barra-acessibilidade/`.
+
+            Cheque o diff antes de aprovar. A barra a11y é integrada
+            diretamente no `shell.js` — talvez seja necessário ajuste
+            manual se o upstream mudou a API.
+          commit-message: "chore: bump barra-acessibilidade upstream"
+          labels: a11y,bot,dependencies
