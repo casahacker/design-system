@@ -582,6 +582,9 @@ button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 .shell-footer a { color: var(--text-helper); text-decoration: none; }
 .shell-footer a:hover { color: var(--ch-code-active); }
 
+/* Sidebar mobile backdrop — fica oculto no desktop, ativado dentro da media query */
+.sidebar-backdrop { display: none; }
+
 /* -----------------------------------------------------------------------------
    05 · TYPOGRAPHY UTILITIES
    ----------------------------------------------------------------------------- */
