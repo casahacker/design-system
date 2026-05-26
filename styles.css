@@ -479,6 +479,36 @@ button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 .h-mini span { background: transparent; }
 .h-mini span.on { background: var(--ch-code); }
 
+/* Header brand · logotipo Casa Hacker (mask + currentColor) */
+.shell-brand-logo {
+  display: inline-block;
+  width: 140px;
+  height: 18px;
+  flex-shrink: 0;
+  background-color: currentColor;
+  -webkit-mask: var(--logo) center / contain no-repeat;
+          mask: var(--logo) center / contain no-repeat;
+  transition: opacity var(--duration-fast-02), transform var(--duration-fast-02);
+}
+.shell-brand:hover .shell-brand-logo { opacity: 0.85; }
+.shell-brand-logo--glitch {
+  animation: ch-brand-glitch 0.28s steps(2, end) 1;
+}
+@keyframes ch-brand-glitch {
+  0%   { transform: translate(0, 0);   filter: none; }
+  20%  { transform: translate(-1px, 1px); filter: hue-rotate(45deg); }
+  40%  { transform: translate(2px, -1px); filter: hue-rotate(-30deg); }
+  60%  { transform: translate(-2px, 0);   filter: hue-rotate(15deg); }
+  80%  { transform: translate(1px, 1px);  filter: none; }
+  100% { transform: translate(0, 0); }
+}
+@media (max-width: 600px) {
+  .shell-brand-logo { width: 108px; height: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .shell-brand-logo--glitch { animation: none; }
+}
+
 .shell-brand-name {
   font: var(--label-02);
   letter-spacing: 0.04em;
