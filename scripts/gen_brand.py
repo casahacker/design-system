@@ -1,8 +1,9 @@
 """Submarcas (6) + Impressos (4) + Contributing (4) + Help (2)."""
 from common import page, sec, demo, do_dont, code, checklist, table, related, write, anatomy, api_table, grid
 import os
+from pathlib import Path
 
-ROOT = "C:/Users/geraldo_casahacker/Downloads/design-system"
+ROOT = str(Path(__file__).resolve().parent.parent)
 
 # Explicit primary logo map · auditado contra paletas reais
 # Cada submarca tem 16-24 variantes (Illustrator export numerado). Sem nomes

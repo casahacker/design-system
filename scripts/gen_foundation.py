@@ -624,7 +624,7 @@ LOGO_INTRO = (
 
 write("pages/elements/logo.html", page(
     "logo", "Logo",
-    '<a href="../../index.html">home</a><span class="sep">/</span><a href="../about/index.html">foundations</a><span class="sep">/</span>logo',
+    '<a href="../../index.html">home</a><span class="sep">/</span><a href="../submarcas/index.html">brand identity</a><span class="sep">/</span>logotipo',
     LOGO_INTRO,
     "".join([
         sec("anatomy", "anatomia · 3 versões oficiais", "01 · estrutura",
@@ -764,6 +764,8 @@ write("pages/elements/logo.html", page(
         {"cls":"","label":"5 variações"},
         {"cls":"","label":"3 versões"},
     ],
+    rel_path="pages/elements/logo.html",
+    section="brand",
 ))
 
 print("done · foundations")

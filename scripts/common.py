@@ -1,8 +1,13 @@
 """Casa Hacker DS — template helpers (build-time only)."""
 import os
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+
+# URL canônica usada para tags og:url, canonical link e sitemap.xml.
+# Mude aqui se o site for migrado de host.
+SITE_URL = "https://casahacker.github.io/design-system"
 
 
 def write(rel, html):
@@ -10,6 +15,24 @@ def write(rel, html):
     fp.parent.mkdir(parents=True, exist_ok=True)
     fp.write_text(html, encoding="utf-8")
     print("written:", rel)
+
+
+# --- TOC auto-discovery -----------------------------------------------------
+# sec() produz `<section class="section" id="X"><div class="section-head"><h2>title</h2>`.
+# Quando toc=None for passado pra page(), varremos o sections string em busca
+# desse pattern e geramos a TOC automaticamente (>=2 sections).
+_SEC_RE = re.compile(
+    r'<section[^>]*class="[^"]*\bsection\b[^"]*"[^>]*id="([^"]+)"[^>]*>'
+    r'\s*<div class="section-head"><h2>([^<]+)</h2>',
+    re.IGNORECASE | re.DOTALL,
+)
+
+def _auto_toc(sections_html, min_count=2):
+    """Extrai (id, label) das <section>s pra montar TOC automaticamente."""
+    matches = _SEC_RE.findall(sections_html or "")
+    if len(matches) < min_count:
+        return []
+    return [{"id": sid, "label": label.strip()} for sid, label in matches]
 
 
 # Map breadcrumb → section accent (paleta secundária por seção)
@@ -36,9 +59,31 @@ def _section_label(section_id):
     }.get(section_id, section_id or "")
 
 # ----- page skeleton --------------------------------------------------------
-def page(page_id, title, breadcrumb, intro, sections, *, depth="../../", tags=None, toc=None, extra_head="", section=None):
+def _depth_to_relpath(depth):
+    """Converte './' ou '../../' no caminho relativo à raiz (vazio ou 'pages/X/Y/')."""
+    if not depth or depth in ("./", ""):
+        return ""
+    # '../../' = duas subidas a partir de pages/<section>/<file>.html → na raiz.
+    # Não temos o nome do arquivo aqui — devolvemos string vazia (canonical
+    # ainda funcionará pra root). Quem precisar de canonical preciso passa rel_path.
+    return ""
+
+def page(page_id, title, breadcrumb, intro, sections, *, depth="../../", tags=None, toc=None,
+         extra_head="", section=None, rel_path=None, og_image=None):
+    """
+    Renderiza uma página completa.
+
+    rel_path: caminho relativo à raiz do site (ex: 'pages/elements/logo.html').
+              Quando passado, gera <link rel="canonical">, og:url e habilita
+              o sitemap.xml. Recomendado em toda página nova.
+    og_image: URL absoluta da imagem og. Default: favicon.svg.
+    toc:      lista de {id,label}. Se None ou [] e o HTML de sections tiver
+              ≥2 <section id="..."><h2>...</h2>, gera TOC automaticamente.
+    """
     tags = tags or []
-    toc = toc or []
+    # Auto-TOC quando não foi passado explicitamente
+    if not toc:
+        toc = _auto_toc(sections)
     # Auto-infer section accent from breadcrumb se não passado explicitamente
     section = section or _infer_section(breadcrumb)
     eyebrow_html = ""
@@ -55,6 +100,28 @@ def page(page_id, title, breadcrumb, intro, sections, *, depth="../../", tags=No
         + "</ol></aside>"
     ) if toc else ""
     desc = (intro or "").replace("<", "&lt;").replace(">", "&gt;")[:160].replace('"', "&quot;")
+
+    # Auto OG / canonical · só emite og:url e canonical se rel_path for explícito,
+    # pra não declarar URL errada em páginas que não passaram rel_path ainda.
+    og_image_url = og_image or f"{SITE_URL}/favicon.svg"
+    og_title = f"{title} · Casa Hacker DS" if title else "Casa Hacker DS"
+    canonical_html = ""
+    og_url_html = ""
+    if rel_path:
+        page_url = f"{SITE_URL}/{rel_path}"
+        canonical_html = f'<link rel="canonical" href="{page_url}">'
+        og_url_html = f'<meta property="og:url" content="{page_url}">\n'
+    og_html = (
+        f'<meta property="og:type" content="article">\n'
+        f'<meta property="og:title" content="{og_title}">\n'
+        f'<meta property="og:description" content="{desc}">\n'
+        f'{og_url_html}'
+        f'<meta property="og:image" content="{og_image_url}">\n'
+        f'<meta name="twitter:card" content="summary_large_image">\n'
+        f'<meta name="twitter:title" content="{og_title}">\n'
+        f'<meta name="twitter:description" content="{desc}">'
+    )
+
     return f"""<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -63,8 +130,10 @@ def page(page_id, title, breadcrumb, intro, sections, *, depth="../../", tags=No
 <meta name="ch-page" content="{page_id}">
 <meta name="ch-base" content="{depth}">
 <meta name="description" content="{desc}">
+{canonical_html}
+{og_html}
 <link rel="icon" type="image/svg+xml" href="{depth}favicon.svg">
-<title>{title} · Casa Hacker DS</title>
+<title>{og_title}</title>
 <link rel="stylesheet" href="{depth}styles.css">
 {extra_head}
 </head>
