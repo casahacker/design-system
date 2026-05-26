@@ -569,4 +569,201 @@ write("pages/elements/themes.html", page(
     toc=[{"id":"active","label":"Temas ativos"},{"id":"switching","label":"Trocando de tema"},{"id":"philosophy","label":"Filosofia"},{"id":"usage","label":"Quando usar cada tema"},{"id":"code","label":"Código"}],
 ))
 
+# =============================================================================
+# LOGO · marca Casa Hacker (manual de identidade)
+# =============================================================================
+LOGO_BASE = "../../assets/logos/casa-hacker"
+
+def _logo_tile(file, label, role, *, bg="var(--logo-stage-bg)", border="var(--logo-stage-border)", height=64):
+    return (
+        f'<div style="display:flex;flex-direction:column;gap:var(--spacing-03)">'
+        f'  <div style="background:{bg};border:1px solid {border};padding:var(--spacing-06);'
+        f'display:flex;align-items:center;justify-content:center;min-height:120px">'
+        f'    <img src="{LOGO_BASE}/{file}" alt="{label}" loading="lazy" decoding="async" '
+        f'style="max-height:{height}px;max-width:100%;height:auto">'
+        f'  </div>'
+        f'  <div style="font:var(--code-01);color:var(--text-helper);text-transform:uppercase;letter-spacing:0.08em">'
+        f'    {label} <span style="color:var(--text-secondary);text-transform:none;letter-spacing:0">· {role}</span>'
+        f'  </div>'
+        f'</div>'
+    )
+
+LOGO_ANATOMY_SVG = '''
+<svg viewBox="0 0 760 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="anatomia do logotipo com area de resguardo clear space igual a 1x altura do H">
+  <defs>
+    <pattern id="ch-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="6" stroke="#32fa96" stroke-width="1" opacity="0.45"/>
+    </pattern>
+    <marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#91938c"/>
+    </marker>
+  </defs>
+  <rect x="70" y="40" width="620" height="120" fill="url(#ch-hatch)" stroke="#32fa96" stroke-width="1" stroke-dasharray="4 4"/>
+  <rect x="130" y="80" width="500" height="40" fill="none" stroke="#3c433c" stroke-width="1" stroke-dasharray="2 3" opacity="0.4"/>
+  <image href="../../assets/logos/casa-hacker/horizontal-dark.svg" x="130" y="80" width="500" height="40" preserveAspectRatio="xMidYMid meet"/>
+  <g font-family="monospace" font-size="11" fill="#91938c">
+    <text x="22" y="105">x</text>
+    <text x="710" y="105">x</text>
+    <text x="380" y="32" text-anchor="middle">x</text>
+    <text x="380" y="180" text-anchor="middle">x</text>
+  </g>
+  <g stroke="#91938c" stroke-width="1" fill="none" marker-end="url(#arr)" marker-start="url(#arr)">
+    <line x1="40" y1="100" x2="125" y2="100"/>
+    <line x1="635" y1="100" x2="715" y2="100"/>
+    <line x1="380" y1="45" x2="380" y2="75"/>
+    <line x1="380" y1="125" x2="380" y2="170"/>
+  </g>
+</svg>
+'''
+
+LOGO_INTRO = (
+    "O logotipo Casa Hacker — marca, simbolo H e versoes. Como aplicar, "
+    "tamanhos minimos, areas de resguardo (clear space), variacoes de cor "
+    "e regras pra nao desfigurar a marca."
+)
+
+write("pages/elements/logo.html", page(
+    "logo", "Logo",
+    '<a href="../../index.html">home</a><span class="sep">/</span><a href="../about/index.html">foundations</a><span class="sep">/</span>logo',
+    LOGO_INTRO,
+    "".join([
+        sec("anatomy", "anatomia · 3 versões oficiais", "01 · estrutura",
+            '<p class="t-body-02 t-secondary mb-05 prose">A identidade tem três expressões. A escolha depende do espaço disponível e do contexto. Quando em dúvida, use a versão <strong>horizontal</strong>.</p>'
+            '<div class="grid-3">'
+            + _logo_tile("horizontal-dark.svg", "horizontal", "primária · headers, papelaria, sites", height=44)
+            + _logo_tile("vertical-dark.svg",   "vertical",   "empilhada · espaços quadrados, redes sociais", height=96)
+            + _logo_tile("simbolo-dark.svg",    "símbolo H",  "ícone · favicon, avatar, watermark, app icon", height=84)
+            + '</div>'),
+
+        sec("clear-space", "área de resguardo · clear space", "02 · respiro",
+            '<p class="t-body-02 t-secondary mb-05 prose">Mantenha pelo menos <strong>1× a altura do H</strong> de espaço livre em volta do logotipo. Nenhum elemento (texto, imagem, borda) deve invadir essa zona.</p>'
+            f'<div class="anatomy" style="background:var(--layer-01);padding:var(--spacing-07);border:1px solid var(--border-subtle-00)">{LOGO_ANATOMY_SVG}</div>'
+            '<p class="t-helper" style="margin-top:var(--spacing-04)">Hachura verde = zona de resguardo · <code class="code-inline">x</code> = altura do H do logotipo</p>'),
+
+        sec("min-size", "tamanho mínimo · redução", "03 · legibilidade",
+            '<p class="t-body-02 t-secondary mb-05 prose">Reduções abaixo destes limites comprometem leitura. Para favicons e usos &lt; 24px, use apenas o <strong>símbolo H</strong>.</p>'
+            + table(
+                ["versão", "digital (px)", "impresso (cm)", "uso"],
+                [
+                    ["horizontal", "130 px", "5 cm",   "navegação, headers, papelaria A4"],
+                    ["vertical",   "75 px",  "4,5 cm", "cards quadrados, redes sociais"],
+                    ["símbolo H",  "15 px",  "1 cm",   "favicon, app icon, watermark"],
+                ]
+            )
+            + '<div class="row" style="gap:var(--spacing-08);align-items:flex-end;margin-top:var(--spacing-07);background:var(--layer-01);padding:var(--spacing-07);border:1px solid var(--border-subtle-00);overflow-x:auto">'
+            f'  <div style="text-align:center"><img src="{LOGO_BASE}/horizontal-dark.svg" style="width:260px;height:auto" alt="horizontal 260px"><div class="t-helper" style="margin-top:var(--spacing-03)">260 px</div></div>'
+            f'  <div style="text-align:center"><img src="{LOGO_BASE}/horizontal-dark.svg" style="width:130px;height:auto" alt="horizontal 130px"><div class="t-helper" style="margin-top:var(--spacing-03)"><strong>130 px · mínimo</strong></div></div>'
+            f'  <div style="text-align:center"><img src="{LOGO_BASE}/simbolo-dark.svg" style="width:32px;height:32px" alt="símbolo 32px"><div class="t-helper" style="margin-top:var(--spacing-03)">32 px</div></div>'
+            f'  <div style="text-align:center"><img src="{LOGO_BASE}/simbolo-dark.svg" style="width:15px;height:15px" alt="símbolo 15px"><div class="t-helper" style="margin-top:var(--spacing-03)"><strong>15 px · favicon</strong></div></div>'
+            '</div>'),
+
+        sec("variants", "variações de cor", "04 · positivo, negativo & código",
+            '<p class="t-body-02 t-secondary mb-05 prose">Cinco variações cromáticas oficiais. Escolha sempre o maior contraste com o fundo. <strong>Code</strong> (verde signature) é reservado para usos institucionais de destaque.</p>'
+            '<h3 class="t-h02" style="margin:var(--spacing-06) 0 var(--spacing-04)">horizontal</h3>'
+            '<div class="grid-3" style="gap:var(--spacing-05)">'
+            + _logo_tile("horizontal-dark.svg",        "dark · #3c433c",  "positivo · fundo claro", bg="#ffffff", border="var(--border-subtle-00)", height=40)
+            + _logo_tile("horizontal-light.svg",       "light · #f8fcf8", "negativo · fundo Dos",   bg="#3c433c", border="#3c433c", height=40)
+            + _logo_tile("horizontal-code.svg",        "code · #32fa96",  "signature · institucional", bg="#3c433c", border="#3c433c", height=40)
+            + _logo_tile("horizontal-green-light.svg", "green-light",     "sutil · fundo Dos",       bg="#3c433c", border="#3c433c", height=40)
+            + _logo_tile("horizontal-gray.svg",        "gray · #d7dcd7",  "neutra · fundo Dos",      bg="#3c433c", border="#3c433c", height=40)
+            + '</div>'
+            '<h3 class="t-h02" style="margin:var(--spacing-08) 0 var(--spacing-04)">vertical</h3>'
+            '<div class="grid-3" style="gap:var(--spacing-05)">'
+            + _logo_tile("vertical-dark.svg",  "dark",  "positivo", bg="#ffffff", border="var(--border-subtle-00)", height=96)
+            + _logo_tile("vertical-light.svg", "light", "negativo", bg="#3c433c", border="#3c433c", height=96)
+            + _logo_tile("vertical-code.svg",  "code",  "signature", bg="#3c433c", border="#3c433c", height=96)
+            + '</div>'
+            '<h3 class="t-h02" style="margin:var(--spacing-08) 0 var(--spacing-04)">símbolo H · monocromáticos</h3>'
+            '<div class="grid-3" style="gap:var(--spacing-05)">'
+            + _logo_tile("simbolo-dark.svg",  "dark",  "positivo", bg="#ffffff", border="var(--border-subtle-00)", height=84)
+            + _logo_tile("simbolo-light.svg", "light", "negativo", bg="#3c433c", border="#3c433c", height=84)
+            + _logo_tile("simbolo-code.svg",  "code",  "signature", bg="#3c433c", border="#3c433c", height=84)
+            + '</div>'
+            '<h3 class="t-h02" style="margin:var(--spacing-08) 0 var(--spacing-04)">símbolo H · acentos por submarca</h3>'
+            '<p class="t-body-02 t-secondary mb-05 prose">Acentos coloridos do símbolo H que correspondem às signatures das submarcas. Use apenas no contexto da submarca correspondente — nunca como marca-mãe.</p>'
+            '<div class="grid-2" style="gap:var(--spacing-05)">'
+            + _logo_tile("simbolo-purple.svg", "purple · #aa78e6",  "PerifaImpacto",  bg="#ffffff", border="var(--border-subtle-00)", height=84)
+            + _logo_tile("simbolo-blue.svg",   "blue · #b3d9fe",    "Hackerclubes",   bg="#ffffff", border="var(--border-subtle-00)", height=84)
+            + _logo_tile("simbolo-pink.svg",   "pink · #ff9ecf",    "Minas em Tech",  bg="#ffffff", border="var(--border-subtle-00)", height=84)
+            + _logo_tile("simbolo-orange.svg", "orange · #d79b2e",  "acento extra",   bg="#ffffff", border="var(--border-subtle-00)", height=84)
+            + '</div>'),
+
+        sec("usage", "como aplicar", "05 · do & don't",
+            do_dont(
+                [
+                    'Sempre o SVG oficial · nunca recriar o logo manualmente',
+                    'Maior contraste com o fundo: dark sobre claro, light sobre escuro',
+                    'Respeitar a área de resguardo (1× altura do H)',
+                    'Centralizar ou alinhar à grid de 8 px (BIT)',
+                    'Para tamanhos &lt; 24 px usar somente o símbolo H',
+                    'Code (verde signature) só em comunicações institucionais',
+                ],
+                [
+                    'Distorcer, rotacionar, inclinar ou alterar proporções',
+                    'Aplicar sombras, gradientes, brilhos ou efeitos visuais',
+                    'Recolorir fora das 5 variações oficiais',
+                    'Sobrepor a fundos sem contraste suficiente (WCAG &lt; 3:1)',
+                    'Usar abaixo do tamanho mínimo (130/75/15 px)',
+                    'Combinar com outros logos sem respeitar resguardo',
+                ],
+            )),
+
+        sec("favicon", "favicon & app icon", "06 · marca em miniatura",
+            '<p class="t-body-02 t-secondary mb-05 prose">Em tamanhos miniatura (favicon, app icon, avatar) usa-se sempre o <strong>símbolo H</strong> isolado. Este site usa a versão pixelada do H (grid 3×3) como favicon, que mantém legibilidade até em 16 px.</p>'
+            '<div class="row" style="gap:var(--spacing-07);align-items:center;background:var(--layer-01);padding:var(--spacing-07);border:1px solid var(--border-subtle-00);overflow-x:auto">'
+            f'  <div style="text-align:center"><img src="{LOGO_BASE}/simbolo-dark.svg" style="width:16px;height:16px" alt="favicon 16"><div class="t-helper" style="margin-top:var(--spacing-02)">16 px</div></div>'
+            f'  <div style="text-align:center"><img src="{LOGO_BASE}/simbolo-dark.svg" style="width:32px;height:32px" alt="favicon 32"><div class="t-helper" style="margin-top:var(--spacing-02)">32 px</div></div>'
+            f'  <div style="text-align:center"><img src="{LOGO_BASE}/simbolo-dark.svg" style="width:64px;height:64px" alt="favicon 64"><div class="t-helper" style="margin-top:var(--spacing-02)">64 px</div></div>'
+            f'  <div style="text-align:center"><img src="{LOGO_BASE}/simbolo-dark.svg" style="width:180px;height:180px" alt="apple-touch-icon"><div class="t-helper" style="margin-top:var(--spacing-02)">180 px · ios</div></div>'
+            '</div>'),
+
+        sec("code", "código · uso em produtos", "07",
+            '<p class="t-body-02 t-secondary mb-05 prose">Os SVGs hard-codam <code class="code-inline">fill</code> em cores brand. Para usar com <code class="code-inline">currentColor</code> (auto light/dark), aplique-os como <code class="code-inline">mask-image</code> e pinte com <code class="code-inline">background-color</code>. É o padrão usado no header deste site.</p>'
+            + code('<span class="c">&lt;!-- 1. uso direto · cor fixa --&gt;</span>\n'
+                   '&lt;<span class="k">img</span> <span class="v">src</span>=<span class="s">"/assets/logos/casa-hacker/horizontal-dark.svg"</span>\n'
+                   '     <span class="v">alt</span>=<span class="s">"Casa Hacker"</span>\n'
+                   '     <span class="v">height</span>=<span class="s">"40"</span>&gt;\n'
+                   '\n'
+                   '<span class="c">&lt;!-- 2. com currentColor · auto light/dark --&gt;</span>\n'
+                   '&lt;<span class="k">span</span> <span class="v">class</span>=<span class="s">"ch-logo"</span> <span class="v">role</span>=<span class="s">"img"</span>\n'
+                   '      <span class="v">aria-label</span>=<span class="s">"Casa Hacker"</span>&gt;&lt;/<span class="k">span</span>&gt;\n'
+                   '\n'
+                   '<span class="k">.ch-logo</span> {\n'
+                   '  display: inline-block;\n'
+                   '  width: 140px; height: 18px;\n'
+                   '  background: <span class="k">currentColor</span>;\n'
+                   '  -webkit-mask: <span class="k">url</span>(<span class="s">"/assets/logos/casa-hacker/horizontal-dark.svg"</span>) center/contain no-repeat;\n'
+                   '          mask: <span class="k">url</span>(<span class="s">"/assets/logos/casa-hacker/horizontal-dark.svg"</span>) center/contain no-repeat;\n'
+                   '}')),
+
+        sec("assets", "downloads", "08 · svg vetorial",
+            '<p class="t-body-02 t-secondary mb-05 prose">Os arquivos estão em <code class="code-inline">assets/logos/casa-hacker/</code> (versões curadas com nomes semânticos) e <code class="code-inline">assets/logos/casa-hacker-full/</code> (export completo do Illustrator · 19 artboards). Para usos impressos em alta resolução, abra o SVG e exporte na resolução desejada — vetorial não perde qualidade.</p>'
+            '<div class="grid-2">'
+            '  <div class="tile tile--bordered">'
+            '    <h4>conjunto curado</h4>'
+            '    <p><code class="code-inline">assets/logos/casa-hacker/</code><br>19 SVGs com nomes semânticos (horizontal-dark, vertical-light, simbolo-code, etc.).</p>'
+            '  </div>'
+            '  <div class="tile tile--bordered">'
+            '    <h4>export completo</h4>'
+            '    <p><code class="code-inline">assets/logos/casa-hacker-full/</code><br>19 artboards originais (Illustrator). Use como fallback se faltar variante no conjunto curado.</p>'
+            '  </div>'
+            '</div>'),
+    ]),
+    toc=[
+        {"id":"anatomy","label":"Anatomia"},
+        {"id":"clear-space","label":"Área de resguardo"},
+        {"id":"min-size","label":"Tamanho mínimo"},
+        {"id":"variants","label":"Variações de cor"},
+        {"id":"usage","label":"Como aplicar"},
+        {"id":"favicon","label":"Favicon"},
+        {"id":"code","label":"Código"},
+        {"id":"assets","label":"Downloads"},
+    ],
+    tags=[
+        {"cls":"tag--code","label":"19 svgs"},
+        {"cls":"","label":"5 variações"},
+        {"cls":"","label":"3 versões"},
+    ],
+))
+
 print("done · foundations")

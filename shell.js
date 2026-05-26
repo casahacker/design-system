@@ -37,6 +37,7 @@
       { id: 'g-ai',         label: 'casa hacker for ai',  href: 'pages/guidelines/ai.html' },
     ]},
     { id: 'foundation', section: 'foundations', items: [
+      { id: 'logo',         label: 'logo · marca',        href: 'pages/elements/logo.html' },
       { id: 'color',        label: 'color',               href: 'pages/elements/color.html' },
       { id: 'typography',   label: 'typography',          href: 'pages/elements/typography.html' },
       { id: 'spacing',      label: 'spacing · bit',       href: 'pages/elements/spacing.html' },
@@ -217,8 +218,9 @@
     <header class="shell-header" role="banner">
       <button class="menu-toggle" id="menuToggle" aria-label="abrir menu" aria-controls="sidebar" aria-expanded="false">☰</button>
       <a href="${base}index.html" class="shell-brand" aria-label="Casa Hacker Design System — home">
-        <div class="h-mini" aria-hidden="true">${H_SYMBOL}</div>
-        <span class="shell-brand-name">casa hacker<span class="ds">/ ds v1.0</span></span>
+        <span class="shell-brand-logo" role="img" aria-label="casa hacker"
+              style="--logo: url('${base}assets/logos/casa-hacker/horizontal-dark.svg');"></span>
+        <span class="shell-brand-name"><span class="ds">/ ds v1.0</span></span>
       </a>
       <nav class="shell-actions" aria-label="links secundários">
         <a href="${base}index.html" class="shell-link optional-mobile">home</a>
@@ -888,10 +890,10 @@
       if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') return;
       if (e.key.length === 1) buf = (buf + e.key.toLowerCase()).slice(-4);
       if (buf === 'hack') {
-        const h = $('.shell-brand .h-mini');
+        const h = $('.shell-brand-logo');
         if (h) {
-          h.classList.add('h-symbol--glitch');
-          setTimeout(() => h.classList.remove('h-symbol--glitch'), 250);
+          h.classList.add('shell-brand-logo--glitch');
+          setTimeout(() => h.classList.remove('shell-brand-logo--glitch'), 280);
         }
         buf = '';
       }
