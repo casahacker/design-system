@@ -24,6 +24,24 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Build site (generators + search-index)
+        run: python3 scripts/build.py
+
+      - name: Verify no generator drift committed
+        # Garante que o que está no main bate com o que os geradores produzem.
+        # Se aparecer diff aqui, alguém editou HTML à mão sem rodar build.py.
+        # O workflow segue (a build acabou de regerar tudo), mas registra warning.
+        run: |
+          if ! git diff --quiet; then
+            echo "::warning::Generator drift detectado · arquivos abaixo foram regerados"
+            git diff --stat
+          fi
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 

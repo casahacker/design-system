@@ -37,7 +37,6 @@
       { id: 'g-ai',         label: 'casa hacker for ai',  href: 'pages/guidelines/ai.html' },
     ]},
     { id: 'foundation', section: 'foundations', items: [
-      { id: 'logo',         label: 'logo · marca',        href: 'pages/elements/logo.html' },
       { id: 'color',        label: 'color',               href: 'pages/elements/color.html' },
       { id: 'typography',   label: 'typography',          href: 'pages/elements/typography.html' },
       { id: 'spacing',      label: 'spacing · bit',       href: 'pages/elements/spacing.html' },
@@ -97,17 +96,16 @@
       { id: 'dv-accessibility',label: 'accessibility',     href: 'pages/dataviz/accessibility.html' },
       { id: 'dv-examples',     label: 'examples',          href: 'pages/dataviz/examples.html' },
     ]},
-    { id: 'submarcas', section: 'submarcas', items: [
-      { id: 'sub-index',       label: 'visão geral',      href: 'pages/submarcas/index.html' },
+    { id: 'brand', section: 'brand identity', items: [
+      { id: 'logo',            label: 'logotipo',         href: 'pages/elements/logo.html' },
+      { id: 'sub-index',       label: 'submarcas · visão geral', href: 'pages/submarcas/index.html' },
       { id: 'hackerclubes',    label: 'hackerclubes',     href: 'pages/submarcas/hackerclubes.html' },
       { id: 'inclusao-tech',   label: 'inclusão tech',    href: 'pages/submarcas/inclusao-tech.html' },
       { id: 'internet-segura', label: 'internet segura',  href: 'pages/submarcas/internet-segura.html' },
       { id: 'minas-em-tech',   label: 'minas em tech',    href: 'pages/submarcas/minas-em-tech.html' },
       { id: 'mao-na-massa',    label: 'mão na massa',     href: 'pages/submarcas/mao-na-massa.html' },
       { id: 'perifa-impacto',  label: 'perifaimpacto',    href: 'pages/submarcas/perifa-impacto.html' },
-    ]},
-    { id: 'impressos', section: 'impressos', items: [
-      { id: 'imp-index',    label: 'overview',            href: 'pages/impressos/index.html' },
+      { id: 'imp-index',    label: 'impressos · overview', href: 'pages/impressos/index.html' },
       { id: 'papelaria',    label: 'papelaria',           href: 'pages/impressos/papelaria.html' },
       { id: 'eventos',      label: 'eventos',             href: 'pages/impressos/eventos.html' },
       { id: 'loja',         label: 'loja & merch',        href: 'pages/impressos/loja.html' },

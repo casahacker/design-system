@@ -27,8 +27,9 @@ GENERATORS = [
     ("impressos",        "gen_impressos.py"),
     ("hackerclubes",     "gen_hackerclubes.py"),  # roda APÓS gen_brand · sobrescreve
     ("search-index",     "gen_search_index.py"),
+    ("sitemap",          "gen_sitemap.py"),
 ]
-QUICK_SUBSET = {"foundations", "components-a", "components-b", "components-new", "search-index"}
+QUICK_SUBSET = {"foundations", "components-a", "components-b", "components-new", "search-index", "sitemap"}
 
 
 def run(name, script, env_overrides=None):
